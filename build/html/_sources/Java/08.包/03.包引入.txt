@@ -1,0 +1,45 @@
+.. contents::
+   :depth: 3
+..
+
+包引入
+======
+
+为了能够使用一个包中类型（类、接口、枚举和注释），需要在Java程序中明确引入该包。
+
+使用import语句实现引入包，import语句应位于package语句之后，所有类的定义之前，可以有0~n条import语句，
+
+eg
+
+::
+
+   import package1[.package2…].(类型名|*);
+
+eg
+
+::
+
+   // HelloWorld.java文件
+   import com.a51work6.Date; ①
+   public class HelloWorld {
+   public static void main(String[] args) {
+   Date date = new Date(); ②
+   System.out.println(date);
+   }
+   }
+
+引入两个类名相同时候的操作 eg
+
+::
+
+   // HelloWorld.java文件
+   import com.a51work6.Date;
+   //import java.util.Date; ①
+   public class HelloWorld {
+   public static void main(String[] args) {
+   Date date = new Date();
+   System.out.println(date);
+   java.util.Date now = new java.util.Date(); ②
+   System.out.println(now);
+   }
+   }

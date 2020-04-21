@@ -1,0 +1,32 @@
+.. contents::
+   :depth: 3
+..
+
+使用FileOutputStream类写入数据到文件
+====================================
+
+Liu4.java
+
+::
+
+   package com.a51work.cn;
+
+   import java.io.File;
+   import java.io.FileInputStream;
+
+   public class Liu4 {
+    public static void main(String[] args) throws Exception {
+     File fr = new File("D:\\\\GitHub/hujianli.txt");
+     FileInputStream fis = new FileInputStream(fr);
+     char ch;
+     for (int i = 0; i < fr.length(); i++) {
+      ch=(char)fis.read();
+      System.out.print(ch);
+      
+     }
+    }
+   }
+
+   /*
+   abcdefghijklmnopqrstuvwxyz
+   */

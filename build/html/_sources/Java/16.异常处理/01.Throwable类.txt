@@ -1,0 +1,46 @@
+.. contents::
+   :depth: 3
+..
+
+01.Throwable类
+==============
+
+HelloWorld.java
+
+::
+
+   package com.a51cto;
+
+   public class HelloWorld {
+    public static void main(String[] args) {
+     int a = 0;
+     int result = divide(5, a);
+     System.out.printf("divide(%d %d) = %d", 5, a, result);
+
+    }
+
+    public static int divide(int number, int divisor) {
+     try {
+      return number / divisor;
+     } catch (Throwable throwable) {
+      // TODO: handle exception
+      System.out.println("getMessage(): " + throwable.getMessage());
+      System.out.println("toString(): " + throwable.toString());
+      System.out.println("printStackTrace() 输出信息如下：");
+      throwable.printStackTrace();
+     }
+     return 0;
+    }
+   }
+
+
+   /*
+    
+   getMessage(): / by zerojava.lang.ArithmeticException: / by zero
+    at com.a51cto.HelloWorld.divide(HelloWorld.java:13)
+    at com.a51cto.HelloWorld.main(HelloWorld.java:6)
+
+   toString(): java.lang.ArithmeticException: / by zero
+   printStackTrace() 输出信息如下：
+   divide(5 0) = 0
+   */

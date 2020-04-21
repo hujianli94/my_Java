@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>21.7. Java打印日志 &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="next" title="22. Swing图形用户界面编程" href="../22.Swing图形用户界面编程/index.html" />
+    <link rel="prev" title="21.6. 发送Email" href="06.发送Email.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java学习笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.Java基础/index.html">1. Java基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.流程控制/index.html">2. 流程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.字符串/index.html">3. 字符串</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.数组/index.html">4. 数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.类与对象/index.html">5. 类与对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.数字处理类/index.html">6. 数字处理类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.接口、继承与多态/index.html">7. 接口、继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08.包/index.html">8. 包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.对象/index.html">9. 对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10.继承与多态/index.html">10. 继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.抽象类与接口/index.html">11. 抽象类与接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12.枚举类/index.html">12. 枚举类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13.Java常用类/index.html">13. Java常用类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14.内部类/index.html">14. 内部类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15.Lambda表达式/index.html">15. Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16.异常处理/index.html">16. 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../17.对象容器—集合/index.html">17. 对象容器—集合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18.泛型/index.html">18. 泛型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../19.文件管理与IO流/index.html">19. 文件管理与IO流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20.多线程编程/index.html">20. 多线程编程</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">21. 网络编程</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01.网络基础.html">21.1. 网络基础</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02.TCP-Socket.html">21.2. TCP Socket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03.UDP-Socket.html">21.3. UDP Socket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.数据交换格式.html">21.4. 数据交换格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05.访问互联网资源.html">21.5. 访问互联网资源</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06.发送Email.html">21.6. 发送Email</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">21.7. Java打印日志</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../22.Swing图形用户界面编程/index.html">22. Swing图形用户界面编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../23.再谈反射/index.html">23. 再谈反射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">21. 网络编程</a> &raquo;</li>
+        
+      <li>21.7. Java打印日志</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Java/21.网络编程/07.Java打印日志.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#java" id="id1">Java打印日志</a></li>
+</ul>
+</div>
+<div class="section" id="java">
+<h1><a class="toc-backref" href="#id1">21.7. Java打印日志</a><a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h1>
+<p>pom.xml</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;dependency&gt;
+           &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+           &lt;artifactId&gt;log4j-core&lt;/artifactId&gt;
+           &lt;version&gt;2.6.2&lt;/version&gt;
+       &lt;/dependency&gt;
+
+       &lt;dependency&gt;
+           &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+           &lt;artifactId&gt;log4j-api&lt;/artifactId&gt;
+           &lt;version&gt;2.6.2&lt;/version&gt;
+       &lt;/dependency&gt;
+
+       &lt;!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl --&gt;
+       &lt;dependency&gt;
+           &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+           &lt;artifactId&gt;log4j-slf4j-impl&lt;/artifactId&gt;
+           &lt;version&gt;2.6.2&lt;/version&gt;
+       &lt;/dependency&gt;
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Test_Logger</span> <span class="p">{</span>
+    <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">Test_Logger</span><span class="o">.</span><span class="n">class</span><span class="p">);</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">test</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;hello, my name is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;chengyi&quot;</span><span class="p">);</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;warring info 132xxxxxx&quot;</span><span class="p">);</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;debug info 21sdsxxxxxxxxxxxx&quot;</span><span class="p">);</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;error info 213xxxxxxxxxxxxxxx&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Test_Logger</span> <span class="n">test_log</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Test_Logger</span><span class="p">();</span>
+        <span class="n">test_log</span><span class="o">.</span><span class="n">test</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../22.Swing图形用户界面编程/index.html" class="btn btn-neutral float-right" title="22. Swing图形用户界面编程" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="06.发送Email.html" class="btn btn-neutral float-left" title="21.6. 发送Email" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

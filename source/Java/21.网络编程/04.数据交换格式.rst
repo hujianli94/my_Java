@@ -1,0 +1,188 @@
+.. contents::
+   :depth: 3
+..
+
+数据交换格式
+============
+
+JSON数据编码和解码
+------------------
+
+编码
+~~~~
+
+::
+
+   package com.a51work.cn;
+
+   import com.a51work.cn.org.json.JSONArray;
+   import com.a51work.cn.org.json.JSONException;
+   import com.a51work.cn.org.json.JSONObject;
+
+   public class Json_encode {
+       public static void main(String[] args) {
+           try {
+               JSONObject jsonObject = new JSONObject();
+               jsonObject.put("name", "hujianli");
+               jsonObject.put("age", 30);
+
+               JSONArray jsonArray = new JSONArray();
+               jsonArray.put(1).put(3);
+               jsonObject.put("a", jsonArray);
+               // 编码完成
+               System.out.println(jsonObject.toString());
+           } catch (JSONException e) {
+               e.printStackTrace();
+           }
+       }
+   }
+
+解码
+~~~~
+
+::
+
+   package com.a51work.cn;
+
+   import com.a51work.cn.org.json.JSONArray;
+   import com.a51work.cn.org.json.JSONException;
+   import com.a51work.cn.org.json.JSONObject;
+
+   public class JSON_decode {
+       public static void main(String[] args) {
+           String jsonString = "{\"name\":\"tony\", \"age\":30, \"a\":[1, 3]}";
+           try {
+               JSONObject jsonObject = new JSONObject(jsonString);
+               String name = jsonObject.getString("name");
+               System.out.println("name : " + name);
+               int age = jsonObject.getInt("age");
+               System.out.println("age : " + age);
+               JSONArray jsonArray = jsonObject.getJSONArray("a");
+               int n1 = jsonArray.getInt(0);
+               System.out.println("数组a第一个元素 : " + n1);
+               int n2 = jsonArray.getInt(1);
+               System.out.println("数组a第二个元素 : " + n2);
+           } catch (
+                   JSONException e) {
+               e.printStackTrace();
+           }
+       }
+   }
+
+案例：聊天工具
+--------------
+
+JSON_chatServer.java
+
+::
+
+   package com.a51work.cn;
+
+   import com.a51work.cn.org.json.JSONObject;
+
+   import java.io.BufferedReader;
+   import java.io.DataInputStream;
+   import java.io.DataOutputStream;
+   import java.io.InputStreamReader;
+   import java.net.ServerSocket;
+   import java.net.Socket;
+
+   public class JSON_ChatServer {
+       public static void main(String[] args) {
+           System.out.println("服务器运行...............");
+           Thread t = new Thread(() -> {
+               try (// 创建一个ServerSocket监听端口8080客户请求
+                    ServerSocket server = new ServerSocket(8080);
+                    // 使用accept()阻塞等待客户端请求
+                    Socket socket = server.accept();
+                    DataInputStream in = new DataInputStream(socket.getInputStream());
+                    DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+                    BufferedReader keyboardIn = new BufferedReader(new InputStreamReader(System.in))) {
+                   while (true) {
+                       /* 接收数据 */
+                       String str = in.readUTF();
+                       // JSON解码
+                       JSONObject jsonObject = new JSONObject(str);
+                       //打印接收的数据
+                       System.out.printf("从客户端接收的数据：%s\n", jsonObject);
+
+                       /* 发送数据 */
+                       // 读取键盘输入的字符串
+                       String keyboardInputString = keyboardIn.readLine();
+                       // 结束聊天
+                       if (keyboardInputString.equals("bye")) {
+                           break;
+                       }
+                       // 编码
+                       jsonObject = new JSONObject();
+                       jsonObject.put("message",keyboardInputString);
+                       jsonObject.put("userid","acid");
+                       jsonObject.put("username","hujianli1");
+
+                       //发送
+                       out.writeUTF(jsonObject.toString());
+                       out.flush();
+                   }
+               } catch (Exception e) {
+                   e.printStackTrace();
+               }
+           });
+
+           t.start();
+
+       }
+   }
+
+JSON_chatClient.java
+
+::
+
+   package com.a51work.cn;
+
+   import com.a51work.cn.org.json.JSONObject;
+
+   import java.io.BufferedReader;
+   import java.io.DataInputStream;
+   import java.io.DataOutputStream;
+   import java.io.InputStreamReader;
+   import java.net.Socket;
+
+   public class JSON_ChatClient {
+       public static void main(String[] args) {
+           System.out.println("客户端运行..............");
+           Thread t = new Thread(() -> {
+               try (//  向127.0.0.1主机8080端口发出连接请求
+                    Socket socket = new Socket("127.0.0.1", 8080);
+                    DataInputStream in = new DataInputStream(socket.getInputStream());
+                    DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+                    BufferedReader keyboardIn = new BufferedReader(new InputStreamReader(System.in))) {
+                   while (true) {
+                       /* 发送数据 */
+                       // 读取键盘输入的字符串
+                       String keyboardInputString = keyboardIn.readLine();
+                       //结束聊天
+                       if (keyboardInputString.equals("bye")) {
+                           break;
+                       }
+                       JSONObject jsonObject = new JSONObject();
+                       jsonObject.put("message", keyboardInputString);
+                       jsonObject.put("userid", "javaee");
+                       jsonObject.put("username", "胡建力2");
+
+                       //发送
+                       out.writeUTF(jsonObject.toString());
+                       out.flush();
+                       //接收数据
+                       String str = in.readUTF();
+                       jsonObject = new JSONObject(str);
+                       //打印接收的数据
+                       System.out.printf("从服务器接收的数据：【%s】\n", str);
+                   }
+               } catch (Exception e) {
+                   System.out.println("服务器暂时未启动........");
+               }
+               System.out.println("客户端停止！");
+           });
+           t.start();
+       }
+   }

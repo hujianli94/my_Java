@@ -1,0 +1,530 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.3. 静态变量、常量和方法（static关键字） &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="next" title="5.4. 主方法" href="04.主方法.html" />
+    <link rel="prev" title="5.2. 类" href="02.类.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java学习笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.Java基础/index.html">1. Java基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.流程控制/index.html">2. 流程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.字符串/index.html">3. 字符串</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.数组/index.html">4. 数组</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">5. 类与对象</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01.面向对象概述.html">5.1. 面向对象概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02.类.html">5.2. 类</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">5.3. 静态变量、常量和方法（static关键字）</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">5.3.1. 静态变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">5.3.2. 静态常量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">5.3.3. 静态方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">5.3.4. 静态代码块</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="04.主方法.html">5.4. 主方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05.实践与练习.html">5.5. 实践与练习</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../06.数字处理类/index.html">6. 数字处理类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.接口、继承与多态/index.html">7. 接口、继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08.包/index.html">8. 包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.对象/index.html">9. 对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10.继承与多态/index.html">10. 继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.抽象类与接口/index.html">11. 抽象类与接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12.枚举类/index.html">12. 枚举类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13.Java常用类/index.html">13. Java常用类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14.内部类/index.html">14. 内部类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15.Lambda表达式/index.html">15. Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16.异常处理/index.html">16. 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../17.对象容器—集合/index.html">17. 对象容器—集合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18.泛型/index.html">18. 泛型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../19.文件管理与IO流/index.html">19. 文件管理与IO流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20.多线程编程/index.html">20. 多线程编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../21.网络编程/index.html">21. 网络编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../22.Swing图形用户界面编程/index.html">22. Swing图形用户界面编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../23.再谈反射/index.html">23. 再谈反射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">5. 类与对象</a> &raquo;</li>
+        
+      <li>5.3. 静态变量、常量和方法（static关键字）</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Java/05.类与对象/03.静态变量、常量和方法（static关键字）.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#static" id="id5">静态变量、常量和方法（static关键字）</a><ul>
+<li><a class="reference internal" href="#id1" id="id6">静态变量</a></li>
+<li><a class="reference internal" href="#id2" id="id7">静态常量</a></li>
+<li><a class="reference internal" href="#id3" id="id8">静态方法</a></li>
+<li><a class="reference internal" href="#id4" id="id9">静态代码块</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="static">
+<h1><a class="toc-backref" href="#id5">5.3. 静态变量、常量和方法（static关键字）</a><a class="headerlink" href="#static" title="Permalink to this headline">¶</a></h1>
+<p>static修饰的成员变量是静态变量，staitc修饰的方法是静态方法，相
+反，没有static修饰的成员变量是实例变量，静态方法可以访问静态变量和其他静态方法。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>public class Pool {
+//  定义静态变量
+    static public int water = 0;
+
+//  定义进水的方法
+    public void inlet() {
+//      进水每次进3个单位
+        water += 3;
+    }
+
+//  定义出水的方法
+    public void outlet() {
+        if (water &gt;= 2) {
+            water -= 2;
+        } else {
+            water = 2;
+        }
+    }
+
+//  主方法
+    public static void main(String[] args) {
+//      实例化in进水类和出水类out
+        Pool in = new Pool();
+        Pool out = new Pool();
+
+        System.out.println( &quot;水池中的水量为: &quot; + Pool.water);
+        System.out.println(&quot;开始进水2次&quot;);
+        in.inlet();
+        in.inlet();
+        System.out.println( &quot;水池中的水量为: &quot; + Pool.water);
+        System.out.println(&quot;开始出水1次：&quot;);
+        out.outlet();
+        System.out.println( &quot;水池中的水量为: &quot; + Pool.water);
+
+
+    }
+}
+
+/*
+输出结果
+水池中的水量为: 0
+开始进水2次
+水池中的水量为: 6
+开始出水1次：
+水池中的水量为: 4
+*/
+</pre></div>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id6">5.3.1. 静态变量</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>静态变量在实例和类中是共享的</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>public class staticVar {
+//  静态变量
+    static int x;
+//  变量
+    int y;
+
+//  构造方法,对实例进行初始化传参
+    public staticVar(int x, int y) {
+        this.x = x;
+        this.y = y;
+
+    }
+    public static void main(String[] args) {
+        staticVar hu= new staticVar(1,2);
+        staticVar hu2= new staticVar(94,722);
+        System.out.println(&quot;x的值为：&quot;+hu.x);
+        System.out.println(&quot;y的值为：&quot;+hu.y);
+
+        System.out.println(&quot;x的值为：&quot;+hu2.x);
+        System.out.println(&quot;y的值为：&quot;+hu2.y);
+
+    }
+
+}
+/*输出
+ * 结果
+x的值为：94
+y的值为：2
+x的值为：94
+y的值为：722
+ */
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id7">5.3.2. 静态常量</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">静态常量</p>
+<p>用final 修饰一个成员变量， 这个成员变量就会变成一个静态常量。
+所有类都要使用的常量，共享的，静态常量一定是大写的。</p>
+</li>
+</ul>
+<p>eg:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>public class final_var {
+//静态常量PI π。提供给圆和球共享使用
+    final static double PI = 3.1415926;
+    public static void main(String[] args) {
+        Yuanxing hu = new Yuanxing(3.0);
+        Qiuxing hu2 = new Qiuxing(3.0);
+
+    }
+
+}
+
+    class Yuanxing {
+//  圆的半径
+        double radius;
+//  圆的面积
+        double area;
+
+        public Yuanxing(double radius) {
+            // 构造函数，圆的半径radius。
+            this.radius = radius;
+
+            area = final_var.PI * radius * radius;
+            System.out.println(&quot;圆的半径是：&quot; + radius);
+            System.out.println(&quot;圆的面积是：&quot; + area);
+
+        }
+
+    }
+
+    class Qiuxing {
+//  double型表示半径
+        double radius;
+//  球的体积
+        double volume;
+
+        public Qiuxing(double radius) {
+            // 构造函数进行传参，radius为半径
+            this.radius = radius;
+
+            volume = 4 / 3 * final_var.PI * radius * radius * radius;
+            System.out.println(&quot;球的半径为：&quot; + radius);
+            System.out.println(&quot;球的体积为：&quot; + volume);
+        }
+
+    }
+
+
+
+/*输出
+ * 结果
+圆的半径是：3.0
+圆的面积是：28.274333400000003
+球的半径为：3.0
+球的体积为：84.82300020000001
+*/
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id8">5.3.3. 静态方法</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span>静态方法不需要实例化，直接使用类名+方法名进行调用，和python类似,
+静态方法可以访问静态变量和其他静态方法，
+</pre></div>
+</div>
+<p>eg:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">static_fangfa</span> <span class="p">{</span>
+<span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">show</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;我是静态方法....&quot;</span><span class="p">);</span>
+
+<span class="p">}</span>
+<span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">static_fangfa</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">/*</span><span class="n">输出</span>
+ <span class="n">我是静态方法</span><span class="o">....</span>
+ <span class="o">*/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id9">5.3.4. 静态代码块</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>如果初始化静态变量不是简单常量，需要进行计算才能初始化，可以使用静态（static）代码块，静态代码块在类第一次加载时执行，并只执行一次。</p>
+<p>eg:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">jingtaidaimakuai</span> <span class="p">{</span>
+<span class="n">static</span> <span class="p">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;这里是静态代码块.......&quot;</span><span class="p">);</span>
+
+<span class="p">}</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;这里是非静态代码块......&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="n">public</span> <span class="n">jingtaidaimakuai</span><span class="p">()</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="n">TODO</span> <span class="n">自动生成的构造函数存根</span>
+    <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;这里是构造方法......&quot;</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="n">void</span> <span class="n">method</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;这里是成员方法........&quot;</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">jingtaidaimakuai</span> <span class="n">hu</span> <span class="o">=</span> <span class="n">new</span> <span class="n">jingtaidaimakuai</span><span class="p">();</span>
+    <span class="n">hu</span><span class="o">.</span><span class="n">method</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">/*</span><span class="n">输出信息</span>
+<span class="n">这里是静态代码块</span><span class="o">.......</span>
+<span class="n">这里是非静态代码块</span><span class="o">......</span>
+<span class="n">这里是构造方法</span><span class="o">......</span>
+<span class="n">这里是成员方法</span><span class="o">........</span>
+ <span class="o">*/</span>
+</pre></div>
+</div>
+<p>示例代码如下：</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">company4</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Account</span> <span class="p">{</span>
+    <span class="n">double</span> <span class="n">amount</span> <span class="o">=</span><span class="mf">0.0</span><span class="p">;</span>
+    <span class="n">String</span> <span class="n">owner</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">静态变量利率</span>
+    <span class="n">static</span> <span class="n">double</span> <span class="n">interestRate</span><span class="p">;</span>
+
+    <span class="o">//</span><span class="n">静态方法</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">double</span> <span class="n">interestBy</span><span class="p">(</span><span class="n">double</span> <span class="n">amt</span><span class="p">){</span>
+        <span class="o">//</span> <span class="n">静态方法可以访问静态变量和其他静态方法</span>
+        <span class="k">return</span> <span class="n">interestRate</span> <span class="o">*</span> <span class="n">amt</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="o">//</span><span class="n">静态代码块</span>
+    <span class="n">static</span> <span class="p">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;静态代码块被调用&quot;</span><span class="p">);</span>
+        <span class="o">//</span> <span class="n">初始化静态变量</span>
+        <span class="n">interestRate</span> <span class="o">=</span> <span class="mf">0.0668</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Account</span> <span class="n">myAccount</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Account</span><span class="p">();</span>
+        <span class="o">//</span><span class="n">访问静态变量</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">Account</span><span class="o">.</span><span class="n">interestRate</span><span class="p">);</span>
+        <span class="o">//</span><span class="n">访问静态方法</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">Account</span><span class="o">.</span><span class="n">interestBy</span><span class="p">(</span><span class="mi">1000</span><span class="p">));</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">/*</span>
+<span class="n">静态代码块被调用</span>
+<span class="mf">0.0668</span>
+<span class="mf">66.8</span><span class="o">*/</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="04.主方法.html" class="btn btn-neutral float-right" title="5.4. 主方法" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="02.类.html" class="btn btn-neutral float-left" title="5.2. 类" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

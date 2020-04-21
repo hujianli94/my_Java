@@ -1,0 +1,44 @@
+.. contents::
+   :depth: 3
+..
+
+Boolean
+=======
+
+::
+
+   Boolean类将接班类型为boolean的值包装在一个对象中，一个Boolean类型的对象只包含一个类型
+   为boolean的字段，此外，此类还为boolean和String的互相转换提供了许多方法，并提供了处理boolean时
+   非常有用的其他一些常量和方法。
+
+1.构造方法
+----------
+
+::
+
+   Boolean b = new Boolean("ok")
+
+|image0|
+
+::
+
+   //创建类
+   public class Getboolean1 {
+   //  创建主方法
+   public static void main(String[] args) {
+       Boolean b1 = new Boolean(true);  //创建Boolean对象
+       Boolean b2 = new Boolean("ok");   //创建Boolean对象
+       
+       System.out.println("b1: "+ b1.booleanValue());
+       System.out.println("b2: " + b2.booleanValue());
+
+   }
+   }
+
+   /*
+   输出内容
+   b1: true
+   b2: false
+   */
+
+.. |image0| image:: ../../_static/Boolean2.PNG

@@ -1,0 +1,112 @@
+.. contents::
+   :depth: 3
+..
+
+构造方法
+========
+
+构造方法时与类同名的方法，对象的创建就是通过构造方法完成的，每当类实例化一个对象时，
+类都会自动调用构造方法。
+
+::
+
+   public class gouzaofangfa {
+       public gouzaofangfa() {
+   //      构造方法
+       }
+
+-  当类中没有声明构造方法时，Java会自动生成一个无参数的构造方法。
+
+-  当声明了构造方法时，无参数的构造方法会销毁，若要使用，自行再声明一次
+
+::
+
+   public class Classtest {
+       public Classtest(int a) {
+           //定义有1个参数的构造方法
+       }
+
+       public Classtest() {
+   //      定义无参数的构造方法
+           
+       }
+       
+       public static void main(String[] args) {
+   //      主方法
+           //不带参数可以实例化
+           Classtest test=new Classtest(); 
+   //      带1个参数也可以实例化
+           Classtest test2=new Classtest(1);       
+
+           
+       }
+   }
+
+eg
+
+::
+
+
+   public class EggCake {
+       int eggCount;
+       
+       public EggCake(int eggCount) {
+           //初始化第一个参数的值
+           this.eggCount = eggCount;
+           System.out.println("这个饼里有" + eggCount + "个鸡蛋");
+       }
+
+       public EggCake() {
+           //构造方法的默认值
+           this(1);
+       }
+   public static void main(String[] args) {
+       EggCake hu = new EggCake();
+       EggCake hu1 = new EggCake(2);
+       EggCake hu2 = new EggCake(5);
+
+   }
+   }
+
+   /* 输出结果
+   这个饼里有1个鸡蛋
+   这个饼里有2个鸡蛋
+   这个饼里有5个鸡蛋
+   */
+
+私有构造方法
+------------
+
+|image0|
+
+::
+
+   public class Book1 {
+   //  定义私有的构造方法
+       private Book1() {
+           
+       }
+       
+       //静态方法
+       static public Book1 libraryBorrow() {
+           System.out.println("this is libraryBorrow");
+           return new Book1();
+       }
+   }
+
+
+   再创建一个类
+   public class jieshu {
+   public static void main(String[] args) {
+       Book1 hu2 = Book1.libraryBorrow();
+   }
+   }
+
+
+
+   /*
+   输出结果
+   this is libraryBorrow 
+    */
+
+.. |image0| image:: ../../_static/siyougouzaofangfa.PNG

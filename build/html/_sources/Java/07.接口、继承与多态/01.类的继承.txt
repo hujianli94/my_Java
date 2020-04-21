@@ -1,0 +1,164 @@
+.. contents::
+   :depth: 3
+..
+
+类的继承
+========
+
+Subroutine.java
+
+::
+
+
+   class Parent { // 父类
+       Parent() {
+           System.out.println("调用父类的parent()构造方法");
+       }
+   }
+
+   class SubParent extends Parent { // 继承Parent类
+       SubParent() {
+           System.out.println("调用子类的SubParent()构造方法");
+       }
+   }
+
+   public class Subroutine extends SubParent { // 继承SubParent类
+       Subroutine() {
+           System.out.println("调用子类的Subroutine()构造方法");
+       }
+       
+       public static void main(String[] args) {
+           Subroutine s = new Subroutine(); // 实例化子类对象
+       }
+   }
+
+   /*输出结果
+   调用父类的parent()构造方法
+   调用子类的SubParent()构造方法
+   调用子类的Subroutine()构造方法 
+    */
+
+Person2.java 两个实例属性，name、age
+
+::
+
+   package a51work6;
+
+   public class Person2 {
+       String name;
+       int age;
+       
+   //  定义构造方法
+       public Person2(String name, int age) {
+           this.name = name;
+           this.age = age;
+           
+       }
+       
+       @Override
+       public String toString() {
+           return "Person2 [name =" + name + ", age=" + age + "]";
+       }
+       
+       
+   }
+
+Student.java类继承Person2类的构造方法，并新增school实例属性
+
+::
+
+   package a51work6;
+
+   public class Student extends Person2 {
+       String school;
+       public Student(String name, int age, String school) {
+           super(name, age);
+           this.school = school;
+       }
+       
+       @Override
+       public String toString() {
+           return "Student [school=" + school + ", name=" + name + ", age=" + age + "]";
+       }
+
+   }
+
+Work.java类，继承Person2类，新增factory实例属性
+
+::
+
+   package a51work6;
+
+   public class Work extends Person2 {
+       String factory;
+       
+       public Work(String name,int age,String factory) {
+           // TODO 自动生成的构造函数存根
+           super(name, age);
+           this.factory = factory;
+       }
+       
+       @Override
+       public String toString() {
+           return "Worker [factory= " + factory 
+                   + ", name= " + name + ", age=" + age + "]";
+       }
+       
+
+   }
+
+调用代码 Helloworld6.java
+
+::
+
+   package a51work6;
+
+   public class Helloworld6 {
+   //  主方法
+       public static void main(String[] args) {
+           Student student1 = new Student("hujianli", 18, "西安电子科技大学");
+           Student student2 = new Student("huxiaojian", 19, "清华大学");
+           Student student3 = new Student("xiaojian", 20, "复旦大学");
+           
+           Work work1 = new Work("胡健力", 20, "迅投");
+           Work work2 = new Work("hujian", 22, "富通东方");
+           
+   //      创建数组
+           Person2[] people = { student1,student2,student3,work1,work2 };
+           
+   //      创建计数器
+           int studentcount = 0;
+           int workercount = 0;
+   //      使用临时变量，变量数组
+           for (Person2 item:people ) {
+               if (item instanceof Work) {
+                   workercount++;
+                   
+               } else if (item instanceof Student) {
+                   studentcount++;
+               }
+           }
+           
+       System.out.printf("工作人员人数：%d,学生人数:%d \n",workercount,studentcount); 
+       System.out.println(work1.toString());
+       System.out.println(work2.toString());
+       
+       System.out.println(student1.toString());
+       System.out.println(student2.toString());
+       System.out.println(student3.toString());
+       
+       
+       
+       }
+   }
+
+输出结果如下：
+
+::
+
+   工作人员人数：2,学生人数:3 
+   Worker [factory= 迅投, name= 胡健力, age=20]
+   Worker [factory= 富通东方, name= hujian, age=22]
+   Student [school=西安电子科技大学, name=hujianli, age=18]
+   Student [school=清华大学, name=huxiaojian, age=19]
+   Student [school=复旦大学, name=xiaojian, age=20]

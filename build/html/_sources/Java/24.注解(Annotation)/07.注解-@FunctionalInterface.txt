@@ -1,0 +1,10 @@
+.. contents::
+   :depth: 3
+..
+
+@FunctionalInterface
+====================
+
+@FunctionalInterface注解是Java 8增加的，
+
+``用于接口的注解，声明接口是函数式接口``

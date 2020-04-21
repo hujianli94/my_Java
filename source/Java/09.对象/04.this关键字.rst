@@ -1,0 +1,88 @@
+.. contents::
+   :depth: 3
+..
+
+this关键字
+==========
+
+this指向对象本身，一个类可以通过this来获得一个代表它自身的对象变
+量。this使用在如下三种情况中：
+
+-  调用实例变量。
+-  调用实例方法。
+-  调用其他构造方法。
+
+.. code:: java
+
+   package aom;
+
+   import java.util.Date;
+
+   public class HelloWorld {
+       // 私有成员变量，进行封装
+       private String name;
+       private int age;
+       private Date birthDate;
+
+       public HelloWorld(String name, int age, Date birthDate) {
+           this.name = name;
+           this.age = age;
+           this.birthDate = birthDate;
+           System.out.println(this.toString());
+       }
+
+       public HelloWorld(String name, int age) {
+           // 调用三个参数构造方法
+           this(name, age, null);
+       }
+
+       public HelloWorld(String name, Date birthDate) {
+           // 调用三个参数构造方法
+           this(name,30,birthDate);
+       }
+
+       public HelloWorld(String name) {
+           // 调用Person(String name, Date d)构造方法
+           this(name,null);
+       }
+
+       @Override
+       public String toString() {
+           return "Person [name=" + name
+                   + ", age=" + age
+                   + ", birthDate=" + birthDate + "]";
+       }
+
+       public String getName() {
+           return name;
+       }
+
+       public void setName(String name) {
+           this.name = name;
+       }
+
+       public int getAge() {
+           return age;
+       }
+
+       public void setAge(int age) {
+           this.age = age;
+       }
+
+       public Date getBirthDate() {
+           return birthDate;
+       }
+
+       public void setBirthDate(Date birthDate) {
+           this.birthDate = birthDate;
+       }
+
+
+       public static void main(String[] args) {
+           HelloWorld hu1 = new HelloWorld("hujianli",18);
+           hu1.setAge(19);
+           System.out.println(hu1.getAge());
+           hu1.setName("xiaojian");
+           System.out.println(hu1);
+       }
+   }

@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.3. Object类 &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="next" title="7.4. 多态" href="04.多态.html" />
+    <link rel="prev" title="7.2. 成员变量隐藏和方法覆盖" href="02.成员变量隐藏和方法覆盖.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java学习笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.Java基础/index.html">1. Java基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.流程控制/index.html">2. 流程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.字符串/index.html">3. 字符串</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.数组/index.html">4. 数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.类与对象/index.html">5. 类与对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.数字处理类/index.html">6. 数字处理类</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">7. 接口、继承与多态</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01.类的继承.html">7.1. 类的继承</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02.成员变量隐藏和方法覆盖.html">7.2. 成员变量隐藏和方法覆盖</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">7.3. Object类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.多态.html">7.4. 多态</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../08.包/index.html">8. 包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.对象/index.html">9. 对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10.继承与多态/index.html">10. 继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.抽象类与接口/index.html">11. 抽象类与接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12.枚举类/index.html">12. 枚举类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13.Java常用类/index.html">13. Java常用类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14.内部类/index.html">14. 内部类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15.Lambda表达式/index.html">15. Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16.异常处理/index.html">16. 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../17.对象容器—集合/index.html">17. 对象容器—集合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18.泛型/index.html">18. 泛型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../19.文件管理与IO流/index.html">19. 文件管理与IO流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20.多线程编程/index.html">20. 多线程编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../21.网络编程/index.html">21. 网络编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../22.Swing图形用户界面编程/index.html">22. Swing图形用户界面编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../23.再谈反射/index.html">23. 再谈反射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">7. 接口、继承与多态</a> &raquo;</li>
+        
+      <li>7.3. Object类</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Java/07.接口、继承与多态/03.Object类.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#object" id="id1">Object类</a></li>
+</ul>
+</div>
+<div class="section" id="object">
+<h1><a class="toc-backref" href="#id1">7.3. Object类</a><a class="headerlink" href="#object" title="Permalink to this headline">¶</a></h1>
+<p>在java中，所有的类都直接或间接继承java.lang.Object类，Object类时比较特殊的类，它是
+所有类的父类，是Java类层中的最高层类。</p>
+<p>所有类都是Object子类，所以在定义类时，省略了extends Object关键字。</p>
+<p>常用的方法为equals()和toString()方法。</p>
+<ol class="arabic">
+<li><p class="first">getClass()方法是Object类定义的方法，它会返回对象执行时的Class实例，然后使用此实例调用
+getName()方法可以取得类的名称。</p>
+<p>语法如下： getClass().getname():</p>
+</li>
+</ol>
+<p>可以将getClass()方法和toString()方法联合使用。</p>
+<p>2.toString()方法
+toString()方法的功能是将一个对象返回为字符串形式，它会返回一个String实例。
+为对象提供一个特定的输出模式。当这个类转换为字符串或与字符串连接时，将自动调用重写toString()方法。</p>
+<p>eg</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">ObjectInstance</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">String</span> <span class="n">toString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">&quot;在&quot;</span><span class="o">+</span><span class="n">getClass</span><span class="p">()</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;类中重写toString()方法&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="o">//</span>      <span class="n">主方法</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">new</span> <span class="n">ObjectInstance</span><span class="p">());</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="o">/*</span>
+
+<span class="n">在ObjectInstance类中重写toString</span><span class="p">()</span><span class="n">方法</span>
+<span class="o">*/</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>eqyals()方法
+“==”运算与equals()方法，“==”比较的是两个对象的引用是否相等，而equals()方法是比较两个对象的实际内容。</li>
+</ol>
+<p>eg</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>//自定义类V
+class V {
+}
+
+public class OverWriteEquals {
+//  主方法
+    public static void main(String[] args) {
+//      实例化两个对象，内容相同
+        String s1 = &quot;123&quot;;
+        String s2 = &quot;123&quot;;
+        System.out.println(s1.equals(s2));  //使用equals()方法调用
+//      实例化两个V类对象
+        V v1 = new V();
+        V v2 = new V();
+//      使用equals()方法比较v1与v2对象
+
+        System.out.println(v1.equals(v2));
+    }
+}
+
+/*
+ *
+true
+false
+ */
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="04.多态.html" class="btn btn-neutral float-right" title="7.4. 多态" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="02.成员变量隐藏和方法覆盖.html" class="btn btn-neutral float-left" title="7.2. 成员变量隐藏和方法覆盖" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

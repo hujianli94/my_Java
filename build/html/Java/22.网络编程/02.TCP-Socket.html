@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>22.2. TCP Socket &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="next" title="22.3. UDP Socket" href="03.UDP-Socket.html" />
+    <link rel="prev" title="22.1. 网络基础" href="01.网络基础.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统常用技术和案例</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java学习笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.Java基础/index.html">1. Java基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.流程控制/index.html">2. 流程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.字符串/index.html">3. 字符串</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.数组/index.html">4. 数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.类与对象/index.html">5. 类与对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.包装类/index.html">6. 包装类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.数字处理类/index.html">7. 数字处理类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08.接口、继承与多态/index.html">8. 接口、继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.包/index.html">9. 包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10.对象/index.html">10. 对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.继承与多态/index.html">11. 继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12.抽象类与接口/index.html">12. 抽象类与接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13.枚举类/index.html">13. 枚举类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14.Java常用类/index.html">14. Java常用类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15.内部类/index.html">15. 内部类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16.Lambda表达式/index.html">16. Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../17.异常处理/index.html">17. 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18.对象容器—集合/index.html">18. 对象容器—集合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../19.泛型/index.html">19. 泛型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20.文件管理与IO流/index.html">20. 文件管理与IO流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../21.多线程编程/index.html">21. 多线程编程</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">22. 网络编程</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01.网络基础.html">22.1. 网络基础</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">22.2. TCP Socket</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">22.2.1. 案例：文件上传工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">22.2.2. 案例：聊天工具</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03.UDP-Socket.html">22.3. UDP Socket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.数据交换格式.html">22.4. 数据交换格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05.访问互联网资源.html">22.5. 访问互联网资源</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06.发送Email.html">22.6. 发送Email</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07.Java打印日志.html">22.7. Java打印日志</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../23.Swing图形用户界面编程/index.html">23. Swing图形用户界面编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../24.再谈反射/index.html">24. 再谈反射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25.注解(Annotation)/index.html">25. 注解(Annotation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../26.数据库编程/index.html">26. 数据库编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.第三方安装包管理工具之Maven/index.html">27. 包管理工具之Maven</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">22. 网络编程</a> &raquo;</li>
+        
+      <li>22.2. TCP Socket</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Java/22.网络编程/02.TCP-Socket.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#tcp-socket" id="id3">TCP Socket</a><ul>
+<li><a class="reference internal" href="#id1" id="id4">案例：文件上传工具</a></li>
+<li><a class="reference internal" href="#id2" id="id5">案例：聊天工具</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tcp-socket">
+<h1><a class="toc-backref" href="#id3">22.2. TCP Socket</a><a class="headerlink" href="#tcp-socket" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id4">22.2.1. 案例：文件上传工具</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>UploadServer.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51work.cn;
+
+import java.io.BufferedInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class UploadServer {
+    public static void main(String[] args) {
+        System.out.println(&quot;服务端运行.............&quot;);
+        try (// 创建一个ServerSocket监听8080端口的客户端请求
+             ServerSocket server = new ServerSocket(8080);
+             // 使用accept()阻塞当前线程，等待客户端请求
+             Socket socket = server.accept();
+             // 由Socket获得输入流，并创建缓冲输入流
+             BufferedInputStream in = new BufferedInputStream(socket.getInputStream());
+             // 由文件输出流创建缓冲输出流
+             FileOutputStream out = new FileOutputStream(&quot;./hujianli.sh&quot;)) {
+
+            //准备一个缓冲区
+            byte[] buffer = new byte[1024];
+            // 首次从Socket读取数据
+            int len = in.read(buffer);
+            while (len != -1) {
+                // 写入数据到文件
+                out.write(buffer, 0, len);
+
+                // 再次从Socket读取数据
+                len = in.read(buffer);
+            }
+            System.out.println(&quot;接收完成！&quot;);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</pre></div>
+</div>
+<p>UploadClient.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51work.cn;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.Socket;
+
+public class UploadClient {
+    public static void main(String[] args) {
+        System.out.println(&quot;客户端运行............&quot;);
+        try (// 向本机的8080端口发出请求
+             Socket socket = new Socket(&quot;127.0.0.1&quot;, 8080);
+             // 由Socket获得输出流，并创建缓冲输出流
+             BufferedOutputStream out = new BufferedOutputStream(socket.getOutputStream());
+             // 创建文件输入流
+             FileInputStream fin = new FileInputStream(&quot;D:\\GitHub\\test.sh&quot;);
+             // 由文件输入流创建缓冲输入流
+             BufferedInputStream in = new BufferedInputStream(fin)) {
+            // 准备一个缓冲区
+            byte[] buffer = new byte[1024];
+            // 首次读取文件
+            int len = in.read(buffer);
+            while (len != -1) {
+                // 数据写入Socket
+                out.write(buffer, 0, len);
+                // 再次读取文件
+                len = in.read(buffer);
+            }
+            System.out.println(&quot;上传成功！！&quot;);
+            } catch(IOException e){
+                e.printStackTrace();
+            }
+        }
+    }
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id5">22.2.2. 案例：聊天工具</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>ChatServer.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.DataInputStream</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.DataOutputStream</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStreamReader</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.ServerSocket</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.Socket</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">ChatServer</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;服务器运行...............&quot;</span><span class="p">);</span>
+        <span class="n">Thread</span> <span class="n">t</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Thread</span><span class="p">(()</span> <span class="o">-&gt;</span> <span class="p">{</span>
+            <span class="k">try</span> <span class="p">(</span><span class="o">//</span> <span class="n">创建一个ServerSocket监听端口8080客户请求</span>
+                 <span class="n">ServerSocket</span> <span class="n">server</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ServerSocket</span><span class="p">(</span><span class="mi">8080</span><span class="p">);</span>
+                 <span class="o">//</span> <span class="n">使用accept</span><span class="p">()</span><span class="n">阻塞等待客户端请求</span>
+                 <span class="n">Socket</span> <span class="n">socket</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">accept</span><span class="p">();</span>
+                 <span class="n">DataInputStream</span> <span class="ow">in</span> <span class="o">=</span> <span class="n">new</span> <span class="n">DataInputStream</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">getInputStream</span><span class="p">());</span>
+                 <span class="n">DataOutputStream</span> <span class="n">out</span> <span class="o">=</span> <span class="n">new</span> <span class="n">DataOutputStream</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">getOutputStream</span><span class="p">());</span>
+                 <span class="n">BufferedReader</span> <span class="n">keyboardIn</span> <span class="o">=</span> <span class="n">new</span> <span class="n">BufferedReader</span><span class="p">(</span><span class="n">new</span> <span class="n">InputStreamReader</span><span class="p">(</span><span class="n">System</span><span class="o">.</span><span class="ow">in</span><span class="p">)))</span> <span class="p">{</span>
+                <span class="k">while</span> <span class="p">(</span><span class="n">true</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="o">/*</span> <span class="n">接收数据</span> <span class="o">*/</span>
+                    <span class="n">String</span> <span class="nb">str</span> <span class="o">=</span> <span class="ow">in</span><span class="o">.</span><span class="n">readUTF</span><span class="p">();</span>
+                    <span class="o">//</span> <span class="n">打印接收的数据</span>
+                    <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;从客户端接收的数据：【</span><span class="si">%s</span><span class="s2">】</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">);</span>
+
+                    <span class="o">/*</span> <span class="n">发送数据</span> <span class="o">*/</span>
+                    <span class="o">//</span> <span class="n">读取键盘输入的字符串</span>
+                    <span class="n">String</span> <span class="n">keyboardInputString</span> <span class="o">=</span> <span class="n">keyboardIn</span><span class="o">.</span><span class="n">readLine</span><span class="p">();</span>
+                    <span class="o">//</span> <span class="n">结束聊天</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">keyboardInputString</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="s2">&quot;bye&quot;</span><span class="p">)){</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="o">//</span><span class="n">发送</span>
+                    <span class="n">out</span><span class="o">.</span><span class="n">writeUTF</span><span class="p">(</span><span class="n">keyboardInputString</span><span class="p">);</span>
+                    <span class="n">out</span><span class="o">.</span><span class="n">flush</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="ne">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+
+        <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">();</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>ChatClinet.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.DataInputStream</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.DataOutputStream</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStreamReader</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.Socket</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">ChatClient</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;客户端运行..............&quot;</span><span class="p">);</span>
+        <span class="n">Thread</span> <span class="n">t</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Thread</span><span class="p">(()</span> <span class="o">-&gt;</span> <span class="p">{</span>
+            <span class="k">try</span> <span class="p">(</span><span class="o">//</span>  <span class="n">向127</span><span class="o">.</span><span class="mf">0.0</span><span class="o">.</span><span class="mi">1</span><span class="n">主机8080端口发出连接请求</span>
+                 <span class="n">Socket</span> <span class="n">socket</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Socket</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">8080</span><span class="p">);</span>
+                 <span class="n">DataInputStream</span> <span class="ow">in</span> <span class="o">=</span> <span class="n">new</span> <span class="n">DataInputStream</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">getInputStream</span><span class="p">());</span>
+                 <span class="n">DataOutputStream</span> <span class="n">out</span> <span class="o">=</span> <span class="n">new</span> <span class="n">DataOutputStream</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">getOutputStream</span><span class="p">());</span>
+                 <span class="n">BufferedReader</span> <span class="n">keyboardIn</span> <span class="o">=</span> <span class="n">new</span> <span class="n">BufferedReader</span><span class="p">(</span><span class="n">new</span> <span class="n">InputStreamReader</span><span class="p">(</span><span class="n">System</span><span class="o">.</span><span class="ow">in</span><span class="p">)))</span> <span class="p">{</span>
+                <span class="k">while</span> <span class="p">(</span><span class="n">true</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="o">/*</span> <span class="n">发送数据</span> <span class="o">*/</span>
+                    <span class="o">//</span> <span class="n">读取键盘输入的字符串</span>
+                    <span class="n">String</span> <span class="n">keyboardInputString</span> <span class="o">=</span> <span class="n">keyboardIn</span><span class="o">.</span><span class="n">readLine</span><span class="p">();</span>
+                    <span class="o">//</span><span class="n">结束聊天</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">keyboardInputString</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="s2">&quot;bye&quot;</span><span class="p">))</span> <span class="p">{</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span>
+
+                    <span class="o">//</span><span class="n">发送</span>
+                    <span class="n">out</span><span class="o">.</span><span class="n">writeUTF</span><span class="p">(</span><span class="n">keyboardInputString</span><span class="p">);</span>
+                    <span class="n">out</span><span class="o">.</span><span class="n">flush</span><span class="p">();</span>
+                    <span class="o">//</span><span class="n">接收数据</span>
+                    <span class="n">String</span> <span class="nb">str</span> <span class="o">=</span> <span class="ow">in</span><span class="o">.</span><span class="n">readUTF</span><span class="p">();</span>
+                    <span class="o">//</span><span class="n">打印接收的数据</span>
+                    <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;从服务器接收的数据：【</span><span class="si">%s</span><span class="s2">】</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="ne">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;服务器暂时未启动........&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;客户端停止！&quot;</span><span class="p">);</span>
+        <span class="p">});</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="03.UDP-Socket.html" class="btn btn-neutral float-right" title="22.3. UDP Socket" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="01.网络基础.html" class="btn btn-neutral float-left" title="22.1. 网络基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

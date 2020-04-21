@@ -1,0 +1,769 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.1. 字符串 &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="next" title="4. 数组" href="../04.数组/index.html" />
+    <link rel="prev" title="3. 字符串" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java学习笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.Java基础/index.html">1. Java基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.流程控制/index.html">2. 流程控制</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">3. 字符串</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.1. 字符串</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#api">3.1.1. 使用API文档</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#java-8api">3.1.2. Java 8在线API文档</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">3.1.3. 不可变字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">3.1.4. 总结</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../04.数组/index.html">4. 数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.类与对象/index.html">5. 类与对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.包装类/index.html">6. 包装类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.数字处理类/index.html">7. 数字处理类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08.接口、继承与多态/index.html">8. 接口、继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.包/index.html">9. 包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10.对象/index.html">10. 对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.继承与多态/index.html">11. 继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12.抽象类与接口/index.html">12. 抽象类与接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13.枚举类/index.html">13. 枚举类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14.Java常用类/index.html">14. Java常用类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15.内部类/index.html">15. 内部类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16.Lambda表达式/index.html">16. Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../17.异常处理/index.html">17. 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18.对象容器—集合/index.html">18. 对象容器—集合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../19.泛型/index.html">19. 泛型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20.文件管理与IO流/index.html">20. 文件管理与IO流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../21.多线程编程/index.html">21. 多线程编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../22.网络编程/index.html">22. 网络编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../23.Swing图形用户界面编程/index.html">23. Swing图形用户界面编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../24.再谈反射/index.html">24. 再谈反射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25.注解(Annotation)/index.html">25. 注解(Annotation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../26.数据库编程/index.html">26. 数据库编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.第三方安装包管理工具之Maven/index.html">27. 包管理工具之Maven</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">3. 字符串</a> &raquo;</li>
+        
+      <li>3.1. 字符串</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Java/03.字符串/01.字符串.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id12">字符串</a><ul>
+<li><a class="reference internal" href="#api" id="id13">使用API文档</a></li>
+<li><a class="reference internal" href="#java-8api" id="id14">Java 8在线API文档</a></li>
+<li><a class="reference internal" href="#id2" id="id15">不可变字符串</a><ul>
+<li><a class="reference internal" href="#string" id="id16">String</a></li>
+<li><a class="reference internal" href="#id3" id="id17">字符串池</a></li>
+<li><a class="reference internal" href="#id4" id="id18">字符串拼接</a></li>
+<li><a class="reference internal" href="#id5" id="id19">字符串查找</a></li>
+<li><a class="reference internal" href="#id6" id="id20">字符串比较</a></li>
+<li><a class="reference internal" href="#id7" id="id21">字符串截取</a></li>
+<li><a class="reference internal" href="#id8" id="id22">可变字符串</a></li>
+<li><a class="reference internal" href="#id9" id="id23">字符串追加</a></li>
+<li><a class="reference internal" href="#id10" id="id24">字符串插入、删除和替换</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id11" id="id25">总结</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h1><a class="toc-backref" href="#id12">3.1. 字符串</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="api">
+<h2><a class="toc-backref" href="#id13">3.1.1. 使用API文档</a><a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<p>使用Java SE的API文档。Java官方提供了Java 8在线API文档，网址
+是http://docs.oracle.com/javase/8/docs/api/</p>
+</div>
+<div class="section" id="java-8api">
+<h2><a class="toc-backref" href="#id14">3.1.2. Java 8在线API文档</a><a class="headerlink" href="#java-8api" title="Permalink to this headline">¶</a></h2>
+<p>提示　很多读者希望能够有离线的中文Java API文档，但Java官方只提供了Java
+6的中文API文档，该文件下载地址是http://download.oracle.com/technetwork/java/javase/6/docs/zh/api.zip，下载完成后解压api.zip文件，找到其中的index.html文件，双击就会在浏览器中打开API文档了。</p>
+<p><img alt="image0" src="../../_images/Java_API01.png" /></p>
+<p>类窗口页面其他内容</p>
+<p><strong>compareTo方法详细描述</strong>
+查询API的一般流程是：找包→找类或接口→查看类或接口→找方法或变量。读者可以尝试查找一下String、StringBuffer和StringBuilder这些字符串类的API文档，熟悉一下这些类的用法。</p>
+<p><img alt="image1" src="../../_images/Java_API02.png" /></p>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id15">3.1.3. 不可变字符串</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="string">
+<h3><a class="toc-backref" href="#id16">String</a><a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h3>
+<p>创建String对象可以通过构造方法实现，常用的构造方法：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>- String()：使用空字符串创建并初始化一个新的String对象。
+
+- String(String original)：使用另外一个字符串创建并初始化一个新的 String 对象。
+
+- String(StringBuffer buffer)：使用可变字符串对象（StringBuffer）创建并初始化一个新的 String对象。
+
+- String(StringBuilder builder)：使用可变字符串对象（StringBuilder）创建并初始化一个新的String 对象。
+
+- String(byte[] bytes)：使用平台的默认字符集解码指定的byte数组，通过byte数组创建并初始化一个新的 String 对象。
+
+- String(char[] value)：通过字符数组创建并初始化一个新的 String 对象。
+
+- String(char[] value, int offset, int count)：通过字符数组的子数组创建并初始化一个新的 String 对象；offset参数是子数组第一个字符的索引，count参数指定子数组的长度。
+</pre></div>
+</div>
+<p>创建字符串对象的示例代码</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">company</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">write</span> <span class="n">your</span> <span class="n">code</span> <span class="n">here</span>
+        <span class="o">//</span> <span class="n">创建字符串对象</span>
+        <span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">String</span><span class="p">();</span>
+        <span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">new</span> <span class="n">String</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">s3</span> <span class="o">=</span> <span class="n">new</span> <span class="n">String</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\u0048\u0065\u006c\u006c\u006f\u0020\u0057\u006f\u0072\u006c\u0064</span><span class="s2">&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;s2 = &quot;</span> <span class="o">+</span> <span class="n">s2</span><span class="p">);</span>       <span class="o">//</span><span class="n">s2</span> <span class="o">=</span> <span class="n">Hello</span> <span class="n">World</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;s3 = &quot;</span> <span class="o">+</span> <span class="n">s3</span><span class="p">);</span>       <span class="o">//</span><span class="n">s3</span> <span class="o">=</span> <span class="n">Hello</span> <span class="n">World</span>
+
+        <span class="n">char</span> <span class="n">chars</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">};</span>
+        <span class="o">//</span> <span class="n">通过字符数组创建字符串对象</span>
+        <span class="n">String</span> <span class="n">s4</span> <span class="o">=</span> <span class="n">new</span> <span class="n">String</span><span class="p">(</span><span class="n">chars</span><span class="p">);</span>
+        <span class="o">//</span> <span class="n">通过子字符数组创建字符串对象</span>
+        <span class="n">String</span> <span class="n">s5</span> <span class="o">=</span> <span class="n">new</span> <span class="n">String</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;s4 = &quot;</span> <span class="o">+</span> <span class="n">s4</span><span class="p">);</span>           <span class="o">//</span><span class="n">s4</span> <span class="o">=</span> <span class="n">abcde</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;s5 = &quot;</span> <span class="o">+</span> <span class="n">s5</span><span class="p">);</span>           <span class="o">//</span><span class="n">s5</span> <span class="o">=</span> <span class="n">bcde</span>
+
+        <span class="n">byte</span> <span class="nb">bytes</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">99</span> <span class="p">};</span>
+        <span class="o">//</span> <span class="n">通过byte数组创建字符串对象</span>
+        <span class="n">String</span> <span class="n">s6</span> <span class="o">=</span> <span class="n">new</span> <span class="n">String</span><span class="p">(</span><span class="nb">bytes</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;s6 = &quot;</span> <span class="o">+</span> <span class="n">s6</span><span class="p">);</span>       <span class="o">//</span><span class="n">s6</span> <span class="o">=</span> <span class="n">abc</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;s6字符串长度 = &quot;</span> <span class="o">+</span> <span class="n">s6</span><span class="o">.</span><span class="n">length</span><span class="p">());</span>     <span class="o">//</span><span class="n">s6字符串长度</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id17">字符串池</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>使用new关键字与字符串常量都能获得字符串对象，但它们之间有一些区别。先看下面代码运行结果：</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">company2</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">s7</span> <span class="o">=</span> <span class="n">new</span> <span class="n">String</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">s8</span> <span class="o">=</span> <span class="n">new</span> <span class="n">String</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">s9</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">s10</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span><span class="p">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;s7 == s8 : %b%n&quot;</span><span class="p">,</span> <span class="n">s7</span> <span class="o">==</span> <span class="n">s8</span><span class="p">);</span>     <span class="o">//</span><span class="n">s7</span> <span class="o">==</span> <span class="n">s8</span> <span class="p">:</span> <span class="n">false</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;s9 == s10: %b%n&quot;</span><span class="p">,</span> <span class="n">s9</span> <span class="o">==</span> <span class="n">s10</span><span class="p">);</span>    <span class="o">//</span><span class="n">s9</span> <span class="o">==</span> <span class="n">s10</span><span class="p">:</span> <span class="n">true</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;s7 == s9 : %b%n&quot;</span><span class="p">,</span> <span class="n">s7</span> <span class="o">==</span> <span class="n">s9</span><span class="p">);</span>     <span class="o">//</span><span class="n">s7</span> <span class="o">==</span> <span class="n">s9</span> <span class="p">:</span> <span class="n">false</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;s8 == s9 : %b%n&quot;</span><span class="p">,</span> <span class="n">s8</span> <span class="o">==</span> <span class="n">s9</span><span class="p">);</span>     <span class="o">//</span><span class="n">s8</span> <span class="o">==</span> <span class="n">s9</span> <span class="p">:</span> <span class="n">false</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><img alt="image2" src="../../_images/str_pool01.png" /></p>
+<p>s10与s9是相同的引用，指向同一个对象,s7和s8是不同的引用，指向不同的对象。</p>
+</div>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id18">字符串拼接</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>String字符串虽然是不可变字符串，但也可以进行拼接只是会产生一个新的对象。String字符串拼接可以使用+运算符或String的concat(String
+str)方法。</p>
+<p>+运算符优势是可以连接任何类型数据拼接成为字符串，而concat方法只能拼接String类型字符串。</p>
+<p>字符串拼接示例如下：</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.zhijiekeji01;
+
+public class Main {
+    public static void main(String[] args) {
+        String s1 = &quot;Hello&quot;;
+        // 使用+运算符连接
+        String s2 = s1 + &quot; &quot;;
+        String s3 = s2 + &quot;World&quot;;
+        System.out.println(s3);             //Hello World
+
+        String s4 = &quot;Hello&quot;;
+        // 使用+运算符连接，支持+=赋值运算符
+        s4 += &quot; &quot;;
+        s4 += &quot;World&quot;;
+        System.out.println(s4);             //Hello World
+
+        String s5 = &quot;Hello&quot;;
+        // 使用concat方法连接
+        s5 = s5.concat(&quot; &quot;).concat(&quot;World&quot;);
+        System.out.println(s5);             //Hello World
+
+        int age = 18;
+        String s6 = &quot;她的年龄是&quot; + age + &quot;岁。&quot;;       //她的年龄是18岁。
+        System.out.println(s6);
+        char score = &#39;A&#39;;
+        String s7 = &quot;她的英语成绩是&quot; + score;
+        System.out.println(s7);                 //她的英语成绩是A
+
+        java.util.Date now = new java.util.Date();
+        //对象拼接自动调用toString()方法
+        String s8 = &quot;今天是：&quot; + now;
+        System.out.println(s8);                 //今天是：Mon Apr 20 19:52:32 CST 2020
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id19">字符串查找</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>在给定的字符串中查找字符或字符串是比较常见的操作。在String类中提供了indexOf和lastIndexOf方法用于查找字符或字符串，返回值是查找的字符或字符串所在的位置，-1表示没有找到。这两个方法有多个重载版本：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>- int indexOf(int ch)：从前往后搜索字符ch，返回第一次找到字符ch所在处的索引。
+
+- int indexOf(int ch, int fromIndex)：从指定的索引开始从前往后搜索字符ch，返回第一次找到字符ch所在处的索引。
+
+-int indexOf(String str)：从前往后搜索字符串str，返回第一次找到字符串所在处的索引。
+
+-int indexOf(String str, int fromIndex)：从指定的索引开始从前往后搜索字符串str，返回第一次找到字符串所在处的索引。
+
+-int lastIndexOf(int ch)：从后往前搜索字符ch，返回第一次找到字符ch所在处的索引。
+
+-int lastIndexOf(int ch, int fromIndex)：从指定的索引开始从后往前搜索字符ch，返回第一次找到字符ch所在处的索引。
+
+-int lastIndexOf(String str)：从后往前搜索字符串str，返回第一次找到字符串所在处的索引。
+
+-int lastIndexOf(String str, int fromIndex)：从指定的索引开始从后往前搜索字符串str，返回第一次找到字符串所在处的索引。
+
+提示　字符串本质上是字符数组，因此它也有索引，索引从零开始。String的charAt(int index)方法可以返回索引index所在位置的字符。
+</pre></div>
+</div>
+<p>字符串查找示例代码如下：</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.zhijiekeji02;
+
+public class Main {
+    public static void main(String[] args) {
+        String sourceStr = &quot;There is a string accessing example.&quot;;
+        //获得字符串长度
+        int len = sourceStr.length();
+        //获得索引位置16的字符
+        char ch = sourceStr.charAt(16);
+        //查找字符和子字符串
+        int firstChar1 = sourceStr.indexOf(&#39;r&#39;);
+        int lastChar1 = sourceStr.lastIndexOf(&#39;r&#39;);
+        int firstStr1 = sourceStr.indexOf(&quot;ing&quot;);
+        int lastStr1 = sourceStr.lastIndexOf(&quot;ing&quot;);
+        int firstChar2 = sourceStr.indexOf(&#39;e&#39;, 15);
+        int lastChar2 = sourceStr.lastIndexOf(&#39;e&#39;, 15);
+        int firstStr2 = sourceStr.indexOf(&quot;ing&quot;, 5);
+        int lastStr2 = sourceStr.lastIndexOf(&quot;ing&quot;, 5);
+
+        System.out.println(&quot;原始字符串:&quot; + sourceStr);
+        System.out.println(&quot;字符串长度:&quot; + len);
+        System.out.println(&quot;索引16的字符:&quot; + ch);
+        System.out.println(&quot;从前往后搜索r字符，第一次找到它所在索引:&quot; + firstChar1);
+        System.out.println(&quot;从后往前搜索r字符，第一次找到它所在索引:&quot; + lastChar1);
+        System.out.println(&quot;从前往后搜索ing字符串，第一次找到它所在索引:&quot; + firstStr1);
+        System.out.println(&quot;从后往前搜索ing字符串，第一次找到它所在索引:&quot; + lastStr1);
+        System.out.println(&quot;从索引为15位置开始，从前往后搜索e字符，第一次找到它所在索引:&quot; + firstChar2);
+        System.out.println(&quot;从索引为15位置开始，从后往前搜索e字符，第一次找到它所在索引:&quot; + lastChar2);
+        System.out.println(&quot;从索引为5位置开始，从前往后搜索ing字符串，第一次找到它所在索引:&quot; + firstStr2);
+        System.out.println(&quot;从索引为5位置开始，从后往前搜索ing字符串，第一次找到它所在索引:&quot; + lastStr2);
+    }
+}
+
+
+/*
+原始字符串:There is a string accessing example.
+        字符串长度:36
+        索引16的字符:g
+        从前往后搜索r字符，第一次找到它所在索引:3
+        从后往前搜索r字符，第一次找到它所在索引:13
+        从前往后搜索ing字符串，第一次找到它所在索引:14
+        从后往前搜索ing字符串，第一次找到它所在索引:24
+        从索引为15位置开始，从前往后搜索e字符，第一次找到它所在索引:21
+        从索引为15位置开始，从后往前搜索e字符，第一次找到它所在索引:4
+        从索引为5位置开始，从前往后搜索ing字符串，第一次找到它所在索引:14
+        从索引为5位置开始，从后往前搜索ing字符串，第一次找到它所在索引:-1*/
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id20">字符串比较</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>字符串比较是常见的操作，包括比较相等、比较大小、比较前缀和后缀等。 1.
+比较相等 String提供的比较字符串相等的方法：</p>
+<ul class="simple">
+<li>boolean equals(Object anObject)：比较两个字符串中内容是否相等。</li>
+<li>boolean equalsIgnoreCase(String
+anotherString)：类似equals方法，只是忽略大小写。</li>
+</ul>
+<ol class="arabic simple" start="2">
+<li>比较大小
+有时不仅需要知道是否相等，还要知道大小，String提供的比较大小的方法：<ul>
+<li>int compareTo(String
+anotherString)：按字典顺序比较两个字符串。如果参数字符串等于此字符串，则返回值
+0；如果此字符串小于字符串参数，则返回一个小于 0
+的值；如果此字符串大于字符串参数，则返回一个大于 0 的值。</li>
+<li>int compareToIgnoreCase(String
+str)：类似compareTo，只是忽略大小写。</li>
+</ul>
+</li>
+<li>比较前缀和后缀<ul>
+<li>boolean endsWith(String
+suffix)：测试此字符串是否以指定的后缀结束。</li>
+<li>boolean startsWith(String
+prefix)：测试此字符串是否以指定的前缀开始</li>
+</ul>
+</li>
+</ol>
+<p>字符串比较示例代码如下：</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.zhijiekeji03;
+
+public class Main {
+    public static void main(String[] args) {
+        String s1 = new String(&quot;Hello&quot;);
+        String s2 = new String(&quot;Hello&quot;);
+
+        // 比较字符串是否是相同的引用
+        System.out.println(&quot;s1 == s2 : &quot; + (s1 == s2));
+        // 比较字符串内容是否相等
+        System.out.println(&quot;s1.equals(s2) : &quot; + (s1.equals(s2)));
+
+        String s3 = &quot;HELlo&quot;;
+        // 忽略大小写比较字符串内容是否相等
+        System.out.println(&quot;s1.equalsIgnoreCase(s3) : &quot; + (s1.equalsIgnoreCase(s3)));
+
+        // 比较大小
+        String s4 = &quot;java&quot;;
+        String s5 = &quot;Swift&quot;;
+        // 比较字符串大小 s4 &gt; s5
+        System.out.println(&quot;s4.compareTo(s5) : &quot; + (s4.compareTo(s5)));
+        // 忽略大小写比较字符串大小 s4 &lt; s5
+        System.out.println(&quot;s4.compareToIgnoreCase(s5) : &quot; + (s4.compareToIgnoreCase(s5)));
+
+        // 判断文件夹中文件名
+        String[] docFolder = {&quot;java.docx&quot;, &quot; JavaBean.docx&quot;, &quot;Objecitve-C.xlsx&quot;, &quot;Swift.docx &quot;};
+        int wordDocCount = 0;
+        // 查找文件夹中Word文档个数
+        for (String doc : docFolder) {
+            // 去的前后空格
+            doc = doc.trim();
+            // 比较后缀是否有.docx字符串
+            if (doc.endsWith(&quot;.docx&quot;)) {
+                wordDocCount++;
+            }
+        }
+        System.out.println(&quot;文件夹中Word文档个数是： &quot; + wordDocCount);
+
+        int javaDocCount = 0;
+        // 查找文件夹中Java相关文档个数
+        for (String doc : docFolder) {
+            // 去的前后空格
+            doc = doc.trim();
+            // 全部字符转成小写
+            doc = doc.toLowerCase();
+            // 比较前缀是否有java字符串
+            if (doc.startsWith(&quot;java&quot;)) {
+                javaDocCount++;
+            }
+        }
+        System.out.println(&quot;文件夹中Java相关文档个数是：&quot; + javaDocCount);
+    }
+}
+
+/*      s1 == s2 : false
+        s1.equals(s2) : true
+        s1.equalsIgnoreCase(s3) : true
+        s4.compareTo(s5) : 23
+        s4.compareToIgnoreCase(s5) : -9
+        文件夹中Word文档个数是： 3
+        文件夹中Java相关文档个数是：2*/
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3><a class="toc-backref" href="#id21">字符串截取</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Java中字符串String截取方法主要的方法如下：</p>
+<ul class="simple">
+<li>String substring(int
+beginIndex)：从指定索引beginIndex开始截取一直到字符串结束的子字符串。</li>
+<li>String substring(int beginIndex, int
+endIndex)：从指定索引beginIndex开始截取直到索引endIndex
+-1处的字符，注意包括索引为beginIndex处的字符，但不包括索引为endIndex处的字符。</li>
+</ul>
+<p>字符串截取方法示例代码如下：</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">zhijiekeji04</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">sourceStr</span> <span class="o">=</span> <span class="s2">&quot;There is a string accessing example.&quot;</span><span class="p">;</span>
+        <span class="o">//</span> <span class="n">截取example</span><span class="o">.</span><span class="n">子字符串</span>
+        <span class="n">String</span> <span class="n">subStr1</span> <span class="o">=</span> <span class="n">sourceStr</span><span class="o">.</span><span class="n">substring</span><span class="p">(</span><span class="mi">28</span><span class="p">);</span>
+
+        <span class="o">//</span> <span class="n">截取string子字符串</span>
+        <span class="n">String</span> <span class="n">subStr2</span> <span class="o">=</span> <span class="n">sourceStr</span><span class="o">.</span><span class="n">substring</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;subStr1 = </span><span class="si">%s</span><span class="s2">%n&quot;</span><span class="p">,</span> <span class="n">subStr1</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;subStr2 = </span><span class="si">%s</span><span class="s2">%n&quot;</span><span class="p">,</span> <span class="n">subStr2</span><span class="p">);</span>
+
+        <span class="o">//</span> <span class="n">使用split方法分割字符串</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;-----使用split方法-----&quot;</span><span class="p">);</span>
+        <span class="n">String</span><span class="p">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="n">sourceStr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="nb">str</span> <span class="p">:</span> <span class="n">array</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="nb">str</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">/*</span><span class="n">subStr1</span> <span class="o">=</span> <span class="n">example</span><span class="o">.</span>
+<span class="n">subStr2</span> <span class="o">=</span> <span class="n">string</span>
+<span class="o">-----</span><span class="n">使用split方法</span><span class="o">-----</span>
+<span class="n">There</span>
+<span class="ow">is</span>
+<span class="n">a</span>
+<span class="n">string</span>
+<span class="n">accessing</span>
+<span class="n">example</span><span class="o">.*/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id22">可变字符串</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>可变字符串在追加、删除、修改、插入和拼接等操作不会产生新的对象。</p>
+<p><strong>StringBuffer和StringBuilder</strong></p>
+<p>Java提供了两个可变字符串类StringBuffer和StringBuilder，中文翻译为“字符串缓冲区”。</p>
+<p>StringBuffer是线程安全的，它的方法是支持线程同步
+，线程同步会操作串行顺序执行，在单线程环境下会影响效率。</p>
+<p>StringBuilder是StringBuffer单线程版本，Java
+5之后发布的，它不是线程安全的，但它的执行效率很高。</p>
+<p>StringBuffer和StringBuilder具有完全相同的API，即构造方法和普通方法等内容一样。StringBuilder的中构造方法有4个：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>- StringBuilder()：创建字符串内容是空的StringBuilder对象，初始容量默认为16个字符。
+
+- StringBuilder(CharSequence seq)：指定CharSequence字符串创建StringBuilder对象。CharSequence接口类型，它的实现类有：String、StringBuffer和StringBuilder等，所以参数seq可以是String、StringBuffer和StringBuilder等类型。
+
+- StringBuilder(int capacity)：创建字符串内容是空的StringBuilder对象，初始容量由参数capacity指定的。
+
+- StringBuilder(String str)：指定String字符串创建StringBuilder对象。
+</pre></div>
+</div>
+<p>上述构造方法同样适合于StringBuffer类，这里不再赘述。
+提示　字符串长度和字符串缓冲区容量区别。</p>
+<p>字符串长度是指在字符串缓冲区中目前所包含字符串长度，通过length()获得；字符串缓冲区容量是缓冲区中所能容纳的最大字符数，通过capacity()获得。当所容纳的字符超过这个长度时，字符串缓冲区自动扩充容量，但这是以牺牲性能为代价的扩容。</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.zhijikeji05;
+
+public class Main {
+    public static void main(String[] args) {
+        // 字符串长度length和字符串缓冲区容量capacity
+        StringBuilder sbuilder1 = new StringBuilder();
+        System.out.println(&quot;包含的字符串长度：&quot; + sbuilder1.length());
+        System.out.println(&quot;字符串缓冲区容量：&quot; + sbuilder1.capacity());
+        StringBuilder sbuilder2 = new StringBuilder(&quot;Hello&quot;);
+        System.out.println(&quot;包含的字符串长度：&quot; + sbuilder2.length());
+        System.out.println(&quot;字符串缓冲区容量：&quot; + sbuilder2.capacity());
+        // 字符串缓冲区初始容量是16，超过之后会扩容
+        StringBuilder sbuilder3 = new StringBuilder();
+        for (int i = 0; i &lt; 17; i++) {
+            sbuilder3.append(8);
+        }
+        System.out.println(&quot;包含的字符串长度：&quot; + sbuilder3.length());
+        System.out.println(&quot;字符串缓冲区容量：&quot; + sbuilder3.capacity());
+    }
+}
+
+/*
+包含的字符串长度：0
+字符串缓冲区容量：16
+包含的字符串长度：5
+字符串缓冲区容量：21
+包含的字符串长度：17
+字符串缓冲区容量：34*/
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id23">字符串追加</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>StringBuilder在提供了很多修改字符串缓冲区的方法，追加、插入、删除和替换等，这一节先介绍字符串追加方法。字符串追加方法是append，append有很多重载方法，可以追加任何类型数据，它的返回值还是StringBuilder。StringBuilder的追加法与StringBuffer完全一样。</p>
+<p>字符串追加示例代码如下：</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.zhijiekeji06;
+
+public class Main {
+    public static void main(String[] args) {
+        //添加字符串、字符
+        StringBuilder sbuilder1 = new StringBuilder(&quot;Hello&quot;);
+        sbuilder1.append(&quot; &quot;).append(&quot;World&quot;);
+        sbuilder1.append(&#39;.&#39;);
+        System.out.println(sbuilder1);
+
+        StringBuilder sbuilder2 = new StringBuilder();
+        Object obj = null;
+        //添加布尔值、转义符和空对象
+        sbuilder2.append(false).append(&#39;\t&#39;).append(obj);
+        System.out.println(sbuilder2);
+
+
+        //添加数值
+        StringBuilder sbuilder3 = new StringBuilder();
+        for (int i = 0; i &lt; 10; i++) {
+            sbuilder3.append(i);
+        }
+        System.out.println(sbuilder3);
+    }
+}
+
+/*
+Hello World.
+false   null
+0123456789*/
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3><a class="toc-backref" href="#id24">字符串插入、删除和替换</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>StringBuilder中实现插入、删除和替换等操作的常用方法说明如下：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>- StringBuilder insert(int offset, String str)：在字符串缓冲区中索引为offset的字符位置之前插入str，insert有很多重载方法，可以插入任何类型数据。
+
+- StringBuffer delete(int start, int end)：在字符串缓冲区中删除子字符串，要删除的子字符串从指定索引start开始直到索引end - 1处的字符。start和end两个参数与substring(int beginIndex, intendIndex)方法中的两个参数含义一样。
+
+- StringBuffer replace(int start, int end, String str)字符串缓冲区中用str替换子字符串，子字符串从指定索引start开始直到索引end - 1处的字符。start和end同delete(int start, int end)方法。
+</pre></div>
+</div>
+<p>以上介绍的方法虽然是StringBuilder方法，但StringBuffer也完全一样，</p>
+<p>示例代码如下：</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">zhijiekeji07</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">原始不可变字符串</span>
+        <span class="n">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;Java C&quot;</span><span class="p">;</span>
+        <span class="o">//</span> <span class="n">从不可变的字符创建可变字符串对象</span>
+        <span class="n">StringBuilder</span> <span class="n">mstr</span> <span class="o">=</span> <span class="n">new</span> <span class="n">StringBuilder</span><span class="p">(</span><span class="n">str1</span><span class="p">);</span>
+        <span class="o">//</span> <span class="n">插入字符串</span>
+        <span class="n">mstr</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot; C++&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">mstr</span><span class="p">);</span>
+
+        <span class="o">//</span> <span class="n">具有追加效果的插入字符串</span>
+        <span class="n">mstr</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">mstr</span><span class="o">.</span><span class="n">length</span><span class="p">(),</span> <span class="s2">&quot; Objective-C&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">mstr</span><span class="p">);</span>
+
+        <span class="o">//</span> <span class="n">追加字符串</span>
+        <span class="n">mstr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot; and Swift&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">mstr</span><span class="p">);</span>
+
+        <span class="o">//</span> <span class="n">删除字符串</span>
+        <span class="n">mstr</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">23</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">mstr</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">/*</span>
+<span class="n">Java</span> <span class="n">C</span><span class="o">++</span> <span class="n">C</span>
+<span class="n">Java</span> <span class="n">C</span><span class="o">++</span> <span class="n">C</span> <span class="n">Objective</span><span class="o">-</span><span class="n">C</span>
+<span class="n">Java</span> <span class="n">C</span><span class="o">++</span> <span class="n">C</span> <span class="n">Objective</span><span class="o">-</span><span class="n">C</span> <span class="ow">and</span> <span class="n">Swift</span>
+<span class="n">Java</span> <span class="n">C</span><span class="o">++</span> <span class="n">C</span> <span class="ow">and</span> <span class="n">Swift</span><span class="o">*/</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2><a class="toc-backref" href="#id25">3.1.4. 总结</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>Java字符串类分为：</p>
+<p>可变字符串类（String）和不可变字符串类（StringBuilder和StringBuffer）。</p>
+<p>然后分别介绍了这些字符串类的用法。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../04.数组/index.html" class="btn btn-neutral float-right" title="4. 数组" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="3. 字符串" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

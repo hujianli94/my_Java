@@ -1,0 +1,988 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.3. 数组的基本操作 &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="next" title="5. 类与对象" href="../05.类与对象/index.html" />
+    <link rel="prev" title="4.2. 二维数组的创建和使用" href="02.二维数组的创建和使用.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java学习笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.Java基础/index.html">1. Java基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.流程控制/index.html">2. 流程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.字符串/index.html">3. 字符串</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">4. 数组</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01.一维数组的创建和使用.html">4.1. 一维数组的创建和使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02.二维数组的创建和使用.html">4.2. 二维数组的创建和使用</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.3. 数组的基本操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">4.3.1. 遍历数组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">4.3.2. 填充替换数组元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">4.3.3. 对数组进行排序</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">4.3.4. 复制数组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">4.3.5. 数组的查询</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">4.3.6. 数组排序</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">4.3.7. 课后练习</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../05.类与对象/index.html">5. 类与对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.包装类/index.html">6. 包装类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.数字处理类/index.html">7. 数字处理类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08.接口、继承与多态/index.html">8. 接口、继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.包/index.html">9. 包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10.对象/index.html">10. 对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.继承与多态/index.html">11. 继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12.抽象类与接口/index.html">12. 抽象类与接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13.枚举类/index.html">13. 枚举类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14.Java常用类/index.html">14. Java常用类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15.内部类/index.html">15. 内部类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16.Lambda表达式/index.html">16. Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../17.异常处理/index.html">17. 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18.对象容器—集合/index.html">18. 对象容器—集合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../19.泛型/index.html">19. 泛型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20.文件管理与IO流/index.html">20. 文件管理与IO流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../21.多线程编程/index.html">21. 多线程编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../22.网络编程/index.html">22. 网络编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../23.Swing图形用户界面编程/index.html">23. Swing图形用户界面编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../24.再谈反射/index.html">24. 再谈反射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25.注解(Annotation)/index.html">25. 注解(Annotation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../26.数据库编程/index.html">26. 数据库编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.第三方安装包管理工具之Maven/index.html">27. 包管理工具之Maven</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">4. 数组</a> &raquo;</li>
+        
+      <li>4.3. 数组的基本操作</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Java/04.数组/03.数组的基本操作.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id12">数组的基本操作</a><ul>
+<li><a class="reference internal" href="#id2" id="id13">遍历数组</a><ul>
+<li><a class="reference internal" href="#foreach" id="id14">使用foreach语句来遍历二维数组</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3" id="id15">填充替换数组元素</a></li>
+<li><a class="reference internal" href="#id4" id="id16">对数组进行排序</a></li>
+<li><a class="reference internal" href="#id5" id="id17">复制数组</a></li>
+<li><a class="reference internal" href="#id6" id="id18">数组的查询</a></li>
+<li><a class="reference internal" href="#id7" id="id19">数组排序</a><ul>
+<li><a class="reference internal" href="#id8" id="id20">冒泡排序</a></li>
+<li><a class="reference internal" href="#id9" id="id21">选择排序</a></li>
+<li><a class="reference internal" href="#id10" id="id22">反转排序</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id11" id="id23">课后练习</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h1><a class="toc-backref" href="#id12">4.3. 数组的基本操作</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id13">4.3.1. 遍历数组</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>遍历数组就是获取数组中的每个元素，通常使用for循环来实现，遍历二维数组需要使用双层for循环，通过length属性可获得数组的长度。
+eg</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">array5</span> <span class="p">{</span>
+<span class="o">//</span>  <span class="n">主方法</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="o">//</span>      <span class="n">定义二维数组</span>
+        <span class="nb">int</span> <span class="n">b</span><span class="p">[][]</span> <span class="o">=</span> <span class="n">new</span> <span class="nb">int</span><span class="p">[][]</span> <span class="p">{{</span><span class="mi">1</span><span class="p">},{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">}};</span>
+        <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">b</span><span class="o">.</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="o">//</span>          <span class="n">遍历二维数组中的每个元素</span>
+            <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>    <span class="o">//</span><span class="n">将数组中的元素输出</span>
+            <span class="p">}</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">();</span>  <span class="o">//</span><span class="n">输出空格</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="foreach">
+<h3><a class="toc-backref" href="#id14">使用foreach语句来遍历二维数组</a><a class="headerlink" href="#foreach" title="Permalink to this headline">¶</a></h3>
+<p>eg</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">foreach_array1</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="o">//</span>  <span class="n">主方法</span>
+<span class="o">//</span>  <span class="n">定义二维数组</span>
+    <span class="nb">int</span> <span class="n">arr2</span><span class="p">[][]</span> <span class="o">=</span> <span class="p">{{</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">}};</span>
+<span class="o">//</span>  <span class="n">打印提示信息</span>
+    <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;数组中的元素是：&quot;</span><span class="p">);</span>
+
+<span class="o">//</span>  <span class="n">定义外层循环计数器</span>
+    <span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="o">//</span>  <span class="n">外层循环变量为以为数组</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">x</span><span class="p">[]</span> <span class="p">:</span> <span class="n">arr2</span><span class="p">)</span> <span class="p">{</span>
+<span class="o">//</span>      <span class="n">外层计数器递增</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+
+        <span class="nb">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>        <span class="o">//</span><span class="n">定义内层循环计数器</span>
+        <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">e</span> <span class="p">:</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>       <span class="o">//</span><span class="n">循环遍历每一个数组元素</span>
+            <span class="n">j</span><span class="o">++</span><span class="p">;</span>            <span class="o">//</span><span class="n">内层计数器递增</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="n">arr2</span><span class="o">.</span><span class="n">length</span> <span class="o">&amp;&amp;</span> <span class="n">j</span><span class="o">==</span><span class="n">x</span><span class="o">.</span><span class="n">length</span><span class="p">)</span> <span class="p">{</span>    <span class="o">//</span><span class="n">判断二维数组中的最后一个元素</span>
+                <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>        <span class="o">//</span><span class="n">输出二维数组的最后一个元素</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="o">//</span><span class="n">如果不是二维数组中的最后一个元素</span>
+                <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">e</span><span class="o">+</span><span class="s2">&quot;、&quot;</span><span class="p">);</span>    <span class="o">//</span><span class="n">输出信息</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id15">4.3.2. 填充替换数组元素</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>数组中的元素定义完成后，可以通过Arrays类的静态方法fill()来对数组中的元素进行替换。
+方法为：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>fill(int[] a,int value)
+
+a:要进行替换的数组
+value：要存储数组中所有元素的值
+</pre></div>
+</div>
+<p>eg</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>import java.util.Arrays;        //导入java.util.Arrays类
+public class array6 {
+    //主方法
+    public static void main(String[] args) {
+//      创建int型数组
+        int arr[] = new int[5];
+        Arrays.fill(arr, 8);  //使用同一个值对数组进行填充
+        for (int i = 0; i &lt; arr.length; i++) {      //循环遍历数组中的元素
+//          将数组中的元素依次输出
+            System.out.println(&quot;第&quot;+i+&quot;个元素是：&quot;+arr[i]);
+        }
+
+    }
+
+}
+
+//输出结果
+第0个元素是：8
+第1个元素是：8
+第2个元素是：8
+第3个元素是：8
+第4个元素是：8
+
+注意：数组若原有值将会被覆盖。
+</pre></div>
+</div>
+<p>eg 覆盖数组下标索引的范围</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>import java.util.Arrays;
+
+public class test7 {
+//  主方法
+    public static void main(String[] args) {
+//      定义数组
+        int arr[]= {1,2,3,4,5,6,7,8};
+//      填充替换数组索引范围2~4下标
+        Arrays.fill(arr, 2, 4, 88);
+//      遍历打印出数组的值
+        for (int i = 0; i &lt; arr.length; i++) {
+            System.out.println(&quot;第&quot;+i+&quot;个元素的值是：&quot;+arr[i]);
+        }
+    }
+
+}
+
+// 输出信息
+第0个元素的值是：1
+第1个元素的值是：2
+第2个元素的值是：88
+第3个元素的值是：88
+第4个元素的值是：5
+第5个元素的值是：6
+第6个元素的值是：7
+第7个元素的值是：8
+</pre></div>
+</div>
+<p>注意：指定的索引位置大于或等于要进行填充的数组的长度。就会报出ArrayIndexOutif-BoundsException异常</p>
+<p>eg: 隐藏电话号码的例子</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">test8</span> <span class="p">{</span>
+<span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="o">//</span>  <span class="n">定义电话号码的数组</span>
+    <span class="nb">int</span> <span class="n">arr</span><span class="p">[]</span><span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">};</span>
+
+<span class="o">//</span>  <span class="n">进行数组替换</span><span class="p">,</span><span class="n">repleace</span> <span class="mi">2</span><span class="o">~</span><span class="mi">6</span> <span class="n">index</span>
+    <span class="n">Arrays</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="o">//</span>      <span class="n">判断替换后为0的打印输出为</span><span class="o">*</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+<span class="o">//</span>          <span class="n">原样输出数组</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="o">//</span><span class="n">输出结果</span>
+<span class="mi">132</span><span class="o">****</span><span class="mi">2216</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id16">4.3.3. 对数组进行排序</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Arrays Sort()方法 Arrays.sort(arr)；</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>int arr[] = new int[] {23,42,12,84} ；
+Arrays.sort(arr);
+</pre></div>
+</div>
+<p>eg:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>import java.util.Arrays;
+
+public class Array_sort {
+//  主方法
+    public static void main(String[] args) {
+//  创建一个数组，无序的
+    int arr1[]= new int[]{11,22,33,88,31,21,55};
+//  对数组进行排序
+    Arrays.sort(arr1);
+
+//  打印排序后数组的值
+    for(int tmp:arr1) {
+        System.out.print(tmp + &quot; &quot;);
+
+    }
+
+    }
+}
+
+//输出结果
+11 21 22 31 33 55 88
+</pre></div>
+</div>
+<p>eg</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>import java.util.Arrays;
+
+public class Array_sort {
+//  主方法
+    public static void main(String[] args) {
+//  创建一个数组，无序的
+//  int arr1[]= new int[]{11,22,33,88,31,21,55};
+    double b[] = new double[] {12.0,1.1,22.2,44.6};
+//  对数组进行排序
+    Arrays.sort(b);
+
+//  打印排序后数组的值
+    for(double tmp:b) {
+        System.out.print(tmp + &quot; &quot;);
+
+    }
+
+    }
+}
+//输出结果
+1.1 12.0 22.2 44.6
+</pre></div>
+</div>
+<p>sort()方法只有升序的一种结果。局限性很大</p>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id17">4.3.4. 复制数组</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>eg</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>public class array_copy {
+    public static void main(String[] args) {
+//      定义arr1数组
+        int arr1[]= {1,2,3};
+
+//      定义arr2数组
+        int arr2[]=arr1;
+        arr2[0]=88;
+        System.out.println(&quot;arr1数组：&quot;);
+//      打印arr1数组内容，遍历arr1
+        for (int tmp:arr1) {
+            System.out.print(tmp+&quot; &quot;);
+        }
+//      打印arr2数组内容，遍历arr2
+        System.out.println(&quot;\narr2数组：&quot;);
+        for (int tmp:arr2) {
+            System.out.print(tmp+&quot; &quot;);
+        }
+    }
+
+}
+
+
+//输出内容
+arr1数组：
+88 2 3
+arr2数组：
+88 2 3
+</pre></div>
+</div>
+<p>eg</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>import java.util.Arrays;
+
+public class array_copy {
+    public static void main(String[] args) {
+//      定义arr1数组
+        int arr1[]= {1,2,3};
+
+//      定义arr2数组,内存中开辟了一个新的区域，2代表数组的长度，大于长度补充0，
+        int arr2[]=Arrays.copyOf(arr1, 2);
+        arr2[0]=88;
+        System.out.println(&quot;arr1数组：&quot;);
+//      打印arr1数组内容，遍历arr1
+        for (int tmp:arr1) {
+            System.out.print(tmp+&quot; &quot;);
+        }
+//      打印arr2数组内容，遍历arr2
+        System.out.println(&quot;\narr2数组：&quot;);
+        for (int tmp:arr2) {
+            System.out.print(tmp+&quot; &quot;);
+        }
+    }
+
+}
+
+
+//输出结果
+arr1数组：
+1 2 3
+arr2数组：
+88 2
+</pre></div>
+</div>
+<p>eg</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>import java.util.Arrays;
+
+public class array_copy2 {
+    public static void main(String[] args) {
+//      定义arr1数组
+        int arr1[]= {1,2,3,4,5,6,7,8};
+
+//      定义arr2数组,内存中开辟了一个新的区域，copy 2~5索引的值
+        int arr2[]=Arrays.copyOfRange(arr1, 2, 4+1);
+        System.out.println(&quot;arr1数组：&quot;);
+//      打印arr1数组内容，遍历arr1
+        for (int tmp:arr1) {
+            System.out.print(tmp+&quot; &quot;);
+        }
+//      打印arr2数组内容，遍历arr2
+        System.out.println(&quot;\narr2数组：&quot;);
+        for (int tmp:arr2) {
+            System.out.print(tmp+&quot; &quot;);
+        }
+    }
+
+}
+// 输出结果
+arr1数组：
+1 2 3 4 5 6 7 8
+arr2数组：
+3 4 5
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id18">4.3.5. 数组的查询</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span>import java.util.Arrays;
+
+public class array_search1 {
+//  主方法
+    public static void main(String[] args) {
+//      create array
+        int arr1[]= {7,5,8,2,3,1,9};
+        //将数组进行排序
+        Arrays.sort(arr1);
+
+//      查找数组中元素8的索引位置
+        int index=Arrays.binarySearch(arr1, 8);
+        System.out.println(&quot;8的索引位置是：&quot;+ index);
+
+    }
+
+}
+//输出结果
+8的索引位置是：5
+</pre></div>
+</div>
+<p>eg</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>import java.util.Arrays;
+
+public class array_search2 {
+//  主方法
+    public static void main(String[] args) {
+        //定义String型数组str
+        String str[]= new String[] {&quot;ab&quot;,&quot;cd&quot;,&quot;ef&quot;,&quot;yz&quot;};
+//      对数组进行排序
+        Arrays.sort(str);
+
+//      在指定范围内搜索元素&quot;cd&quot;的索引位置
+        int index= Arrays.binarySearch(str, 0, 2, &quot;cd&quot;);
+//      输出索引位置
+        System.out.println(&quot;cd 的索引位置是：&quot;+ index);
+
+    }
+
+}
+
+//输出信息
+cd 的索引位置是：1
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id19">4.3.6. 数组排序</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id20">冒泡排序</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>eg</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>public class maopao_paixu {
+//  主方法
+    public static void main(String[] args) {
+//      定义一个int型数组
+        int a[]= {11,33,6,88,32,79,232};
+
+//      遍历数组元素，遍历2次
+        for (int i = 1; i &lt; a.length; i++) {
+            for (int j = 0; j &lt; a.length-1; j++) {
+                if(a[j]&gt;a[j+1]) {
+//                  将第1个位置的数和第2位置的数，互换位置
+                    int tmp=a[j];
+                    a[j]=a[j+1];
+                    a[j+1]=tmp;
+                }
+            }
+        }
+        System.out.println(&quot;冒泡排序的结果：&quot;);
+        for(int tmp:a) {
+            System.out.print(tmp+ &quot;-&gt;&quot;);
+        }
+
+    }
+
+}
+//输出信息
+冒泡排序的结果：
+6-&gt;11-&gt;32-&gt;33-&gt;79-&gt;88-&gt;232-&gt;
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span>if(a[j]&lt;a[j+1]) {
+//      将第1个位置的数和第2位置的数，互换位置
+        int tmp=a[j];
+        a[j]=a[j+1];
+        a[j+1]=tmp;
+    }
+}
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span>#可以实现降序，输出结果：
+冒泡排序的结果：
+232-&gt;88-&gt;79-&gt;33-&gt;32-&gt;11-&gt;6-&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id21">选择排序</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>选择排序的过程</p>
+<p>eg</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>/**
+ * 直接选择排序算法实例
+ *
+ * @author Li Zhong Wei
+ */
+public class SelectSort {
+    public static void main(String[] args) {
+        // 创建一个数组，这个数组元素是乱序的
+        int[] array = { 63, 4, 24, 1, 3, 15 };
+        // 创建直接排序类的对象
+        SelectSort sorter = new SelectSort();
+        // 调用排序对象的方法将数组排序
+        sorter.sort(array);
+    }
+
+    /**
+     *直接选择排序法
+     *
+     * @param array
+     *            要排序的数组
+     */
+    public void sort(int[] array) {
+        int index;
+        for (int i = 1; i &lt; array.length; i++) {
+            index = 0;
+            for (int j = 1; j &lt;= array.length - i; j++) {
+                if (array[j] &gt; array[index]) {
+                    index = j;
+                }
+            }
+            // 交换在位置array.length-i和index(最大值)两个数
+            int temp = array[array.length - i];// 把第一个元素值保持到临时变量中
+            array[array.length - i] = array[index];// 把第二个元素值保存到第一个元素单元中
+            array[index] = temp;// 把临时变量也就是第一个元素原值保持到第二个元素中
+        }
+        showArray(array);// 输出直接选择排序后的数组值
+    }
+
+    /**
+     * 显示数组所有元素
+     *
+     * @param array
+     *            要显示的数组
+     */
+    public void showArray(int[] array) {
+        for (int i : array) {// foreach格式遍历数组
+            System.out.print(&quot; &gt;&quot; + i);// 输出每个数组元素值
+        }
+        System.out.println();
+    }
+}
+
+
+
+//输出结果为
+选择排序的结果为：
+ &gt;1 &gt;3 &gt;4 &gt;15 &gt;24 &gt;63
+</pre></div>
+</div>
+<p>修改如下，即可实现降序</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">[</span><span class="n">index</span><span class="p">])</span> <span class="p">{</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">//</span><span class="n">输出结果</span>
+ <span class="o">&gt;</span><span class="mi">63</span> <span class="o">&gt;</span><span class="mi">24</span> <span class="o">&gt;</span><span class="mi">15</span> <span class="o">&gt;</span><span class="mi">4</span> <span class="o">&gt;</span><span class="mi">3</span> <span class="o">&gt;</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3><a class="toc-backref" href="#id22">反转排序</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>实现思路：把数组的最后一个元素和第一个元素替换，倒数第二个元素和第二个元素替换，
+依次类推，直到把所有数组元素反转替换。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>算法示例：反转排序是对数组两边的元素进行替换，只需要循环数组长度的半数次。如果数组长度为7，
+那么for循环只需要循环3次。
+</pre></div>
+</div>
+<p>eg</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span> import java.util.Arrays;
+
+public class ReverseSort {
+//  主方法
+    public static void main(String[] args) {
+//      创建一个数组
+        int[] array = { 10, 20, 30, 40, 50, 60 };
+
+//      创建反转排序类的对象
+        ReverseSort sorter = new ReverseSort();
+//      调用排序对象的方法将数组反转
+        sorter.sort(array);
+
+    }
+
+    /*
+     * 反转排序
+     *
+     * @param array 要排序的数组
+     */
+    private void sort(int[] array) {
+        System.out.println(&quot;数组原有内容 ：&quot;);
+        showArray(array); // 输出排序前数组值
+        int temp;
+        int len = array.length; // 获取数组的长度
+        for (int i = 0; i &lt; len / 2; i++) {
+            // 只循环数组长度的半数次
+            temp = array[i]; // 数组的值
+            // 进行数值对调
+            array[i] = array[len - 1 - i];
+            array[len - 1 - i] = temp;
+        }
+        System.out.println(&quot;\n数组反转后内容： &quot;);
+        showArray(array); // 输出排序后的数组值
+    }
+
+    /*
+     * 显示数组中的索引元素
+     *
+     * @param array 要显示的数组
+     */
+    public void showArray(int[] array) {
+        for (int temp : array) {
+//          遍历数组
+            System.out.print(&quot;\t&quot; + temp); // 输出每个元素的值
+
+        }
+    }
+
+}
+
+ //输出内容
+ 数组原有内容 ：
+    10  20  30  40  50  60
+数组反转后内容：
+    60  50  40  30  20  10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2><a class="toc-backref" href="#id23">4.3.7. 课后练习</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>1.编写Java程序，创建数组arr1和arr2，将数组arr1中索引位置是0~3的元素赋值到数组arr2中，最后将
+数组str1和str2的元素输出。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>import java.util.Arrays;
+
+public class array_test1 {
+    public static void main(String[] args) {
+//      定义数组arr1
+        int[] arr1= {1,2,3,4,5,6};
+
+//      定义数组arr2
+        int [] arr2=Arrays.copyOfRange(arr1, 0, 3);
+        System.out.println(&quot;arr1数组的值为：            &quot;);
+
+        for (int i = 0; i &lt; arr1.length; i++) {
+            System.out.print( arr1[i]);
+        }
+        System.out.println();
+        System.out.println(&quot;arr2数组的值为：            &quot;);
+        for (int i = 0; i &lt; arr2.length; i++) {
+            System.out.print( arr2[i]);
+        }
+
+
+    }
+
+}
+
+//输出结果
+/*
+arr1数组的值为：
+123456
+arr2数组的值为：
+123
+ */
+</pre></div>
+</div>
+<p>2.编写Java程序，将数组中最小的数输出</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>import java.util.Arrays;
+
+public class array_test2 {
+public static void main(String[] args) {
+    int[] array= {6,5,4,3,7,8,1};
+    System.out.println(&quot;数组的内容是：&quot;);
+    for (int i = 0; i &lt; array.length; i++) {
+        System.out.print(array[i]);
+    }
+
+    System.out.println();
+    Arrays.sort(array);
+    System.out.println(&quot;数组中的最小值为：&quot;+array[0]);
+}
+}
+
+
+/*
+数组的内容是：
+6543781
+数组中的最小值为：1
+ */
+</pre></div>
+</div>
+<p>3.编写Java程序，实现将数组arr中索引位置是2的元素替换为“bb”,并将替换前数组中的元素和替换后的
+数组中的元素全部输出。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>import java.util.Arrays;
+
+public class array_test3 {
+    public static void main(String[] args) {
+//  定义数组arr
+        int arr[] = { 1, 4, 5, 6, 7, 8, 9, 10 };
+
+        System.out.println(&quot;arr 数组的值为： &quot;);
+        for (int i = 0; i &lt; arr.length; i++) {
+            System.out.print(arr[i] + &quot; &quot;);
+        }
+
+        Arrays.fill(arr, 2, 3, 0);
+        System.out.println();
+        System.out.println(&quot;将索引位置是2的数替换为‘bb’后的输出： &quot;);
+        for (int i = 0; i &lt; arr.length; i++) {
+            if (arr[i] == 0) {
+                System.out.print(&quot;bb&quot; + &quot; &quot;);
+            } else {
+                System.out.print(arr[i] + &quot; &quot;);
+            }
+        }
+
+    }
+}
+
+/*
+arr 数组的值为：
+1 4 5 6 7 8 9 10
+将索引位置是2的数替换为‘bb’后的输出：
+1 4 bb 6 7 8 9 10
+*/
+
+
+
+import java.util.*;
+
+public class Text { // 创建类
+    public static void main(String[] args) {
+        String arr[] = new String[] { &quot;ac&quot;, &quot;bc&quot;, &quot;dc&quot;, &quot;yc&quot; };
+        System.out.println(&quot;替换前：&quot;);
+        for (String str : arr) {
+            System.out.print(str+&quot;\t&quot;);
+        }
+        Arrays.fill(arr, 2, 3, &quot;bb&quot;);
+        System.out.println(&quot;\n替换后：&quot;);
+        for (String str2 : arr) {
+            System.out.print(str2+&quot;\t&quot;);
+        }
+    }
+}
+</pre></div>
+</div>
+<p>4.创建一个二维数组，进行转换展示的数组信息</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>public class array2_show { // 创建类
+    public static void main(String[] args) {
+        int arr[][]=new int[][]{{1,2,3},{4,5,6},{7,8,9}};
+        System.out.println(&quot;数组原有内容：&quot;);
+        for(int i = 0;i&lt;arr.length;i++){
+            for(int j=0;j&lt;arr.length;j++){
+                System.out.print(arr[i][j] + &quot; &quot;);
+            }
+            System.out.println();
+        }
+        System.out.println(&quot;行列互换后数组内容：&quot;);
+        for(int i = 0;i&lt;arr.length;i++){
+            for(int j=0;j&lt;arr.length;j++){
+                System.out.print(arr[j][i] + &quot; &quot;);
+            }
+            System.out.println();
+        }
+    }
+}
+
+/*
+ 数组原有内容：
+1 2 3
+4 5 6
+7 8 9
+行列互换后数组内容：
+1 4 7
+2 5 8
+3 6 9
+
+ */
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../05.类与对象/index.html" class="btn btn-neutral float-right" title="5. 类与对象" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="02.二维数组的创建和使用.html" class="btn btn-neutral float-left" title="4.2. 二维数组的创建和使用" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

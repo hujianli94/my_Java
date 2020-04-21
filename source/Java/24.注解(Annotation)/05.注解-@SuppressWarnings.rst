@@ -1,0 +1,22 @@
+.. contents::
+   :depth: 3
+..
+
+@SuppressWarnings
+=================
+
+@SuppressWarnings注解用来抑制编译器警告，如果你确认程序中的警告没有问题，可以不用理会。但
+是就是不想看到这些警告，可以使用@SuppressWarnings注解消除这些警告
+
+代码示例
+
+::
+
+   @SuppressWarnings({"deprecation"})
+   public static void main(String[] args) {
+       HelloWorld2 h = new HelloWorld2();
+       System.out.println(h.getAge());
+       h.setAge(18);
+       System.out.println(h.getAge());
+       h.setName("hujianli");
+       System.out.println(h.getName());

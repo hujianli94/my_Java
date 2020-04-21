@@ -1,0 +1,88 @@
+.. contents::
+   :depth: 3
+..
+
+枚举类构造方法
+==============
+
+代码示例
+--------
+
+WeekDays.java
+
+::
+
+   package com.a51work.cn;
+
+   public enum weekday {
+       // 枚举常量列表
+       MONDAY("星期一", 0), TUESDAY("星期二", 1), WEDNESDAY("星期三", 2), THURSDAY("星期四", 3), FRIDAY("星期五", 4);
+
+       // 实例变量
+       private String name;
+       private int index;
+
+       // 静态变量
+       private static int staticVar = 100;
+
+       weekday(String name, int index) {
+           this.name = name;
+           this.index = index;
+       }
+
+       /**
+        * 构造方法，注意枚举类的中的构造方法只能是私有访问级别，构造方法可以
+        * 省略private关键字，但它仍然是私有的构造方法。这也说明了枚举类不允许在外部创建对象
+        **/
+
+
+       // 覆盖父类中的toString()方法
+       @Override
+       public String toString() {
+           // TODO 自动生成的方法存根
+           StringBuilder sb = new StringBuilder();
+           sb.append(name);
+           sb.append("-");
+           sb.append(index);
+           return sb.toString();
+       }
+
+       //实例方法
+
+       public String getInfo() {
+           // 调用父类中toString()方法
+           return super.toString();
+       }
+
+       // 静态方法
+       public static int getStaticVar() {
+           return staticVar;
+       }
+
+   }
+
+HelloWorld3.java
+
+::
+
+   package com.a51work.cn;
+
+   public class HelloWorld3 {
+       public static void main(String[] args) {
+           // day工作日变量
+           weekday day = weekday.FRIDAY;
+           // 打印day默认调用枚举toString()方法
+           System.out.println(day);
+           // 调用枚举实例方法
+           System.out.println(day.getInfo());
+           // 调用枚举静态方法
+           System.out.println(weekday.getStaticVar());
+       }
+   }
+
+
+   /*
+   星期五-4
+   FRIDAY
+   100
+   * */

@@ -1,0 +1,115 @@
+.. contents::
+   :depth: 3
+..
+
+实践与练习
+==========
+
+1.编写一个类，定义修饰权限为private的成员变量，定义两个成员方法，一个成员方法实现为此成员变量赋值，
+拧一个成员方法获取这个成员变量的值，保证其他类继承该类时能获取该类的成员变量的值。
+
+eg
+
+::
+
+   public class Test1 {
+   //  定义private成员变量
+       private String name;
+
+       // 定义getName方法
+       public String getName() {
+           return name;
+       }
+
+   //  定义SetName方法
+       public void Setname(String name) {
+           this.name = name;
+       }
+
+   }
+
+::
+
+   public class Test2 extends Test1 {
+   public static void main(String[] args) {
+       Test1 hu = new Test1();
+       hu.Setname("hujianli");
+       System.out.println(hu.getName());
+       
+   }
+   }
+
+2.编写一个矩形类，将长和宽作为矩形类的属性，在构造方法中将长、宽初始化，
+定义一个成员方法，求此矩形的面积。
+
+eg
+
+::
+
+   public class Juxing {
+   //  定义矩形的长和宽
+       private float height;
+       private float width;
+       
+   //定义构造方法    
+   public Juxing(float height, float width) {
+       // TODO 自动生成的构造函数存根
+       this.height = height;
+       this.width = width;
+   }   
+   //定义一个求矩形面积的方法
+   public float square() {
+       return height*width;
+   }   
+
+   //主方法
+   public static void main(String[] args) {
+       Juxing jx = new Juxing(12.3f, 4.5f);
+       System.out.println("矩形的长度为: "+ jx.height);
+       System.out.println("矩形的宽度为: "+ jx.width);
+       System.out.println("矩形的面积为: " + jx.square());
+   }
+
+
+   }
+
+   /*输出结果
+   矩形的长度为: 12.3
+   矩形的宽度为: 4.5
+   矩形的面积为: 55.350002
+    * 
+    * 
+    * */
+
+3.根据参数的个数，决定循环打印变量i值的次数
+
+eg
+
+::
+
+
+   public class Test3 {
+   public static void main(String[] args) {
+       int lengh = args.length;        //主方法中传入参数的长度
+       if (lengh == 0) {
+           System.out.println("无参数传入.....");
+       } else {
+           for (int i = 0; i < args.length; i++) {
+               String string = args[i];
+               System.out.println(string);
+           }
+       }
+   }
+
+   }
+
+   /*传入3个参数如下：
+    * hujianli1
+    * hujianli2
+    * hujianli3
+    * 
+    * 输出结果：
+   hujianli1
+   huijanli2
+   hujianli3
+    * */

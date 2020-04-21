@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6.2. Math类 &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="next" title="6.3. Random类 随机数" href="03.Random类.html" />
+    <link rel="prev" title="6.1. 数字格式化" href="01.数字格式化.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java学习笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.Java基础/index.html">1. Java基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.流程控制/index.html">2. 流程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.字符串/index.html">3. 字符串</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.数组/index.html">4. 数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.类与对象/index.html">5. 类与对象</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">6. 数字处理类</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01.数字格式化.html">6.1. 数字格式化</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">6.2. Math类</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#math-random">6.2.1. Math.random()方法</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03.Random类.html">6.3. Random类 随机数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.大数字运算.html">6.4. 大数字运算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05.实践和练习.html">6.5. 实践和练习</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../07.接口、继承与多态/index.html">7. 接口、继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08.包/index.html">8. 包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.对象/index.html">9. 对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10.继承与多态/index.html">10. 继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.抽象类与接口/index.html">11. 抽象类与接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12.枚举类/index.html">12. 枚举类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13.Java常用类/index.html">13. Java常用类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14.内部类/index.html">14. 内部类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15.Lambda表达式/index.html">15. Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16.异常处理/index.html">16. 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../17.对象容器—集合/index.html">17. 对象容器—集合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18.泛型/index.html">18. 泛型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../19.文件管理与IO流/index.html">19. 文件管理与IO流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20.多线程编程/index.html">20. 多线程编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../21.网络编程/index.html">21. 网络编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../22.Swing图形用户界面编程/index.html">22. Swing图形用户界面编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../23.再谈反射/index.html">23. 再谈反射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">6. 数字处理类</a> &raquo;</li>
+        
+      <li>6.2. Math类</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Java/06.数字处理类/02.Math类.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#math" id="id1">Math类</a><ul>
+<li><a class="reference internal" href="#math-random" id="id2">Math.random()方法</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="math">
+<h1><a class="toc-backref" href="#id1">6.2. Math类</a><a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h1>
+<p>Math类中提供了众多数学函数方法，主要包括三角函数方法，指数函数方法，取整函数方法，
+取最大值、最小值以及平均值函数方法，这些方法都被定义为static形式。</p>
+<p><img alt="image0" src="../../_images/Math_class01.png" /></p>
+<p>eg</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>public class TrigonometricFunction {
+//  主方法
+    public static void main(String[] args) {
+//      取90度的正玄
+        System.out.println(&quot;90度的正玄值为：&quot;+ Math.sin(Math.PI/2));
+//      取0度的余玄
+        System.out.println(&quot;0度的余玄值为: &quot; + Math.cos(0));
+
+//      取60度的正切
+        System.out.println(&quot;60度的正切值：&quot;+ Math.tan(Math.PI /3));
+
+//      2的平方根与2商的反正玄
+        System.out.println(&quot;2的平方根与2商的反玄值：&quot; + Math.asin(Math.sqrt(2)/2));
+
+//      2的2次方
+        System.out.println(&quot;e的平方值：&quot;+ Math.exp(2));
+
+//      取4的平方根
+        System.out.println(&quot;4的平方根值：&quot;+ Math.sqrt(4));
+
+//      取8的立方根
+        System.out.println(&quot;8的立方根：&quot; + Math.cbrt(8));
+
+//      取2的2次方
+        System.out.println(&quot;2的2次方：&quot; + Math.pow(2, 2));
+    }
+
+}
+/*输出结果
+90度的正玄值为：1.0
+0度的余玄值为: 1.0
+60度的正切值：1.7320508075688767
+2的平方根与2商的反玄值：0.7853981633974484
+e的平方值：7.38905609893065
+4的平方根值：2.0
+8的立方根：2.0
+2的2次方：4.0
+
+ */
+</pre></div>
+</div>
+<div class="section" id="math-random">
+<h2><a class="toc-backref" href="#id2">6.2.1. Math.random()方法</a><a class="headerlink" href="#math-random" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span>public class Math_random {
+//  定义获取任意字符之间的随机字符
+    public static char GetRandomChar(char cha1, char cha2) {
+        return (char)(cha1 + Math.random()*(cha2 - cha1+1));
+
+    }
+//  主方法
+    public static void main(String[] args) {
+//      获取a-z之间的随机数
+        System.out.println(&quot;任意小写字符: &quot; + GetRandomChar(&#39;a&#39;, &#39;z&#39;));
+//      获取A-Z之间的随机数
+        System.out.println(&quot;任意大写字符：&quot; + GetRandomChar(&#39;A&#39;, &#39;Z&#39;));
+//      获取0-9之间的随机字符
+        System.out.println(&quot;0到9之间的任意数字字符：&quot; + GetRandomChar(&#39;0&#39;, &#39;9&#39;));
+
+
+    }
+
+}
+
+/*输出结果
+任意小写字符: b
+任意大写字符：G
+0到9之间的任意数字字符：6
+
+ */
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="03.Random类.html" class="btn btn-neutral float-right" title="6.3. Random类 随机数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="01.数字格式化.html" class="btn btn-neutral float-left" title="6.1. 数字格式化" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

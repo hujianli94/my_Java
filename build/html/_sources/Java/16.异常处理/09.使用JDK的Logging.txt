@@ -1,0 +1,34 @@
+.. contents::
+   :depth: 3
+..
+
+使用JDK Logging
+===============
+
+Hello.java
+
+::
+
+   package com.a32work.cn;
+
+   import java.util.logging.Logger;
+
+   public class Hello {
+       public static void main(String[] args) {
+           Logger logger = Logger.getGlobal();
+           logger.info("start process");
+           logger.warning("memory is running out.....");
+           logger.fine("ignored.");
+           logger.severe("Process will be terminated.....");
+       }
+   }
+
+   /*
+   十月 29, 2019 9:09:46 下午 com.a32work.cn.Hello main
+   信息: start process
+   十月 29, 2019 9:09:47 下午 com.a32work.cn.Hello main
+   警告: memory is running out.....
+   十月 29, 2019 9:09:47 下午 com.a32work.cn.Hello main
+   严重: Process will be terminated.....
+
+   */

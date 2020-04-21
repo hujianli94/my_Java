@@ -1,0 +1,193 @@
+.. contents::
+   :depth: 3
+..
+
+TCP Socket
+==========
+
+案例：文件上传工具
+------------------
+
+UploadServer.java
+
+::
+
+   package com.a51work.cn;
+
+   import java.io.BufferedInputStream;
+   import java.io.FileOutputStream;
+   import java.io.IOException;
+   import java.net.ServerSocket;
+   import java.net.Socket;
+
+   public class UploadServer {
+       public static void main(String[] args) {
+           System.out.println("服务端运行.............");
+           try (// 创建一个ServerSocket监听8080端口的客户端请求
+                ServerSocket server = new ServerSocket(8080);
+                // 使用accept()阻塞当前线程，等待客户端请求
+                Socket socket = server.accept();
+                // 由Socket获得输入流，并创建缓冲输入流
+                BufferedInputStream in = new BufferedInputStream(socket.getInputStream());
+                // 由文件输出流创建缓冲输出流
+                FileOutputStream out = new FileOutputStream("./hujianli.sh")) {
+
+               //准备一个缓冲区
+               byte[] buffer = new byte[1024];
+               // 首次从Socket读取数据
+               int len = in.read(buffer);
+               while (len != -1) {
+                   // 写入数据到文件
+                   out.write(buffer, 0, len);
+
+                   // 再次从Socket读取数据
+                   len = in.read(buffer);
+               }
+               System.out.println("接收完成！");
+
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+       }
+   }
+
+UploadClient.java
+
+::
+
+   package com.a51work.cn;
+
+   import java.io.BufferedInputStream;
+   import java.io.BufferedOutputStream;
+   import java.io.FileInputStream;
+   import java.io.IOException;
+   import java.net.Socket;
+
+   public class UploadClient {
+       public static void main(String[] args) {
+           System.out.println("客户端运行............");
+           try (// 向本机的8080端口发出请求
+                Socket socket = new Socket("127.0.0.1", 8080);
+                // 由Socket获得输出流，并创建缓冲输出流
+                BufferedOutputStream out = new BufferedOutputStream(socket.getOutputStream());
+                // 创建文件输入流
+                FileInputStream fin = new FileInputStream("D:\\GitHub\\test.sh");
+                // 由文件输入流创建缓冲输入流
+                BufferedInputStream in = new BufferedInputStream(fin)) {
+               // 准备一个缓冲区
+               byte[] buffer = new byte[1024];
+               // 首次读取文件
+               int len = in.read(buffer);
+               while (len != -1) {
+                   // 数据写入Socket
+                   out.write(buffer, 0, len);
+                   // 再次读取文件
+                   len = in.read(buffer);
+               }
+               System.out.println("上传成功！！");
+               } catch(IOException e){
+                   e.printStackTrace();
+               }
+           }
+       }
+
+案例：聊天工具
+--------------
+
+ChatServer.java
+
+::
+
+   package com.a51work.cn;
+
+   import java.io.BufferedReader;
+   import java.io.DataInputStream;
+   import java.io.DataOutputStream;
+   import java.io.InputStreamReader;
+   import java.net.ServerSocket;
+   import java.net.Socket;
+
+   public class ChatServer {
+       public static void main(String[] args) {
+           System.out.println("服务器运行...............");
+           Thread t = new Thread(() -> {
+               try (// 创建一个ServerSocket监听端口8080客户请求
+                    ServerSocket server = new ServerSocket(8080);
+                    // 使用accept()阻塞等待客户端请求
+                    Socket socket = server.accept();
+                    DataInputStream in = new DataInputStream(socket.getInputStream());
+                    DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+                    BufferedReader keyboardIn = new BufferedReader(new InputStreamReader(System.in))) {
+                   while (true) {
+                       /* 接收数据 */
+                       String str = in.readUTF();
+                       // 打印接收的数据
+                       System.out.printf("从客户端接收的数据：【%s】\n", str);
+
+                       /* 发送数据 */
+                       // 读取键盘输入的字符串
+                       String keyboardInputString = keyboardIn.readLine();
+                       // 结束聊天
+                       if (keyboardInputString.equals("bye")){
+                           break;
+                       }
+                       //发送
+                       out.writeUTF(keyboardInputString);
+                       out.flush();
+                   }
+               } catch (Exception e) {
+                   e.printStackTrace();
+               }
+           });
+
+           t.start();
+
+       }
+   }
+
+ChatClinet.java
+
+::
+
+   package com.a51work.cn;
+
+   import java.io.BufferedReader;
+   import java.io.DataInputStream;
+   import java.io.DataOutputStream;
+   import java.io.InputStreamReader;
+   import java.net.Socket;
+
+   public class ChatClient {
+       public static void main(String[] args) {
+           System.out.println("客户端运行..............");
+           Thread t = new Thread(() -> {
+               try (//  向127.0.0.1主机8080端口发出连接请求
+                    Socket socket = new Socket("127.0.0.1", 8080);
+                    DataInputStream in = new DataInputStream(socket.getInputStream());
+                    DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+                    BufferedReader keyboardIn = new BufferedReader(new InputStreamReader(System.in))) {
+                   while (true) {
+                       /* 发送数据 */
+                       // 读取键盘输入的字符串
+                       String keyboardInputString = keyboardIn.readLine();
+                       //结束聊天
+                       if (keyboardInputString.equals("bye")) {
+                           break;
+                       }
+
+                       //发送
+                       out.writeUTF(keyboardInputString);
+                       out.flush();
+                       //接收数据
+                       String str = in.readUTF();
+                       //打印接收的数据
+                       System.out.printf("从服务器接收的数据：【%s】\n", str);
+                   }
+               } catch (Exception e) {
+             System.out.println("服务器暂时未启动........");
+               }
+               System.out.println("客户端停止！");
+           });
+           t.start();
+       }
+   }

@@ -1,0 +1,456 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>17.1. List集合 &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="next" title="17.2. Set集合" href="02.Set集合.html" />
+    <link rel="prev" title="17. 对象容器—集合" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java学习笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.Java基础/index.html">1. Java基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.流程控制/index.html">2. 流程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.字符串/index.html">3. 字符串</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.数组/index.html">4. 数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.类与对象/index.html">5. 类与对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.数字处理类/index.html">6. 数字处理类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.接口、继承与多态/index.html">7. 接口、继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08.包/index.html">8. 包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.对象/index.html">9. 对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10.继承与多态/index.html">10. 继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.抽象类与接口/index.html">11. 抽象类与接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12.枚举类/index.html">12. 枚举类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13.Java常用类/index.html">13. Java常用类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14.内部类/index.html">14. 内部类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15.Lambda表达式/index.html">15. Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16.异常处理/index.html">16. 异常处理</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">17. 对象容器—集合</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">17.1. List集合</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">17.1.1. List集合的遍历</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="02.Set集合.html">17.2. Set集合</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../18.泛型/index.html">18. 泛型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../19.文件管理与IO流/index.html">19. 文件管理与IO流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20.多线程编程/index.html">20. 多线程编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../21.网络编程/index.html">21. 网络编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../22.Swing图形用户界面编程/index.html">22. Swing图形用户界面编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../23.再谈反射/index.html">23. 再谈反射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">17. 对象容器—集合</a> &raquo;</li>
+        
+      <li>17.1. List集合</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Java/17.对象容器—集合/01.List集合.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#list" id="id2">List集合</a><ul>
+<li><a class="reference internal" href="#id1" id="id3">List集合的遍历</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="list">
+<h1><a class="toc-backref" href="#id2">17.1. List集合</a><a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal"><span class="pre">List集合中的元素是有序的，可以重复出现</span></code></p>
+<p>List接口继承自Collection接口，List接口中的很多方法都继承自Collection接口的。List接口中常用方法
+如下。</p>
+<ol class="arabic simple">
+<li>操作元素</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span>get(int index)：返回List集合中指定位置的元素。
+set(int index, Object element)：用指定元素替换List集合中指定位置的元素。
+add(Object element)：在List集合的尾部添加指定的元素。该方法是从Collection集合继承过来的。
+add(int index, Object element)：在List集合的指定位置插入指定元素。
+remove(int index)：移除List集合中指定位置的元素。
+remove(Object element)：如果List集合中存在指定元素，则从List集合中移除第一次出现的指定元素。该方法是从Collection集合继承过来的。
+clear()：从List集合中移除所有元素。该方法是从Collection集合继承过来的。
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>判断元素</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span>isEmpty()：判断List集合中是否有元素，没有返回true，有返回false。该方法是从
+Collection集合继承过来的。
+contains(Object element)：判断List集合中是否包含指定元素，包含返回true，不包含返回false。该方法是从Collection集合继承过来的。
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>查询元素</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span>indexOf(Object o)：从前往后查找List集合元素，返回第一次出现指定元素的索引，如果此列表不包含该元素，则返回-1。
+lastIndexOf(Object o)：从后往前查找List集合元素，返回第一次出现指定元素的索引，如果此列表不包含该元素，则返回-1。
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>其他</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span>iterator()：返回迭代器（Iterator）对象，迭代器对象用于遍历集合。该方法是从Collection集合继承过来的。
+size()：返回List集合中的元素数，返回值是int类型。该方法是从Collection集合继承过来的。
+subList(int fromIndex, int toIndex)：返回List集合中指定的 fromIndex（包括 ）和toIndex（不包括）之间的元素集合，返回值为List集合。
+</pre></div>
+</div>
+<p>HelloWorld.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51cto;
+
+import java.awt.List;
+import java.util.ArrayList;
+
+public class HelloWorld {
+ public static void main(String[] args) {
+  ArrayList list  = new ArrayList();
+
+  String b = &quot;B&quot;;
+
+//  向集合中添加元素
+  list.add(&quot;A&quot;);
+  list.add(b);
+  list.add(&quot;C&quot;);
+
+  list.add(b);
+  list.add(&quot;D&quot;);
+  list.add(&quot;E&quot;);
+//  打印集合元素个数
+  int count = list.size();
+  System.out.println(&quot;集合size = &quot; + count);
+//  打印集合
+  System.out.println(list);
+
+//  从前往后查找元素
+  System.out.println(&quot;indexOf(\&quot;B\&quot;) = &quot; + list.indexOf(b)) ;
+//  从后往前查找元素
+  System.out.println(&quot;lastIndexOf(\&quot;B\&quot;) = &quot; + list.lastIndexOf(b));
+
+//  删除集合中第一个“B”元素
+  list.remove(b);
+  System.out.println(&quot;remove(3)前：&quot; + list);
+//  判断集合中是否包含“B”元素
+  System.out.println(&quot;是否包含\&quot;B\&quot;元素：&quot; + list.contains(b));
+
+//  删除集合第4个元素
+  list.remove(3);
+  System.out.println(&quot;remove(3)后：&quot; + list);
+//  判断集合是否为空
+  System.out.println(&quot;list 集合是空的： &quot; + list.isEmpty());
+
+  System.out.println(&quot;替换前：&quot; + list);
+//  替换集合第2个元素
+  list.set(1, &quot;F&quot;);
+  System.out.println(&quot;替换后：&quot; + list);
+
+//  清空集合
+  list.clear();
+  System.out.println(list);
+
+//  重新添加元素
+  list.add(1);  //发生自动装箱
+  list.add(3);
+
+  int item = (Integer)list.get(0); //发生自动拆箱
+
+ }
+
+}
+
+/*
+ * 集合size = 6
+ * [A, B, C, B, D, E]
+ * indexOf(&quot;B&quot;) = 1
+ * lastIndexOf(&quot;B&quot;) = 3
+ * remove(3)前：[A, C, B, D, E]
+ * 是否包含&quot;B&quot;元素：true
+ * remove(3)后：[A, C, B, E]
+ * list 集合是空的：false
+ * 替换前：[A, C, B, E]
+ * 替换后：[A, F, B, E]
+ *  []
+ */
+</pre></div>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id3">17.1.1. List集合的遍历</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51cto;
+
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class HelloWorld2 {
+ public static void main(String[] args) {
+  ArrayList list = new ArrayList();
+
+  String b = &quot;B&quot;;
+
+//  向集合中添加元素
+  list.add(&quot;A&quot;);
+  list.add(b);
+  list.add(&quot;C&quot;);
+
+  list.add(b);
+  list.add(&quot;D&quot;);
+  list.add(&quot;E&quot;);
+
+//  使用for循环遍历
+  System.out.println(&quot;----1,使用for循环遍历---&quot;);
+  for (int i = 0; i &lt; list.size(); i++) {
+   System.out.printf(&quot;读取集合元素(%d): %s \n&quot;, i, list.get(i));
+  }
+
+//  使用for-each循环遍历
+  System.out.println(&quot;----2.使用for-each循环遍历---&quot;);
+  for (Object item : list) {
+   String s = (String) item;
+   System.out.println(&quot;读取集合元素：&quot; + s);
+
+  }
+
+//  使用迭代器遍历
+  System.out.println(&quot;---3.使用迭代器遍历---&quot;);
+  Iterator it = list.iterator();
+
+  while (it.hasNext()) {
+   Object item = it.next();
+   String s = (String) item;
+   System.out.println(&quot;读取集合元素：&quot; + s);
+
+  }
+ }
+
+}
+
+/*----1,使用for循环遍历---
+读取集合元素(0): A
+读取集合元素(1): B
+读取集合元素(2): C
+读取集合元素(3): B
+读取集合元素(4): D
+读取集合元素(5): E
+----2.使用for-each循环遍历---
+读取集合元素：A
+读取集合元素：B
+读取集合元素：C
+读取集合元素：B
+读取集合元素：D
+读取集合元素：E
+---3.使用迭代器遍历---
+读取集合元素：A
+读取集合元素：B
+读取集合元素：C
+读取集合元素：B
+读取集合元素：D
+读取集合元素：E*/
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="02.Set集合.html" class="btn btn-neutral float-right" title="17.2. Set集合" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="17. 对象容器—集合" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+.. contents::
+   :depth: 3
+..
+
+释放资源
+========
+
+有时在try-catch语句中会占用一些非Java资源，如：打开文件、网络连接、打开数据库连接和使用数据
+结果集等，这些资源并非Java资源，不能通过JVM的垃圾收集器回收，需要程序员释放。为了确保这
+些资源能够被释放可以使用finally代码块或Java
+7之后提供自动资源管理（Automatic Resource Management）技术。
+
+语法：
+
+try{ //可能会生成异常语句
+
+} catch(Throwable e1){ //处理异常e1
+
+} catch(Throwable e2){ //处理异常e2
+
+} catch(Throwable eN){ //处理异常eN
+
+} finally{ //释放资源 }
+
+HelloWorld3.java
+
+::
+
+   package com.a51cto;
+
+   import java.io.BufferedReader;
+   import java.io.FileInputStream;
+   import java.io.FileNotFoundException;
+   import java.io.IOException;
+   import java.io.InputStreamReader;
+   import java.text.DateFormat;
+   import java.text.ParseException;
+   import java.text.SimpleDateFormat;
+   import java.util.Date;
+
+   public class HelloWorld3 {
+    public static void main(String[] args) {
+     Date date = readDate();
+     System.out.println("读取的日期 = " + date);
+    }
+
+    
+    public static Date readDate() {
+     FileInputStream readfile = null;
+     InputStreamReader ir = null;
+     BufferedReader in = null;
+     try {
+      readfile = new FileInputStream("readme.txt");
+      ir = new InputStreamReader(readfile);
+      in = new BufferedReader(ir);
+      // 读取文件中的一行数据
+      String str = in.readLine();
+      if (str == null) {
+       return null;
+      }
+      DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+      Date date = df.parse(str);
+      return date;
+     } catch (FileNotFoundException e) {
+      System.out.println("处理FileNotFoundException...");
+      e.printStackTrace();
+     } catch (IOException e) {
+      System.out.println("处理IOException...");
+      e.printStackTrace();
+     } catch (ParseException e) {
+      System.out.println("处理ParseException...");
+      e.printStackTrace();
+     } finally {
+      try {
+       if (readfile != null) {
+        readfile.close();
+       }
+      } catch (IOException e) {
+       e.printStackTrace();
+      }
+      try {
+       if (ir != null) {
+        ir.close();
+       }
+      } catch (IOException e) {
+       e.printStackTrace();
+      }
+      try {
+       if (in != null) {
+        in.close();
+       }
+      } catch (IOException e) {
+       e.printStackTrace();
+      }
+     }
+     return null;
+    }
+   }
+
+自动资源管理
+------------
+
+语法：
+
+try (声明或初始化资源语句) { //可能会生成异常语句
+
+} catch(Throwable e1){ //处理异常e1
+
+} catch(Throwable e2){ //处理异常e1
+
+} catch(Throwable eN){ //处理异常eN }
+
+HelloWorld4.java
+
+::
+
+   package com.a51cto;
+
+   import java.io.BufferedReader;
+   import java.io.FileInputStream;
+   import java.io.FileNotFoundException;
+   import java.io.IOException;
+   import java.io.InputStreamReader;
+   import java.text.DateFormat;
+   import java.text.ParseException;
+   import java.text.SimpleDateFormat;
+   import java.util.Date;
+
+   public class HelloWorld4 {
+    public static void main(String[] args) {
+     Date date = readDate();
+     System.out.println("读取的日期 = " + date);
+    }
+
+    public static Date readDate() {
+     /*
+      * 自动资源管理
+      * 三条语句放到在try语句后面小括号中，语句之 间用分号“;”分隔，这就是自动资源管理技术了，采用了自动资源管理后不再需要finally代码块，不需
+      * 要自己close这些资源，释放过程交给了JVM。
+      */
+     try (FileInputStream readfile = new FileInputStream("readme.txt");
+       InputStreamReader ir = new InputStreamReader(readfile);
+       BufferedReader in = new BufferedReader(ir)) {
+      // 读取文件中的一行数据
+      String str = in.readLine();
+      if (str == null) {
+       return null;
+      }
+      DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+      Date date = df.parse(str);
+      return date;
+     } catch (FileNotFoundException e) {
+      System.out.println("处理FileNotFoundException...");
+      e.printStackTrace();
+     } catch (IOException e) {
+      System.out.println("处理IOException...");
+      e.printStackTrace();
+     } catch (ParseException e) {
+      System.out.println("处理ParseException...");
+      e.printStackTrace();
+     }
+     return null;
+    }
+   }
+
+   /*
+   处理FileNotFoundException...
+   java.io.FileNotFoundException: readme.txt (系统找不到指定的文件。)
+   读取的日期 = null
+    at java.io.FileInputStream.open0(Native Method)
+    at java.io.FileInputStream.open(Unknown Source)
+    at java.io.FileInputStream.<init>(Unknown Source)
+    at java.io.FileInputStream.<init>(Unknown Source)
+    at com.a51cto.HelloWorld4.readDate(HelloWorld4.java:25)
+    at com.a51cto.HelloWorld4.main(HelloWorld4.java:15)
+
+    */

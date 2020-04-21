@@ -1,0 +1,141 @@
+.. contents::
+   :depth: 3
+..
+
+线程安全
+========
+
+多线程同步
+
+为了防止多线程对临界资源的访问有时会导致数据的不一致性，Java提供了“互斥”机制，可以为这些
+资源对象加上一把“互斥锁”，在任一时刻只能由一个线程访问，即使该线程出现阻塞，该对象的被锁
+定状态也不会解除，其他线程仍不能访问该对象，这就多线程同步。线程同步保证线程安全的重要手
+段，但是线程同步客观上会导致性能下降。
+
+synchronized方法
+
+代码示例
+
+::
+
+   package com.a51work.cn;
+
+   //机票数据库
+   public class TocketDB {
+       //机票的数量
+       private int ticketCount = 5;
+
+       // 获得当前机票数量
+       public synchronized int getTicketCount() {
+           return ticketCount;
+       }
+
+       public synchronized void sellTicket() {
+           try {
+               //等于用户付款
+               //线程休眠，阻塞当前线程，模拟等待用户付款
+               Thread.sleep(1000);
+
+           } catch (InterruptedException e) {
+
+           }
+           System.out.printf("第%d 号票，已经售出\n", ticketCount);
+           ticketCount--;
+       }
+
+       public static void main(String[] args) {
+           TocketDB db = new TocketDB();
+           //创建线程1
+           Thread t1 = new Thread(() -> {
+               //查询是否有票
+               while (true) {
+                   int currTicketCount = db.getTicketCount();
+                   if (currTicketCount > 0) {
+                       db.sellTicket();
+                   }else {
+                       // 无票退出
+                       System.out.println("票已经售完...");
+                       break;
+                   }
+               }
+           });
+           //开始线程t1
+           t1.start();
+
+
+           //创建线程2
+           Thread t2 = new Thread(() -> {
+               //查询是否有票
+               while (true) {
+                   int currTicketCount = db.getTicketCount();
+                   if (currTicketCount > 0) {
+                       db.sellTicket();
+                   }else {
+                       // 无票退出
+                       break;
+                   }
+               }
+           });
+           //开始线程t2
+           t2.start();
+       }
+   }
+
+
+   /*
+   第5 号票，已经售出
+   第4 号票，已经售出
+   第3 号票，已经售出
+   第2 号票，已经售出
+   第1 号票，已经售出
+   票已经售完...
+   * */
+
+synchronized语句
+
+代码示例
+
+::
+
+       public static void main(String[] args) {
+           TocketDB2 db = new TocketDB2();
+           //创建线程1
+           Thread t1 = new Thread(() -> {
+               //查询是否有票
+               while (true) {
+                   synchronized (db) {
+                       int currTicketCount = db.getTicketCount();
+                       if (currTicketCount > 0) {
+                           db.sellTicket();
+                       } else {
+                           // 无票退出
+                           System.out.println("票已经售完...");
+                           break;
+                       }
+                   }
+               }
+           });
+           //开始线程t1
+           t1.start();
+
+
+           //创建线程2
+           Thread t2 = new Thread(() -> {
+               //查询是否有票
+               while (true) {
+                   synchronized (db) {
+                       int currTicketCount = db.getTicketCount();
+                       if (currTicketCount > 0) {
+                           db.sellTicket();
+                       } else {
+                           // 无票退出
+                           System.out.println("票已经售完...");
+                           break;
+                       }
+                   }
+               }
+           });
+           //开始线程t2
+           t2.start();
+       }
+   }

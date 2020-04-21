@@ -1,0 +1,256 @@
+.. contents::
+   :depth: 3
+..
+
+使用接口
+========
+
+``比抽象类更加抽象的是接口，在接口中所有的方法都是抽象的``\ 。
+
+在Java中接口的声明使用的关键字是\ ``interface``\ 。
+
+一个使用接口的例子
+------------------
+
+aaa.java
+
+::
+
+   package com.a51work.cn;
+
+   public interface aaa {
+       int i = 2;
+   }
+
+test.java
+
+::
+
+   package com.a51work.cn;
+
+   public class test {
+       public static void main(String[] args) {
+           // 取得接口里的值
+           int n = aaa.i + 1;
+           // 打印并显示
+           System.out.println(n);
+       }
+   }
+
+一个完整的带方法的接口例子
+--------------------------
+
+aaa.java
+
+::
+
+   package com.a51work.cn;
+
+   public interface aaa {
+       // 创建一个接口的方法getMax
+       public int getMax();
+
+       // 创建一个接口方法getMes
+       String getMes();
+   }
+
+test.java
+
+::
+
+   package com.a51work.cn;
+
+   public class test implements aaa {
+
+       // 实现接口getMax的方法
+       @Override
+       public int getMax() {
+           int i =123;
+           return i;
+       }
+
+       // 实现接口getMes的方法
+       @Override
+       public String getMes() {
+           // 定义String类型的私有变量s
+           String s = "实现接口里的方法";
+           // 将变量s返回并退出方法
+           return s;
+       }
+
+       public static void main(String[] args) {
+           // 实例化test类
+           test h1 = new test();
+           //打印类中实现了接口的方法
+           System.out.println(h1.getMax());
+           System.out.println(h1.getMes());
+       }
+   }
+
+
+   /*
+   123
+   实现接口里的方法
+   */
+
+接口声明和实现 例子1
+--------------------
+
+Figure.java
+
+::
+
+   package JieKouClass;
+
+   public interface Figure {
+
+   // 接口中静态成员变量    
+   // 接口中成员变量都静态成员变量
+    String name = "几何图形";//省略public static final 
+    
+    // 声明抽象方法
+    void onDraw();   //省略public
+     
+
+   }
+
+Elipse.java
+
+::
+
+   package JieKouClass;
+
+   //几何图形椭圆形
+   public class Elipse implements Figure {
+    //绘制几何图形方法
+    @Override
+    public void onDraw() {
+     // TODO 自动生成的方法存根
+     System.out.println("绘制椭圆形......");
+     
+    }
+   }
+
+Triangle.java
+
+::
+
+   package JieKouClass;
+
+   //几何图形三角形
+   public class Triangle implements Figure{
+    //绘制几何图形方法
+    @Override
+    public void onDraw() {
+     // TODO 自动生成的方法存根
+     System.out.println("绘制三角形.....");
+     
+    }
+   }
+
+调用代码
+
+::
+
+   package JieKouClass;
+
+   public class HelloWorld {
+
+    public static void main(String[] args) {
+     // TODO 自动生成的方法存根
+     
+     // f1变量是父类类型，指向子类实例，发生多态
+     Figure f1 = new Triangle();
+     f1.onDraw();
+     System.out.println(f1.name);
+     System.out.println(Figure.name);
+     
+     // f2变量是父类类型，指向子类实例，发生多态
+     Figure f2 = new Elipse();
+     f2.onDraw();
+     System.out.println(f2.name);
+     System.out.println(Figure.name);
+
+    }
+
+   }
+
+   /*
+   绘制三角形.....
+   几何图形
+   几何图形
+   绘制椭圆形......
+   几何图形
+   几何图形
+    * /
+    */
+
+注意：接口与抽象类一样都不能被实例化。
+
+接口 实现例子2
+--------------
+
+代码示例
+
+::
+
+   package com.a51work1.cn;
+
+   interface PCI {
+    // java接口,相当于主板上的PCI插槽
+    void start();
+    void stop();
+   }
+
+   class SoundCard implements PCI {
+    
+    public void start() {
+     System.out.println("Du du du .........");
+    }
+    
+    public void stop() {
+     System.out.println("Sound  stop .....!");
+    }
+   }
+
+   class NetworkCard implements PCI {
+    public void start() {
+     System.out.println("Send .............");
+    }
+    
+    public void stop() {
+     System.out.println("Network stop !..");
+    }
+   }
+
+   class MainBoard {
+   // 该方法可使主板插入任意符合PCI插槽规范的卡
+    public void usePCICard(PCI p) {
+     p.start();
+     p.stop();
+    }
+    
+   }
+
+   public class Assembler {
+
+    public static void main(String[] args) {
+     // TODO 自动生成的方法存根
+     PCI nc = new NetworkCard();
+     PCI sc = new SoundCard();
+     MainBoard mb = new MainBoard();
+     
+   //  主板上插入网卡
+     mb.usePCICard(nc);
+   //  主板上插入声卡
+     mb.usePCICard(sc);
+    }
+
+   }
+
+   /**
+   Send .............
+   Network stop !..
+   Du du du .........
+   Sound  stop .....! 
+    **/

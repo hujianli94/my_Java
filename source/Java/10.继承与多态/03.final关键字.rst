@@ -1,0 +1,106 @@
+.. contents::
+   :depth: 3
+..
+
+final关键字
+===========
+
+final修饰变量
+-------------
+
+inal修饰的变量即成为常量，只能赋值一次，但是final所修饰局部变量和成员变量有所不同。
+01. final修饰的局部变量必须使用之前被赋值一次才能使用。 02.
+final修饰的成员变量在声明时没有赋值的叫“空白final变量”。空白final变量必须在构造方法或静态代码块中初始化。
+
+代码示例
+
+::
+
+   package final_Class_Var;
+
+   public class FinalDemo {
+    void doSomething() {
+     // 没有在声明的同时赋值
+     final int e;
+     // 只能赋值一次
+     e = 100;
+     System.out.println(e);
+     // 声明的同时赋值
+     final int f = 200;
+     System.out.println(f);
+    }
+
+    // 实例常量
+    final int a = 5; // 直接赋值
+    final int b; // 空白final变量
+    // 静态常量
+    final static int c = 12;// 直接赋值
+    final static int d; // 空白final变量 f
+    // 静态代码块
+    static {
+     // 初始化静态变量
+     d = 32;
+    }
+
+    // 构造方法
+    FinalDemo() {
+     // 初始化实例变量
+     b = 3;
+     // 第二次赋值，会发生编译错误
+     // b = 4;
+    }
+    public static void main(String[] args) {
+     FinalDemo final_Var = new FinalDemo();
+     System.out.println(final_Var.a);
+     System.out.println(final_Var.b);
+     System.out.println(final_Var.c);
+     System.out.println(final_Var.d);
+   //  静态方法可以通过类名进行调用
+     System.out.println(FinalDemo.d);
+     final_Var.doSomething();
+    }
+   }
+
+   /*
+   5
+   3
+   12
+   32
+   32
+   100
+   200
+    * /
+    */
+
+final修饰类
+-----------
+
+final修饰的类不能被继承。有时出于设计安全的目的，不想让自己编写的类被别人继承，这时可以使用final关键字修饰父类。
+
+代码示例
+
+::
+
+   package com.a53work.cn;
+
+   final class hujianli_Class{
+       int x = 100;
+
+       public int getX() {
+           return x;
+       }
+   }
+
+   public class Test_Final extends hujianli_Class {            //编译报错,final标记的父类无法被子类继承
+   //    public static void main(String[] args) {
+   //        hujianli_Class n1 = new hujianli_Class();
+   //        System.out.println(n1.x);
+   //        System.out.println("获取x的值为："+ n1.getX());
+       }
+   }
+    
+
+final修饰方法
+-------------
+
+final修饰的方法不能被子类覆盖。有时也是出于设计安全的目的，父类中的方法不想被别人覆盖，这是可以使用final关键字修饰父类中方法。

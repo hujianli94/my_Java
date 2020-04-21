@@ -1,0 +1,13 @@
+.. contents::
+   :depth: 3
+..
+
+Number
+======
+
+抽象类Number是BigDecimal、BigInteger、Byte、Double、Float、Integer、Long和Short类的父类
+，Number的子类必须提供将表示的数值转换为byte、double、float、int、long和short的方法。
+
+|image0|
+
+.. |image0| image:: ../../_static/Number1.PNG

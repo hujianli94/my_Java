@@ -1,0 +1,30 @@
+.. contents::
+   :depth: 3
+..
+
+类
+==
+
+This关键字
+----------
+
+::
+
+   public class Book {
+
+       String name="abc";
+   //  定义一个公共方法
+       public void showName(String name) {
+       
+       //这里使用this关键字输出类本身
+           System.out.println(this.name);
+       }
+   //  主方法
+       public static void main(String[] args) {
+           Book b = new Book();    //实例化方法
+           b.showName("123");
+       }
+   }
+
+权限修饰符
+----------

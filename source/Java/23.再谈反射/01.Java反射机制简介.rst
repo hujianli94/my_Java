@@ -1,0 +1,52 @@
+.. contents::
+   :depth: 3
+..
+
+Java反射机制简介
+================
+
+代码示例
+
+Test.java
+
+::
+
+   package com.a51work;
+
+   //Java反射机制简介
+
+   public class Test {
+       // 1.jva的反射机制
+       // 2.Class 自描述类，（描述当前对象类自己的一个类，通过该类实例可用获得类的属性和方法，
+       // （包括私有属性和构造方法））
+
+       public static void main(String[] args) {
+           getClass1();
+           getClass2();
+           getClass3();
+       }
+
+       // 1)获得Class对象的方法Object有一个方法getClass
+       static void getClass1() {
+           Person h1 = new Person();
+           Class cls = h1.getClass();
+           System.out.println(cls.getName());
+       }
+
+       //2)通过.class属性
+       static void getClass2(){
+           Class cls = Person.class;
+           System.out.println(cls.getName());
+       }
+
+       //3)Class里面有一个静态方法Class.forName("")类全面（包名+类名）
+       static void getClass3() {
+           try {
+               Class cls = Class.forName("com.a51work.Person");
+               System.out.println(cls.getName());
+           } catch (ClassNotFoundException e) {
+               e.printStackTrace();
+           }
+       }
+
+   }

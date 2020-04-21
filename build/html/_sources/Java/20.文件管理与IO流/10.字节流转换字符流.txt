@@ -1,0 +1,65 @@
+.. contents::
+   :depth: 3
+..
+
+字节流转换字符流
+================
+
+FileCopyWirthBuffer_byte_string_transform.java
+
+::
+
+   package com.a51work.com;
+
+   import java.io.*;
+
+   /**
+    * 字符流缓冲
+    */
+   public class FileCopyWirthBuffer_byte_string_transform {
+       public static void main(String[] args) {
+           try (
+                   //创建字节文件输入流对象
+                   FileInputStream fis = new FileInputStream("D:\\GitHub\\test.sh");
+                   //创建转换流对象
+                   InputStreamReader isr = new InputStreamReader(fis);
+                   // 创建字符缓冲输入流对象
+                   BufferedReader bis = new BufferedReader(isr);
+
+                   //创建字节文件输出流对象
+                   FileOutputStream fos = new FileOutputStream("D:\\GitHub\\test2.sh");
+                   //创建转换流对象
+                   OutputStreamWriter osw = new OutputStreamWriter(fos);
+                   // 创建字符缓冲输入流对象
+                   BufferedWriter bos = new BufferedWriter(osw)) {
+
+               //开始时间,当前系统的纳秒时间
+               long startTime = System.nanoTime();
+               // 首先读取一行文本
+               String line = bis.readLine();
+
+               while (line != null) {
+                   //开始写入数据
+                   bos.write(line);
+                   //写入一个换行符
+                   bos.newLine();
+                   //再读取一行文本
+                   line = bis.readLine();
+               }
+               System.out.println("复制完成！");
+               //结束时间，当前系统的纳秒时间
+               long End_Time = System.nanoTime() - startTime;
+               System.out.println("耗时:" + (End_Time / 1000000.0) + "毫秒");
+
+           } catch (FileNotFoundException e) {
+               e.printStackTrace();
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+       }
+   }
+
+   /*
+   复制完成！
+   耗时:0.534277毫秒
+   * */

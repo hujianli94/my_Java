@@ -1,0 +1,465 @@
+.. contents::
+   :depth: 3
+..
+
+包装类
+======
+
+基本数据类型与包装类对应关系
+----------------------------
+
+|image0|
+
+Integer数值包装类
+-----------------
+
+1. 构造方法类似
+   每一个数值包装类都有两个构造方法，以Integer为例，Integer构造方法如下：
+
+``Integer(int value)``\ ：通过指定一个数值构造Integer对象。
+
+``Integer(String s)``\ ：通过指定一个字符串s构造对象，s是十进制字符串表示的数值
+
+2. 共同的父类
+   这6个数值包装类有一个共同的父类——Number，Number是一个抽象类，除了这6个子类还有：
+   AtomicInteger、AtomicLong、BigDecimal和BigInteger，其中BigDecimal和BigInteger后面还会详细介绍。Number是抽象类，要求它的子类必须实现如下6个方法：
+
+``byte byteValue()``\ ：将当前包装的对象转换为byte类型的数值。
+
+``double doubleValue()``\ ：将当前包装的对象转换为double类型的数值。
+
+``float floatValue()``\ ：将当前包装的对象转换为float类型的数值。
+
+``int intValue()``\ ：将当前包装的对象转换为int类型的数值。
+
+``long longValue()``\ ：将当前包装的对象转换为long类型的数值。
+
+``short shortValue()``\ ：将当前包装的对象转换为short类型的数值。
+
+通过这6个方法数值包装类可以互相转换这6种数值，但是需要注意的是大范围数值转换为小范围的数值，如果数值本身很大，可以会导致精度的丢失。
+
+3. compareTo()方法
+
+| 每一个数值包装类都有int
+| compareTo(数值包装类对象)方法，可以进行包装对象的比较。方法返回值是int，如果返回值是0，则相等；
+
+如果返回值小于0，则此对象小于参数对象；如果返回值大于0，则此对象大于参数对象。
+
+4. 字符串转换为基本数据类型
+
+每一个数值包装类都提供一些静态parseXXX()方法将字符串转换为对应的基本数据类型，以Integer为例，方法定义如下：
+
+``static int parseInt(String s)``\ ：将字符串s转换有符号的十进制整数。
+
+``static int parseInt(String s``, int
+radix)：将字符串s转换有符号的整数，radix是指定基数，基数用来指定进制。注意这种指定基数的方法在浮点数包装类（Double和Float）中没有
+的。
+
+5. 基本数据类型转换为字符串
+
+每一个数值包装类都提供一些静态toString()方法实现将基本数据类型数值转换为字符串，以Integer为例，方法定义如下：
+
+``static String toString(int i)``\ ：将该整数i转换为有符号的十进制表示的字符串。
+
+``static String toString(int i, int radix)``\ ：将该整数i转换为有符号的特定进制表示的字符串，
+radix是基数可以指定进制。注意这种指定基数的方法在浮点数包装类（Double和Float）
+中没有的。
+
+代码示例
+
+::
+
+   package aom;
+
+   public class Integer_class {
+       public static void main(String[] args) {
+           System.out.println("int类型的最大值：" + Integer.MAX_VALUE);
+           System.out.println("int类型的最小值：" + Integer.MIN_VALUE);
+           System.out.println("int类型的长度：" + Integer.SIZE);
+           System.out.println("int类型的类型：" + Integer.TYPE);
+           System.out.println("--------------------------");
+           // 创建Integer对象
+           Integer inte1 = new Integer(123);
+           System.out.println(inte1);
+
+           Integer inte2 = new Integer("1234567");
+           System.out.println(inte2);
+
+           Integer inte3 = Integer.valueOf("987654321");
+           System.out.println(inte3);
+
+           int num1 = Integer.parseInt("876");
+           System.out.println(num1 + 2);
+           System.out.println(num1);
+
+           System.out.println("-----------------------------");
+           int num2 = inte2.intValue();
+           System.out.println(num2 - 10);
+
+           String str1 = Integer.toBinaryString(11);
+           System.out.println("11的二进制表示：" + str1);
+           System.out.println("--------------------------");
+
+           String str2 = Integer.toHexString(11);
+           System.out.println("11的十六进制表示：" + str2);
+           System.out.println("--------------------------");
+
+           String str3 = Integer.toOctalString(11);
+           System.out.println("11的八进制表示：" + str3);
+           System.out.println("--------------------------");
+
+           String str4 = Integer.toString(11,15);
+           System.out.println("11进制转换为十五进制表示：" + str4);
+
+           Byte b = new Byte("123");
+           Short s = new Short((short)123);
+           Long l = new Long(123);
+           System.out.println(b);
+           System.out.println(s);
+           System.out.println(l);
+       }
+   }
+
+这些数值包装类（Byte、Short、Integer、Long、Float和Double）都有一些相同特点。
+
+::
+
+   1. 构造方法类似
+      每一个数值包装类都有两个构造方法，以Integer为例，Integer构造方法如下：
+      Integer(int value)：通过指定一个数值构造Integer对象。
+      Integer(String s)：通过指定一个字符串s构造对象，s是十进制字符串表示的数值。
+
+      
+
+   2. 共同的父类这6个数值包装类有一个共同的父类——Number，Number是一个抽象类，除了这6个子类还有：AtomicInteger、AtomicLong、BigDecimal和BigInteger，其中BigDecimal和BigInteger后面还会详
+      细介绍。Number是抽象类，要求它的子类必须实现如下6个方法：
+      byte byteValue()：将当前包装的对象转换为byte类型的数值。
+      double doubleValue()：将当前包装的对象转换为double类型的数值。
+      float floatValue()：将当前包装的对象转换为float类型的数值。
+      int intValue()：将当前包装的对象转换为int类型的数值。
+      long longValue()：将当前包装的对象转换为long类型的数值。
+      short shortValue()：将当前包装的对象转换为short类型的数值。
+      通过这6个方法数值包装类可以互相转换这6种数值，但是需要注意的是大范围数值转换为小范围的数值，如果数值本身很大，可以会导致精度的丢失。
+
+      
+
+   3. compareTo()方法
+      每一个数值包装类都有int compareTo(数值包装类对象)方法，可以进行包装对象的比较。方法返回值是int，如果返回值是0，则相等；如果返回值小于0，则此对象小于参数对象；如果返回值大于0，则此对象大于参数对象。
+
+      
+
+   4. 字符串转换为基本数据类型
+      每一个数值包装类都提供一些静态parseXXX()方法将字符串转换为对应的基本数据类型，以Integer为例，方法定义如下：
+      static int parseInt(String s)：将字符串s转换有符号的十进制整数。
+      static int parseInt(String s, int radix)：将字符串s转换有符号的整数，radix是指定基数，基数用来指定进制。注意这种指定基数的方法在浮点数包装类（Double和Float）中没有的。
+
+      
+
+   5. 基本数据类型转换为字符串
+      每一个数值包装类都提供一些静态toString()方法实现将基本数据类型数值转换为字符串，以Integer为例，方法定义如下：
+      static String toString(int i)：将该整数i转换为有符号的十进制表示的字符串。
+      static String toString(int i, int radix)：将该整数i转换为有符号的特定进制表示的字符串，
+      radix是基数可以指定进制。注意这种指定基数的方法在浮点数包装类（Double和Float）中没有的。
+
+   ## Integer类将字符串转为整数
+
+parseInt(String str)
+
+::
+
+   返回包含在由str指定的字符串中的数字的等价整数值
+
+::
+
+   public class Integer_class01 {
+   //  主方法
+       public static void main(String[] args) {
+   //      定义String字符串数组
+           String str[] = {"89","99","79","66","59","49"};
+           int sum = 0;
+           for (int i = 0; i < str.length; i++) {
+               int myint = Integer.parseInt(str[i]);
+               sum = sum + myint;
+           }
+   //      将计算后结果输出
+           System.out.println("数组中的各元素之和是: "+ sum);
+           
+       }
+       
+   }
+
+   /* 输出结果
+   数组中的各元素之和是: 441
+   */
+
+Integer类的进制转换
+-------------------
+
+::
+
+   //创建Charca类
+   public class Charac {
+       public static void main(String[] args) {
+           //主方法
+   //      获取数字的十进制表示
+           String str = Integer.toString(456);
+   //      获取数字的二进制表示
+           String str1 = Integer.toBinaryString(456);
+   //      获取数字的十六进制表示
+           String str2 = Integer.toHexString(456);
+   //      获取数字的八进制表示
+           String str3 = Integer.toOctalString(456);
+           
+           
+       System.out.println("456的十进制表示为："+ str);
+       System.out.println("456的二进制表示为："+ str1);
+       System.out.println("456的十六进制表示为："+ str2);
+       System.out.println("456的八进制表示为："+ str3);
+           
+       }
+
+   }
+
+   /*输出
+   456的十进制表示为：456
+   456的二进制表示为：111001000
+   456的十六进制表示为：1c8
+   456的八进制表示为：710
+
+
+    */
+
+::
+
+   //创建类GetCon
+   public class Changliang {
+   //  主方法
+       public static void main(String[] args) {
+   //      获取Integer类的常量值
+       int maxint = Integer.MAX_VALUE;
+       int minint = Integer.MIN_VALUE;
+       int intsize = Integer.SIZE;
+       
+       System.out.println("int类型可取的最大值是："+ maxint);
+       System.out.println("int类型可取的最小值是："+ minint);
+       System.out.println("int类型的二进制位数是："+ intsize);
+   }
+   }
+
+   /*输出结果
+   int类型可取的最大值是：2147483647
+   int类型可取的最小值是：-2147483648
+   int类型的二进制位数是：32
+    */
+
+Character类
+-----------
+
+Character类是char类型的包装类。Character类常用方法如下：
+
+::
+
+     Character(char value)：构造方法，通过char值创建一个新的Character对象。
+     char charValue()：返回此Character对象的值。
+     int compareTo(Character anotherCharacter)：方法返回值是int，
+   如果返回值是0，则相等；
+   如果返回值小于0，则此对象小于参数对象；
+   如果返回值大于0，则此对象大于参数对象。
+
+代码示例1
+
+::
+
+   package com.a51work.cn;
+
+   public class Characyer01 {
+       public static void main(String[] args) {
+           //创建数值为'A'的Character对象
+           Character object1 = new Character('A');
+           //从Character对象返回char值
+           char ch = object1.charValue();
+           System.out.println(ch);
+
+   //        字符比较
+           Character object2 = new Character('C');
+           int result = object1.compareTo(object2);
+           if (result < 0) {
+               System.out.println("object1小于object2.");
+           } else {
+               System.out.println("object1大于object2.");
+           }
+       }
+   }
+
+
+   /*
+   A
+   object1小于object2.
+   * */
+
+代码示例2
+
+::
+
+   package som;
+
+   public class Deom {
+       public static void main(String[] args) {
+           Character c = new Character('A');
+           System.out.println("字符"+ c);
+           System.out.println("是大写字母吗？"+ Character.isUpperCase(c));
+           System.out.println("是小写字母吗？"+ Character.isLowerCase(c));
+           System.out.println("转换为大写字母:"+ Character.toUpperCase(c));
+           System.out.println("转换为小写字母:"+ Character.toLowerCase(c));
+           System.out.println("是字母吗？:"+ Character.isLetter(c));
+           System.out.println("是数字吗？:"+ Character.isDigit(c));
+
+
+       }
+   }
+
+Boolean类
+---------
+
+Boolean类 Boolean类是boolean类型的包装类。
+
+1. 构造方法 Boolean类有两个构造方法，构造方法定义如下： Boolean(boolean
+   value)：通过一个boolean值创建Boolean对象。 Boolean(String
+   s)：通过字符串创建Boolean对象。s不能为null，s如果是忽略大小
+   写“true”则转换为true对象，其他字符串都转换为false对象。
+
+2. compareTo()方法 Boolean类有int
+   compareTo(Boolean包装类对象)方法，可以进行包装对象的比较。方法返回值是
+   int，如果返回值是0，则相等；如果返回值小于0，则此对象小于参数对象；如果返回值大于0，则此对象大于参数对象。
+
+3. 字符串转换为boolean类型
+   Boolean包装类都提供静态parseBoolean()方法实现将字符串转换为对应的boolean类型，方法定义
+   如下： static boolean parseBoolean(String
+   s)：将字符串转换为对应的boolean类。s不能为null，s如果是忽
+   略大小写“true”则转换为true，其他字符串都转换为false。
+
+代码示例
+
+HelloWorld.java
+
+::
+
+   package com.a51work6;
+
+   public class HelloWorld {
+
+    public static void main(String[] args) {
+     // TODO 自动生成的方法存根
+     
+     // 创建数值为true的Character对象true
+     Boolean obj1 = new Boolean(true);
+     // 通过字符串"true"创建Character对象true
+     Boolean obj2 = new Boolean("true");
+     // 通过字符串"True"创建Character对象true
+     Boolean obj3 = new Boolean("True");
+     // 通过字符串"TRUE"创建Character对象true
+     Boolean obj4 = new Boolean("TRUE");
+     // 通过字符串"false"创建Character对象false
+     Boolean obj5 = new Boolean("false");
+     // 通过字符串"Yes"创建Character对象false
+     Boolean obj6 = new Boolean("Yes");
+     // 通过字符串"abc"创建Character对象false
+     Boolean obj7 = new Boolean("abc");
+     
+     boolean b1 = Boolean.parseBoolean("true");
+     boolean b2 = Boolean.parseBoolean("True");
+     boolean b3 = Boolean.parseBoolean("TRUE");
+     boolean b4 = Boolean.parseBoolean("false");
+     boolean b5 = Boolean.parseBoolean("Yes");
+     boolean b6 = Boolean.parseBoolean("abc");
+     
+     System.out.println(b1);
+     System.out.println(b2);
+     System.out.println(b3);
+     System.out.println(b4);
+     System.out.println(b5);
+     System.out.println(b6
+       );
+     
+    }
+
+   }
+
+代码示例2
+
+Test.java
+
+::
+
+   package com.a51work.cn.Boolean;
+
+   public class Test {
+       public static void main(String[] args) {
+
+   //        创建Boolean对象 b1、b2
+           Boolean b1, b2;
+   //        创建布尔类型的基本数据类型变量
+           Boolean b;
+
+   //        实例化b1、b2并初始化，b1为true，b2位false
+           b1 = new Boolean(true);
+           b2 = new Boolean(false);
+
+   //        使用equals比较b1和b2，将结果赋给b
+           b = b1.equals(b2);
+           String str = "b1(" + b1 + ")和b2（" + b2 + ")是否相等：" + b;
+           System.out.println(str);
+       }
+   }
+
+   /*
+   b1(true)和b2（false)是否相等：false
+   * */
+
+自动装箱/拆箱
+-------------
+
+代码示例
+
+::
+
+   package com.a51work.cn.Automatic_packing;
+
+   public class HelloWorld {
+       public static void main(String[] args) {
+           //创建数值为80的Integer对象
+           Integer objInt = new Integer(80);
+           //创建数值为80.0的Double对象
+           Double objDouble = new Double(80);
+           //自动拆箱
+           Double sum = objInt + objDouble;
+           System.out.println(sum);        //160.0
+
+           //自动装箱
+           //自动装箱'C'转换为Character对象
+           Character objChar = 'C';
+           //自动装箱true转换为Boolean对象
+           Boolean objBoolean = true;
+           //自动装箱80.0f转换为Float对象
+           Float objFloat = 80.0f;
+
+           //自动装箱100转换为Integer对象
+           display(100);
+
+           System.out.println(objChar.charValue());        //C
+           System.out.println(objBoolean);                 //true
+           System.out.println(objFloat);                   //80.0
+
+
+       }
+
+       /**
+        * @param objInt Integer对象
+        * @return int数值
+        */
+       public static int display(Integer objInt) {
+           return objInt;
+       }
+   }
+
+.. |image0| image:: ../../_static/baozhuanglei01.png

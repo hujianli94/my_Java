@@ -1,0 +1,226 @@
+.. contents::
+   :depth: 3
+..
+
+创建子线程
+==========
+
+使用Runnable接口创建多线程
+--------------------------
+
+代码示例1
+
+Runner.java
+
+::
+
+   package com.a51work.cn;
+
+   /**
+    * 使用Runnable接口创建多线程
+    */
+   public class Runner implements Runnable {
+
+   //    方法覆盖
+       @Override
+       public void run() {
+           for (int i = 0; i < 10; i++) {
+               //打印次数和线程的名字
+               System.out.printf("第%d次执行 - %s\n", i, Thread.currentThread().getName());
+           }
+           try {
+               //随机生成休眠时间
+               long sleepTime = (long) (1000 * Math.random());
+               Thread.sleep(sleepTime);
+           } catch (InterruptedException e) {
+               e.printStackTrace();
+           }
+           //线程执行结束
+           System.out.println("执行完成！" + Thread.currentThread().getName());
+       }
+
+       public static void main(String[] args) {
+           // 创建线程t1，参数是一个线程执行对象Runner
+           Thread t1 = new Thread(new Runner());
+           //开始线程t1
+           t1.start();
+
+
+           // 创建线程t2，参数是一个线程执行对象Runner
+           Thread t2 = new Thread(new Runner(),"hujianli-Thread");
+           //开始线程t1
+           t2.start();
+       }
+   }
+
+代码示例2
+
+MyRunnable1.java
+
+::
+
+   package com.a51work.cn;
+
+   public class MyRunnable1 implements Runnable {
+
+       @Override
+       // 定义一个run线程方法
+       public void run() {
+           for (int i = 0; i <100 ; i++) {
+               System.out.printf("@");
+               try {
+                   Thread.sleep(50); //睡眠0.05s
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
+           }
+       }
+   }
+
+MyRunnable2.java
+
+::
+
+   package com.a51work.cn;
+
+   public class MyRunnable2 implements Runnable{
+       // 定义一个run线程方法
+       @Override
+       public void run() {
+           for (int i = 0; i <100 ; i++) {
+               System.out.printf("$");
+               try {
+                   Thread.sleep(50);      //睡眠0.05s
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
+           }
+       }
+   }
+
+XianCheng6.java
+
+::
+
+   package com.a51work.cn;
+
+   public class XianCheng6 {
+       public static void main(String[] args) {
+           MyRunnable1 process1 = new MyRunnable1();
+           MyRunnable2 process2 = new MyRunnable2();
+           Thread t1 = new Thread(process1);
+           Thread t2 = new Thread(process2);
+           t1.start();
+           t2.start();
+       }
+   }
+
+继承Thread线程类创建多线程
+--------------------------
+
+MyThread.java
+
+::
+
+   package com.a51work.cn;
+
+   /**
+    * 继承Thread线程类创建多线程
+    */
+   public class MyThread extends Thread {
+       //定义一个无参数的构造方法
+       public MyThread() {
+           super();
+       }
+
+       //定义一个有一个参数的构造方法
+       public MyThread(String name) {
+           super(name);
+       }
+
+       //编写执行线程代码
+       @Override
+       public void run() {
+           for (int i = 0; i < 10; i++) {
+               //打印次数和线程的名字
+               System.out.printf("第%d次执行 - %s\n", i, Thread.currentThread().getName());
+           }
+           try {
+               //随机生成休眠时间
+               long sleepTime = (long) (1000 * Math.random());
+               Thread.sleep(sleepTime);
+           } catch (InterruptedException e) {
+               e.printStackTrace();
+           }
+           //线程执行结束
+           System.out.println("执行完成！" + Thread.currentThread().getName());
+       }
+
+       public static void main(String[] args) {
+           // 创建线程t1，参数是一个线程执行对象Runner
+           Thread t1 = new Thread(new MyThread());
+           //开始线程t1
+           t1.start();
+
+
+           // 创建线程t2，参数是一个线程执行对象Runner
+           Thread t2 = new Thread(new MyThread(), "hujianli-Thread");
+           //开始线程t1
+           t2.start();
+       }
+   }
+
+使用匿名内部类和Lambda表达式实现线程体
+--------------------------------------
+
+::
+
+   package com.a51work.cn;
+
+   //使用匿名内部类和Lambda表达式实现线程体
+   public class HelloWorld1 {
+       public static void main(String[] args) {
+           // 创建线程t1，参数是实现Runnable接口的匿名内部类
+           Thread t1 = new Thread(new Runnable() {
+               @Override
+               public void run() {
+                   for (int i = 0; i < 10; i++) {
+                       System.out.printf("第%d次执行 - %s\n", i, Thread.currentThread().getName());
+                       try {
+                           long sleepTime = (long) (1000 * Math.random());
+                           Thread.sleep(sleepTime);
+                       } catch (InterruptedException e) {
+                           e.printStackTrace();
+                       }
+                   }
+                   //线程执行结束
+                   System.out.println("执行完成！ " + Thread.currentThread().getName());
+               }
+           });
+
+           // 开始线程t1
+           t1.start();
+
+
+           //创建线程t2，参数是实现Runnable接口的Lambda表达式
+           // 创建线程t2，参数是实现Runnable接口的Lambda表达式
+           Thread t2 = new Thread(() -> {
+               for (int i = 0; i < 10; i++) {
+                   //打印次数和线程的名字
+                   System.out.printf("第   %d次执行 - %s\n", i, Thread.currentThread().getName());
+                   try {
+                       //随机生成休眠时间
+                       long sleepTime = (long) (1000 * Math.random());
+                       //线程休眠
+                       Thread.sleep(sleepTime);
+                   } catch (InterruptedException e) {
+                   }
+               }
+               //线程执行结束
+               System.out.println("执行完成! " + Thread.currentThread().getName());
+           }, "MyThread");
+           //开始线程t2
+           t2.start();
+
+       }
+   }

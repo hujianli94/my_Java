@@ -1,0 +1,277 @@
+.. contents::
+   :depth: 3
+..
+
+发送Email
+=========
+
+常用邮件服务商的SMTP信息
+------------------------
+
+::
+
+   QQ邮箱：SMTP服务器是smtp.qq.com，端口是465/587；
+   163邮箱：SMTP服务器是smtp.163.com，端口是465；
+   Gmail邮箱：SMTP服务器是smtp.gmail.com，端口是465/587。
+
+发送一封简单的邮件
+------------------
+
+Sendmail01.java
+
+::
+
+   package aom722;
+
+   import javax.mail.*;
+   import javax.mail.internet.InternetAddress;
+   import javax.mail.internet.MimeMessage;
+   import java.util.Properties;
+
+   public class Sendmail01 {
+       public static void main(String[] args) throws MessagingException {
+           String smtp = "smtp.qq.com";
+           final String username = "1879324764@qq.com";
+           final String password = "xibeauerdibudaid";
+
+           // 连接到SMTP服务器587端口:
+           Properties props = new Properties();
+           props.put("mail.smtp.host", smtp); // SMTP主机名
+           props.put("mail.smtp.port", "587"); // 主机端口号
+           props.put("mail.smtp.auth", "true"); // 是否需要用户认证
+           props.put("mail.smtp.starttls.enable", "true"); // 启用TLS加密
+           // 获取Session实例:
+           Session session = Session.getInstance(props, new Authenticator() {
+               protected PasswordAuthentication getPasswordAuthentication() {
+                   return new PasswordAuthentication(username, password);
+               }
+           });
+           // 设置debug模式便于调试:
+           session.setDebug(true);
+           MimeMessage message = new MimeMessage(session);
+           // 设置发送方地址:
+           message.setFrom(new InternetAddress("1879324764@qq.com"));
+           // 设置接收方地址:
+           message.setRecipient(Message.RecipientType.TO, new InternetAddress("962057147@qq.com"));
+           // 设置邮件主题:
+           message.setSubject("Hello", "UTF-8");
+           // 设置邮件正文:
+           message.setText("你好呀。小健爱吃肉............", "UTF-8");
+           // 发送:
+           Transport.send(message);
+       }
+
+   }
+
+发送HTML邮件
+------------
+
+发送HTML邮件 发送HTML邮件和文本邮件是类似的，只需要把：
+
+::
+
+   message.setText(body, "UTF-8");
+
+改为：
+
+::
+
+   message.setText(body, "UTF-8", "html");
+
+Sendmail02.java
+
+::
+
+   package aom722;
+
+   import javax.mail.*;
+   import javax.mail.internet.InternetAddress;
+   import javax.mail.internet.MimeMessage;
+   import java.util.Properties;
+
+   public class Sendmail02 {
+       public static void main(String[] args) throws MessagingException {
+           String smtp = "smtp.qq.com";
+           final String username = "1879324764@qq.com";
+           final String password = "xibeauerdibudaid";
+           String info = "<h1>Hello hujianli</h1> <p> nice to me too....</p>";
+
+           // 连接到SMTP服务器587端口:
+           Properties props = new Properties();
+           props.put("mail.smtp.host", smtp); // SMTP主机名
+           props.put("mail.smtp.port", "587"); // 主机端口号
+           props.put("mail.smtp.auth", "true"); // 是否需要用户认证
+           props.put("mail.smtp.starttls.enable", "true"); // 启用TLS加密
+           // 获取Session实例:
+           Session session = Session.getInstance(props, new Authenticator() {
+               protected PasswordAuthentication getPasswordAuthentication() {
+                   return new PasswordAuthentication(username, password);
+               }
+           });
+           // 设置debug模式便于调试:
+           session.setDebug(true);
+           MimeMessage message = new MimeMessage(session);
+           // 设置发送方地址:
+           message.setFrom(new InternetAddress("1879324764@qq.com"));
+           // 设置接收方地址:
+           message.setRecipient(Message.RecipientType.TO, new InternetAddress("13262662216@163.com"));
+           // 设置邮件主题:
+           message.setSubject("Hello", "UTF-8");
+           // 设置邮件正文:
+           message.setText(info, "UTF-8", "html");
+           // 发送:
+           Transport.send(message);
+       }
+
+   }
+
+发送带附件的邮件
+----------------
+
+Sendmail03.java
+
+::
+
+   package aom722;
+
+   import javax.activation.DataHandler;
+   import javax.mail.*;
+   import javax.mail.internet.InternetAddress;
+   import javax.mail.internet.MimeBodyPart;
+   import javax.mail.internet.MimeMessage;
+   import javax.mail.internet.MimeMultipart;
+   import javax.mail.util.ByteArrayDataSource;
+   import java.io.*;
+   import java.util.Properties;
+
+   public class Sendmail03 {
+       public static void main(String[] args) throws MessagingException, IOException {
+           String smtp = "smtp.qq.com";
+           final String username = "1879324764@qq.com";
+           final String password = "xibeauerdibudaid";
+           String info = "<h1>Hello hujianli</h1> <p> nice to me too....</p>";
+
+           // 连接到SMTP服务器587端口:
+           Properties props = new Properties();
+           props.put("mail.smtp.host", smtp); // SMTP主机名
+           props.put("mail.smtp.port", "587"); // 主机端口号
+           props.put("mail.smtp.auth", "true"); // 是否需要用户认证
+           props.put("mail.smtp.starttls.enable", "true"); // 启用TLS加密
+
+           Session session = Session.getInstance(props, new Authenticator() {
+               protected PasswordAuthentication getPasswordAuthentication() {
+                   return new PasswordAuthentication(username, password);
+               }
+           });
+           // 设置debug模式便于调试:
+           session.setDebug(true);
+           MimeMessage message = new MimeMessage(session);
+           // 设置发送方地址:
+           message.setFrom(new InternetAddress("1879324764@qq.com"));
+           // 设置接收方地址:
+           message.setRecipient(Message.RecipientType.TO, new InternetAddress("13262662216@163.com"));
+           // 设置邮件主题:
+           message.setSubject("Hello Java email", "UTF-8");
+           Multipart multipart = new MimeMultipart();
+
+           // 添加text;
+           BodyPart textpart = new MimeBodyPart();
+           // 添加html文本
+           textpart.setContent("hello Java email hava fjing....", "text/html;chart=utf-8");
+           // 添加纯文本
+           //textpart.setContent(body, "text/plain;chart=utf-8");
+           multipart.addBodyPart(textpart);
+           InputStream iss = new BufferedInputStream( new FileInputStream("D:\\Java_Study\\secondapp\\src\\main\\java\\aom722\\linmc.jpg"));
+           // 添加image
+           BodyPart imagepart = new MimeBodyPart();
+           imagepart.setFileName("linmc.jpg");
+           //添加一个DataHandler()，传入文件的MIME类型。二进制文件可以用application/octet-stream，Word文档则是application/msword
+           imagepart.setDataHandler(new DataHandler(new ByteArrayDataSource(iss, "application/octet-stream")));
+           multipart.addBodyPart(imagepart);
+           // 设置邮件内容为multipart：
+           message.setContent(multipart);
+           // 发送:
+           Transport.send(message);
+
+       }
+   }
+
+发送内嵌图片的HTML邮件
+----------------------
+
+Sendmail04.java
+
+::
+
+   package aom722;
+
+   import javax.activation.DataHandler;
+   import javax.mail.*;
+   import javax.mail.internet.InternetAddress;
+   import javax.mail.internet.MimeBodyPart;
+   import javax.mail.internet.MimeMessage;
+   import javax.mail.internet.MimeMultipart;
+   import javax.mail.util.ByteArrayDataSource;
+   import java.io.*;
+   import java.util.Properties;
+
+   public class Sendmail04 {
+       public static void main(String[] args) throws MessagingException, IOException {
+           String smtp = "smtp.qq.com";
+           final String username = "1879324764@qq.com";
+           final String password = "xibeauerdibudaid";
+           String info = "<h1>Hello hujianli</h1> <p> nice to me too....</p>";
+
+           // 连接到SMTP服务器587端口:
+           Properties props = new Properties();
+           props.put("mail.smtp.host", smtp); // SMTP主机名
+           props.put("mail.smtp.port", "587"); // 主机端口号
+           props.put("mail.smtp.auth", "true"); // 是否需要用户认证
+           props.put("mail.smtp.starttls.enable", "true"); // 启用TLS加密
+
+           Session session = Session.getInstance(props, new Authenticator() {
+               protected PasswordAuthentication getPasswordAuthentication() {
+                   return new PasswordAuthentication(username, password);
+               }
+           });
+           // 设置debug模式便于调试:
+           session.setDebug(true);
+           MimeMessage message = new MimeMessage(session);
+           // 设置发送方地址:
+           message.setFrom(new InternetAddress("1879324764@qq.com"));
+           // 设置接收方地址:
+           message.setRecipient(Message.RecipientType.TO, new InternetAddress("13262662216@163.com"));
+           // 设置邮件主题:
+           message.setSubject("Hello Java email", "UTF-8");
+           Multipart multipart = new MimeMultipart();
+
+           // 添加text;
+           BodyPart textpart = new MimeBodyPart();
+           // 添加html文本
+           textpart.setContent("<h1>Hello</h1><p><img src=\"cid:img01\"></p>", "text/html;charset=utf-8");
+           multipart.addBodyPart(textpart);
+           // 添加纯文本
+           //textpart.setContent(body, "text/plain;chart=utf-8");
+           InputStream iss = new BufferedInputStream( new FileInputStream("D:\\Java_Study\\secondapp\\src\\main\\java\\aom722\\linmc.jpg"));
+           // 添加image
+           BodyPart imagepart = new MimeBodyPart();
+           imagepart.setFileName("linmc.jpg");
+           //添加一个DataHandler()，传入文件的MIME类型。二进制文件可以用application/octet-stream，Word文档则是application/msword
+           imagepart.setDataHandler(new DataHandler(new ByteArrayDataSource(iss, "image/jpeg")));
+           // 与HTML的<img src="cid:img01">关联:
+           imagepart.setHeader("Content-ID", "<img01>");
+           multipart.addBodyPart(imagepart);
+           // 设置邮件内容为multipart：
+           message.setContent(multipart);
+           // 发送:
+           Transport.send(message);
+
+       }
+   }
+
+参考文献
+--------
+
+廖雪峰的博客
+
+https://www.liaoxuefeng.com/wiki/1252599548343744/1319099923693601

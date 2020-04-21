@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.1. Java开篇介绍 &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="next" title="1.2. 第一个Java程序" href="02.第一个Java程序.html" />
+    <link rel="prev" title="1. Java基础" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java学习笔记</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">1. Java基础</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.1. Java开篇介绍</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">1.1.1. Java语言的特点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">1.1.2. Java平台</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="02.第一个Java程序.html">1.2. 第一个Java程序</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03.基本数据类型.html">1.3. 基本数据类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.变量与常量.html">1.4. 变量与常量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05.运算符.html">1.5. 运算符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06.代码注释和编码规范.html">1.6. 代码注释和编码规范</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07.Java相关开发工具.html">1.7. Java相关开发工具</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../02.流程控制/index.html">2. 流程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.字符串/index.html">3. 字符串</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.数组/index.html">4. 数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.类与对象/index.html">5. 类与对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.数字处理类/index.html">6. 数字处理类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.接口、继承与多态/index.html">7. 接口、继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08.包/index.html">8. 包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.对象/index.html">9. 对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10.继承与多态/index.html">10. 继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.抽象类与接口/index.html">11. 抽象类与接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12.枚举类/index.html">12. 枚举类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13.Java常用类/index.html">13. Java常用类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14.内部类/index.html">14. 内部类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15.Lambda表达式/index.html">15. Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16.异常处理/index.html">16. 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../17.对象容器—集合/index.html">17. 对象容器—集合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18.泛型/index.html">18. 泛型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../19.文件管理与IO流/index.html">19. 文件管理与IO流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20.多线程编程/index.html">20. 多线程编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../21.网络编程/index.html">21. 网络编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../22.Swing图形用户界面编程/index.html">22. Swing图形用户界面编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../23.再谈反射/index.html">23. 再谈反射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">1. Java基础</a> &raquo;</li>
+        
+      <li>1.1. Java开篇介绍</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Java/01.Java基础/01.Java开篇介绍.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#java" id="id5">Java开篇介绍</a><ul>
+<li><a class="reference internal" href="#id1" id="id6">Java语言的特点</a></li>
+<li><a class="reference internal" href="#id2" id="id7">Java平台</a><ul>
+<li><a class="reference internal" href="#id3" id="id8">Java虚拟机</a></li>
+<li><a class="reference internal" href="#id4" id="id9">开发环境搭建</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="java">
+<h1><a class="toc-backref" href="#id5">1.1. Java开篇介绍</a><a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id6">1.1.1. Java语言的特点</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><strong>01.简单</strong></p>
+<p>Java设计目标之一就是能够方便学习，使用简单。由于当初C++程序员很多，介绍C++语言的书籍也很多，所以Java语言的风格设计成为类似于C++语言风格，但Java摒弃了C++中容易引发程序错误的地方，如指针、内存管理、运算符重载和多继承等。一方面C++程序员可以很快迁移到Java；另一方面没有编程经验的初学者也能很快学会Java。</p>
+<p><strong>02.面向对象</strong>
+面向对象是Java最重要的特性。Java是彻底的、纯粹的面向对象语言，在Java中“一切都是对象”。Java完全具有面向对象三个基本特性：封装、继承和多态，其中封装性实现了模块化和信息隐藏，继承性实现了代码的复用，用户可以建立自己的类库。而且Java采用的是相对简单的面向对象技术，去掉了多继承等复杂的概念，只支持单继承。</p>
+<p><strong>03.分布式</strong> Java语言就是为分布式系统而设计的。JDK(Java Development
+Kits，Java开发工具包)中包含了支持HTTP和FTP等基于TCP/IP协议的类库。Java程序可以凭借URL打开并访问网络上的对象，其访问方式与访问本地文件系统几乎完全相同。</p>
+<p><strong>04.结构中立</strong>
+Java程序需要在很多不同网络设备中运行，这些设备有很多不同类型的计算机和操作系统。为能够使Java程序能在网络的任何地方运行，Java编译器编译生成了与机器结构（CPU和操作系统）无关的字节码（byte-code）文件。任何种类的计算机，只要可以运行Java虚拟机，字节码文件就可以在该计算机上运行。</p>
+<p><strong>05.可移植</strong>
+体系结构的中立也使得Java程序具有可移植性。针对不同的CPU和操作系统Java虚拟机有不同的版本，这样就可以保证相同的Java字节码文件可以移植到多个不同的平台上运行。</p>
+<p><strong>06.解释执行</strong>
+为实现跨平台，Java设计成为解释执行的，即Java源代码文件首先被编译成为字节码文件，这些字节码本身包含了许多编译时生成的信息，在运行时候Java解释器负责将字节码文件解释成为特定的机器码进行运行。</p>
+<p><strong>07.健壮</strong>
+Java语言是强类型语言，它在编译时进行代码检查，使得很多错误能够在编译期被发现，不至于在运行期发生而导致系统崩溃。
+Java摒弃了C++中指针操作，指针是一种很多强大的技术，能够直接访问内存单元，但同时也很复杂，如果指针操控不好，会引起导致内存分配错误、内存泄漏等问题。而Java中则不会出现由指针所导致的问题。
+内存管理方面C/C++等语言采用手动分配和释放，经常会导致内存泄漏，从而导致系统崩溃。而Java
+采用自动内存垃圾回收机制
+，程序员不再需要管理内存，从而减少内存错误的发生，提高了程序的健壮性</p>
+<p><strong>08.安全</strong>
+在Java程序执行过程中，类装载器负责将字节码文件加载到Java虚拟机中，这个过程中由字节码校验器检查代码中是否存在着非法操作。如果字节码校验器检验通过，由Java解释器负责把该字节码解释成为机器码进行执行，这种检查可以防止木马病毒。
+另外。Java虚拟机采用的是“沙箱”运行模式，即把Java程序的代码和数据都限制在一定内存空间里执行，不允许程序访问该内存空间外的内存。</p>
+<p><strong>09.高性能</strong>
+Java编译器在编译时对字节码会进行一些优化，使之生成高质量的代码。Java字节码格式就是针对机器码转换而设计的，实际转换时相当简便。Java在解释运行时采用一种即时编译技术，可使Java程序的执行速度提升很大。多年的发展Java虚拟机也有很多改进这都使得Java程序的执行速度提升很大。</p>
+<p><strong>10.多线程</strong>
+Java是为网络编程而设计的，这要求Java能够并发处理多个任务。Java支持多线程编程，多线程机制可以实现并发处理多个任务，互不干涉，不会由于某一任务处于等待状态而影响了其它任务的执行，这样就可以容易的实现网络上的实时交互操作</p>
+<p><strong>11.动态</strong>
+Java应用程序在运行过程中，可以动态的加载各种类库，即使是更新类库也不必重新编译使用这一类库的应用程序。这一特点使之非常适合于网络环境下运行，同时也非常有利于软件的开发。</p>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id7">1.1.2. Java平台</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Java SE</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Java SE中主要包含了：JRE（Java SE Runtime Environment，Java SE运行环境）、JDK（Java Development Kit，Java开发工具包）和Java核心类库。如果只是运行Java程序，不考虑开发Java程序，那么只安装JRE就可以了。
+
+在JRE中包含了Java程序运行所需要的Java虚拟机（JVM，Java VirtualMachine）。JDK中包含了JRE和一些开发工具，这些工具包括：编译器、文档生成器和文件打包等工具。
+</pre></div>
+</div>
+<p>Java EE</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Java EE是Java Enterprise Edition，主要目的是为简化企业级系统的开发、部署和管理。Java EE是以Java SE为基础的，并提供了一套服务、API接口和协议，能够开发企业级分布式系统、Web应用程序和业务组件等，其中的包括：JSP、Servlet、EJB、JNI和Java Mail等。
+</pre></div>
+</div>
+<p>Java ME</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Java ME是Java Micro Edition，主要是面向消费类电子产品，为消费电子产品提供一个Java的运行平台，使得Java程序能够在手机、机顶盒、PDA等产品上运行。Java ME在早期的诺基亚塞班手机系统有很多应用，而现在的iOS和Android等智能手机中基本上没有它的用武之地。
+</pre></div>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id8">Java虚拟机</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Java虚拟机往上是Java应用程序，Java虚拟机屏蔽了不同软硬件平台，Java应用程序不需要修改，不需要重新编译直接可以在其他平台上运行。
+</pre></div>
+</div>
+<p><img alt="image0" src="../../_images/java_xuniji01.png" /></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Java虚拟机中包含了Java解释器，首先由编译器将Java源程序文件（.java文件）编译成为字节码文件（.class文件），然后再由Java虚拟机中的解释器将字节码解释成为机器码去执行。
+</pre></div>
+</div>
+<p>java程序运行过程</p>
+<p><img alt="image1" src="../../_images/java_yunxing01.png" /></p>
+</div>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id9">开发环境搭建</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><strong>JDK工具包</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>JDK工具包是最基础的Java开发工具，很多Java IDE工具，如：Eclipse、IntelliJ IDEA和NetBeans等都依赖于JDK。也有一些人使用“JDK+文本编辑工具”编写Java程序。
+</pre></div>
+</div>
+<p><strong>JDK下载和安装</strong></p>
+<p>截止本书编写完成为止，Oracle公司对外发布的最新JDK 8。图2-1所示是JDK
+8下载界面，它的下载地址是http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html。</p>
+<p>其中有很多版本，支持的操作系统有Linux、Mac OS X 、Solaris
+和Windows。注意选择对应的操作系统，以及32位还是64位安装的文件。</p>
+<p>如果你的电脑是Windows 10 64位系统，则首先选中Accept License
+Agreement（同意许可协议），然后单击jdk-8u131-windows-x64.exe下载JDK文件。</p>
+<p><img alt="image2" src="../../_images/java_jdk_download.png" /></p>
+<p><strong>下载JDK8</strong></p>
+<p>下载完成后就可以安装了，双击jdk-8u131-windows-x64.exe文件就可以安装了，安装过程中会弹出如图所示的内容选择对话框，其中“开发工具”是JDK内容；</p>
+<p><img alt="image3" src="../../_images/java_install01.png" /></p>
+<p>“源代码”是安装Java
+SE源代码文件，如果安装源代码，安装完成后会见如图所示的src.zip文件就是源代码文件；公共JRE就是Java运行环境了，这里可以不安装，因为JDK文件夹中也会有一个JRE，如图所示的jre文件夹。</p>
+<p><img alt="image4" src="../../_images/java_src01.png" /></p>
+<p><strong>设置环境变量</strong></p>
+<p>完成之后，需要设置环境变量，主要包括：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>01. JAVA_HOME环境变量，指向JDK目录，很多Java工具运行都需要的JAVA_HOME环境变量，推荐大家添加这变量。
+
+02. 将JDK\bin目录添加到Path环境变量中，这样在任何路径下都可以执行JDK提供的工具指令。
+
+3.测试一下环境设置是否成功。在命令提示行中输入javac指令，看是否能够找到该指令
+</pre></div>
+</div>
+<p>01.单击“环境变量”按钮打开环境变量设置对话框，</p>
+<p>可以在用户变量（上半部分，只配置当前用户）或系统变量（下半部分，配置所有用户）添加环境变量。一般情况下，在用户变量中设置环境变量</p>
+<p>02.设置JAVA_HOME</p>
+<p><img alt="image5" src="../../_images/java_path01.png" /></p>
+<p>03.添加Path变量对话框</p>
+<p>然后追加Path环境变量，在用户变量中找到Path，双击Path弹出Path变量对话框，如下图所示，追加%JAVA_HOME%:raw-latex:<cite>bin</cite>。注意多个变量路径之间用“;”（分号）分隔。最后单击“确定”按钮完成设置</p>
+<p><img alt="image6" src="../../_images/java_path02.png" /></p>
+<p>04.下面测试一下环境设置是否成功，可以通过在命令提示行中输入javac指令，看是否能够找到该指令。</p>
+<p><img alt="image7" src="../../_images/javac_test01.png" /></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="02.第一个Java程序.html" class="btn btn-neutral float-right" title="1.2. 第一个Java程序" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="1. Java基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

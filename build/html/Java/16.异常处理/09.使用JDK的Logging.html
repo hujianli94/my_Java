@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>16.9. 使用JDK Logging &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="next" title="17. 对象容器—集合" href="../17.对象容器—集合/index.html" />
+    <link rel="prev" title="16.8. 断言" href="08.断言.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java学习笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.Java基础/index.html">1. Java基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.流程控制/index.html">2. 流程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.字符串/index.html">3. 字符串</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.数组/index.html">4. 数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.类与对象/index.html">5. 类与对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.数字处理类/index.html">6. 数字处理类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.接口、继承与多态/index.html">7. 接口、继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08.包/index.html">8. 包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.对象/index.html">9. 对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10.继承与多态/index.html">10. 继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.抽象类与接口/index.html">11. 抽象类与接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12.枚举类/index.html">12. 枚举类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13.Java常用类/index.html">13. Java常用类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14.内部类/index.html">14. 内部类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15.Lambda表达式/index.html">15. Lambda表达式</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">16. 异常处理</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01.Throwable类.html">16.1. 01.Throwable类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02.Error和Exception.html">16.2. Error和Exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03.捕获异常.html">16.3. 捕获异常</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.释放资源.html">16.4. 释放资源</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05.自定义异常类.html">16.5. 自定义异常类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06.throws与声明方法抛出异常.html">16.6. throws与声明方法抛出异常</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07.throw与显式抛出异常.html">16.7. throw与显式抛出异常</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08.断言.html">16.8. 断言</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">16.9. 使用JDK Logging</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../17.对象容器—集合/index.html">17. 对象容器—集合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18.泛型/index.html">18. 泛型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../19.文件管理与IO流/index.html">19. 文件管理与IO流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20.多线程编程/index.html">20. 多线程编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../21.网络编程/index.html">21. 网络编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../22.Swing图形用户界面编程/index.html">22. Swing图形用户界面编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../23.再谈反射/index.html">23. 再谈反射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">16. 异常处理</a> &raquo;</li>
+        
+      <li>16.9. 使用JDK Logging</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Java/16.异常处理/09.使用JDK的Logging.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#jdk-logging" id="id1">使用JDK Logging</a></li>
+</ul>
+</div>
+<div class="section" id="jdk-logging">
+<h1><a class="toc-backref" href="#id1">16.9. 使用JDK Logging</a><a class="headerlink" href="#jdk-logging" title="Permalink to this headline">¶</a></h1>
+<p>Hello.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a32work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.logging.Logger</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Hello</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="o">.</span><span class="n">getGlobal</span><span class="p">();</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;start process&quot;</span><span class="p">);</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;memory is running out.....&quot;</span><span class="p">);</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">fine</span><span class="p">(</span><span class="s2">&quot;ignored.&quot;</span><span class="p">);</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">severe</span><span class="p">(</span><span class="s2">&quot;Process will be terminated.....&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">/*</span>
+<span class="n">十月</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">2019</span> <span class="mi">9</span><span class="p">:</span><span class="mi">09</span><span class="p">:</span><span class="mi">46</span> <span class="n">下午</span> <span class="n">com</span><span class="o">.</span><span class="n">a32work</span><span class="o">.</span><span class="n">cn</span><span class="o">.</span><span class="n">Hello</span> <span class="n">main</span>
+<span class="n">信息</span><span class="p">:</span> <span class="n">start</span> <span class="n">process</span>
+<span class="n">十月</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">2019</span> <span class="mi">9</span><span class="p">:</span><span class="mi">09</span><span class="p">:</span><span class="mi">47</span> <span class="n">下午</span> <span class="n">com</span><span class="o">.</span><span class="n">a32work</span><span class="o">.</span><span class="n">cn</span><span class="o">.</span><span class="n">Hello</span> <span class="n">main</span>
+<span class="n">警告</span><span class="p">:</span> <span class="n">memory</span> <span class="ow">is</span> <span class="n">running</span> <span class="n">out</span><span class="o">.....</span>
+<span class="n">十月</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">2019</span> <span class="mi">9</span><span class="p">:</span><span class="mi">09</span><span class="p">:</span><span class="mi">47</span> <span class="n">下午</span> <span class="n">com</span><span class="o">.</span><span class="n">a32work</span><span class="o">.</span><span class="n">cn</span><span class="o">.</span><span class="n">Hello</span> <span class="n">main</span>
+<span class="n">严重</span><span class="p">:</span> <span class="n">Process</span> <span class="n">will</span> <span class="n">be</span> <span class="n">terminated</span><span class="o">.....</span>
+
+<span class="o">*/</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../17.对象容器—集合/index.html" class="btn btn-neutral float-right" title="17. 对象容器—集合" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="08.断言.html" class="btn btn-neutral float-left" title="16.8. 断言" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

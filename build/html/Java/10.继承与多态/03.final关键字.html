@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>10.3. final关键字 &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="next" title="11. 抽象类与接口" href="../11.抽象类与接口/index.html" />
+    <link rel="prev" title="10.2. 多态" href="02.多态.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java学习笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.Java基础/index.html">1. Java基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.流程控制/index.html">2. 流程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.字符串/index.html">3. 字符串</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.数组/index.html">4. 数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.类与对象/index.html">5. 类与对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.数字处理类/index.html">6. 数字处理类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.接口、继承与多态/index.html">7. 接口、继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08.包/index.html">8. 包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.对象/index.html">9. 对象</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">10. 继承与多态</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01.Java中的继承.html">10.1. Java中的继承</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02.多态.html">10.2. 多态</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">10.3. final关键字</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">10.3.1. final修饰变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">10.3.2. final修饰类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">10.3.3. final修饰方法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../11.抽象类与接口/index.html">11. 抽象类与接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12.枚举类/index.html">12. 枚举类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13.Java常用类/index.html">13. Java常用类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14.内部类/index.html">14. 内部类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15.Lambda表达式/index.html">15. Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16.异常处理/index.html">16. 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../17.对象容器—集合/index.html">17. 对象容器—集合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18.泛型/index.html">18. 泛型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../19.文件管理与IO流/index.html">19. 文件管理与IO流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20.多线程编程/index.html">20. 多线程编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../21.网络编程/index.html">21. 网络编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../22.Swing图形用户界面编程/index.html">22. Swing图形用户界面编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../23.再谈反射/index.html">23. 再谈反射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">10. 继承与多态</a> &raquo;</li>
+        
+      <li>10.3. final关键字</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Java/10.继承与多态/03.final关键字.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#final" id="id4">final关键字</a><ul>
+<li><a class="reference internal" href="#id1" id="id5">final修饰变量</a></li>
+<li><a class="reference internal" href="#id2" id="id6">final修饰类</a></li>
+<li><a class="reference internal" href="#id3" id="id7">final修饰方法</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="final">
+<h1><a class="toc-backref" href="#id4">10.3. final关键字</a><a class="headerlink" href="#final" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id5">10.3.1. final修饰变量</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>inal修饰的变量即成为常量，只能赋值一次，但是final所修饰局部变量和成员变量有所不同。
+01. final修饰的局部变量必须使用之前被赋值一次才能使用。 02.
+final修饰的成员变量在声明时没有赋值的叫“空白final变量”。空白final变量必须在构造方法或静态代码块中初始化。</p>
+<p>代码示例</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>package final_Class_Var;
+
+public class FinalDemo {
+ void doSomething() {
+  // 没有在声明的同时赋值
+  final int e;
+  // 只能赋值一次
+  e = 100;
+  System.out.println(e);
+  // 声明的同时赋值
+  final int f = 200;
+  System.out.println(f);
+ }
+
+ // 实例常量
+ final int a = 5; // 直接赋值
+ final int b; // 空白final变量
+ // 静态常量
+ final static int c = 12;// 直接赋值
+ final static int d; // 空白final变量 f
+ // 静态代码块
+ static {
+  // 初始化静态变量
+  d = 32;
+ }
+
+ // 构造方法
+ FinalDemo() {
+  // 初始化实例变量
+  b = 3;
+  // 第二次赋值，会发生编译错误
+  // b = 4;
+ }
+ public static void main(String[] args) {
+  FinalDemo final_Var = new FinalDemo();
+  System.out.println(final_Var.a);
+  System.out.println(final_Var.b);
+  System.out.println(final_Var.c);
+  System.out.println(final_Var.d);
+//  静态方法可以通过类名进行调用
+  System.out.println(FinalDemo.d);
+  final_Var.doSomething();
+ }
+}
+
+/*
+5
+3
+12
+32
+32
+100
+200
+ * /
+ */
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id6">10.3.2. final修饰类</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>final修饰的类不能被继承。有时出于设计安全的目的，不想让自己编写的类被别人继承，这时可以使用final关键字修饰父类。</p>
+<p>代码示例</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a53work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+
+<span class="n">final</span> <span class="k">class</span> <span class="nc">hujianli_Class</span><span class="p">{</span>
+    <span class="nb">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">getX</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Test_Final</span> <span class="n">extends</span> <span class="n">hujianli_Class</span> <span class="p">{</span>            <span class="o">//</span><span class="n">编译报错</span><span class="p">,</span><span class="n">final标记的父类无法被子类继承</span>
+<span class="o">//</span>    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="o">//</span>        <span class="n">hujianli_Class</span> <span class="n">n1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">hujianli_Class</span><span class="p">();</span>
+<span class="o">//</span>        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">n1</span><span class="o">.</span><span class="n">x</span><span class="p">);</span>
+<span class="o">//</span>        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;获取x的值为：&quot;</span><span class="o">+</span> <span class="n">n1</span><span class="o">.</span><span class="n">getX</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id7">10.3.3. final修饰方法</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>final修饰的方法不能被子类覆盖。有时也是出于设计安全的目的，父类中的方法不想被别人覆盖，这是可以使用final关键字修饰父类中方法。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../11.抽象类与接口/index.html" class="btn btn-neutral float-right" title="11. 抽象类与接口" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="02.多态.html" class="btn btn-neutral float-left" title="10.2. 多态" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+.. contents::
+   :depth: 3
+..
+
+@Override
+=========
+
+@Override只能用于方法，子类覆盖父类方法（或者实现接口的方法）时可以@Override注解。编译器
+会检查被@Override注解的方法，确保该方法父类中存在的方法，否则会有编译错误。
+
+代码示例
+
+::
+
+   package com.a51work.cn;
+
+   public class HelloWorld {
+       private String name = "";
+       private int age;
+
+       @Override
+       public String toString() {
+           return "Person [name" + name + "],age [" + age + "]";
+       }
+
+       public static void main(String[] args) {
+           HelloWorld hu = new HelloWorld();
+           System.out.println(hu);
+       }
+   }

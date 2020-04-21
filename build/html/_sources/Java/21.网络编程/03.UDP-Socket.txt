@@ -1,0 +1,241 @@
+.. contents::
+   :depth: 3
+..
+
+UDP Socket
+==========
+
+案例：文件上传工具
+------------------
+
+UDP_UPloadServer.java
+
+::
+
+   package com.a51work.cn;
+
+   import java.io.BufferedOutputStream;
+   import java.io.FileOutputStream;
+   import java.io.IOException;
+   import java.net.DatagramPacket;
+   import java.net.DatagramSocket;
+
+
+   public class UDP_UploadServer {
+       public static void main(String[] args) {
+           System.out.println("服务端运行.............");
+
+           // 创建一个子线程
+           Thread t = new Thread(() ->{
+           try (// 创建一个ServerSocket监听8080端口的客户端请求
+                DatagramSocket socket = new DatagramSocket(8080);
+                FileOutputStream fout = new FileOutputStream("./hujianli1.sh");
+                BufferedOutputStream out = new BufferedOutputStream(fout)) {
+
+               //准备一个缓冲区
+               byte[] buffer = new byte[1024];
+               while (true) {
+                   // 创建数据报包对象，用来接收数据
+                   DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
+                   // 接收数据报包
+                   socket.receive(packet);
+                   // 接收数据长度
+                   int len = packet.getLength();
+                   if (len == 3) {
+                   // 获得结束标志
+                       String flag = new String(buffer, 0, 3);
+                       // 判断结束标志，如果是bye结束接收
+                       if (flag.equals("bye")) {
+                           break;
+                       }
+               }
+                   // 写入数据到文件输出流
+                   out.write(buffer, 0, len);
+               }
+               System.out.println("接收完成！");
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+           });
+
+           //启动线程
+           t.start();
+       }
+   }
+
+UDP_UPloadClient.java
+
+::
+
+   package com.a51work.cn;
+
+   import java.io.BufferedInputStream;
+   import java.io.FileInputStream;
+   import java.io.IOException;
+   import java.net.DatagramPacket;
+   import java.net.DatagramSocket;
+   import java.net.InetAddress;
+
+   public class UDP_UploadClient {
+       public static void main(String[] args) {
+           System.out.println("客户端运行............");
+           try (// 创建DatagramSocket对象，由系统分配可以使用的端口
+                DatagramSocket socket = new DatagramSocket();
+                FileInputStream fin = new FileInputStream("D:\\GitHub\\test.sh");
+                BufferedInputStream in = new BufferedInputStream(fin)) {
+
+               // 创建远程主机IP地址对象
+               InetAddress address = InetAddress.getByName("localhost");
+
+               // 准备一个缓冲区
+               byte[] buffer = new byte[1024];
+               // 首次从文件流中读取数据
+               int len = in.read(buffer);
+               while (len != -1) {
+                   // 创建数据报包对象
+                   DatagramPacket packet = new DatagramPacket(buffer, len, address, 8080);
+                   // 发送数据表
+                   socket.send(packet);
+                   //再次从文件流中读取数据
+                   len = in.read(buffer);
+               }
+               // 创建数据报对象
+               DatagramPacket packet = new DatagramPacket("bye".getBytes(), 3, address, 8080);
+               // 发送结束标志
+               socket.send(packet);
+               System.out.println("上传完成！");
+               } catch(IOException e){
+                   e.printStackTrace();
+               }
+           }
+       }
+
+案例：聊天工具
+--------------
+
+UDP_ChatServer.java
+
+::
+
+   package com.a51work.cn;
+
+   import java.io.*;
+   import java.net.DatagramPacket;
+   import java.net.DatagramSocket;
+   import java.net.InetAddress;
+   import java.net.Socket;
+
+   public class UDP_ChatServer {
+       public static void main(String[] args) {
+           System.out.println("服务器运行...............");
+           // 创建一个子线程
+           Thread t = new Thread(() -> {
+               try (// 创建DatagramSocket对象，指定端口8080
+                    DatagramSocket socket = new DatagramSocket(8080);
+                    BufferedReader keyboardIn
+                            = new BufferedReader(new InputStreamReader(System.in))) {
+                   while (true) {
+                       /* 接收数据 */
+                       //准备一个缓冲区
+                       byte[] buffer = new byte[128];
+                       DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
+                       socket.receive(packet);
+
+                       // 接收数据长度
+                       int len = packet.getLength();
+
+                       String str = new String(buffer, 0, len);
+
+                       // 打印接收的数据
+                       System.out.printf("从客户端接收的数据：【%s】\n", str);
+
+                       /* 发送数据 */
+                       // 从客户端传来的数据包中得到客户端地址
+                       InetAddress address = packet.getAddress();
+                       // 从客户端传来的数据包中得到客户端端口号
+                       int port = packet.getPort();
+
+                       // 读取键盘输入的字符串
+                       String keyboardInputString = keyboardIn.readLine();
+                       // 读取键盘输入的字节数组
+                       byte[] b = keyboardInputString.getBytes();
+                       // 创建DatagramPacket对象，用于向客户端发送数据
+                       packet = new DatagramPacket(b, b.length, address, port);
+                       // 向客户端发送数据
+                       socket.send(packet);
+                   }
+               } catch (IOException e) {
+                   e.printStackTrace();
+               }
+           });
+
+           //启动线程
+           t.start();
+
+       }
+   }
+
+UDP_ChatClient.java
+
+::
+
+   package com.a51work.cn;
+
+   import java.io.BufferedReader;
+   import java.io.IOException;
+   import java.io.InputStreamReader;
+   import java.net.DatagramPacket;
+   import java.net.DatagramSocket;
+   import java.net.InetAddress;
+
+   public class UDP_ChatClient {
+       public static void main(String[] args) {
+           System.out.println("客户端运行...............");
+           // 创建一个子线程
+           Thread t = new Thread(() -> {
+               try (// 创建DatagramSocket对象，指定端口8080
+                    DatagramSocket socket = new DatagramSocket();
+                    BufferedReader keyboardIn
+                            = new BufferedReader(new InputStreamReader(System.in))) {
+                   while (true) {
+                       /* 接收数据 */
+                       //准备一个缓冲区
+                       byte[] buffer = new byte[128];
+                       // 服务器IP地址
+                       InetAddress address = InetAddress.getByName("localhost");
+                       // 服务器端口号
+                       int port = 8080;
+                       // 读取键盘输入的字符串
+                       String keyboardInputString = keyboardIn.readLine();
+
+                       if (keyboardInputString.equals("bye")) {
+                           break;
+                       }
+                       // 读取键盘输入的字节数组
+                       byte[] b = keyboardInputString.getBytes();
+
+                       // 创建DatagramPacket对象，用于向客户端发送数据
+                       DatagramPacket packet = new DatagramPacket(b, b.length, address, port);
+                       // 发送
+                       socket.send(packet);
+
+                       // 接收数据包
+                       packet = new DatagramPacket(buffer, buffer.length);
+                       socket.receive(packet);
+
+                       // 接收数据长度
+                       int len = packet.getLength();
+                       String str = new String(buffer, 0, len);
+                       // 打印接收的数据
+                       System.out.printf("从服务器接收的数据：【%s】\n", str);
+                   }
+               } catch (IOException e) {
+                   e.printStackTrace();
+               }
+           });
+
+           //启动线程
+           t.start();
+
+       }
+   }

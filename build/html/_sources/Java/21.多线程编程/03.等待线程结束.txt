@@ -1,0 +1,77 @@
+.. contents::
+   :depth: 3
+..
+
+等待线程结束
+============
+
+join()方法，当前线程调用t1线程的join()方法，则阻塞当前线程，等待t1线程
+结束，如果t1线程结束或等待超时，则当前线程回到就绪状态。
+
+Thread类提供了多个版本的join()，它们定义如下：
+
+::
+
+        void join()：等待该线程结束。
+        void join(longmillis)：等待该线程结束的时间最长为millis毫秒。如果超时为0意味着要一直等下去。
+        void join(long millis, intnanos)：等待该线程结束的时间最长为millis毫秒加nanos纳秒。
+
+Runner_wait.java
+
+::
+
+   package com.a51work.cn;
+
+   /**
+    * 使用Runnable接口创建多线程
+    */
+
+   //Thread类提供了setPriority(int newPriority)方法可以设置线程优先级，通过getPriority()方法获得线程优先级。
+   public class Runner_wait {
+       static int value = 0;
+
+       public static void main(String[] args) throws InterruptedException{
+           System.out.println("主线程...开始...");
+           // 创建线程t1，参数是一个线程执行对象Runner
+           Thread t1 = new Thread(() -> {
+               System.out.println("ThreadA 开始....");
+               for (int i = 0; i <2 ; i++) {
+                   System.out.println("ThreadA 执行...。");
+                   value++;
+               }
+               System.out.println("ThreadA 结束...");
+           },"ThreadA");
+           //开始线程t1
+           t1.start();
+           //主线程被阻塞，等待t1线程结束
+           t1.join();
+           System.out.println("value = " + value);
+           System.out.println("主线程  结束.....");
+       }
+
+       }
+
+   /*
+   主线程...开始...
+   ThreadA 开始....
+   ThreadA 执行...。
+   ThreadA 执行...。
+   ThreadA 结束...
+   value = 2
+   主线程  结束.....
+   * */
+
+
+
+   /*
+   将t1.join()语句注释掉，输出结果如下：
+   //        t1.join();
+
+   主线程...开始...
+   value = 0
+   主线程  结束.....
+   ThreadA 开始....
+   ThreadA 执行...。
+   ThreadA 执行...。
+   ThreadA 结束...
+   * */

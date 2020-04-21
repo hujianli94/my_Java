@@ -1,0 +1,392 @@
+.. contents::
+   :depth: 3
+..
+
+内部类的分类
+============
+
+成员内部类
+----------
+
+实例内部类
+~~~~~~~~~~
+
+实例内部类与实例变量类似，可以声明为公有级别、私有级别、默认级别或保护级别，即4种访问级别
+都可以，而外部类只能声明为公有或默认级别。
+
+test_inclass.java
+
+::
+
+   package A_test001;
+
+   class Circle {
+    private Draw draw = null;
+    private double raidus = 0;
+    public static int count = 1;
+
+    public Circle(double raidus) {
+     // TODO 自动生成的构造函数存根
+     this.raidus = raidus;
+    }
+    
+    public Draw getDrawInstance() {
+     if (draw == null) {
+      draw = new Draw();
+     }
+     return draw;
+    }
+   // 内部类
+    class Draw {
+     public void drawShape() {
+      System.out.println("raidus is :" + raidus);
+      System.out.println("count is : " + count);
+     }
+    }
+   }
+
+   public class test_inclass {
+    public static void main(String[] args) {
+   //  第一种方式
+     Circle c = new Circle(12.0d);
+     Circle.Draw draw = c.new Draw();
+     draw.drawShape();
+     
+   //  第二种方式
+     draw = c.getDrawInstance();
+     draw.drawShape();
+    }
+   }
+
+代码示例2 Outer.java
+
+::
+
+   package A_test001;
+
+   public class Outer {
+   // 外部类成员变量
+    private int x =10;
+
+    private void print() {
+     System.out.println("调用外部方法......");
+    }
+    public void test() {
+     Inner inner = new Inner();
+     inner.display();
+    }
+    
+    class Inner {
+     // 内部成员变量
+     private int x = 5;
+     
+     //内部类方法
+     void display() {
+   //   访问外部类的成员变量
+      System.out.println("外部类成员变量 x = " + Outer.this.x);
+   //   访问内部类的成员变量
+      System.out.println("内部类的成员变量x = " + this.x);
+      System.out.println("内部类成员变量x = " + x);
+      
+   //   调用外部类的成员方法
+      Outer.this.print();
+      print();
+     }
+     
+    }
+   }
+
+Helloworld.java
+
+::
+
+   package A_test001;
+
+   public class Helloworld {
+    public static void main(String[] args) {
+     Outer outer = new Outer();
+     outer.test();
+     
+     System.out.println("------------直接访问内部类---------------");
+   //  直接访问内部类
+     Outer.Inner inter = outer.new Inner();
+     inter.display();
+    }
+
+   }
+
+   /*
+   外部类成员变量 x = 10
+   内部类的成员变量x = 5
+   内部类成员变量x = 5
+   调用外部方法......
+   调用外部方法......
+   ------------直接访问内部类---------------
+   外部类成员变量 x = 10
+   内部类的成员变量x = 5
+   内部类成员变量x = 5
+   调用外部方法......
+   调用外部方法......
+    * 
+    * 
+    */
+
+静态内部类
+~~~~~~~~~~
+
+静态内部类与静态变量类似，在声明的时候使用关键字static修饰，
+静态内部类只能访问外部类静态成员，不能使用this关键字访问外部类中的实例成员。
+这与一般的static方法相通，所以静态内部类使用的场景不多。但可以提供有别于包的命名空间。
+
+View.java
+
+::
+
+   package com.a51work.cn;
+
+   public class View {
+   //    外部成员变量
+       private int x =20;
+   //    外部静态变量
+       private static int staticX =10;
+
+   //    静态内部类
+       static class Button{
+           void onClick(){
+               System.out.println(staticX);
+   //            不能方法外部的非静态成员
+   //            System.out.println(x);        //编译报错
+
+           }
+   }
+
+       public static void main(String[] args) {
+   //        实例化成员内部类
+           View.Button h1 = new View.Button();
+           h1.onClick();
+       }
+
+   }
+
+   /*
+   10
+   * */
+
+局部内部类
+----------
+
+局部内部类就是在方法体或代码块中定义的内部类，局部内部类的作用域仅限于方法体或代码块中。
+局部内部类访问级别只能是默认的，不能是公有的、私有的和保护的访问级别，即不能使用public、
+private和protected修饰。局部内部类也不能是静态，即不能使用static修饰。局部内部类可以访问外部
+类所有成员
+
+Outer.java
+
+::
+
+   package com.a51work.cn;
+
+   public class Outer {
+       private int value = 10;
+
+       public void add(final int x, int y) {
+   //        局部变量
+           int z = 100;
+   //        定义局部内部类
+           class Inner {
+               //            内部类方法
+               void display() {
+                   int sum = x + y + z + value;
+                   System.out.println("sum = " + sum);
+               }
+           }
+
+           //声明匿名对象
+           new Inner().display();
+       }
+
+       public static void main(String[] args) {
+   //        实例化外部类
+           Outer outer = new Outer();
+           outer.add(20, 30);
+       }
+   }
+
+   /*
+   sum = 160
+   * */
+
+.. _静态内部类-1:
+
+静态内部类
+----------
+
+创建静态内部类
+~~~~~~~~~~~~~~
+
+NeiBuLei14.java
+
+::
+
+   package com;
+
+   public class NeiBuLei14 {
+       static class Nei{   //静态内部类
+           int i =1;       //内部类成员
+       }
+       int ii = 2; //外部类成员
+
+       public static void main(String[] args) {
+           System.out.println("创建一个静态内部类...");
+       }
+   }
+
+在外部类中访问静态内部类
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Wai.java
+
+::
+
+   package com;
+
+   public class Wai {
+       static class Nei{   //创建静态内部类
+           int i =5;       // 内部类成员
+       }
+
+       public void myVoid(){
+           //外部类成员
+           Nei h = new Nei();      //实例一个内部类对象
+           int ii = h.i;           //访问内部类成员
+           System.out.println("静态内部类的变量值为：" + ii);
+       }
+
+       public static void main(String[] args) {
+           Wai h1 = new Wai();
+           h1.myVoid();
+       }
+   }
+
+在外部类外访问静态内部类
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Wai2.java
+
+::
+
+   package com;
+
+   public class Wai2 {
+       static class Nei{
+           int i = 13;
+       }
+
+       public static void main(String[] args) {
+           Wai.Nei wn = new Wai.Nei();     //创建内部类对象
+           System.out.println("内部类中的变量i的值为：" + wn.i);
+       }
+   }
+
+匿名内部类
+----------
+
+匿名内部类是没有名字的内部类，本质上是没有名的局部内部类，具有局部内部类所有特征。
+例如：
+可以访问外部类所有成员。如果匿名内部类在方法中定义，它所访问的参数需要声明为final的。
+
+OnClickListener.java
+
+::
+
+   package com.a51work.cn;
+
+   public interface OnClickListener {
+       void onClick();
+   }
+    
+
+VieW2.java
+
+::
+
+   package com.a51work.cn;
+
+   public class VieW2 {
+       public void handler(OnClickListener listener) {
+           listener.onClick();
+       }
+   }
+
+Figure.java
+
+::
+
+   package com.a51work.cn;
+
+   public abstract class Figure {
+       public void onDraw(){};
+   }
+
+Person.java
+
+::
+
+
+   package com.a51work.cn;
+
+   public class Person {
+       String name;
+       int age;
+
+   //    构造函数
+       public Person(String name, int age) {
+           this.name = name;
+           this.age = age;
+       }
+   }
+
+HelloWorld.java
+
+::
+
+   package com.a51work.cn;
+
+   public class HelloWorld {
+       public static void main(String[] args) {
+   //        实例化VieW2类
+           VieW2 h1 = new VieW2();
+           // 方法参数是匿名内部类
+           h1.handler(new OnClickListener() {
+               @Override
+               public void onClick() {
+                   System.out.println("实现接口的匿名内部类.......");
+               }
+           });
+
+           Figure h2 = new Figure() {
+               @Override
+               public void onDraw() {
+                   System.out.println("继承类的匿名内部类....");
+               }
+           };
+
+           Person h3 = new Person("hujianli",19){
+               @Override
+               public String toString() {
+                   return "匿名内部类实现" +
+                           "Person[name=" + name + ",age=" + age + "]";
+               }
+           };
+           System.out.println(h3);
+
+
+
+       }
+   }
+
+
+   /*
+   实现接口的匿名内部类.......
+   匿名内部类实现Person[name=hujianli,age=19]
+   * */

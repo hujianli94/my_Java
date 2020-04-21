@@ -1,0 +1,635 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>15.3. 内部类的分类 &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="next" title="16. Lambda表达式" href="../16.Lambda表达式/index.html" />
+    <link rel="prev" title="15.2. 内部类的作用" href="02.内部类的作用.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统常用技术和案例</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java学习笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.Java基础/index.html">1. Java基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.流程控制/index.html">2. 流程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.字符串/index.html">3. 字符串</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.数组/index.html">4. 数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.类与对象/index.html">5. 类与对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.包装类/index.html">6. 包装类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.数字处理类/index.html">7. 数字处理类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08.接口、继承与多态/index.html">8. 接口、继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.包/index.html">9. 包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10.对象/index.html">10. 对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.继承与多态/index.html">11. 继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12.抽象类与接口/index.html">12. 抽象类与接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13.枚举类/index.html">13. 枚举类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14.Java常用类/index.html">14. Java常用类</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">15. 内部类</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01.内部类概述.html">15.1. 内部类概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02.内部类的作用.html">15.2. 内部类的作用</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">15.3. 内部类的分类</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">15.3.1. 成员内部类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">15.3.2. 局部内部类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">15.3.3. 静态内部类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">15.3.4. 匿名内部类</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../16.Lambda表达式/index.html">16. Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../17.异常处理/index.html">17. 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18.对象容器—集合/index.html">18. 对象容器—集合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../19.泛型/index.html">19. 泛型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20.文件管理与IO流/index.html">20. 文件管理与IO流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../21.多线程编程/index.html">21. 多线程编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../22.网络编程/index.html">22. 网络编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../23.Swing图形用户界面编程/index.html">23. Swing图形用户界面编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../24.再谈反射/index.html">24. 再谈反射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25.注解(Annotation)/index.html">25. 注解(Annotation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../26.数据库编程/index.html">26. 数据库编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.第三方安装包管理工具之Maven/index.html">27. 包管理工具之Maven</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">15. 内部类</a> &raquo;</li>
+        
+      <li>15.3. 内部类的分类</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Java/15.内部类/03.内部类的分类.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id12">内部类的分类</a><ul>
+<li><a class="reference internal" href="#id2" id="id13">成员内部类</a><ul>
+<li><a class="reference internal" href="#id3" id="id14">实例内部类</a></li>
+<li><a class="reference internal" href="#id4" id="id15">静态内部类</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5" id="id16">局部内部类</a></li>
+<li><a class="reference internal" href="#id6" id="id17">静态内部类</a><ul>
+<li><a class="reference internal" href="#id8" id="id18">创建静态内部类</a></li>
+<li><a class="reference internal" href="#id9" id="id19">在外部类中访问静态内部类</a></li>
+<li><a class="reference internal" href="#id10" id="id20">在外部类外访问静态内部类</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id11" id="id21">匿名内部类</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h1><a class="toc-backref" href="#id12">15.3. 内部类的分类</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id13">15.3.1. 成员内部类</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id14">实例内部类</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>实例内部类与实例变量类似，可以声明为公有级别、私有级别、默认级别或保护级别，即4种访问级别
+都可以，而外部类只能声明为公有或默认级别。</p>
+<p>test_inclass.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">A_test001</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Circle</span> <span class="p">{</span>
+ <span class="n">private</span> <span class="n">Draw</span> <span class="n">draw</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+ <span class="n">private</span> <span class="n">double</span> <span class="n">raidus</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="n">public</span> <span class="n">static</span> <span class="nb">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+ <span class="n">public</span> <span class="n">Circle</span><span class="p">(</span><span class="n">double</span> <span class="n">raidus</span><span class="p">)</span> <span class="p">{</span>
+  <span class="o">//</span> <span class="n">TODO</span> <span class="n">自动生成的构造函数存根</span>
+  <span class="n">this</span><span class="o">.</span><span class="n">raidus</span> <span class="o">=</span> <span class="n">raidus</span><span class="p">;</span>
+ <span class="p">}</span>
+
+ <span class="n">public</span> <span class="n">Draw</span> <span class="n">getDrawInstance</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">draw</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">draw</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Draw</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">draw</span><span class="p">;</span>
+ <span class="p">}</span>
+<span class="o">//</span> <span class="n">内部类</span>
+ <span class="k">class</span> <span class="nc">Draw</span> <span class="p">{</span>
+  <span class="n">public</span> <span class="n">void</span> <span class="n">drawShape</span><span class="p">()</span> <span class="p">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;raidus is :&quot;</span> <span class="o">+</span> <span class="n">raidus</span><span class="p">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;count is : &quot;</span> <span class="o">+</span> <span class="n">count</span><span class="p">);</span>
+  <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">test_inclass</span> <span class="p">{</span>
+ <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="o">//</span>  <span class="n">第一种方式</span>
+  <span class="n">Circle</span> <span class="n">c</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Circle</span><span class="p">(</span><span class="mf">12.0</span><span class="n">d</span><span class="p">);</span>
+  <span class="n">Circle</span><span class="o">.</span><span class="n">Draw</span> <span class="n">draw</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">new</span> <span class="n">Draw</span><span class="p">();</span>
+  <span class="n">draw</span><span class="o">.</span><span class="n">drawShape</span><span class="p">();</span>
+
+<span class="o">//</span>  <span class="n">第二种方式</span>
+  <span class="n">draw</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">getDrawInstance</span><span class="p">();</span>
+  <span class="n">draw</span><span class="o">.</span><span class="n">drawShape</span><span class="p">();</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>代码示例2 Outer.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">A_test001</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Outer</span> <span class="p">{</span>
+<span class="o">//</span> <span class="n">外部类成员变量</span>
+ <span class="n">private</span> <span class="nb">int</span> <span class="n">x</span> <span class="o">=</span><span class="mi">10</span><span class="p">;</span>
+
+ <span class="n">private</span> <span class="n">void</span> <span class="nb">print</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;调用外部方法......&quot;</span><span class="p">);</span>
+ <span class="p">}</span>
+ <span class="n">public</span> <span class="n">void</span> <span class="n">test</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Inner</span> <span class="n">inner</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Inner</span><span class="p">();</span>
+  <span class="n">inner</span><span class="o">.</span><span class="n">display</span><span class="p">();</span>
+ <span class="p">}</span>
+
+ <span class="k">class</span> <span class="nc">Inner</span> <span class="p">{</span>
+  <span class="o">//</span> <span class="n">内部成员变量</span>
+  <span class="n">private</span> <span class="nb">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+  <span class="o">//</span><span class="n">内部类方法</span>
+  <span class="n">void</span> <span class="n">display</span><span class="p">()</span> <span class="p">{</span>
+<span class="o">//</span>   <span class="n">访问外部类的成员变量</span>
+   <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;外部类成员变量 x = &quot;</span> <span class="o">+</span> <span class="n">Outer</span><span class="o">.</span><span class="n">this</span><span class="o">.</span><span class="n">x</span><span class="p">);</span>
+<span class="o">//</span>   <span class="n">访问内部类的成员变量</span>
+   <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;内部类的成员变量x = &quot;</span> <span class="o">+</span> <span class="n">this</span><span class="o">.</span><span class="n">x</span><span class="p">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;内部类成员变量x = &quot;</span> <span class="o">+</span> <span class="n">x</span><span class="p">);</span>
+
+<span class="o">//</span>   <span class="n">调用外部类的成员方法</span>
+   <span class="n">Outer</span><span class="o">.</span><span class="n">this</span><span class="o">.</span><span class="n">print</span><span class="p">();</span>
+   <span class="nb">print</span><span class="p">();</span>
+  <span class="p">}</span>
+
+ <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Helloworld.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">A_test001</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Helloworld</span> <span class="p">{</span>
+ <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Outer</span> <span class="n">outer</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Outer</span><span class="p">();</span>
+  <span class="n">outer</span><span class="o">.</span><span class="n">test</span><span class="p">();</span>
+
+  <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;------------直接访问内部类---------------&quot;</span><span class="p">);</span>
+<span class="o">//</span>  <span class="n">直接访问内部类</span>
+  <span class="n">Outer</span><span class="o">.</span><span class="n">Inner</span> <span class="n">inter</span> <span class="o">=</span> <span class="n">outer</span><span class="o">.</span><span class="n">new</span> <span class="n">Inner</span><span class="p">();</span>
+  <span class="n">inter</span><span class="o">.</span><span class="n">display</span><span class="p">();</span>
+ <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="o">/*</span>
+<span class="n">外部类成员变量</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">内部类的成员变量x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">内部类成员变量x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">调用外部方法</span><span class="o">......</span>
+<span class="n">调用外部方法</span><span class="o">......</span>
+<span class="o">------------</span><span class="n">直接访问内部类</span><span class="o">---------------</span>
+<span class="n">外部类成员变量</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">内部类的成员变量x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">内部类成员变量x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">调用外部方法</span><span class="o">......</span>
+<span class="n">调用外部方法</span><span class="o">......</span>
+ <span class="o">*</span>
+ <span class="o">*</span>
+ <span class="o">*/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id15">静态内部类</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>静态内部类与静态变量类似，在声明的时候使用关键字static修饰，
+静态内部类只能访问外部类静态成员，不能使用this关键字访问外部类中的实例成员。
+这与一般的static方法相通，所以静态内部类使用的场景不多。但可以提供有别于包的命名空间。</p>
+<p>View.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">View</span> <span class="p">{</span>
+<span class="o">//</span>    <span class="n">外部成员变量</span>
+    <span class="n">private</span> <span class="nb">int</span> <span class="n">x</span> <span class="o">=</span><span class="mi">20</span><span class="p">;</span>
+<span class="o">//</span>    <span class="n">外部静态变量</span>
+    <span class="n">private</span> <span class="n">static</span> <span class="nb">int</span> <span class="n">staticX</span> <span class="o">=</span><span class="mi">10</span><span class="p">;</span>
+
+<span class="o">//</span>    <span class="n">静态内部类</span>
+    <span class="n">static</span> <span class="k">class</span> <span class="nc">Button</span><span class="p">{</span>
+        <span class="n">void</span> <span class="n">onClick</span><span class="p">(){</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">staticX</span><span class="p">);</span>
+<span class="o">//</span>            <span class="n">不能方法外部的非静态成员</span>
+<span class="o">//</span>            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>        <span class="o">//</span><span class="n">编译报错</span>
+
+        <span class="p">}</span>
+<span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="o">//</span>        <span class="n">实例化成员内部类</span>
+        <span class="n">View</span><span class="o">.</span><span class="n">Button</span> <span class="n">h1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">View</span><span class="o">.</span><span class="n">Button</span><span class="p">();</span>
+        <span class="n">h1</span><span class="o">.</span><span class="n">onClick</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="o">/*</span>
+<span class="mi">10</span>
+<span class="o">*</span> <span class="o">*/</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id16">15.3.2. 局部内部类</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>局部内部类就是在方法体或代码块中定义的内部类，局部内部类的作用域仅限于方法体或代码块中。
+局部内部类访问级别只能是默认的，不能是公有的、私有的和保护的访问级别，即不能使用public、
+private和protected修饰。局部内部类也不能是静态，即不能使用static修饰。局部内部类可以访问外部
+类所有成员</p>
+<p>Outer.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Outer</span> <span class="p">{</span>
+    <span class="n">private</span> <span class="nb">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">add</span><span class="p">(</span><span class="n">final</span> <span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="nb">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+<span class="o">//</span>        <span class="n">局部变量</span>
+        <span class="nb">int</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="o">//</span>        <span class="n">定义局部内部类</span>
+        <span class="k">class</span> <span class="nc">Inner</span> <span class="p">{</span>
+            <span class="o">//</span>            <span class="n">内部类方法</span>
+            <span class="n">void</span> <span class="n">display</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nb">int</span> <span class="nb">sum</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span> <span class="o">+</span> <span class="n">value</span><span class="p">;</span>
+                <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;sum = &quot;</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="o">//</span><span class="n">声明匿名对象</span>
+        <span class="n">new</span> <span class="n">Inner</span><span class="p">()</span><span class="o">.</span><span class="n">display</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="o">//</span>        <span class="n">实例化外部类</span>
+        <span class="n">Outer</span> <span class="n">outer</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Outer</span><span class="p">();</span>
+        <span class="n">outer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">/*</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">160</span>
+<span class="o">*</span> <span class="o">*/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<span id="id7"></span><h2><a class="toc-backref" href="#id17">15.3.3. 静态内部类</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id18">创建静态内部类</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>NeiBuLei14.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">NeiBuLei14</span> <span class="p">{</span>
+    <span class="n">static</span> <span class="k">class</span> <span class="nc">Nei</span><span class="p">{</span>   <span class="o">//</span><span class="n">静态内部类</span>
+        <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span><span class="mi">1</span><span class="p">;</span>       <span class="o">//</span><span class="n">内部类成员</span>
+    <span class="p">}</span>
+    <span class="nb">int</span> <span class="n">ii</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="o">//</span><span class="n">外部类成员</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;创建一个静态内部类...&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id19">在外部类中访问静态内部类</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>Wai.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Wai</span> <span class="p">{</span>
+    <span class="n">static</span> <span class="k">class</span> <span class="nc">Nei</span><span class="p">{</span>   <span class="o">//</span><span class="n">创建静态内部类</span>
+        <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span><span class="mi">5</span><span class="p">;</span>       <span class="o">//</span> <span class="n">内部类成员</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">myVoid</span><span class="p">(){</span>
+        <span class="o">//</span><span class="n">外部类成员</span>
+        <span class="n">Nei</span> <span class="n">h</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Nei</span><span class="p">();</span>      <span class="o">//</span><span class="n">实例一个内部类对象</span>
+        <span class="nb">int</span> <span class="n">ii</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">i</span><span class="p">;</span>           <span class="o">//</span><span class="n">访问内部类成员</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;静态内部类的变量值为：&quot;</span> <span class="o">+</span> <span class="n">ii</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Wai</span> <span class="n">h1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Wai</span><span class="p">();</span>
+        <span class="n">h1</span><span class="o">.</span><span class="n">myVoid</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3><a class="toc-backref" href="#id20">在外部类外访问静态内部类</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>Wai2.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Wai2</span> <span class="p">{</span>
+    <span class="n">static</span> <span class="k">class</span> <span class="nc">Nei</span><span class="p">{</span>
+        <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Wai</span><span class="o">.</span><span class="n">Nei</span> <span class="n">wn</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Wai</span><span class="o">.</span><span class="n">Nei</span><span class="p">();</span>     <span class="o">//</span><span class="n">创建内部类对象</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;内部类中的变量i的值为：&quot;</span> <span class="o">+</span> <span class="n">wn</span><span class="o">.</span><span class="n">i</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2><a class="toc-backref" href="#id21">15.3.4. 匿名内部类</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>匿名内部类是没有名字的内部类，本质上是没有名的局部内部类，具有局部内部类所有特征。
+例如：
+可以访问外部类所有成员。如果匿名内部类在方法中定义，它所访问的参数需要声明为final的。</p>
+<p>OnClickListener.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="n">interface</span> <span class="n">OnClickListener</span> <span class="p">{</span>
+    <span class="n">void</span> <span class="n">onClick</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>VieW2.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">VieW2</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">handler</span><span class="p">(</span><span class="n">OnClickListener</span> <span class="n">listener</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">listener</span><span class="o">.</span><span class="n">onClick</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Figure.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="n">abstract</span> <span class="k">class</span> <span class="nc">Figure</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">onDraw</span><span class="p">(){};</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Person.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Person</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">age</span><span class="p">;</span>
+
+<span class="o">//</span>    <span class="n">构造函数</span>
+    <span class="n">public</span> <span class="n">Person</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="nb">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>HelloWorld.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="o">//</span>        <span class="n">实例化VieW2类</span>
+        <span class="n">VieW2</span> <span class="n">h1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">VieW2</span><span class="p">();</span>
+        <span class="o">//</span> <span class="n">方法参数是匿名内部类</span>
+        <span class="n">h1</span><span class="o">.</span><span class="n">handler</span><span class="p">(</span><span class="n">new</span> <span class="n">OnClickListener</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nd">@Override</span>
+            <span class="n">public</span> <span class="n">void</span> <span class="n">onClick</span><span class="p">()</span> <span class="p">{</span>
+                <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;实现接口的匿名内部类.......&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+
+        <span class="n">Figure</span> <span class="n">h2</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Figure</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nd">@Override</span>
+            <span class="n">public</span> <span class="n">void</span> <span class="n">onDraw</span><span class="p">()</span> <span class="p">{</span>
+                <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;继承类的匿名内部类....&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">};</span>
+
+        <span class="n">Person</span> <span class="n">h3</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;hujianli&quot;</span><span class="p">,</span><span class="mi">19</span><span class="p">){</span>
+            <span class="nd">@Override</span>
+            <span class="n">public</span> <span class="n">String</span> <span class="n">toString</span><span class="p">()</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="s2">&quot;匿名内部类实现&quot;</span> <span class="o">+</span>
+                        <span class="s2">&quot;Person[name=&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;,age=&quot;</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">};</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">h3</span><span class="p">);</span>
+
+
+
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="o">/*</span>
+<span class="n">实现接口的匿名内部类</span><span class="o">.......</span>
+<span class="n">匿名内部类实现Person</span><span class="p">[</span><span class="n">name</span><span class="o">=</span><span class="n">hujianli</span><span class="p">,</span><span class="n">age</span><span class="o">=</span><span class="mi">19</span><span class="p">]</span>
+<span class="o">*</span> <span class="o">*/</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../16.Lambda表达式/index.html" class="btn btn-neutral float-right" title="16. Lambda表达式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="02.内部类的作用.html" class="btn btn-neutral float-left" title="15.2. 内部类的作用" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

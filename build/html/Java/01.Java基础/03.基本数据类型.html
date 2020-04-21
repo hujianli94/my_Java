@@ -1,0 +1,605 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.3. 基本数据类型 &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="next" title="1.4. 变量与常量" href="04.变量与常量.html" />
+    <link rel="prev" title="1.2. 第一个Java程序" href="02.第一个Java程序.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java学习笔记</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">1. Java基础</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01.Java开篇介绍.html">1.1. Java开篇介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02.第一个Java程序.html">1.2. 第一个Java程序</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.3. 基本数据类型</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">1.3.1. 整数类型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">1.3.2. 浮点类型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">1.3.3. 数字表示方式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">1.3.4. 字符类型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">1.3.5. 布尔类型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">1.3.6. 数值类型相互转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">1.3.7. 引用数据类型</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="04.变量与常量.html">1.4. 变量与常量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05.运算符.html">1.5. 运算符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06.代码注释和编码规范.html">1.6. 代码注释和编码规范</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07.Java相关开发工具.html">1.7. Java相关开发工具</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../02.流程控制/index.html">2. 流程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.字符串/index.html">3. 字符串</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.数组/index.html">4. 数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.类与对象/index.html">5. 类与对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.包装类/index.html">6. 包装类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.数字处理类/index.html">7. 数字处理类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08.接口、继承与多态/index.html">8. 接口、继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.包/index.html">9. 包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10.对象/index.html">10. 对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.继承与多态/index.html">11. 继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12.抽象类与接口/index.html">12. 抽象类与接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13.枚举类/index.html">13. 枚举类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14.Java常用类/index.html">14. Java常用类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15.内部类/index.html">15. 内部类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16.Lambda表达式/index.html">16. Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../17.异常处理/index.html">17. 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18.对象容器—集合/index.html">18. 对象容器—集合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../19.泛型/index.html">19. 泛型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20.文件管理与IO流/index.html">20. 文件管理与IO流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../21.多线程编程/index.html">21. 多线程编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../22.网络编程/index.html">22. 网络编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../23.Swing图形用户界面编程/index.html">23. Swing图形用户界面编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../24.再谈反射/index.html">24. 再谈反射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25.注解(Annotation)/index.html">25. 注解(Annotation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../26.数据库编程/index.html">26. 数据库编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.第三方安装包管理工具之Maven/index.html">27. 包管理工具之Maven</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">1. Java基础</a> &raquo;</li>
+        
+      <li>1.3. 基本数据类型</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Java/01.Java基础/03.基本数据类型.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id9">基本数据类型</a><ul>
+<li><a class="reference internal" href="#id2" id="id10">整数类型</a></li>
+<li><a class="reference internal" href="#id3" id="id11">浮点类型</a></li>
+<li><a class="reference internal" href="#id4" id="id12">数字表示方式</a></li>
+<li><a class="reference internal" href="#id5" id="id13">字符类型</a></li>
+<li><a class="reference internal" href="#id6" id="id14">布尔类型</a></li>
+<li><a class="reference internal" href="#id7" id="id15">数值类型相互转换</a></li>
+<li><a class="reference internal" href="#id8" id="id16">引用数据类型</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h1><a class="toc-backref" href="#id9">1.3. 基本数据类型</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>基本数据类型 基本类型表示简单的数据，基本类型分为4大类，共8种数据类型。</p>
+<ul>
+<li><p class="first">整数类型：byte、short、int和long</p>
+</li>
+<li><p class="first">浮点类型：float和double</p>
+</li>
+<li><p class="first">字符类型：char</p>
+</li>
+<li><p class="first">布尔类型：boolean</p>
+<p>其中整数类型、浮点类型和字符类型都属于数值类型，它们之间可以互相转换。</p>
+<p><img alt="image0" src="../../_images/java_base_datatype.png" /></p>
+</li>
+</ul>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id10">1.3.1. 整数类型</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Java中整数类型包括：byte、short、int和long
+，它们之间的区别仅仅是宽度和范围的不同。Java中整数都是有符号，与C不同没有无符号的整数类型。</p>
+<p>整数类型：</p>
+<p><img alt="image1" src="../../_images/java_int01.png" /></p>
+<ul class="simple">
+<li>整数变量的定义</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">x</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> <span class="n">y</span><span class="o">=-</span><span class="mi">462</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>定义以上4种类型的变量时，要注意变量的取值范围，超出相应范围就会出错</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>对于long型值，若赋给的值大于int型的最大值或者小于int型的最小值，则需要在数字后加L或l，表示该数值为长整数，如：long num=21456733499L
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span>package Number;
+
+public class Number {
+//  创建类
+    public static void main(String[] args) {
+//      主方法
+//      声明byte并赋值类型
+        byte mybyte=124;
+//      声明short类型并赋值
+        short myshort=32564;
+//      声明int型并赋值
+        int myint=45784612;
+//      声明long并赋值
+        long mylong=46789451;
+//      将上面的所有变量相加后输出结构
+        long result= mybyte + myshort + myint + mylong;
+        System.out.println(&quot;结果为： &quot; + result);
+
+    }
+}
+
+//输出结果为：
+结果为： 92606751
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id11">1.3.2. 浮点类型</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span>浮点类型表示有小数部分的数字，Java语音中浮点类型分为单精度浮点类型（float）和双精度浮点，类型（double），双精度浮点数所使用的内存空间比浮点数多，可表示的数值范围与精确度也比较大.它们具有不同的取值范围。
+</pre></div>
+</div>
+<p><img alt="image2" src="../../_images/java_float01.png" /></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>默认情况下，小数都被看作double型，若使用float型小数，则需要在小数后面添加F或f
+
+可以使用后缀d或D来明确表明这是一个double类型数据，不加d不会出错，但声明float型变量时如果
+不加f，系统会认为变量时double类型而出错
+</pre></div>
+</div>
+<ul class="simple">
+<li>定义浮点类型变量，实例代码如下：</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">f1</span><span class="o">=</span><span class="mf">13.23</span><span class="n">f</span><span class="p">;</span>
+<span class="n">double</span> <span class="n">d1</span><span class="o">=</span><span class="mf">4562.12</span><span class="n">d</span><span class="p">;</span>
+<span class="n">double</span> <span class="n">d2</span><span class="o">=</span><span class="mf">45678.1564</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id12">1.3.3. 数字表示方式</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>进制数字表示
+如果为一个整数变量赋值，使用二进制数、八进制数和十六进制数表示，它们的表示方式分别如下：</p>
+<ul class="simple">
+<li>二进制数：以 0b
+或0B为前缀，注意0是阿拉伯数字，不要误认为是英文字母o。</li>
+<li>八进制数：以0为前缀，注意0是阿拉伯数字。</li>
+<li>十六进制数：以 0x 或0X为前缀，注意0是阿拉伯数字。</li>
+</ul>
+<p>例如下面几条语句都是表示int整数28</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">decimalInt</span> <span class="o">=</span> <span class="mi">28</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">binaryInt1</span> <span class="o">=</span> <span class="mb">0b11100</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">binaryInt2</span> <span class="o">=</span> <span class="mb">0B11100</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">octalInt</span> <span class="o">=</span> <span class="mi">034</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">hexadecimalInt1</span> <span class="o">=</span> <span class="mh">0x1C</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">hexadecimalInt2</span> <span class="o">=</span> <span class="mh">0X1C</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id13">1.3.4. 字符类型</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>1.char型</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span>字符类型（char）用于存储单个字符，占用16位（两个字节）的内存空间。
+在定义字符型变量时，要以单引号表示，如‘s’表示一个字符，而&quot;s&quot;则表示一个字符串，
+虽然只有一个字符，但由于使用双引号，它仍然表示字符串，而不是字符。
+</pre></div>
+</div>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Number</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Gess</span> <span class="p">{</span>
+<span class="o">//</span>  <span class="n">定义方法</span>
+   <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="o">//</span>      <span class="n">主方法</span>
+<span class="o">//</span>      <span class="n">定义char型变量</span>
+   <span class="n">char</span> <span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="n">word2</span><span class="o">=</span><span class="s1">&#39;@&#39;</span><span class="p">;</span>
+<span class="o">//</span>  <span class="n">定义int型变量</span>
+   <span class="nb">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">23045</span><span class="p">,</span><span class="n">p2</span> <span class="o">=</span> <span class="mi">45213</span><span class="p">;</span>
+   <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;d 在unicode表中的顺序位置是： &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="n">word</span><span class="p">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;@ 在Unicode表中的顺序位置是: &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="n">word2</span><span class="p">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;unicode表中的第23045位是： &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="n">char</span><span class="p">)</span><span class="n">p</span><span class="p">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;unicode表中的第45231位是: &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="n">char</span><span class="p">)</span><span class="n">p2</span><span class="p">);</span>
+
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>2.转义字符</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span>转义字符是一种特殊的字符变量，它以反斜杠“\”开头，后跟一个或多个字符，
+转义字符具有特定的含义，不同于字符原有的意义，故称“转义”。
+</pre></div>
+</div>
+<p><img alt="image3" src="../../_images/java_zhuanyifu01.png" /></p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>package Number;
+
+public class Gess {
+//  定义方法
+    public static void main(String[] args) {
+//      主方法
+    //将转义字符‘\\’赋值给变量c1
+    char c1=&#39;\\&#39;;
+    //将转义字符‘\u2605’赋值给变量char1
+    char char1=&#39;\u2605&#39;;
+    System.out.println(c1);
+    System.out.println(char1);
+
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id14">1.3.5. 布尔类型</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>布尔类型又称为逻辑类型，通过关键字boolean来定义布尔类型变量，只有true和false两个值，
+
+分别代表逻辑中的“真”和“假”。布尔值不能与整数类型进行转换，布尔类型通常被用在流程
+
+提示　在C语言中布尔类型是数值类型，它有两个取值：1和0。而在Java中的布尔类型取值不能用1和0替代，也不属于数值类型，不能与int等数值类型之间进行数学计算或类型转化。
+
+控制中作为判断条件
+boolean b;
+boolean b1,b2;
+//定义布尔型变量b，并赋值给初值true
+boolean b = true;
+</pre></div>
+</div>
+<p>如果试图给它们赋值true和false之外的常量，如下所示</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">boolean</span> <span class="n">isMan</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">boolean</span> <span class="n">isWoman</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>则发生类型不匹配编译错误。</p>
+</div>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id15">1.3.6. 数值类型相互转换</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>基本数据类型中数值类型之间可以互相转换，布尔类型不能与它们之间进行转换。但有些不兼容类型之间，如String（字符串）转换为int整数等，可以借助于一些类的方法实现。</p>
+<p>数值类型包括了byte、short、char、int、long、float和double，这些数值类型之间的转换有两个方向：</p>
+<ul class="simple">
+<li>自动类型转换和强制类型转换。</li>
+</ul>
+<p><strong>自动类型转换</strong></p>
+<p>自动类型转换就是需要类型之间转换是自动的，不需要采取其他手段，总的原则是小范围数据类型可以自动转换为大范围数据类型，列类型转换顺序如下图所示，从左到右是自动。</p>
+<p>数据类型转换顺序</p>
+<p><img alt="image4" src="../../_images/Java_shuzhizhuanhuan01.png" /></p>
+<p>注意　char类型比较特殊，char自动转换为int、long、float和double，但byte和short不能自动转换为char，而且char也不能自动转换为byte或short。</p>
+<p>自动类型转换不仅发生在赋值过程中，在进行数学计算时也会发生自动类型转换，在运算中往往是先将数据类型转换为同一类型，然后再进行计算。</p>
+<p>从低级类型向高级类型的转换</p>
+<p>顺序为： byte&lt;short&lt;int&lt;long&lt;float&lt;double</p>
+<p>技巧：
+要理解类型转换，这么想象，大脑前面是一片内存，源和目标分别是两个大小不同的内存块（由变量和数据类型决定），将源数据赋值给目标内存的过程，就是用目标内存块尽可能多的套取源内存中的数据。</p>
+<p>计算过程中自动类型转换规则：</p>
+<p><img alt="image5" src="../../_images/java_zhuanhuan02.png" /></p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">company</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">write</span> <span class="n">your</span> <span class="n">code</span> <span class="n">here</span>
+        <span class="o">//</span> <span class="n">声明整数变量</span>
+        <span class="n">byte</span> <span class="n">byteNum</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+        <span class="n">short</span> <span class="n">shortNum</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+        <span class="nb">int</span> <span class="n">intNum</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+        <span class="n">long</span> <span class="n">longNum</span> <span class="o">=</span> <span class="mi">16</span><span class="n">L</span><span class="p">;</span>
+        <span class="o">//</span> <span class="n">byte类型转换为int类型</span>
+        <span class="n">intNum</span> <span class="o">=</span> <span class="n">byteNum</span><span class="p">;</span>
+        <span class="o">//</span> <span class="n">声明char变量</span>
+        <span class="n">char</span> <span class="n">charNum</span> <span class="o">=</span> <span class="s1">&#39;花&#39;</span><span class="p">;</span>
+        <span class="o">//</span> <span class="n">char类型转换为int类型</span>
+        <span class="n">intNum</span> <span class="o">=</span> <span class="n">charNum</span><span class="p">;</span>
+        <span class="o">//</span> <span class="n">声明浮点变量</span>
+        <span class="o">//</span> <span class="n">long类型转换为float类型</span>
+        <span class="nb">float</span> <span class="n">floatNum</span> <span class="o">=</span> <span class="n">longNum</span><span class="p">;</span>
+        <span class="o">//</span> <span class="n">float类型转换为double类型</span>
+        <span class="n">double</span> <span class="n">doubleNum</span> <span class="o">=</span> <span class="n">floatNum</span><span class="p">;</span>
+        <span class="o">//</span><span class="n">表达式计算后类型是double</span>
+        <span class="n">double</span> <span class="n">result</span> <span class="o">=</span> <span class="n">floatNum</span> <span class="o">*</span> <span class="n">intNum</span> <span class="o">+</span> <span class="n">doubleNum</span> <span class="o">/</span> <span class="n">shortNum</span><span class="p">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">intNum</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>强制类型转换</strong></p>
+<p>在数值类型转换过程中，除了需要自动类型转换外，有时还需要强制类型转换，强制类型转换是在变量或常量之前加上“(目标类型)”实现，示例代码如下：</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Number</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">test1</span> <span class="p">{</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">int</span> <span class="n">a</span><span class="o">=</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="mf">45.23</span><span class="p">;</span>
+        <span class="n">long</span> <span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="n">long</span><span class="p">)</span><span class="mf">456.6</span><span class="n">F</span><span class="p">;</span>
+        <span class="nb">int</span> <span class="n">b</span><span class="o">=</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="s1">&#39;d&#39;</span><span class="p">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>  <span class="o">//</span><span class="mi">45</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>  <span class="o">//</span><span class="mi">456</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>  <span class="o">//</span><span class="mi">100</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="o">//</span><span class="n">输出结果</span>
+<span class="mi">45</span>
+<span class="mi">456</span>
+<span class="mi">100</span>
+</pre></div>
+</div>
+<p>有时为了提高精度需要种转换。示例代码如下:</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">company</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span><span class="n">int型变量</span>
+        <span class="nb">int</span> <span class="n">i2</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+        <span class="nb">float</span> <span class="n">c1</span> <span class="o">=</span> <span class="n">i2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">c1</span><span class="p">);</span>
+        <span class="o">//</span><span class="n">把int变量i强制转换为float</span>
+        <span class="nb">float</span> <span class="n">c2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="n">i2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">c2</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">/*</span>
+<span class="mf">6.0</span>
+<span class="mf">6.6666665</span>
+<span class="o">*/</span>
+</pre></div>
+</div>
+<p>再看一个强制类型转换与精度丢失的示例:</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">hujianli</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">long</span> <span class="n">yourNumber</span> <span class="o">=</span> <span class="mi">6666666666</span><span class="n">L</span><span class="p">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">yourNumber</span><span class="p">);</span>
+        <span class="nb">int</span> <span class="n">myNumber</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="n">yourNumber</span><span class="p">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">myNumber</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">/*</span>
+<span class="mi">6666666666</span>
+<span class="o">-</span><span class="mi">1923267926</span><span class="o">*/</span>
+</pre></div>
+</div>
+<p>经过强制类型转换后，原本的6666666666L变成了负数。当大宽度数值转换
+为小宽度数值时，大宽度数值的高位被截掉，这样就会导致数据精度丢失。除非大宽度数值的高位没有数据，就是这个数比较小的情况，例如将6666666666L换为6L就不会丢失精度。</p>
+</div>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="#id16">1.3.7. 引用数据类型</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>在Java中除了8种基本数据类型外，其他数据类型全部都是引用（reference）数据类型，引用数据类型
+用了表示复杂数据类型，如下图所示，包含：类、接口和数组声明的数据类型。</p>
+<p><img alt="image6" src="../../_images/java_yingyong01.png" /></p>
+<p>引用数据类型
+提示　Java中的引用数据类型，相当于C等语言中指针（pointer）类型，引用事实上就是指针，是指向一个对象的内存地址。引用数据类型变量中保持的是指向对象的内存地址。很多资料上提到Java不支持指针，事实上是不支持指针计算，而指针类型还是保留了下来，只是在Java中称为引用数据类型。</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">zhijiekeji</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+        <span class="nb">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+
+        <span class="n">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="n">str1</span><span class="p">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;y value is :&quot;</span> <span class="o">+</span> <span class="n">y</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;str2 value is :&quot;</span> <span class="o">+</span> <span class="n">str2</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+
+<span class="o">/*</span>
+<span class="o">*</span>
+<span class="n">y</span> <span class="n">value</span> <span class="ow">is</span> <span class="p">:</span><span class="mi">7</span>
+<span class="n">str2</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">Hello</span>
+<span class="o">*</span> <span class="o">*/</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="04.变量与常量.html" class="btn btn-neutral float-right" title="1.4. 变量与常量" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="02.第一个Java程序.html" class="btn btn-neutral float-left" title="1.2. 第一个Java程序" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

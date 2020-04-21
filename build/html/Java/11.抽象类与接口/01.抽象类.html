@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.1. 抽象类 &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="next" title="11.2. 使用接口" href="02.使用接口.html" />
+    <link rel="prev" title="11. 抽象类与接口" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java学习笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.Java基础/index.html">1. Java基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.流程控制/index.html">2. 流程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.字符串/index.html">3. 字符串</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.数组/index.html">4. 数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.类与对象/index.html">5. 类与对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.数字处理类/index.html">6. 数字处理类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.接口、继承与多态/index.html">7. 接口、继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08.包/index.html">8. 包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.对象/index.html">9. 对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10.继承与多态/index.html">10. 继承与多态</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">11. 抽象类与接口</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">11.1. 抽象类</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">11.1.1. 抽象类概念</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">11.1.2. 抽象类声明和实现</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#abstract">11.1.3. abstract与继承的关系</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="02.使用接口.html">11.2. 使用接口</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03.接口中的方法和类中方法的区别.html">11.3. 接口中的方法和类中方法的区别</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.接口与多继承.html">11.4. 接口与多继承</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05.接口继承.html">11.5. 接口继承</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06.Java-8新特性默认方法和静态方法.html">11.6. Java 8新特性默认方法和静态方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07.抽象类与接口区别.html">11.7. 抽象类与接口区别</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08.什么是反射机制.html">11.8. 什么是反射机制</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../12.枚举类/index.html">12. 枚举类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13.Java常用类/index.html">13. Java常用类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14.内部类/index.html">14. 内部类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15.Lambda表达式/index.html">15. Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16.异常处理/index.html">16. 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../17.对象容器—集合/index.html">17. 对象容器—集合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18.泛型/index.html">18. 泛型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../19.文件管理与IO流/index.html">19. 文件管理与IO流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20.多线程编程/index.html">20. 多线程编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../21.网络编程/index.html">21. 网络编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../22.Swing图形用户界面编程/index.html">22. Swing图形用户界面编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../23.再谈反射/index.html">23. 再谈反射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">11. 抽象类与接口</a> &raquo;</li>
+        
+      <li>11.1. 抽象类</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Java/11.抽象类与接口/01.抽象类.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id4">抽象类</a><ul>
+<li><a class="reference internal" href="#id2" id="id5">抽象类概念</a></li>
+<li><a class="reference internal" href="#id3" id="id6">抽象类声明和实现</a></li>
+<li><a class="reference internal" href="#abstract" id="id7">abstract与继承的关系</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h1><a class="toc-backref" href="#id4">11.1. 抽象类</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id5">11.1.1. 抽象类概念</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>作为父类Figure（几何图形）并不知道在实际使用时有多少个子类，目前有椭圆形和三角形，那么不
+同的用户需求可能会有矩形或圆形等其他几何图形，而onDraw方法只有确定是哪一个子类后才能具体
+实现。Figure中的onDraw方法不能具体实现，所以只能是一个抽象方法。</p>
+<p>Figure是抽象类，Ellipse和Triangle是Figure子类实现Figure的抽象方法onDraw。</p>
+<p>在Java中抽象类和抽象方法的修饰符是<code class="docutils literal"><span class="pre">abstract</span></code></p>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id6">11.1.2. 抽象类声明和实现</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>FirGure.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">ChouxiangClass01</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="n">abstract</span> <span class="k">class</span> <span class="nc">FirGure</span> <span class="p">{</span>
+<span class="o">//</span> <span class="n">绘制几何图形方法</span>
+ <span class="n">public</span> <span class="n">abstract</span> <span class="n">void</span> <span class="n">onDraw</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ellipse.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">ChouxiangClass01</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Ellipse</span> <span class="n">extends</span> <span class="n">FirGure</span> <span class="p">{</span>
+
+<span class="o">//</span> <span class="n">绘制几何图形方法</span>
+ <span class="nd">@Override</span>
+ <span class="n">public</span> <span class="n">void</span> <span class="n">onDraw</span><span class="p">()</span> <span class="p">{</span>
+  <span class="o">//</span> <span class="n">TODO</span> <span class="n">自动生成的方法存根</span>
+
+  <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;绘制椭圆形！&quot;</span><span class="p">);</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Triangle.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">ChouxiangClass01</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Triangle</span> <span class="n">extends</span> <span class="n">FirGure</span> <span class="p">{</span>
+<span class="o">//</span> <span class="n">绘制三角形</span>
+ <span class="nd">@Override</span>
+ <span class="n">public</span> <span class="n">void</span> <span class="n">onDraw</span><span class="p">()</span> <span class="p">{</span>
+  <span class="o">//</span> <span class="n">TODO</span> <span class="n">自动生成的方法存根</span>
+
+  <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;绘制三角形！&quot;</span><span class="p">);</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>调用入口</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>package ChouxiangClass01;
+
+public class HelloWorld {
+ public static void main(String[] args) {
+  // f1变量是父类类型，指向子类实例，发生多态
+  FirGure f1 = new Triangle();
+  f1.onDraw();
+
+  // f2变量是父类类型，指向子类实例，发生多态
+  FirGure f2 = new Ellipse();
+  f2.onDraw();
+ }
+
+}
+
+
+/*
+绘制三角形！
+绘制椭圆形！
+*/
+</pre></div>
+</div>
+<p>总结：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>设计抽象方法目的就是让子类来实现的，否则抽象方法就没有任何意义
+抽象类不能被实例化,只有具体类才能被实例化。
+</pre></div>
+</div>
+</div>
+<div class="section" id="abstract">
+<h2><a class="toc-backref" href="#id7">11.1.3. abstract与继承的关系</a><a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<p>bike.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a123</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="n">一个抽象的bike类</span>
+<span class="n">abstract</span> <span class="k">class</span> <span class="nc">bike</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">String</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;抽象类的成员变量&quot;</span><span class="p">;</span>
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">getName</span><span class="p">()</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">返回成员变量name</span>
+        <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="o">//</span> <span class="n">抽象方法</span>
+    <span class="n">abstract</span> <span class="n">public</span> <span class="n">String</span> <span class="n">getMes</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Racing_car.java</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a123.cn;
+
+/**
+ * Racing car 赛车类，继承bike抽象类，实现bike抽象类中的方法
+ * 可以在bike抽象类中先写好要实现的功能，写个抽象的蓝图
+ */
+public class Racing_car extends bike {
+    @Override
+    public String getMes() {
+        return getName();
+    }
+
+    public static void main(String[] args) {
+        Racing_car h1 = new Racing_car();
+        System.out.println(&quot;bike抽象类中的抽象方法信息是：&quot; + h1.getMes());
+    }
+}
+
+/*
+bike抽象类中的抽象方法信息是：抽象类的成员变量*/
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="02.使用接口.html" class="btn btn-neutral float-right" title="11.2. 使用接口" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="11. 抽象类与接口" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

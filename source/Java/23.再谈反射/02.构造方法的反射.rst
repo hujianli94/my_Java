@@ -1,0 +1,108 @@
+.. contents::
+   :depth: 3
+..
+
+构造方法的反射
+==============
+
+Test.java
+
+::
+
+   package com.a57work;
+
+   import java.lang.reflect.Constructor;
+   import java.lang.reflect.Modifier;
+
+   public class Test {
+       public static void main(String[] args) {
+           // 调用构造方法1
+   //        new Person();
+
+           // 调用构造方法2
+   //        new Person("hujianli",20, 113);
+
+   //        //  调用构造方法1
+   //        printConstructor(Person.class);
+   //
+   //        //调用构造方法2
+   //        printTwoInit(Person.class);
+
+   //        // 访问所有的构造方法
+   //        printAllMethod(Person.class);
+
+           // 访问所有的修饰符
+           printModifier(Person.class);
+
+       }
+
+       // 访问第一个构造方法
+       static void printConstructor(Class cls) {
+           try {
+               Constructor c1 = cls.getConstructor(null);
+               System.out.println(c1);
+               c1.newInstance();
+
+           } catch (Exception e) {
+               e.printStackTrace();
+           }
+       }
+
+       // 访问第二个构造方法
+       static void printTwoInit(Class cls) {
+           try {
+               Constructor c2 = cls.getConstructor(String.class, int.class, int.class);
+               System.out.println(c2);
+               c2.newInstance("hujianli", 20, 113);
+           } catch (Exception e) {
+               e.printStackTrace();
+           }
+       }
+
+       // 访问所有的构造方法
+       static void printAllMethod(Class cls) {
+           Constructor[] cs = cls.getDeclaredConstructors();
+           for (Constructor c : cs) {
+               System.out.println(c);
+           }
+       }
+
+       // 访问修饰符
+       static void printModifier(Class cls) {
+           Constructor[] cs = cls.getDeclaredConstructors();
+           for (Constructor c : cs) {
+               System.out.print("修饰符：");
+               System.out.println(Modifier.toString(c.getModifiers()));
+               System.out.print("构造名称：");
+               System.out.println(c.getName());
+
+               System.out.print("参数:");
+               Class[] array2 = c.getParameterTypes();
+               for (Class c1 : array2) {
+                   System.out.print(c1.getName() + " ");
+
+               }
+           }
+       }
+
+
+       class Person {
+           private String name;
+           private int age;
+           private int pid;
+
+           // 构造方法1
+           private Person() {
+               System.out.println("Person1!.....");
+
+           }
+
+           //构造方法2
+           public Person(String name, int age, int pid) {
+               this.name = name;
+               this.age = age;
+               this.pid = pid;
+               System.out.println("Person2!.....");
+           }
+       }
+   }

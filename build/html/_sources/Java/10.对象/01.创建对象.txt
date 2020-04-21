@@ -1,0 +1,12 @@
+.. contents::
+   :depth: 3
+..
+
+创建对象
+========
+
+声明 - 实例化
+
+::
+
+   String name = new String("Hello World");
