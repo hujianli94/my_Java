@@ -8,7 +8,7 @@
 DecimalFormat类
 ---------------
 
-::
+.. code:: java
 
    import java.text.DecimalFormat;
    public class DecimalFormatSimpLE {
@@ -62,7 +62,7 @@ DecimalFormat类中的分组方法
 
    使用setGroupingSize() 与setGroupingUsed() 方法设置数字格式
 
-::
+.. code:: java
 
    import java.text.DecimalFormat;
 
