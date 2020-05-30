@@ -274,7 +274,7 @@ radix)：将字符串s转换有符号的整数，radix是指定基数，基数�
 radix是基数可以指定进制。注意这种指定基数的方法在浮点数包装类（Double和Float）
 中没有的。</p>
 <p>代码示例</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">aom</span><span class="p">;</span>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">aom</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Integer_class</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -327,7 +327,7 @@ radix是基数可以指定进制。注意这种指定基数的方法在浮点数
 </pre></div>
 </div>
 <p>这些数值包装类（Byte、Short、Integer、Long、Float和Double）都有一些相同特点。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>1. 构造方法类似
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>1. 构造方法类似
    每一个数值包装类都有两个构造方法，以Integer为例，Integer构造方法如下：
    Integer(int value)：通过指定一个数值构造Integer对象。
    Integer(String s)：通过指定一个字符串s构造对象，s是十进制字符串表示的数值。
@@ -371,7 +371,7 @@ radix是基数可以指定进制。注意这种指定基数的方法在浮点数
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">返回包含在由str指定的字符串中的数字的等价整数值</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Integer_class01</span> <span class="p">{</span>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Integer_class01</span> <span class="p">{</span>
 <span class="o">//</span>  <span class="n">主方法</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
 <span class="o">//</span>      <span class="n">定义String字符串数组</span>
@@ -396,7 +396,7 @@ radix是基数可以指定进制。注意这种指定基数的方法在浮点数
 </div>
 <div class="section" id="id3">
 <h2><a class="toc-backref" href="#id8">13.2.3. Integer类的进制转换</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span>//创建Charca类
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>//创建Charca类
 public class Charac {
     public static void main(String[] args) {
         //主方法
@@ -424,12 +424,10 @@ public class Charac {
 456的二进制表示为：111001000
 456的十六进制表示为：1c8
 456的八进制表示为：710
-
-
  */
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span>//创建类GetCon
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>//创建类GetCon
 public class Changliang {
 //  主方法
     public static void main(String[] args) {
@@ -455,7 +453,7 @@ int类型的二进制位数是：32
 <div class="section" id="character">
 <h2><a class="toc-backref" href="#id9">13.2.4. Character类</a><a class="headerlink" href="#character" title="Permalink to this headline">¶</a></h2>
 <p>Character类是char类型的包装类。Character类常用方法如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>  Character(char value)：构造方法，通过char值创建一个新的Character对象。
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>  Character(char value)：构造方法，通过char值创建一个新的Character对象。
   char charValue()：返回此Character对象的值。
   int compareTo(Character anotherCharacter)：方法返回值是int，
 如果返回值是0，则相等；
@@ -464,7 +462,7 @@ int类型的二进制位数是：32
 </pre></div>
 </div>
 <p>代码示例1</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Characyer01</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -493,7 +491,7 @@ int类型的二进制位数是：32
 </pre></div>
 </div>
 <p>代码示例2</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">som</span><span class="p">;</span>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">som</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Deom</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -531,7 +529,7 @@ s)：将字符串转换为对应的boolean类。s不能为null，s如果是忽
 </ol>
 <p>代码示例</p>
 <p>HelloWorld.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work6</span><span class="p">;</span>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work6</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
 
@@ -575,7 +573,7 @@ s)：将字符串转换为对应的boolean类。s不能为null，s如果是忽
 </div>
 <p>代码示例2</p>
 <p>Test.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51work.cn.Boolean;
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.a51work.cn.Boolean;
 
 public class Test {
     public static void main(String[] args) {
@@ -605,7 +603,7 @@ b1(true)和b2（false)是否相等：false
 <div class="section" id="id4">
 <h2><a class="toc-backref" href="#id11">13.2.6. 自动装箱/拆箱</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>代码示例</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="o">.</span><span class="n">Automatic_packing</span><span class="p">;</span>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="o">.</span><span class="n">Automatic_packing</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>

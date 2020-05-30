@@ -18,6 +18,8 @@ Java类成员的访问控制
 
 |image0|
 
+|image1|
+
 私有级别
 --------
 
@@ -219,3 +221,4 @@ HelloWorld.java
    4.私有访问级别只能在本类中通过调用方法访问，不能继承访问。
 
 .. |image0| image:: ../../_static\fangwenkongzhi01.png
+.. |image1| image:: ../../_static\java_xiushifu01.png

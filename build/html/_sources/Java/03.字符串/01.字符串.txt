@@ -15,7 +15,7 @@ Java 8在线API文档
 -----------------
 
 提示　很多读者希望能够有离线的中文Java API文档，但Java官方只提供了Java
-6的中文API文档，该文件下载地址是http://download.oracle.com/technetwork/java/javase/6/docs/zh/api.zip，下载完成后解压api.zip文件，找到其中的index.html文件，双击就会在浏览器中打开API文档了。
+6的中文API文档，该文件下载地址是\ ``http://download.oracle.com/technetwork/java/javase/6/docs/zh/api.zip``\ ，下载完成后解压api.zip文件，找到其中的index.html文件，双击就会在浏览器中打开API文档了。
 
 |image0|
 
@@ -537,6 +537,165 @@ Java字符串类分为：
 
 然后分别介绍了这些字符串类的用法。
 
+日期和时间字符串格式化
+----------------------
+
+**1.常用的日期格式化转换符**
+
+|image3|
+
+.. code:: java
+
+   import java.util.*;
+
+   public class Eval { // 新建类
+       public static void main(String[] args) { // 主方法
+           Date date = new Date(); // 创建Date对象date
+           String year = String.format("%tY", date); // 将date进行格式化
+           String month = String.format("%tB", date);
+           String day = String.format("%td", date);
+           System.out.println("今年是：" + year + "年"); // 输出信息
+           System.out.println("现在是：" + month);
+           System.out.println("今天是：" + day + "号");
+       }
+   }
+
+**2.常用的时间格式化转换符**
+
+|image4|
+
+.. code:: java
+
+   import java.util.*;
+
+   public class GetDate { // 新建类
+       public static void main(String[] args) { // 主方法
+           Date date = new Date(); // 创建Date对象date
+           String hour = String.format("%tH", date); // 将date进行格式化
+           String minute = String.format("%tM", date);
+           String second = String.format("%tS", date);
+            // 输出的信息
+           System.out.println("现在是：" + hour + "时" + minute + "分"
+                   + second + "秒");
+       }
+   }
+
+**3.格式化常见的日期时间组合**
+
+|image5|
+
+.. code:: java
+
+   import java.util.*;
+
+   public class DateAndTime { // 创建类
+       public static void main(String[] args) { // 主方法
+           Date date = new Date(); // 创建Date对象date
+           String time = String.format("%tc", date); // 将date格式化
+           String form = String.format("%tF", date);
+            // 将格式化后的日期时间输出
+           System.out.println("全部的时间信息是：" + time);
+           System.out.println("年-月-日格式：" + form);
+       }
+   }
+
+常规类型的格式化
+----------------
+
+常规类型的格式化可以用于任何的参数类型
+
+|image6|
+
+.. code:: java
+
+   public class General { // 新建类
+       public static void main(String[] args) { // 主方法
+           String str = String.format("%d", 400 / 2); // 将结果以十进制显示
+           String str2 = String.format("%b", 3 > 5); // 将结果以布尔形式显示
+           String str3 = String.format("%x", 200); // 将结果以十六进制格式显示
+           System.out.println("400的一半是：" + str); // 输出格式化字符串
+           System.out.println("3>5正确吗：" + str2);
+           System.out.println("200的十六进制数是：" + str3);
+       }
+   }
+
+   /*
+   400的一半是：200
+   3>5正确吗：false
+   200的十六进制数是：c8
+    */
+
+使用正则表达式
+--------------
+
+**正则表达式的元字符**
+
+|image7|
+
+**正则表达式的限定修饰符**
+
+|image8|
+
+.. code:: java
+
+   public class Judge {
+       public static void main(String[] args) {
+            // 定义要匹配E_mail地址的正则表达式
+           String regex = "\\w+@\\w+(\\.\\w{2,3})*\\.\\w{2,3}";
+           String str1 = "aaa@"; // 定义要进行验证的字符串
+           String str2 = "aaaaa";
+           String str3 = "1111@111ffyu.dfg.com";
+           if (str1.matches(regex)) { // 判断字符串变量是否与正则表达式匹配
+               System.out.println(str1 + "是一个合法的E-mail地址格式");
+           }
+           if (str2.matches(regex)) {
+               System.out.println(str2 + "是一个合法的E-mail地址格式");
+           }
+           if (str3.matches(regex)) {
+               System.out.println(str3 + "是一个合法的E-mail地址格式");
+           }
+       }
+   }
+
+字符串生成器
+------------
+
+.. code:: java
+
+   public class Jerque { // 新建类
+       public static void main(String[] args) { // 主方法
+           String str = ""; // 创建空字符串
+           // 定义对字符串执行操作的起始时间
+           long starTime = System.currentTimeMillis();
+           for (int i = 0; i < 10000; i++) { // 利用for循环执行10000次操作
+               str = str + i; // 循环追加字符串
+           }
+           long endTime = System.currentTimeMillis(); // 定义对字符串操作后的时间
+           long time = endTime - starTime; // 计算对字符串执行操作的时间
+           System.out.println("Sting消耗时间：" + time); // 将执行的时间输出
+
+           StringBuilder builder = new StringBuilder(""); // 创建字符串生成器
+           starTime = System.currentTimeMillis(); // 定义操作执行前的时间
+           for (int j = 0; j < 10000; j++) { // 利用for循环进行操作
+               builder.append(j); // 循环追加字符
+           }
+           endTime = System.currentTimeMillis(); // 定义操作后的时间
+           time = endTime - starTime; // 追加操作执行的时间
+           System.out.println("StringBuilder消耗时间：" + time); // 将操作时间输出
+       }
+   }
+
+   /*
+   Sting消耗时间：465
+   StringBuilder消耗时间：1
+    */
+
 .. |image0| image:: ../../_static\Java_API01.png
 .. |image1| image:: ../../_static\Java_API02.png
 .. |image2| image:: ../../_static\str_pool01.png
+.. |image3| image:: ../../_static\java_data_format01.png
+.. |image4| image:: ../../_static\java_time_format001.png
+.. |image5| image:: ../../_static\java_data_time001.png
+.. |image6| image:: ../../_static\java_format001.png
+.. |image7| image:: ../../_static\java_zhengze01.png
+.. |image8| image:: ../../_static\zhengze002.png

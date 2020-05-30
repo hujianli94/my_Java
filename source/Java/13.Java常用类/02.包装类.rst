@@ -67,7 +67,7 @@ radix是基数可以指定进制。注意这种指定基数的方法在浮点数
 
 代码示例
 
-::
+.. code:: java
 
    package aom;
 
@@ -122,7 +122,7 @@ radix是基数可以指定进制。注意这种指定基数的方法在浮点数
 
 这些数值包装类（Byte、Short、Integer、Long、Float和Double）都有一些相同特点。
 
-::
+.. code:: java
 
    1. 构造方法类似
       每一个数值包装类都有两个构造方法，以Integer为例，Integer构造方法如下：
@@ -169,7 +169,7 @@ parseInt(String str)
 
    返回包含在由str指定的字符串中的数字的等价整数值
 
-::
+.. code:: java
 
    public class Integer_class01 {
    //  主方法
@@ -195,7 +195,7 @@ parseInt(String str)
 Integer类的进制转换
 -------------------
 
-::
+.. code:: java
 
    //创建Charca类
    public class Charac {
@@ -225,11 +225,9 @@ Integer类的进制转换
    456的二进制表示为：111001000
    456的十六进制表示为：1c8
    456的八进制表示为：710
-
-
     */
 
-::
+.. code:: java
 
    //创建类GetCon
    public class Changliang {
@@ -257,7 +255,7 @@ Character类
 
 Character类是char类型的包装类。Character类常用方法如下：
 
-::
+.. code:: java
 
      Character(char value)：构造方法，通过char值创建一个新的Character对象。
      char charValue()：返回此Character对象的值。
@@ -268,7 +266,7 @@ Character类是char类型的包装类。Character类常用方法如下：
 
 代码示例1
 
-::
+.. code:: java
 
    package com.a51work.cn;
 
@@ -299,7 +297,7 @@ Character类是char类型的包装类。Character类常用方法如下：
 
 代码示例2
 
-::
+.. code:: java
 
    package som;
 
@@ -342,7 +340,7 @@ Boolean类 Boolean类是boolean类型的包装类。
 
 HelloWorld.java
 
-::
+.. code:: java
 
    package com.a51work6;
 
@@ -389,7 +387,7 @@ HelloWorld.java
 
 Test.java
 
-::
+.. code:: java
 
    package com.a51work.cn.Boolean;
 
@@ -421,7 +419,7 @@ Test.java
 
 代码示例
 
-::
+.. code:: java
 
    package com.a51work.cn.Automatic_packing;
 

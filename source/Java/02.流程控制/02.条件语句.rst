@@ -50,28 +50,19 @@ eg1：
 
 eg2：
 
-::
+.. code:: java
 
-   package Number;
-
-   public class Getif {
-
-       public static void main(String[] args) {
-   //      声明int型变量，x、y，并赋值给初值
-           int x = 45;
-           int y = 12;
-   //      进行判断x>Y.
-           if (x>y) {
-               System.out.println("变量x大于变量y");
+   public class Getif { // 创建类
+       public static void main(String args[]) { // 主方法
+           int x = 45; // 声明int型变量x，并赋给初值
+           int y = 12; // 声明int型变量y，并赋给初值
+           if (x > y) { // 判断x是否大于y
+               System.out.println("变量x大于变量y"); // 如果条件成立，输出的信息
            }
-   //      进行判断x<y
-           if (x<y) {
-               
-               System.out.println("变量x小于变量y");
+           if (x < y) { // 判断x是否小于y
+               System.out.println("变量x小于变量y"); // 如果条件成立，输出的信息
            }
-
        }
-
    }
 
 if…else语句
@@ -96,35 +87,23 @@ if…else语句
 
 eg:
 
-::
-
-   package Number;
+.. code:: java
 
    public class Getifelse {
-
-       public static void main(String[] args) {
-   //      声明int型局部变量，赋予初始值
-           int math = 95;
-           int english = 56;
-           
-           if (math >60) {
-               System.out.println("数学及格了");
-               
+       public static void main(String args[]) { // 主方法
+           int math = 95; // 声明int型局部变量，并赋给初值95
+           int english = 56; // 声明int型局部变量，并赋给初值56
+           if (math > 60) { // 使用if语句判断math是否大于60
+               System.out.println("数学及格了"); // 条件成立时输出信息
+           } else {
+               System.out.println("数学没有及格"); // 条件不成立输出的信息
            }
-           else {
-               System.out.println("数学没有及格...");
+           if (english > 60) { // 判断英语成绩是否大于60
+               System.out.println("英语及格了"); // 条件成立输出的信息
+           } else {
+               System.out.println("英语没有及格"); // 条件不成立输出的信息
            }
-           if (english >60) {
-               System.out.println("英语及格了");
-               
-           }
-           else {
-               System.out.println("英语没有及格...");
-           }
-               
-           
        }
-
    }
 
 if …else if 多分支语句
@@ -156,35 +135,24 @@ if …else if 多分支语句
 
 eg：
 
-::
+.. code:: java
 
-   package Number;
-
-   public class GetTerm2 {
-
-       public static void main(String[] args) {
-           // TODO 自动生成的方法存根
-   //      声明int型局部变量
-           int x =20;
-           if (x>30) {
-               
-               System.out.println("a的值大于30");
+   public class GetTerm { // 创建主类
+       public static void main(String args[]) { // 主方法
+           int x = 20; // 声明int型局部变量
+           if (x > 30) { // 判断变量x是否大于30
+               System.out.println("a的值大于30"); // 条件成立的输出信息
+           } else if (x > 10) { // 判断变量x是否大于10
+               System.out.println("a的值大于10，但小于30"); // 条件成立的输出信息
+           } else if (x > 0) { // 判断变量x是否大于0
+               System.out.println("a的值大于0，但小于10"); // 条件成立的输出信息
+           } else { // 当以上条件都不成立时，执行的语句块
+               System.out.println("a的值小于0"); // 输出信息
            }
-           else if(x>10) {
-               System.out.println("a的值大于10,但小于30");
-           }
-           else if (x>0) {
-               System.out.println("a的值大于0,但小于10");
-           }
-           else{
-               System.out.println("a的值小于0");
-           }
-           
        }
-
    }
 
-::
+.. code:: java
 
    package if0001;
 
@@ -206,7 +174,7 @@ eg：
 if-else嵌套语句
 ---------------
 
-::
+.. code:: java
 
    package if0001;
 
@@ -275,7 +243,7 @@ switch 多分支语句
 
 eg：
 
-::
+.. code:: java
 
    package Number;
 
@@ -296,7 +264,6 @@ eg：
        default:
            System.out.println("以上条件都不是.....");
            }
-       
            
        }
 
@@ -304,7 +271,7 @@ eg：
 
 eg2:
 
-::
+.. code:: java
 
    package Number;
 
@@ -333,7 +300,7 @@ eg2:
 
 eg3
 
-::
+.. code:: java
 
    package switch_Packge;
 
