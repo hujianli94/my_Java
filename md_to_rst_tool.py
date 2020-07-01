@@ -10,6 +10,15 @@ import json
 import hashlib
 import time
 
+"""
+*************************************************************
+This script is used to find the changes of the article, 
+and convert the changed md type articles to the rst format type, 
+and write them out to the file file_md5.json
+*****************************************************************
+"""
+
+
 Search_Path = os.path.abspath(os.path.dirname(os.path.abspath(__file__))) + "/source"
 # ENV_PATH = sys.path.append("D:\\Users\\pandocc-2.2.3.2")
 

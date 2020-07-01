@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>27.2. 02.使用DOM &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="next" title="分布式系统架构案例(Java)" href="../../Distributed_Systems/index.html" />
+    <link rel="prev" title="27.1. XML简介" href="01.XML简介.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java学习笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.Java基础/index.html">1. Java基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.流程控制/index.html">2. 流程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.字符串/index.html">3. 字符串</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.数组/index.html">4. 数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.类与对象/index.html">5. 类与对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.数字处理类/index.html">6. 数字处理类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.接口、继承与多态/index.html">7. 接口、继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08.包/index.html">8. 包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.对象/index.html">9. 对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10.继承与多态/index.html">10. 继承与多态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.抽象类与接口/index.html">11. 抽象类与接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12.枚举类/index.html">12. 枚举类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13.Java常用类/index.html">13. Java常用类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14.内部类/index.html">14. 内部类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15.Lambda表达式/index.html">15. Lambda表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16.异常处理/index.html">16. 异常处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../17.对象容器—集合/index.html">17. 对象容器—集合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18.泛型/index.html">18. 泛型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../19.文件管理与IO流/index.html">19. 文件管理与IO流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20.多线程编程/index.html">20. 多线程编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../21.网络编程/index.html">21. 网络编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../22.Swing图形用户界面编程/index.html">22. Swing图形用户界面编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../23.再谈反射/index.html">23. 再谈反射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">27. 27.XML与JSON</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01.XML简介.html">27.1. XML简介</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">27.2. 02.使用DOM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#domxml">27.2.1. DOM方式读取XML文件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">27.2.2. DOM方式创建XML文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">27. 27.XML与JSON</a> &raquo;</li>
+        
+      <li>27.2. 02.使用DOM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Java/27.XML与JSON/02.使用DOM.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#dom" id="id2">02.使用DOM</a><ul>
+<li><a class="reference internal" href="#domxml" id="id3">DOM方式读取XML文件</a></li>
+<li><a class="reference internal" href="#id1" id="id4">DOM方式创建XML文件</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="dom">
+<h1><a class="toc-backref" href="#id2">27.2. 02.使用DOM</a><a class="headerlink" href="#dom" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="domxml">
+<h2><a class="toc-backref" href="#id3">27.2.1. DOM方式读取XML文件</a><a class="headerlink" href="#domxml" title="Permalink to this headline">¶</a></h2>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+
+import java.io.File;
+
+public class ReadXML {
+    public static void main(String[] args) {
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document document = builder.parse(new File(&quot;src/config/language.xml&quot;));//解析文档
+
+
+            Element root = document.getDocumentElement(); //获取根节点
+            System.out.println(&quot;language=&quot; + root.getAttribute(&quot;cat&quot;));
+            System.out.println(&quot;-------------&quot;);
+            NodeList list = root.getElementsByTagName(&quot;lan&quot;);//获取根节点的标签名为“lan”的子节点
+            for (int i = 0; i &lt; list.getLength(); i ++) {
+                Element lan =  (Element) list.item(i);  //遍历得到每个&quot;lan&quot;节点
+                System.out.println(lan.getTagName()+ &quot;=&quot; + lan.getAttribute(&quot;id&quot;));
+
+                NodeList lanList = lan.getChildNodes();  //获取“lan”节点的子节点
+                for (int j = 0; j &lt; lanList.getLength(); j++) {
+                    Node node = lanList.item(j);
+                    if (node instanceof Element) {
+                        System.out.println(node.getNodeName()+&quot;=&quot;+node.getTextContent());
+                    }
+                }
+                System.out.println(&quot;*****************&quot;);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id4">27.2.2. DOM方式创建XML文件</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">org.w3c.dom.Document</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.w3c.dom.Element</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.xml.parsers.DocumentBuilder</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.parsers.DocumentBuilderFactory</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.parsers.ParserConfigurationException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.Transformer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.TransformerConfigurationException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.TransformerException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.TransformerFactory</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.dom.DOMSource</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.stream.StreamResult</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.StringWriter</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">CreateXML</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="n">DocumentBuilderFactory</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">DocumentBuilderFactory</span><span class="o">.</span><span class="n">newInstance</span><span class="p">();</span>
+            <span class="n">DocumentBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">newDocumentBuilder</span><span class="p">();</span>
+            <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">newDocument</span><span class="p">();</span>
+
+            <span class="n">Element</span> <span class="n">languages</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;languages&quot;</span><span class="p">);</span>
+            <span class="n">languages</span><span class="o">.</span><span class="n">setAttribute</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;it&quot;</span><span class="p">);</span>
+
+            <span class="n">Element</span> <span class="n">lan_1</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;lan&quot;</span><span class="p">);</span>
+            <span class="n">lan_1</span><span class="o">.</span><span class="n">setAttribute</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">);</span>
+
+            <span class="n">Element</span> <span class="n">name_1</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">);</span>
+            <span class="n">name_1</span><span class="o">.</span><span class="n">setTextContent</span><span class="p">(</span><span class="s2">&quot;Java&quot;</span><span class="p">);</span>
+
+            <span class="n">Element</span> <span class="n">ide_1</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;ide&quot;</span><span class="p">);</span>
+            <span class="n">ide_1</span><span class="o">.</span><span class="n">setTextContent</span><span class="p">(</span><span class="s2">&quot;Eclipse&quot;</span><span class="p">);</span>
+
+
+            <span class="n">lan_1</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">name_1</span><span class="p">);</span>
+            <span class="n">lan_1</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">ide_1</span><span class="p">);</span>
+
+            <span class="n">languages</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">lan_1</span><span class="p">);</span>
+            <span class="n">document</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">languages</span><span class="p">);</span>
+
+            <span class="o">//</span><span class="n">将构建好的xml输出</span>
+            <span class="n">TransformerFactory</span> <span class="n">transformerFactory</span> <span class="o">=</span> <span class="n">TransformerFactory</span><span class="o">.</span><span class="n">newInstance</span><span class="p">();</span>
+            <span class="n">Transformer</span> <span class="n">transformer</span> <span class="o">=</span> <span class="n">transformerFactory</span><span class="o">.</span><span class="n">newTransformer</span><span class="p">();</span>
+
+            <span class="o">//</span><span class="n">输出到控制台</span>
+            <span class="n">StringWriter</span> <span class="n">writer</span> <span class="o">=</span> <span class="n">new</span> <span class="n">StringWriter</span><span class="p">();</span>
+            <span class="n">transformer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">new</span> <span class="n">DOMSource</span><span class="p">(</span><span class="n">document</span><span class="p">),</span> <span class="n">new</span> <span class="n">StreamResult</span><span class="p">(</span><span class="n">writer</span><span class="p">));</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">writer</span><span class="o">.</span><span class="n">toString</span><span class="p">());</span>
+
+            <span class="o">//</span><span class="n">输出到文件</span>
+            <span class="n">transformer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">new</span> <span class="n">DOMSource</span><span class="p">(</span><span class="n">document</span><span class="p">),</span> <span class="n">new</span> <span class="n">StreamResult</span><span class="p">(</span><span class="n">new</span> <span class="n">File</span><span class="p">(</span><span class="s2">&quot;language.xml&quot;</span><span class="p">)));</span>
+
+        <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">ParserConfigurationException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+        <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">TransformerConfigurationException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+        <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">TransformerException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>参考文献</p>
+<p><a class="reference external" href="https://www.cnblogs.com/lolau/p/7157902.html">https://www.cnblogs.com/lolau/p/7157902.html</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../Distributed_Systems/index.html" class="btn btn-neutral float-right" title="分布式系统架构案例(Java)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="01.XML简介.html" class="btn btn-neutral float-left" title="27.1. XML简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

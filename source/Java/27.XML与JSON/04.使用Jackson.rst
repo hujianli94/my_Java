@@ -1,0 +1,87 @@
+.. contents::
+   :depth: 3
+..
+
+使用Jackson
+===========
+
+前面我们介绍了DOM和SAX两种解析XML的标准接口。但是，无论是DOM还是SAX，使用起来都不直观。
+
+观察XML文档的结构：
+
+::
+
+   <?xml version="1.0" encoding="UTF-8" ?>
+   <book id="1">
+       <name>Java核心技术</name>
+       <author>Cay S. Horstmann</author>
+       <isbn lang="CN">1234567</isbn>
+       <tags>
+           <tag>Java</tag>
+           <tag>Network</tag>
+       </tags>
+       <pubDate/>
+   </book>
+
+我们发现，它完全可以对应到一个定义好的JavaBean中：
+
+::
+
+   public class Book {
+       public long id;
+       public String name;
+       public String author;
+       public String isbn;
+       public List<String> tags;
+       public String pubDate;
+   }
+
+如果能直接从XML文档解析成一个JavaBean，那比DOM或者SAX不知道容易到哪里去了。
+
+幸运的是，一个名叫Jackson的开源的第三方库可以轻松做到XML到JavaBean的转换。我们要使用Jackson，先添加两个Maven的依赖：
+
+-  com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.10.1
+-  org.codehaus.woodstox:woodstox-core-asl:4.4.1
+
+然后，定义好JavaBean，就可以用下面几行代码解析：
+
+.. code:: java
+
+   import com.fasterxml.jackson.core.JsonProcessingException;
+   import com.fasterxml.jackson.dataformat.xml.JacksonXmlModule;
+   import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+
+   import java.io.IOException;
+   import java.io.InputStream;
+   import java.util.List;
+
+   public class Test_Jackson {
+
+       public class Book {
+           public long id;
+           public String name;
+           public String author;
+           public String isbn;
+           public List<String> tags;
+           public String pubDate;
+       }
+
+
+       public static void main(String[] args) {
+           InputStream input = Test_Jackson.class.getResourceAsStream("../config/book.xml");
+           JacksonXmlModule module = new JacksonXmlModule();
+           XmlMapper mapper = new XmlMapper(module);
+           Book book = null;
+           try {
+               book = mapper.readValue(input, Book.class);
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+           System.out.println(book.id);
+           System.out.println(book.name);
+           System.out.println(book.author);
+           System.out.println(book.isbn);
+           System.out.println(book.tags);
+           System.out.println(book.pubDate);
+       }
+   }

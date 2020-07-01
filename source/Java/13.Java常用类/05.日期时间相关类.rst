@@ -8,9 +8,45 @@
 Date类
 ------
 
+Date的基本用法
+
+.. code:: java
+
+   package Data_class;
+
+   import java.util.Date;
+
+   public class simaple01 {
+       public static void main(String[] args) {
+           Date date = new Date();
+           System.out.println(date.getYear() + 1900);
+           System.out.println(date.getMonth() + 1); // 0~11，必须加上1
+           System.out.println(date.getDate()); // 1~31，不能加1
+
+           // 转换为String:
+           System.out.println(date.toString());
+           // 转换为GMT时区:
+           System.out.println(date.toGMTString());
+           // 转换为本地时区:
+           System.out.println(date.toLocaleString());
+       }
+   }
+
+
+   /**
+    * 
+    * 注意getYear()返回的年份必须加上1900，getMonth()返回的月份是0~11分别表示1~12月，所以要加1，而getDate()返回的日期范围是1~31，又不能加1。
+    2020
+    7
+    1
+    Wed Jul 01 09:45:31 CST 2020
+    1 Jul 2020 01:45:31 GMT
+    2020-7-1 9:45:31
+    **/
+
 代码示例
 
-::
+.. code:: java
 
    package com.a51work6;
 
@@ -69,9 +105,39 @@ Date类
 日期格式化和解析
 ----------------
 
+打印本地时区表示的日期和时间时，不同的计算机可能会有不同的结果。如果我们想要针对用户的偏好精确地控制日期和时间的格式，就可以使用\ ``SimpleDateFormat``\ 对一个\ ``Date``\ 进行转换。它用预定义的字符串表示格式化：
+
+-  yyyy：年
+-  MM：月
+-  dd: 日
+-  HH: 小时
+-  mm: 分钟
+-  ss: 秒
+
+我们来看如何以自定义的格式输出：
+
+.. code:: java
+
+   package Data_class;
+
+   import java.text.*;
+   import java.util.*;
+
+
+   public class simple02 {
+       public static void main(String[] args) {
+           // 获取当前时间:
+           Date date = new Date();
+           SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");   //2020-07-01 09:52:59
+   //        SimpleDateFormat sdf = new SimpleDateFormat("E MMM dd, yyyy");      //星期三 七月 01, 2020
+           System.out.println(sdf.format(date));
+       }
+
+   }
+
 代码示例
 
-::
+.. code:: java
 
    package com.a51work7;
 
@@ -113,7 +179,7 @@ Calendar是一个抽象类，不能实例化，但是通过静态工厂方法get
 
 代码示例
 
-::
+.. code:: java
 
    package com.a51work6;
 
@@ -157,14 +223,158 @@ Calendar是一个抽象类，不能实例化，但是通过静态工厂方法get
    *
    */
 
+``simple03.java``
+
+.. code:: java
+
+   package Data_class;
+
+   import java.util.Calendar;
+
+   public class simple03 {
+       public static void main(String[] args) {
+           // 获取当前时间:
+           Calendar c = Calendar.getInstance();
+           int y = c.get(Calendar.YEAR);
+           int m = 1 + c.get(Calendar.MONTH);
+           int d = c.get(Calendar.DAY_OF_MONTH);
+           int w = c.get(Calendar.DAY_OF_WEEK);
+           int hh = c.get(Calendar.HOUR_OF_DAY);
+           int mm = c.get(Calendar.MINUTE);
+           int ss = c.get(Calendar.SECOND);
+           int ms = c.get(Calendar.MILLISECOND);
+           System.out.println(y + "-" + m + "-" + d + " " + w + " " + hh + ":" + mm + ":" + ss + "." + ms);    //2020-7-1 4 9:55:36.483
+       }
+   }
+
+``Calendar``\ 只有一种方式获取，即\ ``Calendar.getInstance()``\ ，而且一获取到就是当前时间。如果我们想给它设置成特定的一个日期和时间，就必须先清除所有字段：
+
+``simple04.java``
+
+.. code:: java
+
+   package Data_class;
+
+   import java.text.SimpleDateFormat;
+   import java.util.Calendar;
+
+   public class simple04 {
+       public static void main(String[] args) {
+           // 当前时间:
+           Calendar c = Calendar.getInstance();
+           // 清除所有:
+           c.clear();
+           // 设置2019年:
+           c.set(Calendar.YEAR, 2019);
+           // 设置9月:注意8表示9月:
+           c.set(Calendar.MONTH, 8);
+           // 设置2日:
+           c.set(Calendar.DATE, 2);
+           // 设置时间:
+           c.set(Calendar.HOUR_OF_DAY, 21);
+           c.set(Calendar.MINUTE, 22);
+           c.set(Calendar.SECOND, 23);
+           System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(c.getTime()));    //2019-09-02 21:22:23
+       }
+   }
+
+TimeZone
+--------
+
+``Calendar``\ 和\ ``Date``\ 相比，它提供了时区转换的功能。时区用\ ``TimeZone``\ 对象表示：
+
+``simpl05.java``
+
+.. code:: java
+
+   package Data_class;
+
+   import java.util.Arrays;
+   import java.util.TimeZone;
+
+   public class simpl05 {
+       public static void main(String[] args) {
+           TimeZone tzDefault = TimeZone.getDefault(); // 当前时区
+           TimeZone tzGMT9 = TimeZone.getTimeZone("GMT+09:00"); // GMT+9:00时区
+           TimeZone tzNY = TimeZone.getTimeZone("America/New_York"); // 纽约时区
+           System.out.println(tzDefault.getID()); // Asia/Shanghai
+           System.out.println(Arrays.toString(TimeZone.getAvailableIDs()));    //// Asia/Shanghai, Asia/Chongqing, Asia/Hong_Kong, Asia/Macao, .
+           System.out.println(tzGMT9.getID()); // GMT+09:00
+           System.out.println(tzNY.getID()); // America/New_York
+       }
+   }
+
+要列出系统支持的所有ID，请使用\ ``TimeZone.getAvailableIDs()``\ 。
+
+有了时区，我们就可以对指定时间进行转换。例如，下面的例子演示了如何将北京时间\ ``2019-11-20 8:15:00``\ 转换为纽约时间：
+
+``simpl05.java``
+
+.. code:: java
+
+   package Data_class;
+
+   import java.text.SimpleDateFormat;
+   import java.util.Calendar;
+   import java.util.TimeZone;
+
+   public class simpl05 {
+       public static void main(String[] args) {
+           // 当前时间:
+           Calendar c = Calendar.getInstance();
+           // 清除所有:
+           c.clear();
+           // 设置为北京时区:
+           c.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
+           // 设置年月日时分秒:
+           c.set(2019, 10 /* 11月 */, 20, 8, 15, 0);
+           // 显示时间:
+           SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+           sdf.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+           System.out.println(sdf.format(c.getTime()));
+       }
+   }
+
+``Calendar``\ 也可以对日期和时间进行简单的加减：
+
+``simple05.java``
+
+.. code:: java
+
+   package Data_class;
+
+   import java.text.SimpleDateFormat;
+   import java.util.Calendar;
+   import java.util.Date;
+   import java.util.TimeZone;
+
+   public class simpl05 {
+       public static void main(String[] args) {
+           // 当前时间:
+           Calendar c = Calendar.getInstance();
+           // 清除所有:
+           c.clear();
+           // 设置年月日时分秒:
+           c.set(2019, 10 /* 11月 */, 20, 8, 15, 0);
+           // 加5天并减去2小时:
+           c.add(Calendar.DAY_OF_MONTH, 5);
+           c.add(Calendar.HOUR_OF_DAY, -2);
+           // 显示时间:
+           SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+           Date d = c.getTime();
+           System.out.println(sdf.format(d));
+           // 2019-11-25 6:15:00
+       }
+   }
+
 Java8新日期时间相关类
 ---------------------
 
 时间和日期
 
-HelloWorld.java
+``HelloWorld.java``
 
-::
+.. code:: java
 
    package com.a51work8;
 
@@ -219,7 +429,7 @@ HelloWorld.java
 
 HelloWorld9.java
 
-::
+.. code:: java
 
    package com.a51work6;
 
@@ -278,5 +488,58 @@ HelloWorld9.java
    time格式化之前：14:35:16.657
    time格式化之后：14:35:16
    LocalTime解析之后：08:58:18
-
    */
+
+LocalDateTime
+-------------
+
+我们首先来看最常用的\ ``LocalDateTime``\ ，它表示一个本地日期和时间：
+
+.. code:: java
+
+   package Local_date;
+
+   import java.time.LocalDate;
+   import java.time.LocalDateTime;
+   import java.time.LocalTime;
+
+   public class Main {
+       public static void main(String[] args) {
+           LocalDate d = LocalDate.now(); // 当前日期
+           LocalTime t = LocalTime.now(); // 当前时间
+           LocalDateTime dt = LocalDateTime.now(); // 当前日期和时间
+           System.out.println(d); // 严格按照ISO 8601格式打印  //2020-07-01
+           System.out.println(t); // 严格按照ISO 8601格式打印  //10:24:41.429
+           System.out.println(dt); // 严格按照ISO 8601格式打印 //2020-07-01T10:24:41.429
+       }
+   }
+
+.. code:: java
+
+   package Local_date;
+
+   import java.time.LocalDate;
+   import java.time.LocalDateTime;
+   import java.time.LocalTime;
+
+   public class Main {
+       public static void main(String[] args) {
+   //        LocalDate d = LocalDate.now(); // 当前日期
+   //        LocalTime t = LocalTime.now(); // 当前时间
+   //        LocalDateTime dt = LocalDateTime.now(); // 当前日期和时间
+   //        System.out.println(d); // 严格按照ISO 8601格式打印  //2020-07-01
+   //        System.out.println(t); // 严格按照ISO 8601格式打印  //10:24:41.429
+   //        System.out.println(dt); // 严格按照ISO 8601格式打印 //2020-07-01T10:24:41.429
+
+
+   //        上述代码其实有一个小问题，在获取3个类型的时候，由于执行一行代码总会消耗一点时间，
+   //        因此，3个类型的日期和时间很可能对不上（时间的毫秒数基本上不同）。为了保证获取到同一时刻的日期和时间，可以改写如下：
+           LocalDateTime dt = LocalDateTime.now(); // 当前日期和时间
+           LocalDate d = dt.toLocalDate(); // 转换到当前日期
+           LocalTime t = dt.toLocalTime(); // 转换到当前时间
+           System.out.println(dt);
+           System.out.println(d);
+           System.out.println(t);
+
+       }
+   }

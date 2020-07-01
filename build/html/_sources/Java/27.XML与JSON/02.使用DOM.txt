@@ -1,0 +1,125 @@
+.. contents::
+   :depth: 3
+..
+
+02.使用DOM
+==========
+
+DOM方式读取XML文件
+------------------
+
+.. code:: java
+
+   import org.w3c.dom.Document;
+   import org.w3c.dom.Element;
+   import org.w3c.dom.Node;
+   import org.w3c.dom.NodeList;
+
+   import javax.xml.parsers.DocumentBuilder;
+   import javax.xml.parsers.DocumentBuilderFactory;
+
+
+   import java.io.File;
+
+   public class ReadXML {
+       public static void main(String[] args) {
+           try {
+               DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+               DocumentBuilder builder = factory.newDocumentBuilder();
+               Document document = builder.parse(new File("src/config/language.xml"));//解析文档
+
+
+               Element root = document.getDocumentElement(); //获取根节点
+               System.out.println("language=" + root.getAttribute("cat"));
+               System.out.println("-------------");
+               NodeList list = root.getElementsByTagName("lan");//获取根节点的标签名为“lan”的子节点
+               for (int i = 0; i < list.getLength(); i ++) {
+                   Element lan =  (Element) list.item(i);  //遍历得到每个"lan"节点
+                   System.out.println(lan.getTagName()+ "=" + lan.getAttribute("id"));
+
+                   NodeList lanList = lan.getChildNodes();  //获取“lan”节点的子节点
+                   for (int j = 0; j < lanList.getLength(); j++) {
+                       Node node = lanList.item(j);
+                       if (node instanceof Element) {
+                           System.out.println(node.getNodeName()+"="+node.getTextContent());
+                       }
+                   }
+                   System.out.println("*****************");
+               }
+           } catch (Exception e) {
+               e.printStackTrace();
+           }
+       }
+   }
+
+DOM方式创建XML文件
+------------------
+
+.. code:: java
+
+   import org.w3c.dom.Document;
+   import org.w3c.dom.Element;
+
+   import javax.xml.parsers.DocumentBuilder;
+   import javax.xml.parsers.DocumentBuilderFactory;
+   import javax.xml.parsers.ParserConfigurationException;
+   import javax.xml.transform.Transformer;
+   import javax.xml.transform.TransformerConfigurationException;
+   import javax.xml.transform.TransformerException;
+   import javax.xml.transform.TransformerFactory;
+   import javax.xml.transform.dom.DOMSource;
+   import javax.xml.transform.stream.StreamResult;
+   import java.io.File;
+   import java.io.StringWriter;
+
+   public class CreateXML {
+       public static void main(String[] args) {
+           try {
+               DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+               DocumentBuilder builder = factory.newDocumentBuilder();
+               Document document = builder.newDocument();
+
+               Element languages = document.createElement("languages");
+               languages.setAttribute("cat", "it");
+
+               Element lan_1 = document.createElement("lan");
+               lan_1.setAttribute("id", "1");
+
+               Element name_1 = document.createElement("name");
+               name_1.setTextContent("Java");
+
+               Element ide_1 = document.createElement("ide");
+               ide_1.setTextContent("Eclipse");
+
+
+               lan_1.appendChild(name_1);
+               lan_1.appendChild(ide_1);
+
+               languages.appendChild(lan_1);
+               document.appendChild(languages);
+
+               //将构建好的xml输出
+               TransformerFactory transformerFactory = TransformerFactory.newInstance();
+               Transformer transformer = transformerFactory.newTransformer();
+
+               //输出到控制台
+               StringWriter writer = new StringWriter();
+               transformer.transform(new DOMSource(document), new StreamResult(writer));
+               System.out.println(writer.toString());
+
+               //输出到文件
+               transformer.transform(new DOMSource(document), new StreamResult(new File("language.xml")));
+
+           } catch (ParserConfigurationException e) {
+               e.printStackTrace();
+           } catch (TransformerConfigurationException e) {
+               e.printStackTrace();
+           } catch (TransformerException e) {
+               e.printStackTrace();
+           }
+       }
+   }
+
+参考文献
+
+https://www.cnblogs.com/lolau/p/7157902.html

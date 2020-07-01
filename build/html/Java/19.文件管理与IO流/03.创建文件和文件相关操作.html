@@ -118,7 +118,15 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">19. 文件管理与IO流</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="01.文件筛选过滤.html">19.1. 文件筛选过滤</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02.创建文件对象的例子.html">19.2. 创建文件对象的例子</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">19.3. 创建文件和文件相关操作</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">19.3. 创建文件和文件相关操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">19.3.1. 文件属性判断</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">19.3.2. 创建和删除文件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">19.3.3. 创建和删除目录</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">19.3.4. 遍历文件和目录</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">19.3.5. 创建临时文件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#path">19.3.6. Path</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="04.使用FileOutputStream类写入数据到文件.html">19.4. 使用FileOutputStream类写入数据到文件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="05.使用FileInputStream类读取文件数据.html">19.5. 使用FileInputStream类读取文件数据</a></li>
 <li class="toctree-l3"><a class="reference internal" href="06.FileInputStream类和FileOutputStream类的结合使用.html">19.6. FileInputStream类和FileOutputStream类的结合使用</a></li>
@@ -209,11 +217,42 @@
   <div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#id1" id="id2">创建文件和文件相关操作</a></li>
+<li><a class="reference internal" href="#id1" id="id7">创建文件和文件相关操作</a><ul>
+<li><a class="reference internal" href="#id2" id="id8">文件属性判断</a></li>
+<li><a class="reference internal" href="#id3" id="id9">创建和删除文件</a></li>
+<li><a class="reference internal" href="#id4" id="id10">创建和删除目录</a></li>
+<li><a class="reference internal" href="#id5" id="id11">遍历文件和目录</a></li>
+<li><a class="reference internal" href="#id6" id="id12">创建临时文件</a></li>
+<li><a class="reference internal" href="#path" id="id13">Path</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section" id="id1">
-<h1><a class="toc-backref" href="#id2">19.3. 创建文件和文件相关操作</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id7">19.3. 创建文件和文件相关操作</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id8">19.3.1. 文件属性判断</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>用<code class="docutils literal"><span class="pre">File</span></code>对象获取到一个文件时，还可以进一步判断文件的权限和大小：</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">boolean</span> <span class="pre">canRead()</span></code>：是否可读；</li>
+<li><code class="docutils literal"><span class="pre">boolean</span> <span class="pre">canWrite()</span></code>：是否可写；</li>
+<li><code class="docutils literal"><span class="pre">boolean</span> <span class="pre">canExecute()</span></code>：是否可执行；</li>
+<li><code class="docutils literal"><span class="pre">long</span> <span class="pre">length()</span></code>：文件字节大小。</li>
+</ul>
+<p>对目录而言，是否可执行表示能否列出它包含的文件和子目录。</p>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id9">19.3.2. 创建和删除文件</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>当File对象表示一个文件时，可以通过<code class="docutils literal"><span class="pre">createNewFile()</span></code>创建一个新文件，用<code class="docutils literal"><span class="pre">delete()</span></code>删除该文件：</p>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id10">19.3.3. 创建和删除目录</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>和文件操作类似，File对象如果表示一个目录，可以通过以下方法创建和删除目录：</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">boolean</span> <span class="pre">mkdir()</span></code>：创建当前File对象表示的目录；</li>
+<li><code class="docutils literal"><span class="pre">boolean</span> <span class="pre">mkdirs()</span></code>：创建当前File对象表示的目录，并在必要时将不存在的父目录也创建出来；</li>
+<li><code class="docutils literal"><span class="pre">boolean</span> <span class="pre">delete()</span></code>：删除当前File对象表示的目录，当前目录必须为空才能删除成功。</li>
+</ul>
 <p>Liu2.java</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51work.cn;
 
@@ -251,6 +290,71 @@ f1对象是文件，文件名称为hujianli.txt
 路径为：D:\GitHub\hujianli.txt
 */
 </pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id11">19.3.4. 遍历文件和目录</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>当File对象表示一个目录时，可以使用<code class="docutils literal"><span class="pre">list()</span></code>和<code class="docutils literal"><span class="pre">listFiles()</span></code>列出目录下的文件和子目录名。<code class="docutils literal"><span class="pre">listFiles()</span></code>提供了一系列重载方法，可以过滤不想要的文件和目录：</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="n">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">File</span> <span class="n">f</span> <span class="o">=</span> <span class="n">new</span> <span class="n">File</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Windows&quot;</span><span class="p">);</span>
+        <span class="n">File</span><span class="p">[]</span> <span class="n">fs1</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">listFiles</span><span class="p">();</span> <span class="o">//</span> <span class="n">列出所有文件和子目录</span>
+        <span class="n">printFiles</span><span class="p">(</span><span class="n">fs1</span><span class="p">);</span>
+        <span class="n">File</span><span class="p">[]</span> <span class="n">fs2</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">listFiles</span><span class="p">(</span><span class="n">new</span> <span class="n">FilenameFilter</span><span class="p">()</span> <span class="p">{</span> <span class="o">//</span> <span class="n">仅列出</span><span class="o">.</span><span class="n">exe文件</span>
+            <span class="n">public</span> <span class="n">boolean</span> <span class="n">accept</span><span class="p">(</span><span class="n">File</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="n">name</span><span class="o">.</span><span class="n">endsWith</span><span class="p">(</span><span class="s2">&quot;.exe&quot;</span><span class="p">);</span> <span class="o">//</span> <span class="n">返回true表示接受该文件</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+        <span class="n">printFiles</span><span class="p">(</span><span class="n">fs2</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">static</span> <span class="n">void</span> <span class="n">printFiles</span><span class="p">(</span><span class="n">File</span><span class="p">[]</span> <span class="n">files</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;==========&quot;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">files</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">File</span> <span class="n">f</span> <span class="p">:</span> <span class="n">files</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;==========&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id12">19.3.5. 创建临时文件</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>有些时候，程序需要读写一些临时文件，File对象提供了<code class="docutils literal"><span class="pre">createTempFile()</span></code>来创建一个临时文件，以及<code class="docutils literal"><span class="pre">deleteOnExit()</span></code>在JVM退出时自动删除该文件。</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="n">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">File</span> <span class="n">f</span> <span class="o">=</span> <span class="n">File</span><span class="o">.</span><span class="n">createTempFile</span><span class="p">(</span><span class="s2">&quot;tmp-&quot;</span><span class="p">,</span> <span class="s2">&quot;.txt&quot;</span><span class="p">);</span> <span class="o">//</span> <span class="n">提供临时文件的前缀和后缀</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">deleteOnExit</span><span class="p">();</span> <span class="o">//</span> <span class="n">JVM退出时自动删除</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">isFile</span><span class="p">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getAbsolutePath</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="path">
+<h2><a class="toc-backref" href="#id13">19.3.6. Path</a><a class="headerlink" href="#path" title="Permalink to this headline">¶</a></h2>
+<p>Java标准库还提供了一个<code class="docutils literal"><span class="pre">Path</span></code>对象，它位于<code class="docutils literal"><span class="pre">java.nio.file</span></code>包。<code class="docutils literal"><span class="pre">Path</span></code>对象和<code class="docutils literal"><span class="pre">File</span></code>对象类似，但操作更加简单：</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="n">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">Path</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">Paths</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span> <span class="s2">&quot;study&quot;</span><span class="p">);</span> <span class="o">//</span> <span class="n">构造一个Path对象</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>
+        <span class="n">Path</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">toAbsolutePath</span><span class="p">();</span> <span class="o">//</span> <span class="n">转换为绝对路径</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>
+        <span class="n">Path</span> <span class="n">p3</span> <span class="o">=</span> <span class="n">p2</span><span class="o">.</span><span class="n">normalize</span><span class="p">();</span> <span class="o">//</span> <span class="n">转换为规范路径</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">p3</span><span class="p">);</span>
+        <span class="n">File</span> <span class="n">f</span> <span class="o">=</span> <span class="n">p3</span><span class="o">.</span><span class="n">toFile</span><span class="p">();</span> <span class="o">//</span> <span class="n">转换为File对象</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">Path</span> <span class="n">p</span> <span class="p">:</span> <span class="n">Paths</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">toAbsolutePath</span><span class="p">())</span> <span class="p">{</span> <span class="o">//</span> <span class="n">可以直接遍历Path</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;  &quot;</span> <span class="o">+</span> <span class="n">p</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 

@@ -219,9 +219,12 @@
 <h1><a class="toc-backref" href="#id5">10.2. 多态</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2><a class="toc-backref" href="#id6">10.2.1. 多态概念</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>发生多态要有三个前提条件： 01. 继承。多态发生一定要子类和父类之间。 02.
-覆盖。子类覆盖了父类的方法。 03.
-声明的变量类型是父类类型，但实例则指向子类实例。</p>
+<p>发生多态要有三个前提条件：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>1. 继承。多态发生一定要子类和父类之间。
+2. 覆盖。子类覆盖了父类的方法。
+3. 声明的变量类型是父类类型，但实例则指向子类实例。
+</pre></div>
+</div>
 <p>代码示例</p>
 <p>父类：Figure.java</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai01_Class</span><span class="p">;</span>
@@ -291,8 +294,8 @@
 </div>
 <div class="section" id="id3">
 <h2><a class="toc-backref" href="#id7">10.2.2. 引用类型检查</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>有时候需要在运行时判断一个对象是否属于某个引用类型，这时可以使用instanceof运算符，instanceof
-运算符语法格式如下：</p>
+<p>有时候需要在运行时判断一个对象是否属于某个引用类型，这时可以使用instanceof运算符，
+instanceof运算符语法格式如下：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">obj</span>　<span class="n">instanceof</span>　<span class="nb">type</span>
 </pre></div>
 </div>
@@ -398,7 +401,7 @@ public class HelloWorld {
 <div class="section" id="id4">
 <h2><a class="toc-backref" href="#id8">10.2.3. 引用类型转换</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>只有属于同一棵继承层次树中的引用类型才可以转换。</p>
-<p>类型转换有两个方向：</p>
+<p><strong>类型转换有两个方向：</strong></p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>将父类引用类型变量转换为子类类型，这种转换称为向下转型（downcast）；
 将子类引用类型变量转换为父类类型，这种转换称为向上转型（upcast）。
 向下转型需要强制转换，而向上转型是自动的。

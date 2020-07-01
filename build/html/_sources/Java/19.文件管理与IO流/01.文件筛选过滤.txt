@@ -7,7 +7,7 @@
 
 HelloWorld.java
 
-::
+.. code:: java
 
    package com.a51work.com;
 
@@ -104,3 +104,50 @@ HelloWorld.java
    hujianli1.txt文件可以读取..
    hujianli1.txt文件可以写入..
    * */
+
+.. code:: java
+
+   package IO_test01;
+
+   import java.io.File;
+   import java.io.IOException;
+
+   public class main {
+           public static void main(String[] args) throws IOException {
+               File f = new File("..");
+               System.out.println(f.getPath());
+               //返回绝对路径
+               System.out.println(f.getAbsolutePath());
+               //返回的是规范路径
+               System.out.println(f.getCanonicalPath());
+
+               File f1 = new File("C:\\Windows");
+               File f2 = new File("C:\\Windows\\notepad.exe");
+               File f3 = new File("C:\\Windows\\nothing");
+               System.out.println(f1.isFile());
+               System.out.println(f1.isDirectory());
+               System.out.println(f2.isFile());
+               System.out.println(f2.isDirectory());
+               System.out.println(f3.isFile());
+               System.out.println(f3.isDirectory());
+
+               if (f1.isDirectory()) {
+                   if (f1.canRead()) {
+                       System.out.println("f2 is dir and can read...");
+                   }else {
+                       System.out.println("f2 is dir can't read ....");
+                   }
+                   if (f1.canWrite()) {
+                       System.out.println("f2 is dir and can write...");
+                   }else {
+                       System.out.println("f2 is dir can't write ....");
+                   }
+                   if (f1.canExecute()) {
+                       System.out.println("f2 is dir and can exe...");
+                   }else {
+                       System.out.println("f2 is dir can't exe ....");
+                   }
+
+               }
+           }
+       }

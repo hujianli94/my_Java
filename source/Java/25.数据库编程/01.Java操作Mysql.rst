@@ -27,7 +27,7 @@ Java官方提供JDBC接口，如Connection、Statement和ResultSet等。
 
 HelloWorld.java
 
-::
+.. code:: java
 
    package com.a51work;
 
@@ -62,7 +62,7 @@ HelloWorld.java
 读取配置文件示例
 ~~~~~~~~~~~~~~~~
 
-::
+.. code:: java
 
    package com.a51work;
 
@@ -166,7 +166,7 @@ Java连接Mysql
 
 JdbcUtil.java
 
-::
+.. code:: java
 
     import java.sql.Connection;  
     import java.sql.DriverManager;  
@@ -239,7 +239,7 @@ JdbcUtil.java
 
 CRUDSample.java
 
-::
+.. code:: java
 
    package com.a51work;
 
@@ -348,7 +348,7 @@ CRUDSample.java
 无条件的查询
 ~~~~~~~~~~~~
 
-::
+.. code:: java
 
    //数据无条件查询操作
    public static void readMaxUserId() {
@@ -377,7 +377,7 @@ CRUDSample.java
 插入数据
 ~~~~~~~~
 
-::
+.. code:: java
 
    // 插入数据
    public static void create() {
@@ -403,7 +403,7 @@ CRUDSample.java
 更新数据
 ~~~~~~~~
 
-::
+.. code:: java
 
    package com.a51work;
 
@@ -473,7 +473,7 @@ CRUDSample.java
 删除数据
 ~~~~~~~~
 
-::
+.. code:: java
 
    // 删除数据
    public static void delete() {
@@ -500,7 +500,7 @@ CRUDSample.java
 数据增删改查（CRUD汇总）
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+.. code:: java
 
 
    package com.a51work;
@@ -641,3 +641,8 @@ CRUDSample.java
        }
        
    }
+
+Java CRUD不错的文章
+-------------------
+
+https://www.cnblogs.com/xiaotiaosi/p/6394554.html

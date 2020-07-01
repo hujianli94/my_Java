@@ -118,7 +118,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#date">13.5.1. Date类</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id2">13.5.2. 日期格式化和解析</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#calendar">13.5.3. Calendar类</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#java8">13.5.4. Java8新日期时间相关类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#timezone">13.5.4. TimeZone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#java8">13.5.5. Java8新日期时间相关类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#localdatetime">13.5.6. LocalDateTime</a></li>
 </ul>
 </li>
 </ul>
@@ -214,7 +216,9 @@
 <li><a class="reference internal" href="#date" id="id4">Date类</a></li>
 <li><a class="reference internal" href="#id2" id="id5">日期格式化和解析</a></li>
 <li><a class="reference internal" href="#calendar" id="id6">Calendar类</a></li>
-<li><a class="reference internal" href="#java8" id="id7">Java8新日期时间相关类</a></li>
+<li><a class="reference internal" href="#timezone" id="id7">TimeZone</a></li>
+<li><a class="reference internal" href="#java8" id="id8">Java8新日期时间相关类</a></li>
+<li><a class="reference internal" href="#localdatetime" id="id9">LocalDateTime</a></li>
 </ul>
 </li>
 </ul>
@@ -223,8 +227,42 @@
 <h1><a class="toc-backref" href="#id3">13.5. 日期时间相关类</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="date">
 <h2><a class="toc-backref" href="#id4">13.5.1. Date类</a><a class="headerlink" href="#date" title="Permalink to this headline">¶</a></h2>
+<p>Date的基本用法</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>package Data_class;
+
+import java.util.Date;
+
+public class simaple01 {
+    public static void main(String[] args) {
+        Date date = new Date();
+        System.out.println(date.getYear() + 1900);
+        System.out.println(date.getMonth() + 1); // 0~11，必须加上1
+        System.out.println(date.getDate()); // 1~31，不能加1
+
+        // 转换为String:
+        System.out.println(date.toString());
+        // 转换为GMT时区:
+        System.out.println(date.toGMTString());
+        // 转换为本地时区:
+        System.out.println(date.toLocaleString());
+    }
+}
+
+
+/**
+ *
+ * 注意getYear()返回的年份必须加上1900，getMonth()返回的月份是0~11分别表示1~12月，所以要加1，而getDate()返回的日期范围是1~31，又不能加1。
+ 2020
+ 7
+ 1
+ Wed Jul 01 09:45:31 CST 2020
+ 1 Jul 2020 01:45:31 GMT
+ 2020-7-1 9:45:31
+ **/
+</pre></div>
+</div>
 <p>代码示例</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51work6;
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.a51work6;
 
 import java.util.Date;
 
@@ -282,8 +320,36 @@ now.compareTo(date) = -1
 </div>
 <div class="section" id="id2">
 <h2><a class="toc-backref" href="#id5">13.5.2. 日期格式化和解析</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>打印本地时区表示的日期和时间时，不同的计算机可能会有不同的结果。如果我们想要针对用户的偏好精确地控制日期和时间的格式，就可以使用<code class="docutils literal"><span class="pre">SimpleDateFormat</span></code>对一个<code class="docutils literal"><span class="pre">Date</span></code>进行转换。它用预定义的字符串表示格式化：</p>
+<ul class="simple">
+<li>yyyy：年</li>
+<li>MM：月</li>
+<li>dd: 日</li>
+<li>HH: 小时</li>
+<li>mm: 分钟</li>
+<li>ss: 秒</li>
+</ul>
+<p>我们来看如何以自定义的格式输出：</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Data_class</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.text.</span><span class="o">*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.</span><span class="o">*</span><span class="p">;</span>
+
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">simple02</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">获取当前时间</span><span class="p">:</span>
+        <span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Date</span><span class="p">();</span>
+        <span class="n">SimpleDateFormat</span> <span class="n">sdf</span> <span class="o">=</span> <span class="n">new</span> <span class="n">SimpleDateFormat</span><span class="p">(</span><span class="s2">&quot;yyyy-MM-dd HH:mm:ss&quot;</span><span class="p">);</span>   <span class="o">//</span><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">01</span> <span class="mi">09</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">59</span>
+<span class="o">//</span>        <span class="n">SimpleDateFormat</span> <span class="n">sdf</span> <span class="o">=</span> <span class="n">new</span> <span class="n">SimpleDateFormat</span><span class="p">(</span><span class="s2">&quot;E MMM dd, yyyy&quot;</span><span class="p">);</span>      <span class="o">//</span><span class="n">星期三</span> <span class="n">七月</span> <span class="mi">01</span><span class="p">,</span> <span class="mi">2020</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">sdf</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">date</span><span class="p">));</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>代码示例</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work7</span><span class="p">;</span>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work7</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.text.DateFormat</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.text.ParseException</span><span class="p">;</span>
@@ -322,7 +388,7 @@ now.compareTo(date) = -1
 <p>可以使用java.util.Calendar类，
 Calendar是一个抽象类，不能实例化，但是通过静态工厂方法getInstance()获得Calendar实例。</p>
 <p>代码示例</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work6</span><span class="p">;</span>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work6</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.text.DateFormat</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.text.ParseException</span><span class="p">;</span>
@@ -365,12 +431,141 @@ Calendar是一个抽象类，不能实例化，但是通过静态工厂方法get
 <span class="o">*/</span>
 </pre></div>
 </div>
+<p><code class="docutils literal"><span class="pre">simple03.java</span></code></p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Data_class</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Calendar</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">simple03</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">获取当前时间</span><span class="p">:</span>
+        <span class="n">Calendar</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="n">getInstance</span><span class="p">();</span>
+        <span class="nb">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">YEAR</span><span class="p">);</span>
+        <span class="nb">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">MONTH</span><span class="p">);</span>
+        <span class="nb">int</span> <span class="n">d</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">DAY_OF_MONTH</span><span class="p">);</span>
+        <span class="nb">int</span> <span class="n">w</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">DAY_OF_WEEK</span><span class="p">);</span>
+        <span class="nb">int</span> <span class="n">hh</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">HOUR_OF_DAY</span><span class="p">);</span>
+        <span class="nb">int</span> <span class="n">mm</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">MINUTE</span><span class="p">);</span>
+        <span class="nb">int</span> <span class="n">ss</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">SECOND</span><span class="p">);</span>
+        <span class="nb">int</span> <span class="n">ms</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">MILLISECOND</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">m</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">d</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">w</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">hh</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">mm</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">ss</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">ms</span><span class="p">);</span>    <span class="o">//</span><span class="mi">2020</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">1</span> <span class="mi">4</span> <span class="mi">9</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mf">36.483</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Calendar</span></code>只有一种方式获取，即<code class="docutils literal"><span class="pre">Calendar.getInstance()</span></code>，而且一获取到就是当前时间。如果我们想给它设置成特定的一个日期和时间，就必须先清除所有字段：</p>
+<p><code class="docutils literal"><span class="pre">simple04.java</span></code></p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Data_class</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Calendar</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">simple04</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">当前时间</span><span class="p">:</span>
+        <span class="n">Calendar</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="n">getInstance</span><span class="p">();</span>
+        <span class="o">//</span> <span class="n">清除所有</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span>
+        <span class="o">//</span> <span class="n">设置2019年</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span> <span class="mi">2019</span><span class="p">);</span>
+        <span class="o">//</span> <span class="n">设置9月</span><span class="p">:</span><span class="n">注意8表示9月</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">MONTH</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+        <span class="o">//</span> <span class="n">设置2日</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">DATE</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="o">//</span> <span class="n">设置时间</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">HOUR_OF_DAY</span><span class="p">,</span> <span class="mi">21</span><span class="p">);</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">MINUTE</span><span class="p">,</span> <span class="mi">22</span><span class="p">);</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">SECOND</span><span class="p">,</span> <span class="mi">23</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">new</span> <span class="n">SimpleDateFormat</span><span class="p">(</span><span class="s2">&quot;yyyy-MM-dd HH:mm:ss&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">getTime</span><span class="p">()));</span>    <span class="o">//</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">02</span> <span class="mi">21</span><span class="p">:</span><span class="mi">22</span><span class="p">:</span><span class="mi">23</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="timezone">
+<h2><a class="toc-backref" href="#id7">13.5.4. TimeZone</a><a class="headerlink" href="#timezone" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">Calendar</span></code>和<code class="docutils literal"><span class="pre">Date</span></code>相比，它提供了时区转换的功能。时区用<code class="docutils literal"><span class="pre">TimeZone</span></code>对象表示：</p>
+<p><code class="docutils literal"><span class="pre">simpl05.java</span></code></p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Data_class</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.TimeZone</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">simpl05</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TimeZone</span> <span class="n">tzDefault</span> <span class="o">=</span> <span class="n">TimeZone</span><span class="o">.</span><span class="n">getDefault</span><span class="p">();</span> <span class="o">//</span> <span class="n">当前时区</span>
+        <span class="n">TimeZone</span> <span class="n">tzGMT9</span> <span class="o">=</span> <span class="n">TimeZone</span><span class="o">.</span><span class="n">getTimeZone</span><span class="p">(</span><span class="s2">&quot;GMT+09:00&quot;</span><span class="p">);</span> <span class="o">//</span> <span class="n">GMT</span><span class="o">+</span><span class="mi">9</span><span class="p">:</span><span class="mi">00</span><span class="n">时区</span>
+        <span class="n">TimeZone</span> <span class="n">tzNY</span> <span class="o">=</span> <span class="n">TimeZone</span><span class="o">.</span><span class="n">getTimeZone</span><span class="p">(</span><span class="s2">&quot;America/New_York&quot;</span><span class="p">);</span> <span class="o">//</span> <span class="n">纽约时区</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">tzDefault</span><span class="o">.</span><span class="n">getID</span><span class="p">());</span> <span class="o">//</span> <span class="n">Asia</span><span class="o">/</span><span class="n">Shanghai</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">Arrays</span><span class="o">.</span><span class="n">toString</span><span class="p">(</span><span class="n">TimeZone</span><span class="o">.</span><span class="n">getAvailableIDs</span><span class="p">()));</span>    <span class="o">////</span> <span class="n">Asia</span><span class="o">/</span><span class="n">Shanghai</span><span class="p">,</span> <span class="n">Asia</span><span class="o">/</span><span class="n">Chongqing</span><span class="p">,</span> <span class="n">Asia</span><span class="o">/</span><span class="n">Hong_Kong</span><span class="p">,</span> <span class="n">Asia</span><span class="o">/</span><span class="n">Macao</span><span class="p">,</span> <span class="o">.</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">tzGMT9</span><span class="o">.</span><span class="n">getID</span><span class="p">());</span> <span class="o">//</span> <span class="n">GMT</span><span class="o">+</span><span class="mi">09</span><span class="p">:</span><span class="mi">00</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">tzNY</span><span class="o">.</span><span class="n">getID</span><span class="p">());</span> <span class="o">//</span> <span class="n">America</span><span class="o">/</span><span class="n">New_York</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>要列出系统支持的所有ID，请使用<code class="docutils literal"><span class="pre">TimeZone.getAvailableIDs()</span></code>。</p>
+<p>有了时区，我们就可以对指定时间进行转换。例如，下面的例子演示了如何将北京时间<code class="docutils literal"><span class="pre">2019-11-20</span> <span class="pre">8:15:00</span></code>转换为纽约时间：</p>
+<p><code class="docutils literal"><span class="pre">simpl05.java</span></code></p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Data_class</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Calendar</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.TimeZone</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">simpl05</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">当前时间</span><span class="p">:</span>
+        <span class="n">Calendar</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="n">getInstance</span><span class="p">();</span>
+        <span class="o">//</span> <span class="n">清除所有</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span>
+        <span class="o">//</span> <span class="n">设置为北京时区</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">setTimeZone</span><span class="p">(</span><span class="n">TimeZone</span><span class="o">.</span><span class="n">getTimeZone</span><span class="p">(</span><span class="s2">&quot;Asia/Shanghai&quot;</span><span class="p">));</span>
+        <span class="o">//</span> <span class="n">设置年月日时分秒</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">10</span> <span class="o">/*</span> <span class="mi">11</span><span class="n">月</span> <span class="o">*/</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="o">//</span> <span class="n">显示时间</span><span class="p">:</span>
+        <span class="n">SimpleDateFormat</span> <span class="n">sdf</span> <span class="o">=</span> <span class="n">new</span> <span class="n">SimpleDateFormat</span><span class="p">(</span><span class="s2">&quot;yyyy-MM-dd HH:mm:ss&quot;</span><span class="p">);</span>
+        <span class="n">sdf</span><span class="o">.</span><span class="n">setTimeZone</span><span class="p">(</span><span class="n">TimeZone</span><span class="o">.</span><span class="n">getTimeZone</span><span class="p">(</span><span class="s2">&quot;America/New_York&quot;</span><span class="p">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">sdf</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">getTime</span><span class="p">()));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Calendar</span></code>也可以对日期和时间进行简单的加减：</p>
+<p><code class="docutils literal"><span class="pre">simple05.java</span></code></p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Data_class</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Calendar</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.TimeZone</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">simpl05</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">当前时间</span><span class="p">:</span>
+        <span class="n">Calendar</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="n">getInstance</span><span class="p">();</span>
+        <span class="o">//</span> <span class="n">清除所有</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span>
+        <span class="o">//</span> <span class="n">设置年月日时分秒</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">10</span> <span class="o">/*</span> <span class="mi">11</span><span class="n">月</span> <span class="o">*/</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="o">//</span> <span class="n">加5天并减去2小时</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">DAY_OF_MONTH</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Calendar</span><span class="o">.</span><span class="n">HOUR_OF_DAY</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+        <span class="o">//</span> <span class="n">显示时间</span><span class="p">:</span>
+        <span class="n">SimpleDateFormat</span> <span class="n">sdf</span> <span class="o">=</span> <span class="n">new</span> <span class="n">SimpleDateFormat</span><span class="p">(</span><span class="s2">&quot;yyyy-MM-dd HH:mm:ss&quot;</span><span class="p">);</span>
+        <span class="n">Date</span> <span class="n">d</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">getTime</span><span class="p">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">sdf</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d</span><span class="p">));</span>
+        <span class="o">//</span> <span class="mi">2019</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">25</span> <span class="mi">6</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mi">00</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="java8">
-<h2><a class="toc-backref" href="#id7">13.5.4. Java8新日期时间相关类</a><a class="headerlink" href="#java8" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">13.5.5. Java8新日期时间相关类</a><a class="headerlink" href="#java8" title="Permalink to this headline">¶</a></h2>
 <p>时间和日期</p>
-<p>HelloWorld.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work8</span><span class="p">;</span>
+<p><code class="docutils literal"><span class="pre">HelloWorld.java</span></code></p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work8</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.time.LocalDate</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="p">;</span>
@@ -422,7 +617,7 @@ Calendar是一个抽象类，不能实例化，但是通过静态工厂方法get
 </div>
 <p>日期格式化和解析</p>
 <p>HelloWorld9.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51work6;
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.a51work6;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -479,8 +674,58 @@ LocalDate解析之后：2018-08-18
 time格式化之前：14:35:16.657
 time格式化之后：14:35:16
 LocalTime解析之后：08:58:18
-
 */
+</pre></div>
+</div>
+</div>
+<div class="section" id="localdatetime">
+<h2><a class="toc-backref" href="#id9">13.5.6. LocalDateTime</a><a class="headerlink" href="#localdatetime" title="Permalink to this headline">¶</a></h2>
+<p>我们首先来看最常用的<code class="docutils literal"><span class="pre">LocalDateTime</span></code>，它表示一个本地日期和时间：</p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Local_date</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.time.LocalDate</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalTime</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">LocalDate</span> <span class="n">d</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="n">now</span><span class="p">();</span> <span class="o">//</span> <span class="n">当前日期</span>
+        <span class="n">LocalTime</span> <span class="n">t</span> <span class="o">=</span> <span class="n">LocalTime</span><span class="o">.</span><span class="n">now</span><span class="p">();</span> <span class="o">//</span> <span class="n">当前时间</span>
+        <span class="n">LocalDateTime</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="n">now</span><span class="p">();</span> <span class="o">//</span> <span class="n">当前日期和时间</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">d</span><span class="p">);</span> <span class="o">//</span> <span class="n">严格按照ISO</span> <span class="mi">8601</span><span class="n">格式打印</span>  <span class="o">//</span><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">01</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">t</span><span class="p">);</span> <span class="o">//</span> <span class="n">严格按照ISO</span> <span class="mi">8601</span><span class="n">格式打印</span>  <span class="o">//</span><span class="mi">10</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mf">41.429</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">dt</span><span class="p">);</span> <span class="o">//</span> <span class="n">严格按照ISO</span> <span class="mi">8601</span><span class="n">格式打印</span> <span class="o">//</span><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">01</span><span class="n">T10</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mf">41.429</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>package Local_date;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
+public class Main {
+    public static void main(String[] args) {
+//        LocalDate d = LocalDate.now(); // 当前日期
+//        LocalTime t = LocalTime.now(); // 当前时间
+//        LocalDateTime dt = LocalDateTime.now(); // 当前日期和时间
+//        System.out.println(d); // 严格按照ISO 8601格式打印  //2020-07-01
+//        System.out.println(t); // 严格按照ISO 8601格式打印  //10:24:41.429
+//        System.out.println(dt); // 严格按照ISO 8601格式打印 //2020-07-01T10:24:41.429
+
+
+//        上述代码其实有一个小问题，在获取3个类型的时候，由于执行一行代码总会消耗一点时间，
+//        因此，3个类型的日期和时间很可能对不上（时间的毫秒数基本上不同）。为了保证获取到同一时刻的日期和时间，可以改写如下：
+        LocalDateTime dt = LocalDateTime.now(); // 当前日期和时间
+        LocalDate d = dt.toLocalDate(); // 转换到当前日期
+        LocalTime t = dt.toLocalTime(); // 转换到当前时间
+        System.out.println(dt);
+        System.out.println(d);
+        System.out.println(t);
+
+    }
+}
 </pre></div>
 </div>
 </div>

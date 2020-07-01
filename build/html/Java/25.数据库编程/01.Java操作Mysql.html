@@ -126,6 +126,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#jdbc">25.1.1. JDBC技术</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id1">25.1.2. 建立数据连接</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#crud-mysql">25.1.3. 数据CRUD操作（MySQL增删改查）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#java-crud">25.1.4. Java CRUD不错的文章</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="02.Java操作Redis.html">25.2. Java操作Redis</a></li>
@@ -222,6 +223,7 @@
 <li><a class="reference internal" href="#crud" id="id20">数据增删改查（CRUD汇总）</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#java-crud" id="id21">Java CRUD不错的文章</a></li>
 </ul>
 </li>
 </ul>
@@ -246,7 +248,7 @@ Driver（JDBC驱动程序），例如Connection是数据库连接接口，如何
 <div class="section" id="id1">
 <h2><a class="toc-backref" href="#id11">25.1.2. 建立数据连接</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>HelloWorld.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="p">;</span>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.sql.Connection</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.sql.DriverManager</span><span class="p">;</span>
@@ -279,7 +281,7 @@ Driver（JDBC驱动程序），例如Connection是数据库连接接口，如何
 </div>
 <div class="section" id="id2">
 <h3><a class="toc-backref" href="#id12">读取配置文件示例</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="p">;</span>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
@@ -381,7 +383,7 @@ Driver（JDBC驱动程序），例如Connection是数据库连接接口，如何
 <div class="section" id="id3">
 <h3><a class="toc-backref" href="#id13">Java连接Mysql</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>JdbcUtil.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>import java.sql.Connection;
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -452,7 +454,7 @@ public class JdbcUtil {
 <div class="section" id="id4">
 <h3><a class="toc-backref" href="#id15">有条件的查询</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>CRUDSample.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="p">;</span>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
@@ -560,7 +562,7 @@ public class JdbcUtil {
 </div>
 <div class="section" id="id5">
 <h3><a class="toc-backref" href="#id16">无条件的查询</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">数据无条件查询操作</span>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">数据无条件查询操作</span>
 <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">readMaxUserId</span><span class="p">()</span> <span class="p">{</span>
     <span class="nb">int</span> <span class="n">maxId</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="n">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
@@ -588,7 +590,7 @@ public class JdbcUtil {
 </div>
 <div class="section" id="id6">
 <h3><a class="toc-backref" href="#id17">插入数据</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">插入数据</span>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">插入数据</span>
 <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">create</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">try</span> <span class="p">(</span><span class="n">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">DriverManager</span><span class="o">.</span><span class="n">getConnection</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">info</span><span class="p">);</span>
          <span class="n">PreparedStatement</span> <span class="n">pstmt</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">prepareStatement</span><span class="p">(</span><span class="s2">&quot;INSERT INTO student(id,name,phone) VALUES(?,?,?)&quot;</span><span class="p">))</span> <span class="p">{</span>
@@ -613,7 +615,7 @@ public class JdbcUtil {
 </div>
 <div class="section" id="id7">
 <h3><a class="toc-backref" href="#id18">更新数据</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51work;
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.a51work;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -682,7 +684,7 @@ public class CRUDSample4 {
 </div>
 <div class="section" id="id8">
 <h3><a class="toc-backref" href="#id19">删除数据</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span>// 删除数据
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>// 删除数据
 public static void delete() {
     // 自动释放资源
     try (  // 2创建数据库连接
@@ -708,7 +710,7 @@ public static void main(String[] args) {
 </div>
 <div class="section" id="crud">
 <h3><a class="toc-backref" href="#id20">数据增删改查（CRUD汇总）</a><a class="headerlink" href="#crud" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51work;
+<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.a51work;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -849,6 +851,10 @@ public class CRUDSample6 {
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="java-crud">
+<h2><a class="toc-backref" href="#id21">25.1.4. Java CRUD不错的文章</a><a class="headerlink" href="#java-crud" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.cnblogs.com/xiaotiaosi/p/6394554.html">https://www.cnblogs.com/xiaotiaosi/p/6394554.html</a></p>
 </div>
 </div>
 

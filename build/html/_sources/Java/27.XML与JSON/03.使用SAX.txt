@@ -1,0 +1,131 @@
+.. contents::
+   :depth: 3
+..
+
+使用SAX
+=======
+
+使用DOM解析XML的优点是用起来省事，但它的主要缺点是内存占用太大。
+
+另一种解析XML的方式是SAX。SAX是Simple API for
+XML的缩写，它是一种基于流的解析方式，边读取XML边解析，并以事件回调的方式让调用者获取数据。因为是一边读一边解析，所以无论XML有多大，占用的内存都很小。
+
+SAX解析会触发一系列事件：
+
+-  startDocument：开始读取XML文档；
+-  startElement：读取到了一个元素，例如\ ``<book>``\ ；
+-  characters：读取到了字符；
+-  endElement：读取到了一个结束的元素，例如\ ``</book>``\ ；
+-  endDocument：读取XML文档结束。
+
+``src/config/book.xml``
+
+::
+
+   <?xml version="1.0" encoding="UTF-8" ?>
+   <book id="1">
+       <name>Java核心技术</name>
+       <author>Cay S. Horstmann</author>
+       <isbn lang="CN">1234567</isbn>
+       <tags>
+           <tag>Java</tag>
+           <tag>Network</tag>
+       </tags>
+       <pubDate/>
+   </book>
+
+如果我们用SAX API解析XML，Java代码如下：
+
+.. code:: java
+
+   import java.io.FileInputStream;
+   import java.io.InputStream;
+
+   import javax.xml.parsers.SAXParser;
+   import javax.xml.parsers.SAXParserFactory;
+
+   import org.xml.sax.Attributes;
+   import org.xml.sax.SAXException;
+   import org.xml.sax.SAXParseException;
+   import org.xml.sax.helpers.DefaultHandler;
+
+   public class MySAXParserTest {
+
+       public static void main(String[] args) {
+           SAXParserFactory factory = SAXParserFactory.newInstance();
+           try {
+
+               InputStream xmlInput = new FileInputStream("src/config/book.xml");
+               SAXParser saxParser = factory.newSAXParser();
+
+               DefaultHandler handler = new MyHandler();
+               saxParser.parse(xmlInput, handler);
+
+           } catch (Throwable err) {
+               err.printStackTrace();
+           }
+       }
+
+   static class MyHandler extends DefaultHandler {
+           public void startDocument() throws SAXException {
+               print("start document");
+           }
+
+           public void endDocument() throws SAXException {
+               print("end document");
+           }
+
+           public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+               print("start element:", localName, qName);
+           }
+
+           public void endElement(String uri, String localName, String qName) throws SAXException {
+               print("end element:", localName, qName);
+           }
+
+           public void characters(char[] ch, int start, int length) throws SAXException {
+               print("characters:", new String(ch, start, length));
+           }
+
+           public void error(SAXParseException e) throws SAXException {
+               print("error:", e);
+           }
+
+           void print(Object... objs) {
+               for (Object obj : objs) {
+                   System.out.print(obj);
+                   System.out.print(" ");
+               }
+               System.out.println();
+           }
+       }
+   }
+
+运行SAX解析代码，可以打印出下面的结果：
+
+::
+
+   "C:\Program Files\Java\jdk1.8.0_251\bin\java.exe" "-Files\Java\jdk1.8.0_251\jre\lib\rt.jar;D:\Java_Study\Java小白到大牛\ch9\SAX\Test_ReadXML\out\production\Test_ReadXML" MySAXParserTest
+
+   start document 
+   start element:  book 
+   characters: 
+        
+   start element:  name 
+   characters: Java核心技术 
+   end element:  name 
+   characters: 
+        
+   start element:  author 
+   characters: Cay S. Horstmann 
+   end element:  author 
+   characters: 
+        
+   start element:  isbn 
+   characters: 1234567 
+   end element:  isbn 
+   characters: 
+   ......
+
+如果要读取\ ``<name>``\ 节点的文本，我们就必须在解析过程中根据\ ``startElement()``\ 和\ ``endElement()``\ 定位当前正在读取的节点，可以使用栈结构保存，每遇到一个\ ``startElement()``\ 入栈，每遇到一个\ ``endElement()``\ 出栈，这样，读到\ ``characters()``\ 时我们才知道当前读取的文本是哪个节点的。可见，使用SAX
+API仍然比较麻烦。
