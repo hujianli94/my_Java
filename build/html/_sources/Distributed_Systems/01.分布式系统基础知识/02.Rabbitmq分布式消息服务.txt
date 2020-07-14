@@ -171,7 +171,7 @@ Worker.java (消费者).我们创建2个Worker消费者。
 
 pom.xml文件如下
 
-::
+.. code:: xml
 
    <?xml version="1.0" encoding="UTF-8"?>
    <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -181,7 +181,7 @@ pom.xml文件如下
 
        <groupId>rabbitmq-demo</groupId>
        <artifactId>rabbitmq-demo</artifactId>
-       <version>1.0-SNAPSHOT</version>
+       <version>1.0.0</version>
        <dependencies>
 
            <dependency>
@@ -249,12 +249,33 @@ pom.xml文件如下
        </build>
    </project>
 
+在linux上启动的命令为：
+
+.. code:: java
+
+   [root@jenkins-git chapter3]# java -cp target/rabbitmq-demo-1.0.0.jar NewTask
+   04:06:18.229 [main] INFO  NewTask -  [x] Sent 'Hello World! 0'
+   04:06:18.232 [main] INFO  NewTask -  [x] Sent 'Hello World! 1'
+   04:06:18.233 [main] INFO  NewTask -  [x] Sent 'Hello World! 2'
+   04:06:18.233 [main] INFO  NewTask -  [x] Sent 'Hello World! 3'
+   04:06:18.233 [main] INFO  NewTask -  [x] Sent 'Hello World! 4'
+   04:06:18.233 [main] INFO  NewTask -  [x] Sent 'Hello World! 5'
+   04:06:18.234 [main] INFO  NewTask -  [x] Sent 'Hello World! 6'
+   04:06:18.234 [main] INFO  NewTask -  [x] Sent 'Hello World! 7'
+   04:06:18.234 [main] INFO  NewTask -  [x] Sent 'Hello World! 8'
+   04:06:18.234 [main] INFO  NewTask -  [x] Sent 'Hello World! 9'
+
+.. code:: shell
+
+   [root@jenkins-git chapter3]# java -cp target/rabbitmq-demo-1.0.0.jar Worker
+
 例子：Publish/Subscribe
 -----------------------
 
 Publish/Subscribe(发布/订阅)
-在消息队列中是一种比较常见的工作模式，该模式同事也定义了一种一对多的依赖关系。
-让多个订阅者对象同时监听某一个主题对象。 |image1|
+在消息队列中是一种比较常见的工作模式，该模式同事也定义了一种一对多的依赖关系。让多个订阅者对象同时监听某一个主题对象。
+
+|image1|
 
 该模式，producer(生产者)并不直接发送消息到queue(队列),而是发到了exchange(交换器)中。exchange一边接收来自producer的消息，
 另外一边将消息插入queue中。在上一个例子中，我们并没有显式地使用exchange，我们仍然可以发送和接收消息。因为我们使用了一个默认的转发器，
@@ -262,7 +283,7 @@ Publish/Subscribe(发布/订阅)
 
 主要direct、topic、header和fanout。比如，我们要创建一个fanout类型的exchange，可以使用如下方法：
 
-::
+.. code:: shell
 
    channel.exchangeDeclare('logs',"fonout");
 
@@ -270,7 +291,7 @@ fonout类型的exchange特别简单–把所有它接收到的消息广播所有
 
 EmitLog.java程序
 
-::
+.. code:: java
 
    package NewTask;
    import com.rabbitmq.client.Channel;
@@ -322,7 +343,7 @@ EmitLog.java程序
 
 ReceiveLogs.java
 
-::
+.. code:: java
 
    package Public_Client;
 
@@ -387,6 +408,25 @@ ReceiveLogs.java
    20:47:43.023 [main] INFO  Public_Client.ReceiveLogs -  [*] Waiting for messages. To exit press CTRL+C
    20:47:49.096 [pool-2-thread-4] INFO  Public_Client.ReceiveLogs -  [x] Received 'info: Hello World!'
 
+测试过程，这里为了演示效果，开启2个ReceiveLogs客户端
+
+.. code:: shell
+
+   [root@jenkins-git chapter3]# java -cp target/rabbitmq-demo-1.0.0.jar Publish_Subscribe.ReceiveLogs
+
+开启EmitLog服务器一直发广播，
+
+.. code:: shell
+
+   [root@jenkins-git chapter3]# cat test.sh 
+   #!/bin/bash
+   while true
+   do
+       echo "java rabbitmq 开始广播信息....!!!!"
+       java -cp target/rabbitmq-demo-1.0.0.jar Publish_Subscribe.EmitLog
+       sleep 1
+   done
+
 例子: Routing
 -------------
 
@@ -399,7 +439,7 @@ key(绑定键)，和消息发布附带的routing key（路由键）完全匹配�
 
 EmitLogDirect.java
 
-::
+.. code:: java
 
    package Routing;
 
@@ -461,7 +501,7 @@ EmitLogDirect.java
 
 ReceiveLogsDirect.java
 
-::
+.. code:: java
 
    package Routing;
 
@@ -523,6 +563,51 @@ ReceiveLogsDirect.java
        }
    }
 
+我们为了演示，启动2个ReceiveLogsDirect。一个绑定\ ``error``\ ，另一个绑定\ ``error、info、warning、``\ 。
+
+启动ReceiveLogsDirect执行如下：
+
+.. code:: shell
+
+   [root@jenkins-git chapter3]# java -cp target/rabbitmq-demo-1.0.0.jar Routing.ReceiveLogsDirect error
+
+和
+
+.. code:: shell
+
+   [root@jenkins-git chapter3]# java -cp target/rabbitmq-demo-1.0.0.jar Routing.ReceiveLogsDirect info warning error
+
+启动EmitLogDirect执行如下：
+
+.. code:: shell
+
+   [root@jenkins-git chapter3]# cat test.sh 
+   #!/bin/bash
+   while :
+   do
+       echo "java rabbitmq Routing error.......!"
+       java -cp target/rabbitmq-demo-1.0.0.jar Routing.EmitLogDirect error "An error  will explode"
+       echo
+       echo "java rabbitmq Routing info.......!"
+       java -cp target/rabbitmq-demo-1.0.0.jar Routing.EmitLogDirect info "An info will explode"
+       echo
+       echo "java rabbitmq Routing warning.......!"
+       java -cp target/rabbitmq-demo-1.0.0.jar Routing.EmitLogDirect warning "An warning will explode"
+       sleep 1
+   done
+
+.. code:: java
+
+   channel.basicPublish(EXCHANGE_NAME, severity, null, message.getBytes("UTF-8"));
+   //为不同的routing key做绑定
+
+.. code:: java
+
+   channel.queueBind(queueName, EXCHANGE_NAME, severity);
+   // 直接收绑定routing key的消息
+
+发现数据在发布和订阅的时候，进行了路由分发。
+
 例子：Topics
 ------------
 
@@ -538,7 +623,7 @@ key可以是长度不超过255 bytes的字符，其格式是以点号
 
 EmitLogTopic.java
 
-::
+.. code:: java
 
    package Topics;
 
@@ -620,7 +705,7 @@ EmitLogTopic.java
 
 ReceiveLogsTopic.java
 
-::
+.. code:: java
 
    package Topics;
 
@@ -674,6 +759,32 @@ ReceiveLogsTopic.java
            channel.basicConsume(queueName, true, consumer);
        }
    }
+
+这里我们为了演示效果，启动2个ReceiveLogsTopic.一个绑定\ ``kern.*``\ ，另一个绑定\ ``kern.*``\ 和
+``*.txt， *.py``
+
+.. code:: shell
+
+   [root@jenkins-git chapter3]# java -cp target/rabbitmq-demo-1.0.0.jar Topics.ReceiveLogsTopic "kern.*"
+
+.. code:: shell
+
+   [root@jenkins-git chapter3]# java -cp target/rabbitmq-demo-1.0.0.jar Topics.ReceiveLogsTopic "kern.*" "*.txt" "*.py"
+
+启动EmitLogTopic执行如下：
+
+.. code:: shell
+
+   [root@jenkins-git chapter3]# cat test01.sh 
+   #!/bin/bash
+   while :
+
+   do
+       echo "java send \"kern.critical\" \"aaa.txt" "bbb.py\"\"
+       echo 
+       java -cp target/rabbitmq-demo-1.0.0.jar Topics.EmitLogTopic "kern.critical" "aaa.txt" "bbb.py"
+       sleep 1
+   done
 
 RPC
 ---

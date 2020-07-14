@@ -1,0 +1,611 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.3. Apache Kafka &mdash; 运维开发修炼之路</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="prev" title="1.2. RabbitMQ" href="02.Rabbitmq分布式消息服务.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+          
+
+          
+            
+            <img src="../../_static/my_java_study.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Java/index.html">Java学习笔记</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">分布式系统架构案例(Java)</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">1. 分布式系统基础知识</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01.编程语言中的线程对象.html">1.1. 编程语言中的线程对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02.Rabbitmq分布式消息服务.html">1.2. RabbitMQ</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.3. Apache Kafka</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">1.3.1. Apache Kafka的安装、配置、使用</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">小健_Java_Blog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">分布式系统架构案例(Java)</a> &raquo;</li>
+        
+          <li><a href="index.html">1. 分布式系统基础知识</a> &raquo;</li>
+        
+      <li>1.3. Apache Kafka</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Distributed_Systems/01.分布式系统基础知识/03.Apache-Kafka.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#apache-kafka" id="id5">Apache Kafka</a><ul>
+<li><a class="reference internal" href="#id1" id="id6">Apache Kafka的安装、配置、使用</a><ul>
+<li><a class="reference internal" href="#id2" id="id7">1.下载安装</a></li>
+<li><a class="reference internal" href="#kafka-server" id="id8">2.启动kafka server服务</a></li>
+<li><a class="reference internal" href="#topic" id="id9">3.创建topic</a></li>
+<li><a class="reference internal" href="#id3" id="id10">4.发送消息</a></li>
+<li><a class="reference internal" href="#id4" id="id11">5.启动消费者</a></li>
+<li><a class="reference internal" href="#broker" id="id12">6.设置多个broker集群</a></li>
+<li><a class="reference internal" href="#kafka" id="id13">7.kafka指令大全</a></li>
+<li><a class="reference internal" href="#java-idea-kafka" id="id14">8.用Java(idea)来测试kafka中的生产者和消费者</a></li>
+<li><a class="reference internal" href="#pyhtonkafka" id="id15">9.用Pyhton来测试Kafka生产者和消费者</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="apache-kafka">
+<h1><a class="toc-backref" href="#id5">1.3. Apache Kafka</a><a class="headerlink" href="#apache-kafka" title="Permalink to this headline">¶</a></h1>
+<p>Apache Kafka
+是一种高吞吐的分布式发布订阅消息系统，可以提供消息的持久化，即使数据以TB的消息存储也能够保持长时间的文档性能，同时Kafka也支持Hadoop并行数据加载。</p>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id6">1.3.1. Apache Kafka的安装、配置、使用</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id7">1.下载安装</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>安装包的下载地址为 <a class="reference external" href="http://kafka.apache.org/downloads.html">http://kafka.apache.org/downloads.html</a>&gt;</p>
+<p>这里下载的是kafka_2.13-2.5.0.tgz</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="o">-</span><span class="n">xzf</span> <span class="n">kafka_2</span><span class="o">.</span><span class="mi">13</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mf">0.</span><span class="n">tgz</span>
+<span class="n">cd</span> <span class="n">kafka_2</span><span class="o">.</span><span class="mi">13</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mf">0.</span>
+</pre></div>
+</div>
+<p>解压安装包kafka_2.13-2.5.0.tgz到任意安装目录，如果是unix系统，则执行安装目录下的bin目录下的脚本，如果是windows系统，则执行bin/windows目录下的脚本。</p>
+</div>
+<div class="section" id="kafka-server">
+<h3><a class="toc-backref" href="#id8">2.启动kafka server服务</a><a class="headerlink" href="#kafka-server" title="Permalink to this headline">¶</a></h3>
+<p>因Kafka使用了ZooKeeper，所以，首先启动ZooKeeper（Kafka自带打包和配置好了的ZooKeeper），执行：</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@px</span><span class="o">-</span><span class="n">master</span> <span class="n">kafka_2</span><span class="o">.</span><span class="mi">13</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="p">]</span><span class="c1"># ./bin/zookeeper-server-start.sh config/zookeeper.properties</span>
+</pre></div>
+</div>
+<p>现在启动Kafka服务：</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@px</span><span class="o">-</span><span class="n">master</span> <span class="n">kafka_2</span><span class="o">.</span><span class="mi">13</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="p">]</span><span class="c1"># ./bin/kafka-server-start.sh config/server.properties &amp;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="topic">
+<h3><a class="toc-backref" href="#id9">3.创建topic</a><a class="headerlink" href="#topic" title="Permalink to this headline">¶</a></h3>
+<p>创建一个名为“test”的Topic，只有一个分区和一个备份：</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@px</span><span class="o">-</span><span class="n">master</span> <span class="n">kafka_2</span><span class="o">.</span><span class="mi">13</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="p">]</span><span class="c1"># ./bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test</span>
+<span class="n">Created</span> <span class="n">topic</span> <span class="n">test</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>创建好之后，可以通过运行以下命令，查看已创建的topic信息：</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@px</span><span class="o">-</span><span class="n">master</span> <span class="n">kafka_2</span><span class="o">.</span><span class="mi">13</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="p">]</span><span class="c1"># ./bin/kafka-topics.sh --list --zookeeper localhost:2181</span>
+<span class="n">test</span>
+</pre></div>
+</div>
+<p>除了手工创建topic，我们也可以配置直接的broker，当发布一个不存在的topic时，来自动创建topic。</p>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id10">4.发送消息</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Kafka提供一个命令行的工具，可以从输入文件或者命令行中读取消息并发送给Kafka集群，每一行是一条消息。</p>
+<p>运行Producer程序，然后在控制台输入几条消息到服务器。</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@px</span><span class="o">-</span><span class="n">master</span> <span class="n">kafka_2</span><span class="o">.</span><span class="mi">13</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="p">]</span><span class="c1"># bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test</span>
+<span class="o">&gt;</span><span class="n">asasas</span>
+<span class="o">&gt;</span><span class="n">asasas</span>
+<span class="o">&gt;</span><span class="n">saasa</span>
+<span class="o">&gt;</span><span class="n">aasdsa</span>
+<span class="o">&gt;</span><span class="n">asa</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id11">5.启动消费者</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@px</span><span class="o">-</span><span class="n">master</span> <span class="n">kafka_2</span><span class="o">.</span><span class="mi">13</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="p">]</span><span class="c1">#  bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning</span>
+<span class="n">This</span> <span class="ow">is</span> <span class="n">another</span> <span class="n">message</span>
+<span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">message</span>
+<span class="n">This</span> <span class="ow">is</span> <span class="n">another</span> <span class="n">message</span>
+<span class="n">aaa</span>
+<span class="n">aaaaaaaaaaaaaaaaaaaaa</span>
+<span class="n">aaaaaaaaaaaaaaa</span>
+<span class="n">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</span>
+<span class="n">cccccccccccccccccc</span>
+<span class="n">asasas</span>
+<span class="n">asasas</span>
+<span class="n">saasa</span>
+<span class="n">aasdsa</span>
+<span class="n">asa</span>
+</pre></div>
+</div>
+<p>如果无法启动，根据提示，可能需要加zookeeper：</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>$ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --zookeeper localhost:2181 --topic test --from-beginning
+</pre></div>
+</div>
+<p>如果在2台不同的终端上运行上述命令，那么当运行Producer时，Consumer就能消费到Producer发送的消息。</p>
+</div>
+<div class="section" id="broker">
+<h3><a class="toc-backref" href="#id12">6.设置多个broker集群</a><a class="headerlink" href="#broker" title="Permalink to this headline">¶</a></h3>
+<p>对于Kafka来说，一个broker仅仅是一个集群的大小，即使多设置几个broker实例也不会有大的变化，为了演示效果，我们扩展集群到三个节点。</p>
+<p>首先为每个broker创建一个配置文件：</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>$ cp config/server.properties config/server-1.properties
+$ cp config/server.properties config/server-2.properties
+</pre></div>
+</div>
+<p>编辑这些新建的文件。</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>$ cat config/server-1.properties |grep -v &quot;^#&quot;|grep -v &quot;^$&quot;
+broker.id=1
+listeners=PLAINTEXT://:9093
+log.dirs=/tmp/kafka-logs-1
+</pre></div>
+</div>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>$ cat config/server-2.properties |grep -v &quot;^#&quot;|grep -v &quot;^$&quot;
+broker.id=2
+listeners=PLAINTEXT://:9094
+log.dirs=/tmp/kafka-logs-2
+</pre></div>
+</div>
+<p>broker.id是集群中每个节点的唯一且永久的名称，端口和日志分区是因为多个broker现在在同一台机器上运行，我们防止broker在同一端口上注册和覆盖对方数据。</p>
+<p>我们已经运行了Zookeeper和一个Kafka节点，所以只需要再启动2个新的Kafka节点：</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>$ ./bin/kafka-server-start.sh config/server-1.properties &amp;
+
+$ ./bin/kafka-server-start.sh config/server-2.properties &amp;
+</pre></div>
+</div>
+<p>现在创建一个topic，把备份设置为3</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>$ bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 3 --partitions 1 --topic my-replic
+ated-topic
+
+Created topic my-replicated-topic.
+</pre></div>
+</div>
+<p>现在已经有了一个集群了，运行“describe
+topics”命令可以查看每个集群的状态。</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>$ bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic my-replicated-topic
+
+Topic: my-replicated-topic  PartitionCount: 1   ReplicationFactor: 3    Configs:
+    Topic: my-replicated-topic  Partition: 0    Leader: 1   Replicas: 1,0,2 Isr: 1,0,2
+</pre></div>
+</div>
+<p>这是一个解释输出，第一行是所有分区的摘要，每一个线提供一个分区信息，因为只有一个分区，所以只有一条线，其中。</p>
+<ul class="simple">
+<li>Leader
+—该节点负责所有指定分区的读和写，每个节点的领导都是随机选择的；</li>
+<li>Replicas—备份的节点，无论该节点是否是leader或者目前是否还活着，只是显示；</li>
+<li>Isr—-备份节点的集合，也就是活着的节点集合。</li>
+</ul>
+<p>查看之前创建的单节点：</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>$ bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic test
+Topic: test PartitionCount: 1   ReplicationFactor: 1    Configs:
+    Topic: test Partition: 0    Leader: 0   Replicas: 0 Isr: 0
+</pre></div>
+</div>
+<p>由于刚才创建的topic没有Replicas，所以是0。</p>
+<p>发布一些信息在新的topic上：</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>$ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic myreplicated-topic
+&gt;dasdasdasda
+[2020-07-14 11:48:34,231] WARN [Producer clientId=console-producer] Error while fetching metadata with correlation id 3 : {myreplicated-topic=LEAD
+ER_NOT_AVAILABLE} (org.apache.kafka.clients.NetworkClient)a&gt;dadasdasdasd
+&gt;my test message 1
+&gt;my test message 2
+&gt;adsdsa
+</pre></div>
+</div>
+<p>现在消费这些信息：</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>$ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic myreplicated-topic --from-beginning
+dasdasdasda
+adadasdasdasd
+my test message 1
+my test message 2
+adsdsa
+</pre></div>
+</div>
+<p>要测试集群的容错，kill掉leader，由于Broker1是当前的leader，被kill掉也就是Broker
+1：</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>ps aux | grep server-1.properties
+$ kill -9 3025
+</pre></div>
+</div>
+<p>备节点之一成为新的leader，而Broker 1 已经不在同步备份集合里了：</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>$ bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic my-replicated-topic
+Topic: my-replicated-topic  PartitionCount: 1   ReplicationFactor: 3    Configs:
+    Topic: my-replicated-topic  Partition: 0    Leader: 0   Replicas: 1,0,2 Isr: 0,2
+</pre></div>
+</div>
+<p>但是消息仍然没丢</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>$ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic myreplicated-topic --from-beginning
+dasdasdasda
+adadasdasdasd
+my test message 1
+my test message 2
+adsdsa
+sdasdas
+</pre></div>
+</div>
+</div>
+<div class="section" id="kafka">
+<h3><a class="toc-backref" href="#id13">7.kafka指令大全</a><a class="headerlink" href="#kafka" title="Permalink to this headline">¶</a></h3>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>bin/kafka-topics.sh --zookeeper localhost:2181 --list
+//查看列表有那些topics
+
+sh bin/kafka-topics.sh --delete --zookeeper localhost:2181 --topic sparkDemo
+//删除topics：sparkDemo
+
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 3 --topic sparkDemo
+//创建topics：sparkDemo
+
+
+bin/kafka-server-start.sh -daemon config/server.properties
+//启动kafka
+
+
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic HelloWor ld
+//启动生产者
+
+
+bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic HelloWorld
+//启动消费者
+</pre></div>
+</div>
+</div>
+<div class="section" id="java-idea-kafka">
+<h3><a class="toc-backref" href="#id14">8.用Java(idea)来测试kafka中的生产者和消费者</a><a class="headerlink" href="#java-idea-kafka" title="Permalink to this headline">¶</a></h3>
+<p>idea环境 打开idea并且创建maven项目。（不会的自己去百度） <strong>pow.xml</strong>：</p>
+<div class="code xml highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;kafkaTest&lt;/groupId&gt;
+    &lt;artifactId&gt;kafkaTest&lt;/artifactId&gt;
+    &lt;version&gt;1.0.0&lt;/version&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.kafka&lt;/groupId&gt;
+            &lt;artifactId&gt;kafka_2.12&lt;/artifactId&gt;
+            &lt;version&gt;1.0.0&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.kafka&lt;/groupId&gt;
+            &lt;artifactId&gt;kafka-clients&lt;/artifactId&gt;
+            &lt;version&gt;1.0.0&lt;/version&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.kafka&lt;/groupId&gt;
+            &lt;artifactId&gt;kafka-streams&lt;/artifactId&gt;
+            &lt;version&gt;1.0.0&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+
+&lt;/project&gt;
+</pre></div>
+</div>
+<p>先关闭Kafka服务</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>$ bin/kafka-server-stop.sh config/server.properties &amp;
+</pre></div>
+</div>
+<p>修改配置文件<code class="docutils literal"><span class="pre">vim</span> <span class="pre">config/server.properties</span></code></p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>$ cat config/server.properties|grep -v &quot;^#&quot;|grep -v &quot;^$&quot;
+broker.id=0
+listeners=PLAINTEXT://172.16.60.190:9092
+advertised.listeners=PLAINTEXT://172.16.60.190:9092
+</pre></div>
+</div>
+<p>启动Kafka服务</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span>$ bin/kafka-server-start.sh config/server.properties  &amp;
+
+$ bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic HelloWorld
+//创建topics：HelloWorld
+
+$ bin/kafka-topics.sh --zookeeper localhost:2181 --list
+</pre></div>
+</div>
+<p>Java生产者代码</p>
+<p><code class="docutils literal"><span class="pre">ProducerDemo.java</span></code></p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">kafka_Test</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Properties</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.kafka.clients.producer.KafkaProducer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.kafka.clients.producer.Producer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.kafka.clients.producer.ProducerConfig</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.kafka.clients.producer.ProducerRecord</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.kafka.common.serialization.StringSerializer</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">ProducerDemo</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">topicName</span> <span class="o">=</span> <span class="s2">&quot;HelloWorld&quot;</span><span class="p">;</span><span class="o">//</span><span class="n">这个是创建好的topic</span>
+
+        <span class="o">//</span> <span class="n">create</span> <span class="n">instance</span> <span class="k">for</span> <span class="n">properties</span> <span class="n">to</span> <span class="n">access</span> <span class="n">producer</span> <span class="n">configs</span>
+        <span class="n">Properties</span> <span class="n">props</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Properties</span><span class="p">();</span>
+
+        <span class="o">//</span><span class="n">这里是填你linux的ip地址</span><span class="p">:</span><span class="n">kafka的端口号</span>
+        <span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;bootstrap.servers&quot;</span><span class="p">,</span> <span class="s2">&quot;172.16.60.190:9092&quot;</span><span class="p">);</span>
+
+        <span class="o">//</span><span class="n">Set</span> <span class="n">acknowledgements</span> <span class="k">for</span> <span class="n">producer</span> <span class="n">requests</span><span class="o">.</span>
+        <span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;acks&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">);</span>
+
+        <span class="o">//</span><span class="n">If</span> <span class="n">the</span> <span class="n">request</span> <span class="n">fails</span><span class="p">,</span> <span class="n">the</span> <span class="n">producer</span> <span class="n">can</span> <span class="n">automatically</span> <span class="n">retry</span><span class="p">,</span>
+        <span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;retries&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+        <span class="o">//</span><span class="n">Specify</span> <span class="n">buffer</span> <span class="n">size</span> <span class="ow">in</span> <span class="n">config</span>
+        <span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;batch.size&quot;</span><span class="p">,</span> <span class="mi">16384</span><span class="p">);</span>
+
+        <span class="o">//</span><span class="n">Reduce</span> <span class="n">the</span> <span class="n">no</span> <span class="n">of</span> <span class="n">requests</span> <span class="n">less</span> <span class="n">than</span> <span class="mi">0</span>
+        <span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;linger.ms&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+        <span class="o">//</span><span class="n">The</span> <span class="n">buffer</span><span class="o">.</span><span class="n">memory</span> <span class="n">controls</span> <span class="n">the</span> <span class="n">total</span> <span class="n">amount</span> <span class="n">of</span> <span class="n">memory</span> <span class="n">available</span> <span class="n">to</span> <span class="n">the</span> <span class="n">producer</span> <span class="k">for</span> <span class="n">buffering</span><span class="o">.</span>
+        <span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;buffer.memory&quot;</span><span class="p">,</span> <span class="mi">33554432</span><span class="p">);</span>
+
+        <span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">ProducerConfig</span><span class="o">.</span><span class="n">VALUE_SERIALIZER_CLASS_CONFIG</span><span class="p">,</span> <span class="n">StringSerializer</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">getName</span><span class="p">());</span>
+        <span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">ProducerConfig</span><span class="o">.</span><span class="n">KEY_SERIALIZER_CLASS_CONFIG</span><span class="p">,</span> <span class="n">StringSerializer</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">getName</span><span class="p">());</span>
+        <span class="n">Producer</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">producer</span> <span class="o">=</span> <span class="n">new</span> <span class="n">KafkaProducer</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="n">props</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">producer</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">new</span> <span class="n">ProducerRecord</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="n">topicName</span><span class="p">,</span> <span class="n">Integer</span><span class="o">.</span><span class="n">toString</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">Integer</span><span class="o">.</span><span class="n">toString</span><span class="p">(</span><span class="n">i</span><span class="p">)));</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Message sent successfully&quot;</span><span class="p">);</span>
+        <span class="n">producer</span><span class="o">.</span><span class="n">close</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><img alt="image0" src="../../_images/kafk00001.png" /></p>
+<p>Java消费者代码 <code class="docutils literal"><span class="pre">ConsumerDemo.java</span></code></p>
+<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">kafka_Test</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">org.apache.kafka.clients.consumer.ConsumerRecord</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.kafka.clients.consumer.ConsumerRecords</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.kafka.clients.consumer.KafkaConsumer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.kafka.common.serialization.StringDeserializer</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Properties</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">ConsumerDemo</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="n">throws</span> <span class="ne">Exception</span> <span class="p">{</span>
+
+        <span class="o">//</span><span class="n">Kafka</span> <span class="n">consumer</span> <span class="n">configuration</span> <span class="n">settings</span>
+        <span class="n">String</span> <span class="n">topicName</span> <span class="o">=</span> <span class="s2">&quot;HelloWorld&quot;</span><span class="p">;</span><span class="o">//</span><span class="n">创建好的topic</span>
+        <span class="n">Properties</span> <span class="n">props</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Properties</span><span class="p">();</span>
+
+        <span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;bootstrap.servers&quot;</span><span class="p">,</span> <span class="s2">&quot;172.16.60.190:9092&quot;</span><span class="p">);</span><span class="o">//</span><span class="n">地址和端口号</span>
+        <span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;group.id&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">);</span>
+        <span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;enable.auto.commit&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">);</span>
+        <span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;auto.commit.interval.ms&quot;</span><span class="p">,</span> <span class="s2">&quot;1000&quot;</span><span class="p">);</span>
+        <span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;session.timeout.ms&quot;</span><span class="p">,</span> <span class="s2">&quot;30000&quot;</span><span class="p">);</span>
+        <span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;key.deserializer&quot;</span><span class="p">,</span> <span class="n">StringDeserializer</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">getName</span><span class="p">());</span>
+        <span class="n">props</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;value.deserializer&quot;</span><span class="p">,</span> <span class="n">StringDeserializer</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">getName</span><span class="p">());</span>
+        <span class="n">KafkaConsumer</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">consumer</span> <span class="o">=</span> <span class="n">new</span> <span class="n">KafkaConsumer</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="n">props</span><span class="p">);</span>
+
+        <span class="o">//</span><span class="n">Kafka</span> <span class="n">Consumer</span> <span class="n">subscribes</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">topics</span> <span class="n">here</span><span class="o">.</span>
+        <span class="n">consumer</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">Arrays</span><span class="o">.</span><span class="n">asList</span><span class="p">(</span><span class="n">topicName</span><span class="p">));</span>
+
+        <span class="o">//</span><span class="nb">print</span> <span class="n">the</span> <span class="n">topic</span> <span class="n">name</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Subscribed to topic &quot;</span> <span class="o">+</span> <span class="n">topicName</span><span class="p">);</span>
+        <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">ConsumerRecords</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">records</span> <span class="o">=</span> <span class="n">consumer</span><span class="o">.</span><span class="n">poll</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">ConsumerRecord</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">record</span> <span class="p">:</span> <span class="n">records</span><span class="p">)</span>
+                <span class="o">//</span> <span class="nb">print</span> <span class="n">the</span> <span class="n">offset</span><span class="p">,</span><span class="n">key</span> <span class="ow">and</span> <span class="n">value</span> <span class="k">for</span> <span class="n">the</span> <span class="n">consumer</span> <span class="n">records</span><span class="o">.</span>
+                <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;offset = </span><span class="si">%d</span><span class="s2">, key = </span><span class="si">%s</span><span class="s2">, value = </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">record</span><span class="o">.</span><span class="n">offset</span><span class="p">(),</span> <span class="n">record</span><span class="o">.</span><span class="n">key</span><span class="p">(),</span> <span class="n">record</span><span class="o">.</span><span class="n">value</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><img alt="image1" src="../../_images/kafka00002.png" /></p>
+<p>查看Linux里面的消费者，然后再执行生产者的代码，也能看到消费信息：</p>
+<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="o">/</span><span class="n">kafka</span><span class="o">-</span><span class="n">console</span><span class="o">-</span><span class="n">consumer</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">bootstrap</span><span class="o">-</span><span class="n">server</span> <span class="n">PLAINTEXT</span><span class="p">:</span><span class="o">//</span><span class="mf">172.16</span><span class="o">.</span><span class="mf">60.190</span><span class="p">:</span><span class="mi">9092</span> <span class="o">--</span><span class="n">topic</span> <span class="n">HelloWorld</span> <span class="o">--</span><span class="n">from</span><span class="o">-</span><span class="n">beginning</span>
+</pre></div>
+</div>
+<p><img alt="image2" src="../../_images/kafka00003.png" /></p>
+<p>参考文献</p>
+<p><a class="reference external" href="https://blog.csdn.net/weixin_42369418/article/details/103234026?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5.compare&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5.compare">https://blog.csdn.net/weixin_42369418/article/details/103234026?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5.compare&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5.compare</a></p>
+</div>
+<div class="section" id="pyhtonkafka">
+<h3><a class="toc-backref" href="#id15">9.用Pyhton来测试Kafka生产者和消费者</a><a class="headerlink" href="#pyhtonkafka" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/confluentinc/confluent-kafka-python/tree/master/examples">https://github.com/confluentinc/confluent-kafka-python/tree/master/examples</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="02.Rabbitmq分布式消息服务.html" class="btn btn-neutral float-left" title="1.2. RabbitMQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, huxiaojian
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

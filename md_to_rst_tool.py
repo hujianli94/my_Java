@@ -11,7 +11,7 @@ import hashlib
 import time
 
 """
-*************************************************************
+***************************************************************
 This script is used to find the changes of the article, 
 and convert the changed md type articles to the rst format type, 
 and write them out to the file file_md5.json
