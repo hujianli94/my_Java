@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,19 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="25.2. Java操作Redis" href="02.Java操作Redis.html" />
     <link rel="prev" title="25. 数据库编程" href="index.html" /> 
 </head>
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -133,14 +137,17 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.XML与JSON/index.html">27. XML与JSON</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -179,7 +186,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
@@ -191,7 +198,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/25.数据库编程/01.Java操作Mysql.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/25.数据库编程/01.Java操作Mysql.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -248,7 +255,7 @@ Driver（JDBC驱动程序），例如Connection是数据库连接接口，如何
 <div class="section" id="id1">
 <h2><a class="toc-backref" href="#id11">25.1.2. 建立数据连接</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>HelloWorld.java</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.sql.Connection</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.sql.DriverManager</span><span class="p">;</span>
@@ -281,7 +288,7 @@ Driver（JDBC驱动程序），例如Connection是数据库连接接口，如何
 </div>
 <div class="section" id="id2">
 <h3><a class="toc-backref" href="#id12">读取配置文件示例</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
@@ -383,7 +390,7 @@ Driver（JDBC驱动程序），例如Connection是数据库连接接口，如何
 <div class="section" id="id3">
 <h3><a class="toc-backref" href="#id13">Java连接Mysql</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>JdbcUtil.java</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>import java.sql.Connection;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -454,7 +461,7 @@ public class JdbcUtil {
 <div class="section" id="id4">
 <h3><a class="toc-backref" href="#id15">有条件的查询</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>CRUDSample.java</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
@@ -562,7 +569,7 @@ public class JdbcUtil {
 </div>
 <div class="section" id="id5">
 <h3><a class="toc-backref" href="#id16">无条件的查询</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">数据无条件查询操作</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">数据无条件查询操作</span>
 <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">readMaxUserId</span><span class="p">()</span> <span class="p">{</span>
     <span class="nb">int</span> <span class="n">maxId</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="n">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
@@ -590,7 +597,7 @@ public class JdbcUtil {
 </div>
 <div class="section" id="id6">
 <h3><a class="toc-backref" href="#id17">插入数据</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">插入数据</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">插入数据</span>
 <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">create</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">try</span> <span class="p">(</span><span class="n">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">DriverManager</span><span class="o">.</span><span class="n">getConnection</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">info</span><span class="p">);</span>
          <span class="n">PreparedStatement</span> <span class="n">pstmt</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">prepareStatement</span><span class="p">(</span><span class="s2">&quot;INSERT INTO student(id,name,phone) VALUES(?,?,?)&quot;</span><span class="p">))</span> <span class="p">{</span>
@@ -615,7 +622,7 @@ public class JdbcUtil {
 </div>
 <div class="section" id="id7">
 <h3><a class="toc-backref" href="#id18">更新数据</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.a51work;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package com.a51work;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -684,7 +691,7 @@ public class CRUDSample4 {
 </div>
 <div class="section" id="id8">
 <h3><a class="toc-backref" href="#id19">删除数据</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>// 删除数据
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>// 删除数据
 public static void delete() {
     // 自动释放资源
     try (  // 2创建数据库连接
@@ -710,7 +717,7 @@ public static void main(String[] args) {
 </div>
 <div class="section" id="crud">
 <h3><a class="toc-backref" href="#id20">数据增删改查（CRUD汇总）</a><a class="headerlink" href="#crud" title="Permalink to this headline">¶</a></h3>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.a51work;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package com.a51work;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -878,11 +885,19 @@ public class CRUDSample6 {
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -893,7 +908,6 @@ public class CRUDSample6 {
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

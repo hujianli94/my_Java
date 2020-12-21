@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,19 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="6. 数字处理类" href="../06.数字处理类/index.html" />
     <link rel="prev" title="5.4. 主方法" href="04.主方法.html" /> 
 </head>
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -130,14 +134,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.XML与JSON/index.html">27. XML与JSON</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -176,7 +183,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
@@ -188,7 +195,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/05.类与对象/05.实践与练习.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/05.类与对象/05.实践与练习.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -212,7 +219,7 @@
 <p>1.编写一个类，定义修饰权限为private的成员变量，定义两个成员方法，一个成员方法实现为此成员变量赋值，
 拧一个成员方法获取这个成员变量的值，保证其他类继承该类时能获取该类的成员变量的值。</p>
 <p>eg</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Test1</span> <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Test1</span> <span class="p">{</span>
 <span class="o">//</span>  <span class="n">定义private成员变量</span>
     <span class="n">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
 
@@ -229,7 +236,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Test2</span> <span class="n">extends</span> <span class="n">Test1</span> <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Test2</span> <span class="n">extends</span> <span class="n">Test1</span> <span class="p">{</span>
 <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">Test1</span> <span class="n">hu</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Test1</span><span class="p">();</span>
     <span class="n">hu</span><span class="o">.</span><span class="n">Setname</span><span class="p">(</span><span class="s2">&quot;hujianli&quot;</span><span class="p">);</span>
@@ -242,7 +249,7 @@
 <p>2.编写一个矩形类，将长和宽作为矩形类的属性，在构造方法中将长、宽初始化，
 定义一个成员方法，求此矩形的面积。</p>
 <p>eg</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Juxing</span> <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Juxing</span> <span class="p">{</span>
 <span class="o">//</span>  <span class="n">定义矩形的长和宽</span>
     <span class="n">private</span> <span class="nb">float</span> <span class="n">height</span><span class="p">;</span>
     <span class="n">private</span> <span class="nb">float</span> <span class="n">width</span><span class="p">;</span>
@@ -280,7 +287,7 @@
 </div>
 <p>3.根据参数的个数，决定循环打印变量i值的次数</p>
 <p>eg</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>public class Test3 {
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>public class Test3 {
 public static void main(String[] args) {
     int lengh = args.length;        //主方法中传入参数的长度
     if (lengh == 0) {
@@ -329,11 +336,19 @@ hujianli3
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -344,7 +359,6 @@ hujianli3
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,19 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="27.4. 使用Jackson" href="04.使用Jackson.html" />
     <link rel="prev" title="27.2. 02.使用DOM" href="02.使用DOM.html" /> 
 </head>
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -133,11 +137,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -176,7 +182,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
@@ -188,7 +194,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/27.XML与JSON/03.使用SAX.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/27.XML与JSON/03.使用SAX.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -215,13 +221,13 @@ XML的缩写，它是一种基于流的解析方式，边读取XML边解析，�
 <p>SAX解析会触发一系列事件：</p>
 <ul class="simple">
 <li>startDocument：开始读取XML文档；</li>
-<li>startElement：读取到了一个元素，例如<code class="docutils literal"><span class="pre">&lt;book&gt;</span></code>；</li>
+<li>startElement：读取到了一个元素，例如<code class="docutils literal notranslate"><span class="pre">&lt;book&gt;</span></code>；</li>
 <li>characters：读取到了字符；</li>
-<li>endElement：读取到了一个结束的元素，例如<code class="docutils literal"><span class="pre">&lt;/book&gt;</span></code>；</li>
+<li>endElement：读取到了一个结束的元素，例如<code class="docutils literal notranslate"><span class="pre">&lt;/book&gt;</span></code>；</li>
 <li>endDocument：读取XML文档结束。</li>
 </ul>
-<p><code class="docutils literal"><span class="pre">src/config/book.xml</span></code></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+<p><code class="docutils literal notranslate"><span class="pre">src/config/book.xml</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
 &lt;book id=&quot;1&quot;&gt;
     &lt;name&gt;Java核心技术&lt;/name&gt;
     &lt;author&gt;Cay S. Horstmann&lt;/author&gt;
@@ -235,7 +241,7 @@ XML的缩写，它是一种基于流的解析方式，边读取XML边解析，�
 </pre></div>
 </div>
 <p>如果我们用SAX API解析XML，Java代码如下：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">javax.xml.parsers.SAXParser</span><span class="p">;</span>
@@ -300,7 +306,7 @@ XML的缩写，它是一种基于流的解析方式，边读取XML边解析，�
 </pre></div>
 </div>
 <p>运行SAX解析代码，可以打印出下面的结果：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;C:\Program Files\Java\jdk1.8.0_251</span><span class="se">\b</span><span class="s2">in\java.exe&quot;</span> <span class="s2">&quot;-Files\Java\jdk1.8.0_251\jre\lib</span><span class="se">\r</span><span class="s2">t.jar;D:\Java_Study\Java小白到大牛\ch9\SAX\Test_ReadXML\out\production\Test_ReadXML&quot;</span> <span class="n">MySAXParserTest</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;C:\Program Files\Java\jdk1.8.0_251</span><span class="se">\b</span><span class="s2">in\java.exe&quot;</span> <span class="s2">&quot;-Files\Java\jdk1.8.0_251\jre\lib</span><span class="se">\r</span><span class="s2">t.jar;D:\Java_Study\Java小白到大牛\ch9\SAX\Test_ReadXML\out\production\Test_ReadXML&quot;</span> <span class="n">MySAXParserTest</span>
 
 <span class="n">start</span> <span class="n">document</span>
 <span class="n">start</span> <span class="n">element</span><span class="p">:</span>  <span class="n">book</span>
@@ -323,7 +329,7 @@ XML的缩写，它是一种基于流的解析方式，边读取XML边解析，�
 <span class="o">......</span>
 </pre></div>
 </div>
-<p>如果要读取<code class="docutils literal"><span class="pre">&lt;name&gt;</span></code>节点的文本，我们就必须在解析过程中根据<code class="docutils literal"><span class="pre">startElement()</span></code>和<code class="docutils literal"><span class="pre">endElement()</span></code>定位当前正在读取的节点，可以使用栈结构保存，每遇到一个<code class="docutils literal"><span class="pre">startElement()</span></code>入栈，每遇到一个<code class="docutils literal"><span class="pre">endElement()</span></code>出栈，这样，读到<code class="docutils literal"><span class="pre">characters()</span></code>时我们才知道当前读取的文本是哪个节点的。可见，使用SAX
+<p>如果要读取<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>节点的文本，我们就必须在解析过程中根据<code class="docutils literal notranslate"><span class="pre">startElement()</span></code>和<code class="docutils literal notranslate"><span class="pre">endElement()</span></code>定位当前正在读取的节点，可以使用栈结构保存，每遇到一个<code class="docutils literal notranslate"><span class="pre">startElement()</span></code>入栈，每遇到一个<code class="docutils literal notranslate"><span class="pre">endElement()</span></code>出栈，这样，读到<code class="docutils literal notranslate"><span class="pre">characters()</span></code>时我们才知道当前读取的文本是哪个节点的。可见，使用SAX
 API仍然比较麻烦。</p>
 </div>
 
@@ -347,11 +353,19 @@ API仍然比较麻烦。</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -362,7 +376,6 @@ API仍然比较麻烦。</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

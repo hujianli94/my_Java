@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,23 +33,21 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="27.2. 02.使用DOM" href="02.使用DOM.html" />
-    <link rel="prev" title="27. 27.XML与JSON" href="index.html" /> 
+    <link rel="prev" title="27. XML与JSON" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -123,19 +127,23 @@
 <li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">27. 27.XML与JSON</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">27. XML与JSON</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">27.1. XML简介</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02.使用DOM.html">27.2. 02.使用DOM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03.使用SAX.html">27.3. 使用SAX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.使用Jackson.html">27.4. 使用Jackson</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -174,11 +182,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
-          <li><a href="index.html">27. 27.XML与JSON</a> &raquo;</li>
+          <li><a href="index.html">27. XML与JSON</a> &raquo;</li>
         
       <li>27.1. XML简介</li>
     
@@ -186,7 +194,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/27.XML与JSON/01.XML简介.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/27.XML与JSON/01.XML简介.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -210,7 +218,7 @@
 <p>XML是可扩展标记语言（eXtensible Markup
 Language）的缩写，它是是一种数据表示格式，可以描述非常复杂的数据结构，常用于传输和存储数据。</p>
 <p>例如，一个描述书籍的XML文档可能如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
 &lt;!DOCTYPE note SYSTEM &quot;book.dtd&quot;&gt;
 &lt;book id=&quot;1&quot;&gt;
     &lt;name&gt;Java核心技术&lt;/name&gt;
@@ -240,7 +248,7 @@ Language）的缩写，它是是一种数据表示格式，可以描述非常复
         <a href="02.使用DOM.html" class="btn btn-neutral float-right" title="27.2. 02.使用DOM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="27. 27.XML与JSON" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="27. XML与JSON" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -249,11 +257,19 @@ Language）的缩写，它是是一种数据表示格式，可以描述非常复
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -264,7 +280,6 @@ Language）的缩写，它是是一种数据表示格式，可以描述非常复
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

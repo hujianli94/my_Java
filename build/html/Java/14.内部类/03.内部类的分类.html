@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,19 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="15. Lambda表达式" href="../15.Lambda表达式/index.html" />
     <link rel="prev" title="14.2. 内部类的作用" href="02.内部类的作用.html" /> 
 </head>
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -134,14 +138,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.XML与JSON/index.html">27. XML与JSON</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -180,7 +187,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
@@ -192,7 +199,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/14.内部类/03.内部类的分类.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/14.内部类/03.内部类的分类.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -235,7 +242,7 @@
 <p>实例内部类与实例变量类似，可以声明为公有级别、私有级别、默认级别或保护级别，即4种访问级别
 都可以，而外部类只能声明为公有或默认级别。</p>
 <p>test_inclass.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">A_test001</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">A_test001</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">Circle</span> <span class="p">{</span>
  <span class="n">private</span> <span class="n">Draw</span> <span class="n">draw</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
@@ -277,7 +284,7 @@
 </pre></div>
 </div>
 <p>代码示例2 Outer.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">A_test001</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">A_test001</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Outer</span> <span class="p">{</span>
 <span class="o">//</span> <span class="n">外部类成员变量</span>
@@ -313,7 +320,7 @@
 </pre></div>
 </div>
 <p>Helloworld.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">A_test001</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">A_test001</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Helloworld</span> <span class="p">{</span>
  <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -352,7 +359,7 @@
 静态内部类只能访问外部类静态成员，不能使用this关键字访问外部类中的实例成员。
 这与一般的static方法相通，所以静态内部类使用的场景不多。但可以提供有别于包的命名空间。</p>
 <p>View.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">View</span> <span class="p">{</span>
 <span class="o">//</span>    <span class="n">外部成员变量</span>
@@ -392,7 +399,7 @@
 private和protected修饰。局部内部类也不能是静态，即不能使用static修饰。局部内部类可以访问外部
 类所有成员</p>
 <p>Outer.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Outer</span> <span class="p">{</span>
     <span class="n">private</span> <span class="nb">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
@@ -431,7 +438,7 @@ private和protected修饰。局部内部类也不能是静态，即不能使用s
 <div class="section" id="id8">
 <h3><a class="toc-backref" href="#id18">创建静态内部类</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>NeiBuLei14.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">NeiBuLei14</span> <span class="p">{</span>
     <span class="n">static</span> <span class="k">class</span> <span class="nc">Nei</span><span class="p">{</span>   <span class="o">//</span><span class="n">静态内部类</span>
@@ -449,7 +456,7 @@ private和protected修饰。局部内部类也不能是静态，即不能使用s
 <div class="section" id="id9">
 <h3><a class="toc-backref" href="#id19">在外部类中访问静态内部类</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>Wai.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Wai</span> <span class="p">{</span>
     <span class="n">static</span> <span class="k">class</span> <span class="nc">Nei</span><span class="p">{</span>   <span class="o">//</span><span class="n">创建静态内部类</span>
@@ -474,7 +481,7 @@ private和protected修饰。局部内部类也不能是静态，即不能使用s
 <div class="section" id="id10">
 <h3><a class="toc-backref" href="#id20">在外部类外访问静态内部类</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>Wai2.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Wai2</span> <span class="p">{</span>
     <span class="n">static</span> <span class="k">class</span> <span class="nc">Nei</span><span class="p">{</span>
@@ -496,7 +503,7 @@ private和protected修饰。局部内部类也不能是静态，即不能使用s
 例如：
 可以访问外部类所有成员。如果匿名内部类在方法中定义，它所访问的参数需要声明为final的。</p>
 <p>OnClickListener.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="n">interface</span> <span class="n">OnClickListener</span> <span class="p">{</span>
     <span class="n">void</span> <span class="n">onClick</span><span class="p">();</span>
@@ -504,7 +511,7 @@ private和protected修饰。局部内部类也不能是静态，即不能使用s
 </pre></div>
 </div>
 <p>VieW2.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">VieW2</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">void</span> <span class="n">handler</span><span class="p">(</span><span class="n">OnClickListener</span> <span class="n">listener</span><span class="p">)</span> <span class="p">{</span>
@@ -514,7 +521,7 @@ private和protected修饰。局部内部类也不能是静态，即不能使用s
 </pre></div>
 </div>
 <p>Figure.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="n">abstract</span> <span class="k">class</span> <span class="nc">Figure</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">void</span> <span class="n">onDraw</span><span class="p">(){};</span>
@@ -522,7 +529,7 @@ private和protected修饰。局部内部类也不能是静态，即不能使用s
 </pre></div>
 </div>
 <p>Person.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Person</span> <span class="p">{</span>
     <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
@@ -537,7 +544,7 @@ private和protected修饰。局部内部类也不能是静态，即不能使用s
 </pre></div>
 </div>
 <p>HelloWorld.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -602,11 +609,19 @@ private和protected修饰。局部内部类也不能是静态，即不能使用s
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -617,7 +632,6 @@ private和protected修饰。局部内部类也不能是静态，即不能使用s
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

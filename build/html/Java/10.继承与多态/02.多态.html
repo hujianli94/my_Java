@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,19 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="10.3. final关键字" href="03.final关键字.html" />
     <link rel="prev" title="10.1. Java中的继承" href="01.Java中的继承.html" /> 
 </head>
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -133,14 +137,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.XML与JSON/index.html">27. XML与JSON</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -179,7 +186,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
@@ -191,7 +198,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/10.继承与多态/02.多态.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/10.继承与多态/02.多态.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -220,14 +227,14 @@
 <div class="section" id="id2">
 <h2><a class="toc-backref" href="#id6">10.2.1. 多态概念</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>发生多态要有三个前提条件：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>1. 继承。多态发生一定要子类和父类之间。
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. 继承。多态发生一定要子类和父类之间。
 2. 覆盖。子类覆盖了父类的方法。
 3. 声明的变量类型是父类类型，但实例则指向子类实例。
 </pre></div>
 </div>
 <p>代码示例</p>
 <p>父类：Figure.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai01_Class</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai01_Class</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Figure</span> <span class="p">{</span>
  <span class="n">public</span> <span class="n">void</span> <span class="n">onDraw</span><span class="p">()</span> <span class="p">{</span>
@@ -238,7 +245,7 @@
 </pre></div>
 </div>
 <p>子类：Ellipse.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai01_Class</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai01_Class</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Ellipse</span> <span class="n">extends</span> <span class="n">Figure</span> <span class="p">{</span>
 
@@ -251,7 +258,7 @@
 </pre></div>
 </div>
 <p>子类：Ttiangle.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai01_Class</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai01_Class</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Ttiangle</span> <span class="n">extends</span> <span class="n">Figure</span> <span class="p">{</span>
  <span class="o">//</span> <span class="n">绘制几何图形方法</span>
@@ -263,7 +270,7 @@
 </pre></div>
 </div>
 <p>调用主代码</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai01_Class</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai01_Class</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
 
@@ -296,11 +303,11 @@
 <h2><a class="toc-backref" href="#id7">10.2.2. 引用类型检查</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>有时候需要在运行时判断一个对象是否属于某个引用类型，这时可以使用instanceof运算符，
 instanceof运算符语法格式如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">obj</span>　<span class="n">instanceof</span>　<span class="nb">type</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span>　<span class="n">instanceof</span>　<span class="nb">type</span>
 </pre></div>
 </div>
 <p>代码示例 父类 Person.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai02_Class</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai02_Class</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Person</span> <span class="p">{</span>
  <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
@@ -319,7 +326,7 @@ instanceof运算符语法格式如下：</p>
 </pre></div>
 </div>
 <p>子类 Worker.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai02_Class</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai02_Class</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Worker</span> <span class="n">extends</span> <span class="n">Person</span> <span class="p">{</span>
  <span class="n">String</span> <span class="n">factory</span><span class="p">;</span>
@@ -341,7 +348,7 @@ instanceof运算符语法格式如下：</p>
 </pre></div>
 </div>
 <p>子类 Student.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai02_Class</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai02_Class</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Student</span> <span class="n">extends</span> <span class="n">Person</span> <span class="p">{</span>
  <span class="n">String</span> <span class="n">school</span><span class="p">;</span>
@@ -363,7 +370,7 @@ instanceof运算符语法格式如下：</p>
 </pre></div>
 </div>
 <p>调用代码</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>package duotai02_Class;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>package duotai02_Class;
 
 public class HelloWorld {
  public static void main(String[] args) {
@@ -402,13 +409,13 @@ public class HelloWorld {
 <h2><a class="toc-backref" href="#id8">10.2.3. 引用类型转换</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>只有属于同一棵继承层次树中的引用类型才可以转换。</p>
 <p><strong>类型转换有两个方向：</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>将父类引用类型变量转换为子类类型，这种转换称为向下转型（downcast）；
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>将父类引用类型变量转换为子类类型，这种转换称为向下转型（downcast）；
 将子类引用类型变量转换为父类类型，这种转换称为向上转型（upcast）。
 向下转型需要强制转换，而向上转型是自动的。
 </pre></div>
 </div>
 <p>代码示例</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai02_Class</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">duotai02_Class</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
  <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -489,11 +496,19 @@ public class HelloWorld {
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -504,7 +519,6 @@ public class HelloWorld {
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

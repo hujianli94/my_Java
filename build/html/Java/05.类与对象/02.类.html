@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,19 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="5.3. 静态变量、常量和方法（static关键字）" href="03.静态变量、常量和方法（static关键字）.html" />
     <link rel="prev" title="5.1. 面向对象概述" href="01.面向对象概述.html" /> 
 </head>
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -133,14 +137,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.XML与JSON/index.html">27. XML与JSON</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -179,7 +186,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
@@ -191,7 +198,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/05.类与对象/02.类.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/05.类与对象/02.类.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -226,7 +233,7 @@
 <div class="section" id="id4">
 <h3><a class="toc-backref" href="#id9">1.1 类声明</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>Java语言中一个类的实现包括：类声明和类体。类声明语法格式如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">public</span><span class="p">][</span><span class="n">abstract</span><span class="o">|</span><span class="n">final</span><span class="p">]</span> <span class="k">class</span> <span class="nc">className</span> <span class="p">[</span><span class="n">extends</span> <span class="n">superclassName</span><span class="p">]</span> <span class="p">[</span><span class="n">implements</span> <span class="n">interfaceNameList</span><span class="p">]</span> <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">public</span><span class="p">][</span><span class="n">abstract</span><span class="o">|</span><span class="n">final</span><span class="p">]</span> <span class="k">class</span> <span class="nc">className</span> <span class="p">[</span><span class="n">extends</span> <span class="n">superclassName</span><span class="p">]</span> <span class="p">[</span><span class="n">implements</span> <span class="n">interfaceNameList</span><span class="p">]</span> <span class="p">{</span>
 <span class="o">//</span><span class="n">类体</span>
 <span class="p">}</span>
 </pre></div>
@@ -235,7 +242,7 @@
 略，如果省略则该类继承Object类，Object类所有类的根类，所有类都直接或间接继承Object；
 interfaceNameList是该类实现的接口列表，可以省略，接口列表中的多个接口之间用逗号分隔。</p>
 <p>声明动物（Animal）类代码如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Animal</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Animal</span><span class="o">.</span><span class="n">java</span>
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Animal</span> <span class="n">extends</span> <span class="n">Object</span> <span class="p">{</span>
 <span class="o">//</span><span class="n">类体</span>
 <span class="p">}</span>
@@ -247,19 +254,19 @@ Object代码可以省略</p>
 <div class="section" id="id5">
 <h3><a class="toc-backref" href="#id10">1.2 成员变量</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>声明类体中成员变量语法格式如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">className</span> <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">className</span> <span class="p">{</span>
 <span class="p">[</span><span class="n">public</span> <span class="o">|</span> <span class="n">protected</span> <span class="o">|</span> <span class="n">private</span> <span class="p">]</span> <span class="p">[</span><span class="n">static</span><span class="p">]</span> <span class="p">[</span><span class="n">final</span><span class="p">]</span> <span class="nb">type</span> <span class="n">variableName</span><span class="p">;</span> <span class="o">//</span><span class="n">成员变量</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>其中type是成员变量数据类型，variableName是成员变量名。type前的关键字都是成员变量修饰符，它们说明如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>1. public、protected和private修饰符用于封装成员变量。
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. public、protected和private修饰符用于封装成员变量。
 2. static修饰符用于声明静态变量，所以静态变量也称为“类变量”。
 3. final修饰符用于声明变量，该变量不能被修改。
 </pre></div>
 </div>
 <p>下面看一个声明成员变量示例：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">company3</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">company3</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Animal</span> <span class="n">extends</span> <span class="n">Object</span> <span class="p">{</span>
     <span class="nb">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
@@ -273,7 +280,7 @@ Object代码可以省略</p>
 <div class="section" id="id6">
 <h3><a class="toc-backref" href="#id11">1.3 成员方法</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>声明类体中成员方法语法格式如下：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">className</span> <span class="p">{</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">className</span> <span class="p">{</span>
 <span class="p">[</span><span class="n">public</span> <span class="o">|</span> <span class="n">protected</span> <span class="o">|</span> <span class="n">private</span> <span class="p">]</span> <span class="p">[</span><span class="n">static</span><span class="p">]</span> <span class="p">[</span><span class="n">final</span> <span class="o">|</span> <span class="n">abstract</span><span class="p">]</span> <span class="p">[</span><span class="n">native</span><span class="p">]</span> <span class="p">[</span><span class="n">synchronized</span><span class="p">]</span>
 <span class="nb">type</span> <span class="n">methodName</span><span class="p">([</span><span class="n">paramList</span><span class="p">])</span> <span class="p">[</span><span class="n">throws</span> <span class="n">exceptionList</span><span class="p">]</span> <span class="p">{</span>
 <span class="o">//</span><span class="n">方法体</span>
@@ -282,7 +289,7 @@ Object代码可以省略</p>
 </pre></div>
 </div>
 <p>其中type是方法返回值数据类型，methodName是方法名。type前的关键字都是方法修饰符，它们说明如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>01. public、protected和private修饰符用于封装方法。
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>01. public、protected和private修饰符用于封装方法。
 02. static修饰符用于声明静态方法，所以静态方法也称为“类方法”。
 03. final | abstract不能同时修饰方法，final修饰的方法不能在子类中被覆盖；abstract用来修饰抽象方法，抽象方法必须在子类中被实现。
 04. native修饰的方法，称为“本地方法”，本地方法调用平台本地代码（如：C或C++编写的代码），不能实现跨平台。
@@ -292,7 +299,7 @@ Object代码可以省略</p>
 </pre></div>
 </div>
 <p>声明方法示例：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">aom</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">aom</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Animal</span> <span class="p">{</span>
     <span class="nb">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>            <span class="o">//</span><span class="n">年龄</span>
@@ -331,6 +338,101 @@ Object代码可以省略</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="n">String</span> <span class="n">color</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">age</span><span class="p">;</span>
+
+    <span class="o">//</span><span class="n">无返回值的方法</span>
+    <span class="n">void</span> <span class="n">barking</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;汪汪汪汪....&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="o">//</span><span class="n">无返回值的方法</span>
+    <span class="n">void</span> <span class="n">sleep</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;呼呼呼..........&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">SmallMath</span> <span class="p">{</span>
+    <span class="nb">int</span> <span class="n">balance</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">有返回值的方法</span>
+    <span class="nb">int</span> <span class="n">add</span><span class="p">(</span><span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="nb">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="o">//</span> <span class="n">有返回值的方法</span>
+    <span class="nb">int</span> <span class="n">sub</span><span class="p">(</span><span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="nb">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">SmallMath</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">balance</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+
+    <span class="n">SmallMath</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">void</span> <span class="n">printsumt</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;x + y = </span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">variableArgs</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="n">可变参数</span>
+    <span class="nb">int</span> <span class="n">add</span><span class="p">(</span><span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="nb">int</span><span class="o">...</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">int</span> <span class="n">total</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">num</span> <span class="p">:</span> <span class="n">y</span><span class="p">)</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">num</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">total</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">ch8_3</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;------------------------------------------------------&quot;</span><span class="p">);</span>
+        <span class="n">Dog</span> <span class="n">my_dog</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Dog</span><span class="p">();</span>
+        <span class="n">Dog</span> <span class="n">tom_dog</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Dog</span><span class="p">();</span>
+        <span class="n">my_dog</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;元宝&quot;</span><span class="p">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;my dog name is </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">my_dog</span><span class="o">.</span><span class="n">name</span><span class="p">);</span>
+        <span class="n">my_dog</span><span class="o">.</span><span class="n">sleep</span><span class="p">();</span>
+
+        <span class="n">tom_dog</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;旺财&quot;</span><span class="p">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;tom dog nmae is </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">tom_dog</span><span class="o">.</span><span class="n">name</span><span class="p">);</span>
+        <span class="n">tom_dog</span><span class="o">.</span><span class="n">sleep</span><span class="p">();</span>
+
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;------------------------------------------------------&quot;</span><span class="p">);</span>
+        <span class="n">SmallMath</span> <span class="n">s</span> <span class="o">=</span> <span class="n">new</span> <span class="n">SmallMath</span><span class="p">();</span>  <span class="o">//</span><span class="n">实例化类</span>
+        <span class="nb">int</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">;</span>
+        <span class="n">a1</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span>     <span class="o">//</span><span class="mi">30</span>
+
+        <span class="n">a2</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">a2</span><span class="p">);</span>     <span class="o">//</span><span class="mi">0</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;------------------------------------------------------&quot;</span><span class="p">);</span>
+        <span class="n">variableArgs</span> <span class="n">v</span> <span class="o">=</span> <span class="n">new</span> <span class="n">variableArgs</span><span class="p">();</span>
+        <span class="nb">int</span> <span class="n">intArray</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">66</span><span class="p">};</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">intArray</span><span class="p">));</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;--------------------------------------------------------&quot;</span><span class="p">);</span>
+        <span class="n">SmallMath</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">SmallMath</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">balance</span><span class="p">);</span>
+        <span class="n">s1</span><span class="o">.</span><span class="n">printsumt</span><span class="p">();</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -355,11 +457,19 @@ Object代码可以省略</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -370,7 +480,6 @@ Object代码可以省略</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

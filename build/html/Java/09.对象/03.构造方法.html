@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,19 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="9.4. this关键字" href="04.this关键字.html" />
     <link rel="prev" title="9.2. 空对象" href="02.空对象.html" /> 
 </head>
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -138,14 +142,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.XML与JSON/index.html">27. XML与JSON</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -184,7 +191,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
@@ -196,7 +203,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/09.对象/03.构造方法.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/09.对象/03.构造方法.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -226,13 +233,13 @@
 <div class="section" id="id1">
 <h1><a class="toc-backref" href="#id8">9.3. 构造方法</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Java构造方法的特点：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>01. 构造方法名必须与类名相同。
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>01. 构造方法名必须与类名相同。
 02. 构造方法没有任何返回值，包括void。
 03. 构造方法只能与new运算符结合使用。
 </pre></div>
 </div>
 <p>代码示例</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Null_class</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Null_class</span><span class="p">;</span>
 
 <span class="o">//</span> <span class="n">矩形类</span>
 <span class="n">public</span> <span class="k">class</span> <span class="nc">HelloWord</span> <span class="p">{</span>
@@ -257,7 +264,7 @@
 <div class="section" id="id2">
 <h2><a class="toc-backref" href="#id9">9.3.1. 01.被修饰的构造方法</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>代码示例</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">apple</span> <span class="p">{</span>
     <span class="o">//</span> <span class="n">声明一个私有的成员变量</span>
@@ -300,14 +307,14 @@
 </div>
 <div class="section" id="id3">
 <h2><a class="toc-backref" href="#id10">9.3.2. 02.默认构造方法</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span>Java虚拟机为没有构造方法的类，提供一个无参数的默认构造方法，默认构造方法其方法体内无任何语句
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Java虚拟机为没有构造方法的类，提供一个无参数的默认构造方法，默认构造方法其方法体内无任何语句
 </pre></div>
 </div>
 </div>
 <div class="section" id="id4">
 <h2><a class="toc-backref" href="#id11">9.3.3. 03.构造方法重载</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>代码示例</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Null_class</span><span class="p">;</span>
+<p>代码示例1</p>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Null_class</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Date</span><span class="p">;</span>
 
@@ -373,11 +380,60 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>代码示例2</p>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">hujianli2</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Myclass</span><span class="p">{</span>
+    <span class="nb">int</span> <span class="n">age</span><span class="p">;</span>
+    <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+
+    <span class="n">public</span> <span class="n">Myclass</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">age</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;hujianli&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">Myclass</span><span class="p">(</span><span class="nb">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">Myclass</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">Myclass</span><span class="p">(</span><span class="nb">int</span> <span class="n">age</span><span class="p">,</span> <span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span><span class="p">;</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">void</span> <span class="n">printinfo</span><span class="p">(){</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">age</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">chonggou</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Myclass</span> <span class="n">a</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Myclass</span><span class="p">();</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">printinfo</span><span class="p">();</span>
+
+        <span class="n">Myclass</span> <span class="n">b</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Myclass</span><span class="p">(</span><span class="mi">19</span><span class="p">);</span>
+        <span class="n">b</span><span class="o">.</span><span class="n">printinfo</span><span class="p">();</span>
+
+        <span class="n">Myclass</span> <span class="n">c</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Myclass</span><span class="p">(</span><span class="s2">&quot;huxiaojian&quot;</span><span class="p">);</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">printinfo</span><span class="p">();</span>
+
+        <span class="n">Myclass</span> <span class="n">d</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Myclass</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="s2">&quot;hu&quot;</span><span class="p">);</span>
+        <span class="n">d</span><span class="o">.</span><span class="n">printinfo</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id5">
 <h2><a class="toc-backref" href="#id12">9.3.4. 04.构造方法封装</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>代码示例</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Null_class</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Null_class</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Date</span><span class="p">;</span>
 
@@ -451,7 +507,7 @@
 </div>
 <div class="section" id="id6">
 <h2><a class="toc-backref" href="#id13">9.3.5. 构造方法和普通方法的区别</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span>* 构造器是为了创建一个类的对象实例， 也可以在创建对象的时候使用。
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>* 构造器是为了创建一个类的对象实例， 也可以在创建对象的时候使用。
 * 方法是为了执行相应的方法体， 即Java 代码。
 * 构造器可以被修饰为public、protected、default 、private 类型， 但不能修饰为abstract 、final、native、static、synchronized
 * 方法可以有零个或多个参数。
@@ -467,9 +523,9 @@
 <div class="section" id="id7">
 <h2><a class="toc-backref" href="#id14">9.3.6. 什么是单子模式</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>单子模式是Java模式工厂的一种，就是某个类在同一时刻只允许有一个对象，</p>
-<p>单子模式就是把<code class="docutils literal"><span class="pre">构造函数修饰为一个provate类型的</span></code>，用一个<code class="docutils literal"><span class="pre">public类型的方法返回类型的引用</span></code>。</p>
+<p>单子模式就是把<code class="docutils literal notranslate"><span class="pre">构造函数修饰为一个provate类型的</span></code>，用一个<code class="docutils literal notranslate"><span class="pre">public类型的方法返回类型的引用</span></code>。</p>
 <p>代码示例</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51work.cn;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>package com.a51work.cn;
 
 public class aceing {
     // 定义一个私有，静态类型的成员ace变量
@@ -537,11 +593,19 @@ aceing类中的无参数构造方法调用了
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -552,7 +616,6 @@ aceing类中的无参数构造方法调用了
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

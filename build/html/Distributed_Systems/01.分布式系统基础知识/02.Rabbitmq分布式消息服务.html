@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,20 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.3. Apache Kafka" href="03.Apache-Kafka.html" />
     <link rel="prev" title="1.1. 编程语言中的线程对象" href="01.编程语言中的线程对象.html" /> 
 </head>
 
@@ -57,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -87,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -107,15 +112,18 @@
 <li class="toctree-l4"><a class="reference internal" href="#rpc">1.2.5. RPC</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="03.Apache-Kafka.html">1.3. Apache Kafka</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -154,7 +162,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">分布式系统架构案例(Java)</a> &raquo;</li>
         
@@ -166,7 +174,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Distributed_Systems/01.分布式系统基础知识/02.Rabbitmq分布式消息服务.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Distributed_Systems/01.分布式系统基础知识/02.Rabbitmq分布式消息服务.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -200,7 +208,7 @@
 Queues(任务队列)，我们将任务封装成消息发送到队列中。 一个Work
 工作者进程在后台运行，获取任务并执行任务，当多个Work进程工作时，所有任务将被他们共享。
 <img alt="image0" src="../../_images/java_work_queuq01.png" /> NewTask.java（生产者）</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>import org.slf4j.Logger;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.rabbitmq.client.Channel;
@@ -265,7 +273,7 @@ public class NewTask {
 </pre></div>
 </div>
 <p>在rabbitmq上可以查看到队列已经入队。10个消息</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@172</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mi">72</span><span class="o">-</span><span class="mi">19</span> <span class="n">compose</span><span class="p">]</span><span class="c1"># rabbitmqctl list_queues</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@172</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mi">72</span><span class="o">-</span><span class="mi">19</span> <span class="n">compose</span><span class="p">]</span><span class="c1"># rabbitmqctl list_queues</span>
 <span class="n">WARNING</span><span class="p">:</span> <span class="n">ignoring</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">rabbitmq</span><span class="o">/</span><span class="n">rabbitmq</span><span class="o">.</span><span class="n">conf</span> <span class="o">--</span> <span class="n">location</span> <span class="n">has</span> <span class="n">moved</span> <span class="n">to</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">rabbitmq</span><span class="o">/</span><span class="n">rabbitmq</span><span class="o">-</span><span class="n">env</span><span class="o">.</span><span class="n">conf</span>
 <span class="n">Listing</span> <span class="n">queues</span> <span class="o">...</span>
 <span class="n">java01_queue</span>    <span class="mi">10</span>
@@ -275,7 +283,7 @@ public class NewTask {
 </div>
 <p>Worker.java (消费者).我们创建2个Worker消费者。</p>
 <p>举例1</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Worker1</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Worker1</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">com.rabbitmq.client.</span><span class="o">*</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="p">;</span>
@@ -349,7 +357,7 @@ public class NewTask {
 可以很容易地并行处理，还有一点。两个消费者之间互相共享数据。</p>
 <p>使用的是Maven创建的项目，自动导入包</p>
 <p>pom.xml文件如下</p>
-<div class="code xml highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<div class="code xml highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
          xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
@@ -427,7 +435,7 @@ public class NewTask {
 </pre></div>
 </div>
 <p>在linux上启动的命令为：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># java -cp target/rabbitmq-demo-1.0.0.jar NewTask</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># java -cp target/rabbitmq-demo-1.0.0.jar NewTask</span>
 <span class="mi">04</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">18.229</span> <span class="p">[</span><span class="n">main</span><span class="p">]</span> <span class="n">INFO</span>  <span class="n">NewTask</span> <span class="o">-</span>  <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Sent</span> <span class="s1">&#39;Hello World! 0&#39;</span>
 <span class="mi">04</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">18.232</span> <span class="p">[</span><span class="n">main</span><span class="p">]</span> <span class="n">INFO</span>  <span class="n">NewTask</span> <span class="o">-</span>  <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Sent</span> <span class="s1">&#39;Hello World! 1&#39;</span>
 <span class="mi">04</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">18.233</span> <span class="p">[</span><span class="n">main</span><span class="p">]</span> <span class="n">INFO</span>  <span class="n">NewTask</span> <span class="o">-</span>  <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Sent</span> <span class="s1">&#39;Hello World! 2&#39;</span>
@@ -440,7 +448,7 @@ public class NewTask {
 <span class="mi">04</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">18.234</span> <span class="p">[</span><span class="n">main</span><span class="p">]</span> <span class="n">INFO</span>  <span class="n">NewTask</span> <span class="o">-</span>  <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Sent</span> <span class="s1">&#39;Hello World! 9&#39;</span>
 </pre></div>
 </div>
-<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># java -cp target/rabbitmq-demo-1.0.0.jar Worker</span>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># java -cp target/rabbitmq-demo-1.0.0.jar Worker</span>
 </pre></div>
 </div>
 </div>
@@ -451,14 +459,14 @@ public class NewTask {
 <p><img alt="image1" src="../../_images/java_publish-sub01.png" /></p>
 <p>该模式，producer(生产者)并不直接发送消息到queue(队列),而是发到了exchange(交换器)中。exchange一边接收来自producer的消息，
 另外一边将消息插入queue中。在上一个例子中，我们并没有显式地使用exchange，我们仍然可以发送和接收消息。因为我们使用了一个默认的转发器，
-它的标识符为&#8221;&#8220;。</p>
+它的标识符为”“。</p>
 <p>主要direct、topic、header和fanout。比如，我们要创建一个fanout类型的exchange，可以使用如下方法：</p>
-<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="n">channel</span><span class="o">.</span><span class="n">exchangeDeclare</span><span class="p">(</span><span class="s1">&#39;logs&#39;</span><span class="p">,</span><span class="s2">&quot;fonout&quot;</span><span class="p">);</span>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">channel</span><span class="o">.</span><span class="n">exchangeDeclare</span><span class="p">(</span><span class="s1">&#39;logs&#39;</span><span class="p">,</span><span class="s2">&quot;fonout&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>fonout类型的exchange特别简单–把所有它接收到的消息广播所有它知道的队列。</p>
 <p>EmitLog.java程序</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">NewTask</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">NewTask</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">com.rabbitmq.client.Channel</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">com.rabbitmq.client.Connection</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">com.rabbitmq.client.ConnectionFactory</span><span class="p">;</span>
@@ -508,7 +516,7 @@ public class NewTask {
 </pre></div>
 </div>
 <p>ReceiveLogs.java</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package Public_Client;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package Public_Client;
 
 import com.rabbitmq.client.*;
 import org.slf4j.Logger;
@@ -548,29 +556,29 @@ public class ReceiveLogs {
 }
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span>// 不传递任何参数来创建一个非持久的、唯一的、动删除的队列，该队列名称由服务器随机产生。
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// 不传递任何参数来创建一个非持久的、唯一的、动删除的队列，该队列名称由服务器随机产生。
 String queueName = channel.queueDeclare().getQueue();
 </pre></div>
 </div>
 <p>先执行订阅者 ReceiveLogs.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">20</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mf">15.158</span> <span class="p">[</span><span class="n">main</span><span class="p">]</span> <span class="n">INFO</span>  <span class="n">Public_Client</span><span class="o">.</span><span class="n">ReceiveLogs</span> <span class="o">-</span>  <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Waiting</span> <span class="k">for</span> <span class="n">messages</span><span class="o">.</span> <span class="n">To</span> <span class="n">exit</span> <span class="n">press</span> <span class="n">CTRL</span><span class="o">+</span><span class="n">C</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">20</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mf">15.158</span> <span class="p">[</span><span class="n">main</span><span class="p">]</span> <span class="n">INFO</span>  <span class="n">Public_Client</span><span class="o">.</span><span class="n">ReceiveLogs</span> <span class="o">-</span>  <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Waiting</span> <span class="k">for</span> <span class="n">messages</span><span class="o">.</span> <span class="n">To</span> <span class="n">exit</span> <span class="n">press</span> <span class="n">CTRL</span><span class="o">+</span><span class="n">C</span>
 </pre></div>
 </div>
 <p>执行发布者 EmitLog.java 发送广播队列</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">20</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mf">21.074</span> <span class="p">[</span><span class="n">main</span><span class="p">]</span> <span class="n">INFO</span>  <span class="n">NewTask</span><span class="o">.</span><span class="n">EmitLog</span> <span class="o">-</span>  <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Sent</span> <span class="s1">&#39;info: Hello World!&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">20</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mf">21.074</span> <span class="p">[</span><span class="n">main</span><span class="p">]</span> <span class="n">INFO</span>  <span class="n">NewTask</span><span class="o">.</span><span class="n">EmitLog</span> <span class="o">-</span>  <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Sent</span> <span class="s1">&#39;info: Hello World!&#39;</span>
 </pre></div>
 </div>
 <p>订阅者收到消息队列输出</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">20</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mf">43.023</span> <span class="p">[</span><span class="n">main</span><span class="p">]</span> <span class="n">INFO</span>  <span class="n">Public_Client</span><span class="o">.</span><span class="n">ReceiveLogs</span> <span class="o">-</span>  <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Waiting</span> <span class="k">for</span> <span class="n">messages</span><span class="o">.</span> <span class="n">To</span> <span class="n">exit</span> <span class="n">press</span> <span class="n">CTRL</span><span class="o">+</span><span class="n">C</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">20</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mf">43.023</span> <span class="p">[</span><span class="n">main</span><span class="p">]</span> <span class="n">INFO</span>  <span class="n">Public_Client</span><span class="o">.</span><span class="n">ReceiveLogs</span> <span class="o">-</span>  <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Waiting</span> <span class="k">for</span> <span class="n">messages</span><span class="o">.</span> <span class="n">To</span> <span class="n">exit</span> <span class="n">press</span> <span class="n">CTRL</span><span class="o">+</span><span class="n">C</span>
 <span class="mi">20</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mf">49.096</span> <span class="p">[</span><span class="n">pool</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">thread</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="n">INFO</span>  <span class="n">Public_Client</span><span class="o">.</span><span class="n">ReceiveLogs</span> <span class="o">-</span>  <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Received</span> <span class="s1">&#39;info: Hello World!&#39;</span>
 </pre></div>
 </div>
 <p>测试过程，这里为了演示效果，开启2个ReceiveLogs客户端</p>
-<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># java -cp target/rabbitmq-demo-1.0.0.jar Publish_Subscribe.ReceiveLogs</span>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># java -cp target/rabbitmq-demo-1.0.0.jar Publish_Subscribe.ReceiveLogs</span>
 </pre></div>
 </div>
 <p>开启EmitLog服务器一直发广播，</p>
-<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># cat test.sh</span>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># cat test.sh</span>
 <span class="c1">#!/bin/bash</span>
 <span class="k">while</span> <span class="n">true</span>
 <span class="n">do</span>
@@ -589,7 +597,7 @@ String queueName = channel.queueDeclare().getQueue();
 <p>使用direct类型的exchange，这样消息会被推送到binding
 key(绑定键)，和消息发布附带的routing key（路由键）完全匹配的队列。</p>
 <p>EmitLogDirect.java</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package Routing;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package Routing;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -649,7 +657,7 @@ public class EmitLogDirect {
 </pre></div>
 </div>
 <p>ReceiveLogsDirect.java</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Routing</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Routing</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
 
@@ -710,17 +718,17 @@ public class EmitLogDirect {
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>我们为了演示，启动2个ReceiveLogsDirect。一个绑定<code class="docutils literal"><span class="pre">error</span></code>，另一个绑定<code class="docutils literal"><span class="pre">error、info、warning、</span></code>。</p>
+<p>我们为了演示，启动2个ReceiveLogsDirect。一个绑定<code class="docutils literal notranslate"><span class="pre">error</span></code>，另一个绑定<code class="docutils literal notranslate"><span class="pre">error、info、warning、</span></code>。</p>
 <p>启动ReceiveLogsDirect执行如下：</p>
-<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># java -cp target/rabbitmq-demo-1.0.0.jar Routing.ReceiveLogsDirect error</span>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># java -cp target/rabbitmq-demo-1.0.0.jar Routing.ReceiveLogsDirect error</span>
 </pre></div>
 </div>
 <p>和</p>
-<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># java -cp target/rabbitmq-demo-1.0.0.jar Routing.ReceiveLogsDirect info warning error</span>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># java -cp target/rabbitmq-demo-1.0.0.jar Routing.ReceiveLogsDirect info warning error</span>
 </pre></div>
 </div>
 <p>启动EmitLogDirect执行如下：</p>
-<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># cat test.sh</span>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># cat test.sh</span>
 <span class="c1">#!/bin/bash</span>
 <span class="k">while</span> <span class="p">:</span>
 <span class="n">do</span>
@@ -736,11 +744,11 @@ public class EmitLogDirect {
 <span class="n">done</span>
 </pre></div>
 </div>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">channel</span><span class="o">.</span><span class="n">basicPublish</span><span class="p">(</span><span class="n">EXCHANGE_NAME</span><span class="p">,</span> <span class="n">severity</span><span class="p">,</span> <span class="n">null</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">getBytes</span><span class="p">(</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">));</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">channel</span><span class="o">.</span><span class="n">basicPublish</span><span class="p">(</span><span class="n">EXCHANGE_NAME</span><span class="p">,</span> <span class="n">severity</span><span class="p">,</span> <span class="n">null</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">getBytes</span><span class="p">(</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">));</span>
 <span class="o">//</span><span class="n">为不同的routing</span> <span class="n">key做绑定</span>
 </pre></div>
 </div>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">channel</span><span class="o">.</span><span class="n">queueBind</span><span class="p">(</span><span class="n">queueName</span><span class="p">,</span> <span class="n">EXCHANGE_NAME</span><span class="p">,</span> <span class="n">severity</span><span class="p">);</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">channel</span><span class="o">.</span><span class="n">queueBind</span><span class="p">(</span><span class="n">queueName</span><span class="p">,</span> <span class="n">EXCHANGE_NAME</span><span class="p">,</span> <span class="n">severity</span><span class="p">);</span>
 <span class="o">//</span> <span class="n">直接收绑定routing</span> <span class="n">key的消息</span>
 </pre></div>
 </div>
@@ -755,7 +763,7 @@ key可以是长度不超过255 bytes的字符，其格式是以点号
 <p>· # 代表0个或多个单词；</p>
 <p><img alt="image3" src="../../_images/java_topics01.png" /></p>
 <p>EmitLogTopic.java</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Topics</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Topics</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">com.rabbitmq.client.ConnectionFactory</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">com.rabbitmq.client.Connection</span><span class="p">;</span>
@@ -835,7 +843,7 @@ key可以是长度不超过255 bytes的字符，其格式是以点号
 </pre></div>
 </div>
 <p>ReceiveLogsTopic.java</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Topics</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Topics</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">com.rabbitmq.client.</span><span class="o">*</span><span class="p">;</span>
 
@@ -889,16 +897,16 @@ key可以是长度不超过255 bytes的字符，其格式是以点号
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>这里我们为了演示效果，启动2个ReceiveLogsTopic.一个绑定<code class="docutils literal"><span class="pre">kern.*</span></code>，另一个绑定<code class="docutils literal"><span class="pre">kern.*</span></code>和
-<code class="docutils literal"><span class="pre">*.txt，</span> <span class="pre">*.py</span></code></p>
-<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># java -cp target/rabbitmq-demo-1.0.0.jar Topics.ReceiveLogsTopic &quot;kern.*&quot;</span>
+<p>这里我们为了演示效果，启动2个ReceiveLogsTopic.一个绑定<code class="docutils literal notranslate"><span class="pre">kern.*</span></code>，另一个绑定<code class="docutils literal notranslate"><span class="pre">kern.*</span></code>和
+<code class="docutils literal notranslate"><span class="pre">*.txt，</span> <span class="pre">*.py</span></code></p>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># java -cp target/rabbitmq-demo-1.0.0.jar Topics.ReceiveLogsTopic &quot;kern.*&quot;</span>
 </pre></div>
 </div>
-<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># java -cp target/rabbitmq-demo-1.0.0.jar Topics.ReceiveLogsTopic &quot;kern.*&quot; &quot;*.txt&quot; &quot;*.py&quot;</span>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># java -cp target/rabbitmq-demo-1.0.0.jar Topics.ReceiveLogsTopic &quot;kern.*&quot; &quot;*.txt&quot; &quot;*.py&quot;</span>
 </pre></div>
 </div>
 <p>启动EmitLogTopic执行如下：</p>
-<div class="code shell highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># cat test01.sh</span>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@jenkins</span><span class="o">-</span><span class="n">git</span> <span class="n">chapter3</span><span class="p">]</span><span class="c1"># cat test01.sh</span>
 <span class="c1">#!/bin/bash</span>
 <span class="k">while</span> <span class="p">:</span>
 
@@ -927,6 +935,8 @@ RPC_Client将计算结果通过队列返回给RPC_Server，实现远程过程调
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="03.Apache-Kafka.html" class="btn btn-neutral float-right" title="1.3. Apache Kafka" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
       
         <a href="01.编程语言中的线程对象.html" class="btn btn-neutral float-left" title="1.1. 编程语言中的线程对象" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
@@ -937,11 +947,19 @@ RPC_Client将计算结果通过队列返回给RPC_Server，实现远程过程调
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -952,7 +970,6 @@ RPC_Client将计算结果通过队列返回给RPC_Server，实现远程过程调
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,19 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="18. 泛型" href="../18.泛型/index.html" />
     <link rel="prev" title="17.1. List集合" href="01.List集合.html" /> 
 </head>
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -133,14 +137,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.XML与JSON/index.html">27. XML与JSON</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -179,7 +186,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
@@ -191,7 +198,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/17.对象容器—集合/02.Set集合.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/17.对象容器—集合/02.Set集合.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -218,7 +225,7 @@
 </div>
 <div class="section" id="set">
 <h1><a class="toc-backref" href="#id3">17.2. Set集合</a><a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h1>
-<p><code class="docutils literal"><span class="pre">Set集合中的元素是无序的、不能重复的。</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Set集合中的元素是无序的、不能重复的。</span></code></p>
 <p>List集合中的元素是有序的、可重复的，而Set集合中的元素是无序的、不能重复的。List集
 合强调的是有序，Set集合强调的是不重复。当不考虑顺序，且没有重复元素时，Set集合和List集
 合可以互相替换的。</p>
@@ -229,7 +236,7 @@ Set接口也继承自Collection接口，Set接口中大部分都是继承自Coll
 <ol class="arabic simple">
 <li>操作元素</li>
 </ol>
-<div class="highlight-default"><div class="highlight"><pre><span></span>add(Object element)：在Set集合的尾部添加指定的元素。该方法是从Collection集合继承过来的。
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>add(Object element)：在Set集合的尾部添加指定的元素。该方法是从Collection集合继承过来的。
 remove(Object element)：如果Set集合中存在指定元素，则从Set集合中移除该元素。该方法是从Collection集合继承过来的。
 clear()：从Set集合中移除所有元素。该方法是从Collection集合继承过来的。
 </pre></div>
@@ -237,7 +244,7 @@ clear()：从Set集合中移除所有元素。该方法是从Collection集合继
 <ol class="arabic simple" start="2">
 <li>判断元素</li>
 </ol>
-<div class="highlight-default"><div class="highlight"><pre><span></span>isEmpty()：判断Set集合中是否有元素，没有返回true，有返回false。该方法是从
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>isEmpty()：判断Set集合中是否有元素，没有返回true，有返回false。该方法是从
 Collection集合继承过来的。
 contains(Object element)：判断Set集合中是否包含指定元素，包含返回true，不包含返回false。该方法是从Collection集合继承过来的。
 </pre></div>
@@ -245,12 +252,12 @@ contains(Object element)：判断Set集合中是否包含指定元素，包含�
 <ol class="arabic simple" start="3">
 <li>其他</li>
 </ol>
-<div class="highlight-default"><div class="highlight"><pre><span></span>iterator()：返回迭代器（Iterator）对象，迭代器对象用于遍历集合。该方法是从Collection集合继承过来的。
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>iterator()：返回迭代器（Iterator）对象，迭代器对象用于遍历集合。该方法是从Collection集合继承过来的。
 size()：返回Set集合中的元素数，返回值是int类型。该方法是从Collection集合继承过来的。
 </pre></div>
 </div>
 <p>HelloWorld2.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51cto;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>package com.a51cto;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -303,7 +310,7 @@ public class HelloWorld2 {
 <h2><a class="toc-backref" href="#id5">17.2.2. 创建HashSet类</a><a class="headerlink" href="#hashset" title="Permalink to this headline">¶</a></h2>
 <p>无序，且不能重复</p>
 <p>HashSetDemo.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51cto;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>package com.a51cto;
 
 // 导入HashSet包
 import java.util.HashSet;
@@ -353,7 +360,7 @@ hujianli2
 <h2><a class="toc-backref" href="#id6">17.2.3. 创建TreeSetDemo类</a><a class="headerlink" href="#treesetdemo" title="Permalink to this headline">¶</a></h2>
 <p>有序，且不能重复</p>
 <p>TreeSetDemo.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51cto;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>package com.a51cto;
 
 import java.util.TreeSet;
 
@@ -405,7 +412,7 @@ hujianli2
 <div class="section" id="id2">
 <h2><a class="toc-backref" href="#id7">17.2.4. Set集合的遍历</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>HelloWorld4.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51cto</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51cto</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="p">;</span>
@@ -487,11 +494,19 @@ hujianli2
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -502,7 +517,6 @@ hujianli2
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

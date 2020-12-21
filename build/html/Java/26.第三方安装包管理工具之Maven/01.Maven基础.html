@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,22 +33,20 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="next" title="分布式系统架构案例(Java)" href="../../Distributed_Systems/index.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="27. XML与JSON" href="../27.XML与JSON/index.html" />
     <link rel="prev" title="26. 包管理工具之Maven" href="index.html" /> 
 </head>
 
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -138,14 +142,17 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../27.XML与JSON/index.html">27. XML与JSON</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -184,7 +191,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
@@ -196,7 +203,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/26.第三方安装包管理工具之Maven/01.Maven基础.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/26.第三方安装包管理工具之Maven/01.Maven基础.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -237,7 +244,7 @@
 <h1><a class="toc-backref" href="#id10">26.1. Maven基础</a><a class="headerlink" href="#maven" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2><a class="toc-backref" href="#id11">26.1.1. 1.安装Maven</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span>https://maven.apache.org
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://maven.apache.org
 从Maven官网下载最新的Maven安装包，设置环境变量如下：
 
 M2_HOME=/path/to/maven-3.6.x
@@ -251,7 +258,7 @@ C:\Users\18793&gt; mvn -version
 </div>
 <div class="section" id="id2">
 <h3><a class="toc-backref" href="#id12">了解Maven安装目录结构</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span>*bin：含有mvn运行的脚本
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>*bin：含有mvn运行的脚本
 *boot：含有plexus-classworlds类加载器框架
 *conf：含有settings.xml配置文件
 *lib：含有Maven运行时所需要的java类库
@@ -262,7 +269,7 @@ C:\Users\18793&gt; mvn -version
 </div>
 <div class="section" id="mavenjar">
 <h2><a class="toc-backref" href="#id13">26.1.2. 2、修改从Maven中心仓库下载到本地的jar包的默认存储位置</a><a class="headerlink" href="#mavenjar" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span>从Maven中心仓库下载到本地的jar包的默认存放在“~/.m2/repository”中。
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>从Maven中心仓库下载到本地的jar包的默认存放在“~/.m2/repository”中。
 我们希望能够自己定义下载下来的jar包的存放位置，因此我们可以自己设置下载到本地时的jar包的存放目录。
 settings.xml文件
 增加如下配置，重启Eclipse生效：
@@ -275,7 +282,7 @@ settings.xml文件
 </pre></div>
 </div>
 <p>pom.xml</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;build&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;build&gt;
 &lt;plugins&gt;
 &lt;plugin&gt;
 &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
@@ -303,7 +310,7 @@ ${basedir}/src/main/webapp/WEB-INF/lib
 </div>
 <div class="section" id="id3">
 <h3><a class="toc-backref" href="#id14">引用其他第三方库</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">commons</span><span class="o">-</span><span class="n">logging</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">commons</span><span class="o">-</span><span class="n">logging</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">1.2</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
@@ -317,7 +324,7 @@ ${basedir}/src/main/webapp/WEB-INF/lib
 <p>一般情况下可以配置为国外的远程中央仓库，但是在国内从国外远程中央仓库下载jar包的速度比较差。
 如果国内的话，建议使用阿里的远程中央仓库（下载速度快）。配置阿里的远程中央仓库</p>
 <p>配置方式：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conf</span>\<span class="n">setting</span><span class="o">.</span><span class="n">xml</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conf</span>\<span class="n">setting</span><span class="o">.</span><span class="n">xml</span>
 
   <span class="o">&lt;</span><span class="n">mirror</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nb">id</span><span class="o">&gt;</span><span class="n">nexus</span><span class="o">-</span><span class="n">aliyun</span><span class="o">&lt;/</span><span class="nb">id</span><span class="o">&gt;</span>
@@ -329,7 +336,7 @@ ${basedir}/src/main/webapp/WEB-INF/lib
 </div>
 <p>中国区用户可以使用阿里云提供的Maven镜像仓库。使用Maven镜像仓库需要一个配置，
 在用户主目录下进入.m2目录，创建一个settings.xml配置文件，内容如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;settings&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;settings&gt;
     &lt;mirrors&gt;
         &lt;mirror&gt;
             &lt;id&gt;aliyun&lt;/id&gt;
@@ -345,14 +352,14 @@ ${basedir}/src/main/webapp/WEB-INF/lib
 </div>
 <div class="section" id="jar">
 <h2><a class="toc-backref" href="#id16">26.1.4. 4. jar相关库文件下载地址</a><a class="headerlink" href="#jar" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mvnrepository</span><span class="o">.</span><span class="n">com</span><span class="o">/</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mvnrepository</span><span class="o">.</span><span class="n">com</span><span class="o">/</span>
 <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">blog</span><span class="o">.</span><span class="n">csdn</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">u012851114</span><span class="o">/</span><span class="n">article</span><span class="o">/</span><span class="n">details</span><span class="o">/</span><span class="mi">81872981</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id5">
 <h2><a class="toc-backref" href="#id17">26.1.5. 5. 参考文献</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">blog</span><span class="o">.</span><span class="n">csdn</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">jakemanse</span><span class="o">/</span><span class="n">article</span><span class="o">/</span><span class="n">details</span><span class="o">/</span><span class="mi">83035389</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">blog</span><span class="o">.</span><span class="n">csdn</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">jakemanse</span><span class="o">/</span><span class="n">article</span><span class="o">/</span><span class="n">details</span><span class="o">/</span><span class="mi">83035389</span>
 
 <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">ctolib</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">topics</span><span class="o">-</span><span class="mf">123587.</span><span class="n">html</span>
 
@@ -364,7 +371,7 @@ ${basedir}/src/main/webapp/WEB-INF/lib
 </div>
 <div class="section" id="intellij-idea-pom-xml-maven">
 <h2><a class="toc-backref" href="#id18">26.1.6. Intellij IDEA 往pom.xml 中添加maven依赖</a><a class="headerlink" href="#intellij-idea-pom-xml-maven" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span>打开pom.xml  ——&gt;在它里面右击选择generate (快捷键ALT+Insert)  ——&gt;点击dependency
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>打开pom.xml  ——&gt;在它里面右击选择generate (快捷键ALT+Insert)  ——&gt;点击dependency
 </pre></div>
 </div>
 </div>
@@ -400,7 +407,7 @@ ${basedir}/src/main/webapp/WEB-INF/lib
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../Distributed_Systems/index.html" class="btn btn-neutral float-right" title="分布式系统架构案例(Java)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../27.XML与JSON/index.html" class="btn btn-neutral float-right" title="27. XML与JSON" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="26. 包管理工具之Maven" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -412,11 +419,19 @@ ${basedir}/src/main/webapp/WEB-INF/lib
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -427,7 +442,6 @@ ${basedir}/src/main/webapp/WEB-INF/lib
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

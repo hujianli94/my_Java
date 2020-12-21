@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,19 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Java学习笔记" href="Java/index.html" /> 
 </head>
 
@@ -57,7 +60,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> 小健_Java_Blog
+            <a href="#" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -87,6 +90,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -97,11 +101,13 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="Java/index.html">Java学习笔记</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -140,7 +146,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
       <li>Devops学院【Java|分布式服务】专栏三</li>
     
@@ -148,7 +154,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -203,6 +209,7 @@
 <li class="toctree-l4"><a class="reference internal" href="Java/01.Java基础/04.变量与常量.html#id3">1.4.2. 声明变量</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Java/01.Java基础/04.变量与常量.html#id4">1.4.3. 声明常量</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Java/01.Java基础/04.变量与常量.html#id5">1.4.4. 变量的有效范围</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Java/01.Java基础/04.变量与常量.html#id6">1.4.5. 精准控制格式化的输出</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="Java/01.Java基础/05.运算符.html">1.5. 运算符</a><ul>
@@ -238,7 +245,8 @@
 <li class="toctree-l4"><a class="reference internal" href="Java/02.流程控制/02.条件语句.html#if-else">2.2.2. if…else语句</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Java/02.流程控制/02.条件语句.html#if-else-if">2.2.3. if …else if 多分支语句</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Java/02.流程控制/02.条件语句.html#id3">2.2.4. if-else嵌套语句</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Java/02.流程控制/02.条件语句.html#switch">2.2.5. switch 多分支语句</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Java/02.流程控制/02.条件语句.html#id4">2.2.5. 三目运算符来代替简单的if语句</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Java/02.流程控制/02.条件语句.html#switch">2.2.6. switch 多分支语句</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="Java/02.流程控制/03.循环语句.html">2.3. 循环语句</a><ul>
@@ -249,6 +257,7 @@
 <li class="toctree-l4"><a class="reference internal" href="Java/02.流程控制/03.循环语句.html#id3">2.3.5. 循环控制</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Java/02.流程控制/03.循环语句.html#id4">2.3.6. 总结</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Java/02.流程控制/03.循环语句.html#id5">2.3.7. 课后练习</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Java/02.流程控制/03.循环语句.html#scanner">2.3.8. 将循环应用于Scanner类的输入检查</a></li>
 </ul>
 </li>
 </ul>
@@ -258,11 +267,12 @@
 <li class="toctree-l4"><a class="reference internal" href="Java/03.字符串/01.字符串.html#api">3.1.1. 使用API文档</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Java/03.字符串/01.字符串.html#java-8api">3.1.2. Java 8在线API文档</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Java/03.字符串/01.字符串.html#id2">3.1.3. 不可变字符串</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Java/03.字符串/01.字符串.html#id11">3.1.4. 总结</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Java/03.字符串/01.字符串.html#id12">3.1.5. 日期和时间字符串格式化</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Java/03.字符串/01.字符串.html#id13">3.1.6. 常规类型的格式化</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Java/03.字符串/01.字符串.html#id14">3.1.7. 使用正则表达式</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Java/03.字符串/01.字符串.html#id15">3.1.8. 字符串生成器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Java/03.字符串/01.字符串.html#id8">3.1.4. 可变字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Java/03.字符串/01.字符串.html#id11">3.1.5. 总结</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Java/03.字符串/01.字符串.html#id12">3.1.6. 日期和时间字符串格式化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Java/03.字符串/01.字符串.html#id13">3.1.7. 常规类型的格式化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Java/03.字符串/01.字符串.html#id14">3.1.8. 使用正则表达式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Java/03.字符串/01.字符串.html#id15">3.1.9. 字符串生成器</a></li>
 </ul>
 </li>
 </ul>
@@ -719,19 +729,44 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="Spring_Boot/index.html">Spring Boot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Spring_Boot/01.Spring_Boot入门.html">1. Spring Boot入门</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Spring_Boot/01.Spring_Boot入门.html#id1">1.1. 开发第一个Spring Boot程序</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Spring_Boot/01.Spring_Boot入门.html#mave">1.1.1. 创建Mave工程</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Spring_Boot/01.Spring_Boot入门.html#id2">1.1.2. 目录结构</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Spring_Boot/01.Spring_Boot入门.html#id3">1.1.3. 编写启动类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Spring_Boot/01.Spring_Boot入门.html#id4">1.1.4. 项目启动</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Spring_Boot/01.Spring_Boot入门.html#id5">1.2. Spring Boot的简便创建方式</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Spring_Boot/01.Spring_Boot入门.html#id6">1.2.1. 在线创建</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Spring_Boot/02.Spring_Boot基础配置.html">2. Spring Boot基础配置</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Spring_Boot/02.Spring_Boot基础配置.html#spring-boot-starter-parent">2.1. 不使用spring-boot-starter-parent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Spring_Boot/02.Spring_Boot基础配置.html#spring-bootapplication">2.2. &#64;Spring BootApplication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Spring_Boot/02.Spring_Boot基础配置.html#banner">2.3. 定制banner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Spring_Boot/02.Spring_Boot基础配置.html#web">2.4. Web容器配置</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Spring_Boot/02.Spring_Boot基础配置.html#id1">2.4.1. 1.常规配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Spring_Boot/02.Spring_Boot基础配置.html#https">2.4.2. 2.HTTPS配置</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Spring_Boot/02.Spring_Boot基础配置.html#jetty">2.5. Jetty配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Spring_Boot/02.Spring_Boot基础配置.html#undertow">2.6. Undertow配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Spring_Boot/02.Spring_Boot基础配置.html#properties">2.7. Properties配置</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div class="section" id="id2">
 <h2>温馨提示：认真的学习，思考、系统的整理碎片化的知识<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>orem ipsum <a class="footnote-reference" href="#f1" id="id3">[1]</a> dolor sit amet ... <a class="footnote-reference" href="#f2" id="id4">[2]</a></p>
+<p>orem ipsum <a class="footnote-reference" href="#f1" id="id3">[1]</a> dolor sit amet … <a class="footnote-reference" href="#f2" id="id4">[2]</a></p>
 <p>Footnotes</p>
-<table class="docutils citation" frame="void" id="ref" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[Ref]</td><td>参考文献《零基础学Java 第4版 (零基础学编程)》、《Java从小白到大牛》、《Java从入门到精通（第4版）》等.</td></tr>
-</tbody>
-</table>
 <p class="rubric">Footnotes</p>
 <table class="docutils footnote" frame="void" id="f1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -766,11 +801,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -781,7 +824,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

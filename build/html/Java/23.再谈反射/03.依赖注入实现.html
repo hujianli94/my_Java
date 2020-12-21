@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,19 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="24. 注解(Annotation）" href="../24.注解(Annotation)/index.html" />
     <link rel="prev" title="23.2. 构造方法的反射" href="02.构造方法的反射.html" /> 
 </head>
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -128,14 +132,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.XML与JSON/index.html">27. XML与JSON</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -174,7 +181,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
@@ -186,7 +193,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/23.再谈反射/03.依赖注入实现.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/23.再谈反射/03.依赖注入实现.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -208,17 +215,17 @@
 <div class="section" id="id1">
 <h1><a class="toc-backref" href="#id2">23.3. 依赖注入实现</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>创建松耦合、基于配置的程序</p>
-<p><code class="docutils literal"><span class="pre">Java反射机制能够在运行时动态加载类，而不是在编译期。</span></code>
+<p><code class="docutils literal notranslate"><span class="pre">Java反射机制能够在运行时动态加载类，而不是在编译期。</span></code>
 在一些框架开发中经常将要实例化的类名保存到配置文件中，在运行时从配置文件中读取类名字符串，然后动态创建对象，建立依赖关系
 。采
 用new创建对象依赖关系是在编译期建立的，反射机制能够将依赖关系推迟到运行时建立，这种依赖
 关系动态注入进来称为依赖注入</p>
 <p>config.txt</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">com</span><span class="o">.</span><span class="n">a52work</span><span class="o">.</span><span class="n">Discourse75</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">com</span><span class="o">.</span><span class="n">a52work</span><span class="o">.</span><span class="n">Discourse75</span>
 </pre></div>
 </div>
 <p>Discourse.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a52work</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a52work</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="n">interface</span> <span class="n">Discourse</span> <span class="p">{</span>
     <span class="n">public</span> <span class="nb">int</span> <span class="n">getDiscourse</span><span class="p">();</span>         <span class="o">//</span><span class="n">折扣的变量</span>
@@ -226,7 +233,7 @@
 </pre></div>
 </div>
 <p>Discourse75.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a52work;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>package com.a52work;
 
 public class Discourse75 implements Discourse{
     // 继承接口，返回75折
@@ -238,7 +245,7 @@ public class Discourse75 implements Discourse{
 </pre></div>
 </div>
 <p>Discourse85.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a52work;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>package com.a52work;
 
 public class Discourse85 implements Discourse {
     // 继承接口，返回85折
@@ -250,7 +257,7 @@ public class Discourse85 implements Discourse {
 </pre></div>
 </div>
 <p>Person.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a52work</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a52work</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Person</span> <span class="p">{</span>
     <span class="n">private</span> <span class="n">double</span> <span class="n">price</span> <span class="o">=</span> <span class="mf">80.0</span><span class="p">;</span>
@@ -264,7 +271,7 @@ public class Discourse85 implements Discourse {
 </pre></div>
 </div>
 <p>Test.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a52work</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a52work</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.io.FileReader</span><span class="p">;</span>
@@ -278,8 +285,8 @@ public class Discourse85 implements Discourse {
 
         <span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="n">new</span> <span class="n">BufferedReader</span><span class="p">(</span><span class="n">new</span> <span class="n">FileReader</span><span class="p">(</span><span class="s2">&quot;D:</span><span class="se">\\</span><span class="s2">Java_Study/Day26/src/com/a52work/config.txt&quot;</span><span class="p">));</span>
         <span class="n">String</span> <span class="n">line</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="n">readLine</span><span class="p">();</span>
-        <span class="n">Class</span> <span class="n">cls</span> <span class="o">=</span> <span class="n">Class</span><span class="o">.</span><span class="n">forName</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
-        <span class="n">Discourse</span> <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">Discourse</span><span class="p">)</span> <span class="n">cls</span><span class="o">.</span><span class="n">newInstance</span><span class="p">();</span>
+        <span class="n">Class</span> <span class="bp">cls</span> <span class="o">=</span> <span class="n">Class</span><span class="o">.</span><span class="n">forName</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+        <span class="n">Discourse</span> <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">Discourse</span><span class="p">)</span> <span class="bp">cls</span><span class="o">.</span><span class="n">newInstance</span><span class="p">();</span>
         <span class="n">p1</span><span class="o">.</span><span class="n">buy</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
         <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;-----------&quot;</span><span class="p">);</span>
         <span class="o">//</span><span class="n">p1</span><span class="o">.</span><span class="n">buy</span><span class="p">(</span><span class="n">d1</span><span class="p">);</span>
@@ -310,11 +317,19 @@ public class Discourse85 implements Discourse {
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -325,7 +340,6 @@ public class Discourse85 implements Discourse {
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

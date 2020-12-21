@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,19 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="13.3. Math类" href="03.Math类.html" />
     <link rel="prev" title="13.1. Java根类Object" href="01.Java根类.html" /> 
 </head>
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -138,14 +142,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.XML与JSON/index.html">27. XML与JSON</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -184,7 +191,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
@@ -196,7 +203,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/13.Java常用类/02.包装类.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/13.Java常用类/02.包装类.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -235,19 +242,19 @@
 <li>构造方法类似
 每一个数值包装类都有两个构造方法，以Integer为例，Integer构造方法如下：</li>
 </ol>
-<p><code class="docutils literal"><span class="pre">Integer(int</span> <span class="pre">value)</span></code>：通过指定一个数值构造Integer对象。</p>
-<p><code class="docutils literal"><span class="pre">Integer(String</span> <span class="pre">s)</span></code>：通过指定一个字符串s构造对象，s是十进制字符串表示的数值</p>
+<p><code class="docutils literal notranslate"><span class="pre">Integer(int</span> <span class="pre">value)</span></code>：通过指定一个数值构造Integer对象。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Integer(String</span> <span class="pre">s)</span></code>：通过指定一个字符串s构造对象，s是十进制字符串表示的数值</p>
 <ol class="arabic simple" start="2">
 <li>共同的父类
 这6个数值包装类有一个共同的父类——Number，Number是一个抽象类，除了这6个子类还有：
 AtomicInteger、AtomicLong、BigDecimal和BigInteger，其中BigDecimal和BigInteger后面还会详细介绍。Number是抽象类，要求它的子类必须实现如下6个方法：</li>
 </ol>
-<p><code class="docutils literal"><span class="pre">byte</span> <span class="pre">byteValue()</span></code>：将当前包装的对象转换为byte类型的数值。</p>
-<p><code class="docutils literal"><span class="pre">double</span> <span class="pre">doubleValue()</span></code>：将当前包装的对象转换为double类型的数值。</p>
-<p><code class="docutils literal"><span class="pre">float</span> <span class="pre">floatValue()</span></code>：将当前包装的对象转换为float类型的数值。</p>
-<p><code class="docutils literal"><span class="pre">int</span> <span class="pre">intValue()</span></code>：将当前包装的对象转换为int类型的数值。</p>
-<p><code class="docutils literal"><span class="pre">long</span> <span class="pre">longValue()</span></code>：将当前包装的对象转换为long类型的数值。</p>
-<p><code class="docutils literal"><span class="pre">short</span> <span class="pre">shortValue()</span></code>：将当前包装的对象转换为short类型的数值。</p>
+<p><code class="docutils literal notranslate"><span class="pre">byte</span> <span class="pre">byteValue()</span></code>：将当前包装的对象转换为byte类型的数值。</p>
+<p><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">doubleValue()</span></code>：将当前包装的对象转换为double类型的数值。</p>
+<p><code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">floatValue()</span></code>：将当前包装的对象转换为float类型的数值。</p>
+<p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">intValue()</span></code>：将当前包装的对象转换为int类型的数值。</p>
+<p><code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">longValue()</span></code>：将当前包装的对象转换为long类型的数值。</p>
+<p><code class="docutils literal notranslate"><span class="pre">short</span> <span class="pre">shortValue()</span></code>：将当前包装的对象转换为short类型的数值。</p>
 <p>通过这6个方法数值包装类可以互相转换这6种数值，但是需要注意的是大范围数值转换为小范围的数值，如果数值本身很大，可以会导致精度的丢失。</p>
 <ol class="arabic simple" start="3">
 <li>compareTo()方法</li>
@@ -261,20 +268,20 @@ AtomicInteger、AtomicLong、BigDecimal和BigInteger，其中BigDecimal和BigInt
 <li>字符串转换为基本数据类型</li>
 </ol>
 <p>每一个数值包装类都提供一些静态parseXXX()方法将字符串转换为对应的基本数据类型，以Integer为例，方法定义如下：</p>
-<p><code class="docutils literal"><span class="pre">static</span> <span class="pre">int</span> <span class="pre">parseInt(String</span> <span class="pre">s)</span></code>：将字符串s转换有符号的十进制整数。</p>
-<p><code class="docutils literal"><span class="pre">static</span> <span class="pre">int</span> <span class="pre">parseInt(String</span> <span class="pre">s</span></code>, int
+<p><code class="docutils literal notranslate"><span class="pre">static</span> <span class="pre">int</span> <span class="pre">parseInt(String</span> <span class="pre">s)</span></code>：将字符串s转换有符号的十进制整数。</p>
+<p><code class="docutils literal notranslate"><span class="pre">static</span> <span class="pre">int</span> <span class="pre">parseInt(String</span> <span class="pre">s</span></code>, int
 radix)：将字符串s转换有符号的整数，radix是指定基数，基数用来指定进制。注意这种指定基数的方法在浮点数包装类（Double和Float）中没有
 的。</p>
 <ol class="arabic simple" start="5">
 <li>基本数据类型转换为字符串</li>
 </ol>
 <p>每一个数值包装类都提供一些静态toString()方法实现将基本数据类型数值转换为字符串，以Integer为例，方法定义如下：</p>
-<p><code class="docutils literal"><span class="pre">static</span> <span class="pre">String</span> <span class="pre">toString(int</span> <span class="pre">i)</span></code>：将该整数i转换为有符号的十进制表示的字符串。</p>
-<p><code class="docutils literal"><span class="pre">static</span> <span class="pre">String</span> <span class="pre">toString(int</span> <span class="pre">i,</span> <span class="pre">int</span> <span class="pre">radix)</span></code>：将该整数i转换为有符号的特定进制表示的字符串，
+<p><code class="docutils literal notranslate"><span class="pre">static</span> <span class="pre">String</span> <span class="pre">toString(int</span> <span class="pre">i)</span></code>：将该整数i转换为有符号的十进制表示的字符串。</p>
+<p><code class="docutils literal notranslate"><span class="pre">static</span> <span class="pre">String</span> <span class="pre">toString(int</span> <span class="pre">i,</span> <span class="pre">int</span> <span class="pre">radix)</span></code>：将该整数i转换为有符号的特定进制表示的字符串，
 radix是基数可以指定进制。注意这种指定基数的方法在浮点数包装类（Double和Float）
 中没有的。</p>
 <p>代码示例</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">aom</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">aom</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Integer_class</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -327,7 +334,7 @@ radix是基数可以指定进制。注意这种指定基数的方法在浮点数
 </pre></div>
 </div>
 <p>这些数值包装类（Byte、Short、Integer、Long、Float和Double）都有一些相同特点。</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>1. 构造方法类似
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>1. 构造方法类似
    每一个数值包装类都有两个构造方法，以Integer为例，Integer构造方法如下：
    Integer(int value)：通过指定一个数值构造Integer对象。
    Integer(String s)：通过指定一个字符串s构造对象，s是十进制字符串表示的数值。
@@ -368,10 +375,10 @@ radix是基数可以指定进制。注意这种指定基数的方法在浮点数
 </pre></div>
 </div>
 <p>parseInt(String str)</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">返回包含在由str指定的字符串中的数字的等价整数值</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">返回包含在由str指定的字符串中的数字的等价整数值</span>
 </pre></div>
 </div>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Integer_class01</span> <span class="p">{</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Integer_class01</span> <span class="p">{</span>
 <span class="o">//</span>  <span class="n">主方法</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
 <span class="o">//</span>      <span class="n">定义String字符串数组</span>
@@ -396,7 +403,7 @@ radix是基数可以指定进制。注意这种指定基数的方法在浮点数
 </div>
 <div class="section" id="id3">
 <h2><a class="toc-backref" href="#id8">13.2.3. Integer类的进制转换</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>//创建Charca类
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>//创建Charca类
 public class Charac {
     public static void main(String[] args) {
         //主方法
@@ -427,7 +434,7 @@ public class Charac {
  */
 </pre></div>
 </div>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>//创建类GetCon
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>//创建类GetCon
 public class Changliang {
 //  主方法
     public static void main(String[] args) {
@@ -449,11 +456,27 @@ int类型的二进制位数是：32
  */
 </pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">Integer</span></code>、<code class="docutils literal notranslate"><span class="pre">Float</span></code>、<code class="docutils literal notranslate"><span class="pre">Long</span></code>三个封装类实现了数据转换功能。</p>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">base</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">HeLLWORLd</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;123&quot;</span><span class="p">;</span>
+        <span class="nb">int</span> <span class="n">intVal</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="n">valueOf</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+        <span class="nb">float</span> <span class="n">floatVal</span> <span class="o">=</span> <span class="n">Float</span><span class="o">.</span><span class="n">valueOf</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+        <span class="n">long</span> <span class="n">LongVal</span> <span class="o">=</span> <span class="n">Long</span><span class="o">.</span><span class="n">valueOf</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">intVal</span><span class="p">);</span> <span class="o">//</span><span class="mi">123</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">floatVal</span><span class="p">);</span>   <span class="o">//</span><span class="mf">123.0</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">LongVal</span><span class="p">);</span>    <span class="o">//</span><span class="mi">123</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="character">
 <h2><a class="toc-backref" href="#id9">13.2.4. Character类</a><a class="headerlink" href="#character" title="Permalink to this headline">¶</a></h2>
 <p>Character类是char类型的包装类。Character类常用方法如下：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>  Character(char value)：构造方法，通过char值创建一个新的Character对象。
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>  Character(char value)：构造方法，通过char值创建一个新的Character对象。
   char charValue()：返回此Character对象的值。
   int compareTo(Character anotherCharacter)：方法返回值是int，
 如果返回值是0，则相等；
@@ -462,7 +485,7 @@ int类型的二进制位数是：32
 </pre></div>
 </div>
 <p>代码示例1</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Characyer01</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -491,7 +514,7 @@ int类型的二进制位数是：32
 </pre></div>
 </div>
 <p>代码示例2</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">som</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">som</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Deom</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -529,7 +552,7 @@ s)：将字符串转换为对应的boolean类。s不能为null，s如果是忽
 </ol>
 <p>代码示例</p>
 <p>HelloWorld.java</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work6</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work6</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
 
@@ -573,7 +596,7 @@ s)：将字符串转换为对应的boolean类。s不能为null，s如果是忽
 </div>
 <p>代码示例2</p>
 <p>Test.java</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.a51work.cn.Boolean;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package com.a51work.cn.Boolean;
 
 public class Test {
     public static void main(String[] args) {
@@ -603,7 +626,7 @@ b1(true)和b2（false)是否相等：false
 <div class="section" id="id4">
 <h2><a class="toc-backref" href="#id11">13.2.6. 自动装箱/拆箱</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>代码示例</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="o">.</span><span class="n">Automatic_packing</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="o">.</span><span class="n">Automatic_packing</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -666,11 +689,19 @@ b1(true)和b2（false)是否相等：false
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -681,7 +712,6 @@ b1(true)和b2（false)是否相等：false
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

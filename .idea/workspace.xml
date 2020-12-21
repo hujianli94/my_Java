@@ -1,0 +1,1247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="abdb315f-84ad-40f5-83a4-d30cb0846f04" name="默认更改列表" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/doctrees/Spring_Boot/01.Spring_Boot入门.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/doctrees/Spring_Boot/02.Spring_Boot基础配置.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/doctrees/Spring_Boot/index.doctree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/Spring_Boot/01.Spring_Boot入门.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/Spring_Boot/02.Spring_Boot基础配置.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/Spring_Boot/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/01.Java开篇介绍.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/03.基本数据类型.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/04.变量与常量.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/05.运算符.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/02.流程控制/02.条件语句.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/02.流程控制/03.循环语句.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/03.字符串/01.字符串.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/04.数组/01.一维数组的创建和使用.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/04.数组/02.二维数组的创建和使用.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/02.类.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/08.包/06.封装性与访问控制.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/09.对象/03.构造方法.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/13.Java常用类/02.包装类.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/13.Java常用类/03.Math类.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/14.内部类/01.内部类概述.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/03.捕获异常.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/04.释放资源.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Spring_Boot/01.Spring_Boot入门.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Spring_Boot/02.Spring_Boot基础配置.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/Spring_Boot/index.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_sources/index.rst.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/Roboto-Slab-Bold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/Roboto-Slab-Bold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/Roboto-Slab-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/Roboto-Slab-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/lato-bold-italic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/lato-bold-italic.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/lato-bold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/lato-bold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/lato-normal-italic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/lato-normal-italic.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/lato-normal.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/css/fonts/lato-normal.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/documentation_options.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/Roboto-Slab-Bold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/Roboto-Slab-Bold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/Roboto-Slab-Light.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/Roboto-Slab-Light.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/Roboto-Slab-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/Roboto-Slab-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/Roboto-Slab-Thin.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/Roboto-Slab-Thin.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/lato-bold-italic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/lato-bold-italic.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/lato-bold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/lato-bold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/lato-normal-italic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/lato-normal-italic.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/lato-normal.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/fonts/lato-normal.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/jquery-3.2.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/js/badge_only.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/js/html5shiv-printshiv.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/html/_static/js/html5shiv.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/Spring_Boot/01.Spring_Boot入门.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/Spring_Boot/01.Spring_Boot入门.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/Spring_Boot/02.Spring_Boot基础配置.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/Spring_Boot/02.Spring_Boot基础配置.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/Spring_Boot/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/my_Java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/my_Java.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Distributed_Systems/01.分布式系统基础知识/01.编程语言中的线程对象.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Distributed_Systems/01.分布式系统基础知识/01.编程语言中的线程对象.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Distributed_Systems/01.分布式系统基础知识/02.Rabbitmq分布式消息服务.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Distributed_Systems/01.分布式系统基础知识/02.Rabbitmq分布式消息服务.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Distributed_Systems/01.分布式系统基础知识/03.Apache Kafka.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Distributed_Systems/01.分布式系统基础知识/03.Apache-Kafka.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Distributed_Systems/01.分布式系统基础知识/03.Apache-Kafka.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Distributed_Systems/01.分布式系统基础知识/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Distributed_Systems/01.分布式系统基础知识/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Distributed_Systems/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Distributed_Systems/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/01.Java开篇介绍.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/01.Java开篇介绍.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/02.第一个Java程序.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/02.第一个Java程序.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/03.基本数据类型.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/03.基本数据类型.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/04.变量与常量.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/04.变量与常量.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/05.运算符.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/05.运算符.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/06.代码注释和编码规范.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/06.代码注释和编码规范.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/07.Java相关开发工具.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/07.Java相关开发工具.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/01.Java基础/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/02.流程控制/01.复合语句.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/02.流程控制/01.复合语句.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/02.流程控制/02.条件语句.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/02.流程控制/02.条件语句.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/02.流程控制/03.循环语句.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/02.流程控制/03.循环语句.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/02.流程控制/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/02.流程控制/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/03.字符串/01.字符串.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/03.字符串/01.字符串.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/03.字符串/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/03.字符串/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/04.数组/01.一维数组的创建和使用.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/04.数组/01.一维数组的创建和使用.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/04.数组/02.二维数组的创建和使用.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/04.数组/02.二维数组的创建和使用.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/04.数组/03.数组的基本操作.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/04.数组/03.数组的基本操作.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/04.数组/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/04.数组/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/01.面向对象概述.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/01.面向对象概述.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/02.对象.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/02.类.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/02.类.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/03.静态变量、常量和方法（static关键字）.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/03.静态变量、常量和方法（static关键字）.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/04.主方法.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/04.主方法.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/04.类.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/05.实践与练习.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/05.实践与练习.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/05.构造方法.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/06.主方法.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/07.实践与练习.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/05.类与对象/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/06.包装类/01.Integer.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/06.包装类/02.Boolean.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/06.包装类/03.Byte.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/06.包装类/04.Character.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/06.包装类/05.Double.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/06.包装类/06.Number.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/06.包装类/07.实践与练习.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/06.包装类/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/06.数字处理类/01.数字格式化.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/06.数字处理类/01.数字格式化.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/06.数字处理类/02.Math类.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/06.数字处理类/02.Math类.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/06.数字处理类/03.Random类.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/06.数字处理类/03.Random类.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/06.数字处理类/04.大数字运算.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/06.数字处理类/04.大数字运算.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/06.数字处理类/05.实践和练习.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/06.数字处理类/05.实践和练习.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/06.数字处理类/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/06.数字处理类/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/07.接口、继承与多态/01.类的继承.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/07.接口、继承与多态/01.类的继承.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/07.接口、继承与多态/02.成员变量隐藏和方法覆盖.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/07.接口、继承与多态/02.成员变量隐藏和方法覆盖.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/07.接口、继承与多态/03.Object类.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/07.接口、继承与多态/03.Object类.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/07.接口、继承与多态/04.多态.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/07.接口、继承与多态/04.多态.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/07.接口、继承与多态/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/07.接口、继承与多态/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/07.数字处理类/01.数字格式化.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/07.数字处理类/02.Math类.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/07.数字处理类/03.Random类.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/07.数字处理类/04.大数字运算.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/07.数字处理类/05.实践和练习.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/07.数字处理类/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/08.包/01.包作用.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/08.包/01.包作用.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/08.包/02.包定义.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/08.包/02.包定义.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/08.包/03.包引入.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/08.包/03.包引入.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/08.包/04.常用包.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/08.包/04.常用包.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/08.包/05.方法重载(overload).doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/08.包/05.方法重载(overload).doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/08.包/06.封装性与访问控制.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/08.包/06.封装性与访问控制.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/08.包/07.静态方法和静态变量.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/08.包/07.静态方法和静态变量.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/08.包/08.静态代码块.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/08.包/08.静态代码块.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/08.包/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/08.包/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/08.接口、继承与多态/01.类的继承.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/08.接口、继承与多态/02.成员变量隐藏和方法覆盖.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/08.接口、继承与多态/03.Object类.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/08.接口、继承与多态/04.多态.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/08.接口、继承与多态/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/09.包/01.包作用.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/09.包/02.包定义.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/09.包/03.包引入.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/09.包/04.常用包.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/09.包/05.方法重载(overload).doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/09.包/06.封装性与访问控制.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/09.包/07.静态方法和静态变量.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/09.包/08.静态代码块.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/09.包/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/09.对象/01.创建对象.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/09.对象/01.创建对象.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/09.对象/02.空对象.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/09.对象/02.空对象.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/09.对象/03.构造方法.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/09.对象/03.构造方法.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/09.对象/04.this关键字.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/09.对象/04.this关键字.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/09.对象/05.对象的销毁.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/09.对象/05.对象的销毁.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/09.对象/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/09.对象/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/10.对象/01.创建对象.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/10.对象/02.空对象.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/10.对象/03.构造方法.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/10.对象/04.this关键字.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/10.对象/05.对象的销毁.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/10.对象/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/10.继承与多态/01.Java中的继承.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/10.继承与多态/01.Java中的继承.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/10.继承与多态/02.多态.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/10.继承与多态/02.多态.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/10.继承与多态/03.final关键字.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/10.继承与多态/03.final关键字.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/10.继承与多态/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/10.继承与多态/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/01.抽象类.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/01.抽象类.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/02.使用接口.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/02.使用接口.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/03.接口中的方法和类中方法的区别.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/03.接口中的方法和类中方法的区别.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/04.接口与多继承.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/04.接口与多继承.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/05.接口继承.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/05.接口继承.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/06.Java-8新特性默认方法和静态方法.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/06.Java-8新特性默认方法和静态方法.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/07.抽象类与接口区别.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/07.抽象类与接口区别.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/08.什么是反射机制.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/08.什么是反射机制.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/11.抽象类与接口/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/11.继承与多态/01.Java中的继承.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/11.继承与多态/02.多态.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/11.继承与多态/03.final关键字.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/11.继承与多态/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/12.抽象类与接口/01.抽象类.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/12.抽象类与接口/02.使用接口.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/12.抽象类与接口/03.接口中的方法和类中方法的区别.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/12.抽象类与接口/04.接口与多继承.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/12.抽象类与接口/05.接口继承.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/12.抽象类与接口/06.Java-8新特性默认方法和静态方法.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/12.抽象类与接口/07.抽象类与接口区别.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/12.抽象类与接口/08.什么是反射机制.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/12.抽象类与接口/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/12.枚举类/01.什么是枚举类.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/12.枚举类/01.什么是枚举类.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/12.枚举类/02.枚举类中成员变量和成员方法.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/12.枚举类/02.枚举类中成员变量和成员方法.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/12.枚举类/03.枚举类构造方法.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/12.枚举类/03.枚举类构造方法.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/12.枚举类/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/12.枚举类/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/13.Java常用类/01.Java根类.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/13.Java常用类/01.Java根类.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/13.Java常用类/02.包装类.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/13.Java常用类/02.包装类.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/13.Java常用类/03.Math类.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/13.Java常用类/03.Math类.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/13.Java常用类/04.大数值.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/13.Java常用类/04.大数值.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/13.Java常用类/05.日期时间相关类.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/13.Java常用类/05.日期时间相关类.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/13.Java常用类/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/13.Java常用类/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/13.枚举类/01.什么是枚举类.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/13.枚举类/02.枚举类中成员变量和成员方法.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/13.枚举类/03.枚举类构造方法.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/13.枚举类/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/14.Java常用类/01.Java根类.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/14.Java常用类/02.包装类.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/14.Java常用类/03.Math类.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/14.Java常用类/04.大数值.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/14.Java常用类/05.日期时间相关类.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/14.Java常用类/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/14.内部类/01.内部类概述.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/14.内部类/01.内部类概述.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/14.内部类/02.内部类的作用.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/14.内部类/02.内部类的作用.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/14.内部类/03.内部类的分类.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/14.内部类/03.内部类的分类.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/14.内部类/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/14.内部类/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/15.Lambda表达式/01.Lambda表达式标准语法.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/15.Lambda表达式/01.Lambda表达式标准语法.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/15.Lambda表达式/02.函数式接口.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/15.Lambda表达式/02.函数式接口.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/15.Lambda表达式/03.Lambda表达式简化形式.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/15.Lambda表达式/03.Lambda表达式简化形式.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/15.Lambda表达式/04.作为参数使用Lambda表达式.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/15.Lambda表达式/04.作为参数使用Lambda表达式.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/15.Lambda表达式/05.访问变量.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/15.Lambda表达式/05.访问变量.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/15.Lambda表达式/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/15.Lambda表达式/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/15.内部类/01.内部类概述.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/15.内部类/02.内部类的作用.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/15.内部类/03.内部类的分类.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/15.内部类/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.Lambda表达式/01.Lambda表达式标准语法.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.Lambda表达式/02.函数式接口.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.Lambda表达式/03.Lambda表达式简化形式.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.Lambda表达式/04.作为参数使用Lambda表达式.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.Lambda表达式/05.访问变量.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.Lambda表达式/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/01.Throwable类.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/01.Throwable类.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/02.Error和Exception.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/02.Error和Exception.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/03.捕获异常.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/03.捕获异常.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/04.释放资源.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/04.释放资源.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/05.自定义异常类.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/05.自定义异常类.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/06.throws与声明方法抛出异常.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/06.throws与声明方法抛出异常.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/07.throw与显式抛出异常.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/07.throw与显式抛出异常.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/08.断言.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/08.断言.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/09.使用JDK的Logging.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/09.使用JDK的Logging.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/16.异常处理/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/17.对象容器—集合/01.List集合.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/17.对象容器—集合/01.List集合.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/17.对象容器—集合/02.Set集合.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/17.对象容器—集合/02.Set集合.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/17.对象容器—集合/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/17.对象容器—集合/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/17.异常处理/01.Throwable类.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/17.异常处理/02.Error和Exception.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/17.异常处理/03.捕获异常.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/17.异常处理/04.释放资源.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/17.异常处理/05.自定义异常类.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/17.异常处理/06.throws与声明方法抛出异常.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/17.异常处理/07.throw与显式抛出异常.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/17.异常处理/08.断言.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/17.异常处理/09.使用JDK的Logging.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/17.异常处理/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/18.对象容器—集合/01.List集合.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/18.对象容器—集合/02.Set集合.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/18.对象容器—集合/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/18.泛型/01.泛型的使用.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/18.泛型/01.泛型的使用.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/18.泛型/02.Set泛型集合示例.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/18.泛型/02.Set泛型集合示例.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/18.泛型/03.Map泛型集合示例.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/18.泛型/03.Map泛型集合示例.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/18.泛型/04.自定义泛型类.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/18.泛型/04.自定义泛型类.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/18.泛型/05.自定义泛型接口.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/18.泛型/05.自定义泛型接口.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/18.泛型/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/18.泛型/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/01.文件筛选过滤.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/01.文件筛选过滤.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/02.创建文件对象的例子.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/02.创建文件对象的例子.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/03.创建文件和文件相关操作.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/03.创建文件和文件相关操作.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/04.使用FileOutputStream类写入数据到文件.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/04.使用FileOutputStream类写入数据到文件.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/05.使用FileInputStream类读取文件数据.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/05.使用FileInputStream类读取文件数据.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/06.FileInputStream类和FileOutputStream类的结合使用.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/06.FileInputStream类和FileOutputStream类的结合使用.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/07.使用字节流复制文件.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/07.使用字节流复制文件.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/08.使用字节缓冲流复制文件.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/08.使用字节缓冲流复制文件.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/09.使用字符流缓冲.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/09.使用字符流缓冲.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/10.字节流转换字符流.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/10.字节流转换字符流.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/19.文件管理与IO流/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.泛型/01.泛型的使用.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.泛型/02.Set泛型集合示例.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.泛型/03.Map泛型集合示例.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.泛型/04.自定义泛型类.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.泛型/05.自定义泛型接口.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/19.泛型/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/01.创建子线程.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/01.创建子线程.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/02.线程优先级.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/02.线程优先级.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/03.等待线程结束.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/03.等待线程结束.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/04.线程让步.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/04.线程让步.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/05.线程停止.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/05.线程停止.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/06.线程安全.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/06.线程安全.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/07.线程间通信.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/07.线程间通信.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/20.多线程编程/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.文件管理与IO流/01.文件筛选过滤.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.文件管理与IO流/02.创建文件对象的例子.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.文件管理与IO流/03.创建文件和文件相关操作.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.文件管理与IO流/04.使用FileOutputStream类写入数据到文件.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.文件管理与IO流/05.使用FileInputStream类读取文件数据.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.文件管理与IO流/06.FileInputStream类和FileOutputStream类的结合使用.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.文件管理与IO流/07.使用字节流复制文件.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.文件管理与IO流/08.使用字节缓冲流复制文件.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.文件管理与IO流/09.使用字符流缓冲.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.文件管理与IO流/10.字节流转换字符流.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/20.文件管理与IO流/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.多线程编程/01.创建子线程.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.多线程编程/02.线程优先级.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.多线程编程/03.等待线程结束.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.多线程编程/04.线程让步.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.多线程编程/05.线程停止.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.多线程编程/06.线程安全.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.多线程编程/07.线程间通信.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.多线程编程/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/01.网络基础.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/01.网络基础.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/02.TCP-Socket.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/02.TCP-Socket.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/03.UDP-Socket.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/03.UDP-Socket.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/04.数据交换格式.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/04.数据交换格式.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/05.访问互联网资源.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/05.访问互联网资源.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/06.发送Email.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/06.发送Email.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/07.Java打印日志.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/07.Java打印日志.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/21.网络编程/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/22.Swing图形用户界面编程/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/22.Swing图形用户界面编程/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/22.网络编程/01.网络基础.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/22.网络编程/02.TCP-Socket.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/22.网络编程/03.UDP-Socket.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/22.网络编程/04.数据交换格式.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/22.网络编程/05.访问互联网资源.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/22.网络编程/06.发送Email.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/22.网络编程/07.Java打印日志.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/22.网络编程/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/23.Swing图形用户界面编程/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/23.再谈反射/01.Java反射机制简介.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/23.再谈反射/01.Java反射机制简介.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/23.再谈反射/02.构造方法的反射.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/23.再谈反射/02.构造方法的反射.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/23.再谈反射/03.依赖注入实现.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/23.再谈反射/03.依赖注入实现.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/23.再谈反射/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/23.再谈反射/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/24.再谈反射/01.Java反射机制简介.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/24.再谈反射/02.构造方法的反射.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/24.再谈反射/03.依赖注入实现.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/24.再谈反射/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/01.注解的含义.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/01.注解的含义.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/02.基本注解.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/02.基本注解.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/03.注解-Override.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/03.注解-Override.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/04.注解-@Deprecated.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/04.注解-@Deprecated.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/05.注解-@SuppressWarnings.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/05.注解-@SuppressWarnings.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/06.注解-@SafeVarargs.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/06.注解-@SafeVarargs.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/07.注解-@FunctionalInterface.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/07.注解-@FunctionalInterface.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/24.注解(Annotation)/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/25.数据库编程/01.Java操作Mysql.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/25.数据库编程/01.Java操作Mysql.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/25.数据库编程/02.Java操作Redis.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/25.数据库编程/02.Java操作Redis.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/25.数据库编程/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/25.数据库编程/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/25.注解(Annotation)/01.注解的含义.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/25.注解(Annotation)/02.基本注解.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/25.注解(Annotation)/03.注解-Override.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/25.注解(Annotation)/04.注解-@Deprecated.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/25.注解(Annotation)/05.注解-@SuppressWarnings.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/25.注解(Annotation)/06.注解-@SafeVarargs.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/25.注解(Annotation)/07.注解-@FunctionalInterface.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/25.注解(Annotation)/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/26.数据库编程/01.Java操作Mysql.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/26.数据库编程/02.Java操作Redis.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/26.数据库编程/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/26.第三方安装包管理工具之Maven/01.Maven基础.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/26.第三方安装包管理工具之Maven/01.Maven基础.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/26.第三方安装包管理工具之Maven/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/26.第三方安装包管理工具之Maven/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/27.XML与JSON/01.XML简介.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/27.XML与JSON/01.XML简介.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/27.XML与JSON/02.使用DOM.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/27.XML与JSON/02.使用DOM.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/27.XML与JSON/03.使用SAX.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/27.XML与JSON/03.使用SAX.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/27.XML与JSON/04.使用Jackson.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/27.XML与JSON/04.使用Jackson.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/27.XML与JSON/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/27.XML与JSON/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/27.第三方安装包管理工具之Maven/01.Maven基础.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/27.第三方安装包管理工具之Maven/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/Java/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/Java/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.buildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.buildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Distributed_Systems/01.分布式系统基础知识/01.编程语言中的线程对象.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Distributed_Systems/01.分布式系统基础知识/01.编程语言中的线程对象.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Distributed_Systems/01.分布式系统基础知识/02.Rabbitmq分布式消息服务.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Distributed_Systems/01.分布式系统基础知识/02.Rabbitmq分布式消息服务.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Distributed_Systems/01.分布式系统基础知识/03.Apache Kafka.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Distributed_Systems/01.分布式系统基础知识/03.Apache-Kafka.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Distributed_Systems/01.分布式系统基础知识/03.Apache-Kafka.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Distributed_Systems/01.分布式系统基础知识/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Distributed_Systems/01.分布式系统基础知识/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Distributed_Systems/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Distributed_Systems/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/01.Java基础/01.Java开篇介绍.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/01.Java基础/01.Java开篇介绍.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/01.Java基础/02.第一个Java程序.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/01.Java基础/02.第一个Java程序.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/01.Java基础/03.基本数据类型.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/01.Java基础/03.基本数据类型.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/01.Java基础/04.变量与常量.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/01.Java基础/04.变量与常量.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/01.Java基础/05.运算符.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/01.Java基础/05.运算符.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/01.Java基础/06.代码注释和编码规范.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/01.Java基础/06.代码注释和编码规范.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/01.Java基础/07.Java相关开发工具.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/01.Java基础/07.Java相关开发工具.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/01.Java基础/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/01.Java基础/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/02.流程控制/01.复合语句.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/02.流程控制/01.复合语句.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/02.流程控制/02.条件语句.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/02.流程控制/02.条件语句.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/02.流程控制/03.循环语句.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/02.流程控制/03.循环语句.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/02.流程控制/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/02.流程控制/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/03.字符串/01.字符串.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/03.字符串/01.字符串.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/03.字符串/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/03.字符串/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/04.数组/01.一维数组的创建和使用.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/04.数组/01.一维数组的创建和使用.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/04.数组/02.二维数组的创建和使用.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/04.数组/02.二维数组的创建和使用.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/04.数组/03.数组的基本操作.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/04.数组/03.数组的基本操作.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/04.数组/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/04.数组/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/05.类与对象/01.面向对象概述.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/05.类与对象/01.面向对象概述.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/05.类与对象/02.对象.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/05.类与对象/02.类.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/05.类与对象/02.类.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/05.类与对象/03.静态变量、常量和方法（static关键字）.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/05.类与对象/03.静态变量、常量和方法（static关键字）.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/05.类与对象/04.主方法.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/05.类与对象/04.主方法.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/05.类与对象/04.类.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/05.类与对象/05.实践与练习.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/05.类与对象/05.实践与练习.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/05.类与对象/05.构造方法.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/05.类与对象/06.主方法.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/05.类与对象/07.实践与练习.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/05.类与对象/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/05.类与对象/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/06.包装类/01.Integer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/06.包装类/02.Boolean.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/06.包装类/03.Byte.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/06.包装类/04.Character.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/06.包装类/05.Double.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/06.包装类/06.Number.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/06.包装类/07.实践与练习.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/06.包装类/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/06.数字处理类/01.数字格式化.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/06.数字处理类/01.数字格式化.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/06.数字处理类/02.Math类.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/06.数字处理类/02.Math类.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/06.数字处理类/03.Random类.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/06.数字处理类/03.Random类.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/06.数字处理类/04.大数字运算.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/06.数字处理类/04.大数字运算.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/06.数字处理类/05.实践和练习.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/06.数字处理类/05.实践和练习.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/06.数字处理类/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/06.数字处理类/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/07.接口、继承与多态/01.类的继承.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/07.接口、继承与多态/01.类的继承.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/07.接口、继承与多态/02.成员变量隐藏和方法覆盖.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/07.接口、继承与多态/02.成员变量隐藏和方法覆盖.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/07.接口、继承与多态/03.Object类.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/07.接口、继承与多态/03.Object类.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/07.接口、继承与多态/04.多态.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/07.接口、继承与多态/04.多态.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/07.接口、继承与多态/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/07.接口、继承与多态/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/07.数字处理类/01.数字格式化.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/07.数字处理类/02.Math类.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/07.数字处理类/03.Random类.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/07.数字处理类/04.大数字运算.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/07.数字处理类/05.实践和练习.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/07.数字处理类/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/08.包/01.包作用.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/08.包/01.包作用.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/08.包/02.包定义.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/08.包/02.包定义.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/08.包/03.包引入.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/08.包/03.包引入.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/08.包/04.常用包.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/08.包/04.常用包.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/08.包/05.方法重载(overload).html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/08.包/05.方法重载(overload).html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/08.包/06.封装性与访问控制.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/08.包/06.封装性与访问控制.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/08.包/07.静态方法和静态变量.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/08.包/07.静态方法和静态变量.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/08.包/08.静态代码块.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/08.包/08.静态代码块.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/08.包/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/08.包/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/08.接口、继承与多态/01.类的继承.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/08.接口、继承与多态/02.成员变量隐藏和方法覆盖.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/08.接口、继承与多态/03.Object类.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/08.接口、继承与多态/04.多态.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/08.接口、继承与多态/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/09.包/01.包作用.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/09.包/02.包定义.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/09.包/03.包引入.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/09.包/04.常用包.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/09.包/05.方法重载(overload).html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/09.包/06.封装性与访问控制.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/09.包/07.静态方法和静态变量.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/09.包/08.静态代码块.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/09.包/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/09.对象/01.创建对象.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/09.对象/01.创建对象.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/09.对象/02.空对象.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/09.对象/02.空对象.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/09.对象/03.构造方法.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/09.对象/03.构造方法.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/09.对象/04.this关键字.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/09.对象/04.this关键字.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/09.对象/05.对象的销毁.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/09.对象/05.对象的销毁.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/09.对象/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/09.对象/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/10.对象/01.创建对象.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/10.对象/02.空对象.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/10.对象/03.构造方法.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/10.对象/04.this关键字.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/10.对象/05.对象的销毁.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/10.对象/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/10.继承与多态/01.Java中的继承.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/10.继承与多态/01.Java中的继承.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/10.继承与多态/02.多态.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/10.继承与多态/02.多态.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/10.继承与多态/03.final关键字.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/10.继承与多态/03.final关键字.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/10.继承与多态/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/10.继承与多态/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/01.抽象类.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/01.抽象类.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/02.使用接口.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/02.使用接口.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/03.接口中的方法和类中方法的区别.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/03.接口中的方法和类中方法的区别.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/04.接口与多继承.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/04.接口与多继承.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/05.接口继承.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/05.接口继承.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/06.Java-8新特性默认方法和静态方法.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/06.Java-8新特性默认方法和静态方法.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/07.抽象类与接口区别.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/07.抽象类与接口区别.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/08.什么是反射机制.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/08.什么是反射机制.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/11.抽象类与接口/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/11.继承与多态/01.Java中的继承.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/11.继承与多态/02.多态.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/11.继承与多态/03.final关键字.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/11.继承与多态/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/12.抽象类与接口/01.抽象类.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/12.抽象类与接口/02.使用接口.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/12.抽象类与接口/03.接口中的方法和类中方法的区别.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/12.抽象类与接口/04.接口与多继承.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/12.抽象类与接口/05.接口继承.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/12.抽象类与接口/06.Java-8新特性默认方法和静态方法.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/12.抽象类与接口/07.抽象类与接口区别.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/12.抽象类与接口/08.什么是反射机制.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/12.抽象类与接口/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/12.枚举类/01.什么是枚举类.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/12.枚举类/01.什么是枚举类.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/12.枚举类/02.枚举类中成员变量和成员方法.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/12.枚举类/02.枚举类中成员变量和成员方法.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/12.枚举类/03.枚举类构造方法.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/12.枚举类/03.枚举类构造方法.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/12.枚举类/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/12.枚举类/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/13.Java常用类/01.Java根类.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/13.Java常用类/01.Java根类.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/13.Java常用类/02.包装类.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/13.Java常用类/02.包装类.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/13.Java常用类/03.Math类.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/13.Java常用类/03.Math类.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/13.Java常用类/04.大数值.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/13.Java常用类/04.大数值.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/13.Java常用类/05.日期时间相关类.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/13.Java常用类/05.日期时间相关类.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/13.Java常用类/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/13.Java常用类/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/13.枚举类/01.什么是枚举类.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/13.枚举类/02.枚举类中成员变量和成员方法.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/13.枚举类/03.枚举类构造方法.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/13.枚举类/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/14.Java常用类/01.Java根类.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/14.Java常用类/02.包装类.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/14.Java常用类/03.Math类.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/14.Java常用类/04.大数值.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/14.Java常用类/05.日期时间相关类.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/14.Java常用类/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/14.内部类/01.内部类概述.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/14.内部类/01.内部类概述.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/14.内部类/02.内部类的作用.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/14.内部类/02.内部类的作用.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/14.内部类/03.内部类的分类.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/14.内部类/03.内部类的分类.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/14.内部类/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/14.内部类/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/15.Lambda表达式/01.Lambda表达式标准语法.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/15.Lambda表达式/01.Lambda表达式标准语法.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/15.Lambda表达式/02.函数式接口.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/15.Lambda表达式/02.函数式接口.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/15.Lambda表达式/03.Lambda表达式简化形式.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/15.Lambda表达式/03.Lambda表达式简化形式.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/15.Lambda表达式/04.作为参数使用Lambda表达式.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/15.Lambda表达式/04.作为参数使用Lambda表达式.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/15.Lambda表达式/05.访问变量.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/15.Lambda表达式/05.访问变量.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/15.Lambda表达式/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/15.Lambda表达式/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/15.内部类/01.内部类概述.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/15.内部类/02.内部类的作用.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/15.内部类/03.内部类的分类.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/15.内部类/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.Lambda表达式/01.Lambda表达式标准语法.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.Lambda表达式/02.函数式接口.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.Lambda表达式/03.Lambda表达式简化形式.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.Lambda表达式/04.作为参数使用Lambda表达式.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.Lambda表达式/05.访问变量.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.Lambda表达式/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.异常处理/01.Throwable类.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/16.异常处理/01.Throwable类.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.异常处理/02.Error和Exception.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/16.异常处理/02.Error和Exception.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.异常处理/03.捕获异常.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/16.异常处理/03.捕获异常.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.异常处理/04.释放资源.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/16.异常处理/04.释放资源.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.异常处理/05.自定义异常类.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/16.异常处理/05.自定义异常类.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.异常处理/06.throws与声明方法抛出异常.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/16.异常处理/06.throws与声明方法抛出异常.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.异常处理/07.throw与显式抛出异常.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/16.异常处理/07.throw与显式抛出异常.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.异常处理/08.断言.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/16.异常处理/08.断言.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.异常处理/09.使用JDK的Logging.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/16.异常处理/09.使用JDK的Logging.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/16.异常处理/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/16.异常处理/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/17.对象容器—集合/01.List集合.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/17.对象容器—集合/01.List集合.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/17.对象容器—集合/02.Set集合.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/17.对象容器—集合/02.Set集合.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/17.对象容器—集合/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/17.对象容器—集合/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/17.异常处理/01.Throwable类.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/17.异常处理/02.Error和Exception.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/17.异常处理/03.捕获异常.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/17.异常处理/04.释放资源.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/17.异常处理/05.自定义异常类.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/17.异常处理/06.throws与声明方法抛出异常.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/17.异常处理/07.throw与显式抛出异常.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/17.异常处理/08.断言.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/17.异常处理/09.使用JDK的Logging.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/17.异常处理/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/18.对象容器—集合/01.List集合.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/18.对象容器—集合/02.Set集合.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/18.对象容器—集合/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/18.泛型/01.泛型的使用.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/18.泛型/01.泛型的使用.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/18.泛型/02.Set泛型集合示例.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/18.泛型/02.Set泛型集合示例.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/18.泛型/03.Map泛型集合示例.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/18.泛型/03.Map泛型集合示例.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/18.泛型/04.自定义泛型类.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/18.泛型/04.自定义泛型类.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/18.泛型/05.自定义泛型接口.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/18.泛型/05.自定义泛型接口.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/18.泛型/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/18.泛型/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/01.文件筛选过滤.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/01.文件筛选过滤.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/02.创建文件对象的例子.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/02.创建文件对象的例子.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/03.创建文件和文件相关操作.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/03.创建文件和文件相关操作.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/04.使用FileOutputStream类写入数据到文件.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/04.使用FileOutputStream类写入数据到文件.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/05.使用FileInputStream类读取文件数据.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/05.使用FileInputStream类读取文件数据.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/06.FileInputStream类和FileOutputStream类的结合使用.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/06.FileInputStream类和FileOutputStream类的结合使用.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/07.使用字节流复制文件.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/07.使用字节流复制文件.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/08.使用字节缓冲流复制文件.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/08.使用字节缓冲流复制文件.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/09.使用字符流缓冲.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/09.使用字符流缓冲.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/10.字节流转换字符流.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/10.字节流转换字符流.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/19.文件管理与IO流/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.泛型/01.泛型的使用.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.泛型/02.Set泛型集合示例.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.泛型/03.Map泛型集合示例.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.泛型/04.自定义泛型类.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.泛型/05.自定义泛型接口.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/19.泛型/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.多线程编程/01.创建子线程.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/20.多线程编程/01.创建子线程.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.多线程编程/02.线程优先级.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/20.多线程编程/02.线程优先级.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.多线程编程/03.等待线程结束.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/20.多线程编程/03.等待线程结束.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.多线程编程/04.线程让步.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/20.多线程编程/04.线程让步.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.多线程编程/05.线程停止.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/20.多线程编程/05.线程停止.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.多线程编程/06.线程安全.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/20.多线程编程/06.线程安全.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.多线程编程/07.线程间通信.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/20.多线程编程/07.线程间通信.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.多线程编程/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/20.多线程编程/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.文件管理与IO流/01.文件筛选过滤.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.文件管理与IO流/02.创建文件对象的例子.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.文件管理与IO流/03.创建文件和文件相关操作.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.文件管理与IO流/04.使用FileOutputStream类写入数据到文件.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.文件管理与IO流/05.使用FileInputStream类读取文件数据.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.文件管理与IO流/06.FileInputStream类和FileOutputStream类的结合使用.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.文件管理与IO流/07.使用字节流复制文件.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.文件管理与IO流/08.使用字节缓冲流复制文件.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.文件管理与IO流/09.使用字符流缓冲.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.文件管理与IO流/10.字节流转换字符流.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/20.文件管理与IO流/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.多线程编程/01.创建子线程.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.多线程编程/02.线程优先级.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.多线程编程/03.等待线程结束.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.多线程编程/04.线程让步.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.多线程编程/05.线程停止.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.多线程编程/06.线程安全.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.多线程编程/07.线程间通信.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.多线程编程/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.网络编程/01.网络基础.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/21.网络编程/01.网络基础.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.网络编程/02.TCP-Socket.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/21.网络编程/02.TCP-Socket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.网络编程/03.UDP-Socket.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/21.网络编程/03.UDP-Socket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.网络编程/04.数据交换格式.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/21.网络编程/04.数据交换格式.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.网络编程/05.访问互联网资源.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/21.网络编程/05.访问互联网资源.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.网络编程/06.发送Email.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/21.网络编程/06.发送Email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.网络编程/07.Java打印日志.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/21.网络编程/07.Java打印日志.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/21.网络编程/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/21.网络编程/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/22.Swing图形用户界面编程/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/22.Swing图形用户界面编程/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/22.网络编程/01.网络基础.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/22.网络编程/02.TCP-Socket.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/22.网络编程/03.UDP-Socket.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/22.网络编程/04.数据交换格式.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/22.网络编程/05.访问互联网资源.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/22.网络编程/06.发送Email.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/22.网络编程/07.Java打印日志.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/22.网络编程/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/23.Swing图形用户界面编程/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/23.再谈反射/01.Java反射机制简介.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/23.再谈反射/01.Java反射机制简介.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/23.再谈反射/02.构造方法的反射.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/23.再谈反射/02.构造方法的反射.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/23.再谈反射/03.依赖注入实现.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/23.再谈反射/03.依赖注入实现.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/23.再谈反射/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/23.再谈反射/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/24.再谈反射/01.Java反射机制简介.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/24.再谈反射/02.构造方法的反射.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/24.再谈反射/03.依赖注入实现.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/24.再谈反射/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/01.注解的含义.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/01.注解的含义.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/02.基本注解.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/02.基本注解.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/03.注解-Override.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/03.注解-Override.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/04.注解-@Deprecated.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/04.注解-@Deprecated.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/05.注解-@SuppressWarnings.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/05.注解-@SuppressWarnings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/06.注解-@SafeVarargs.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/06.注解-@SafeVarargs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/07.注解-@FunctionalInterface.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/07.注解-@FunctionalInterface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/24.注解(Annotation)/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/25.数据库编程/01.Java操作Mysql.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/25.数据库编程/01.Java操作Mysql.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/25.数据库编程/02.Java操作Redis.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/25.数据库编程/02.Java操作Redis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/25.数据库编程/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/25.数据库编程/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/25.注解(Annotation)/01.注解的含义.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/25.注解(Annotation)/02.基本注解.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/25.注解(Annotation)/03.注解-Override.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/25.注解(Annotation)/04.注解-@Deprecated.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/25.注解(Annotation)/05.注解-@SuppressWarnings.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/25.注解(Annotation)/06.注解-@SafeVarargs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/25.注解(Annotation)/07.注解-@FunctionalInterface.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/25.注解(Annotation)/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/26.数据库编程/01.Java操作Mysql.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/26.数据库编程/02.Java操作Redis.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/26.数据库编程/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/26.第三方安装包管理工具之Maven/01.Maven基础.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/26.第三方安装包管理工具之Maven/01.Maven基础.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/26.第三方安装包管理工具之Maven/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/26.第三方安装包管理工具之Maven/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/27.XML与JSON/01.XML简介.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/27.XML与JSON/01.XML简介.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/27.XML与JSON/02.使用DOM.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/27.XML与JSON/02.使用DOM.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/27.XML与JSON/03.使用SAX.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/27.XML与JSON/03.使用SAX.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/27.XML与JSON/04.使用Jackson.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/27.XML与JSON/04.使用Jackson.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/27.XML与JSON/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/27.XML与JSON/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/27.第三方安装包管理工具之Maven/01.Maven基础.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/27.第三方安装包管理工具之Maven/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Java/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Java/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Distributed_Systems/01.分布式系统基础知识/01.编程语言中的线程对象.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Distributed_Systems/01.分布式系统基础知识/01.编程语言中的线程对象.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Distributed_Systems/01.分布式系统基础知识/02.Rabbitmq分布式消息服务.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Distributed_Systems/01.分布式系统基础知识/02.Rabbitmq分布式消息服务.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Distributed_Systems/01.分布式系统基础知识/03.Apache Kafka.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Distributed_Systems/01.分布式系统基础知识/03.Apache-Kafka.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Distributed_Systems/01.分布式系统基础知识/03.Apache-Kafka.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Distributed_Systems/01.分布式系统基础知识/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Distributed_Systems/01.分布式系统基础知识/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Distributed_Systems/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Distributed_Systems/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/01.Java开篇介绍.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/02.第一个Java程序.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/02.第一个Java程序.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/03.基本数据类型.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/04.变量与常量.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/05.运算符.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/06.代码注释和编码规范.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/06.代码注释和编码规范.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/07.Java相关开发工具.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/07.Java相关开发工具.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/01.Java基础/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/02.流程控制/01.复合语句.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/02.流程控制/01.复合语句.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/02.流程控制/02.条件语句.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/02.流程控制/03.循环语句.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/02.流程控制/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/02.流程控制/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/03.字符串/01.字符串.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/03.字符串/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/03.字符串/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/04.数组/01.一维数组的创建和使用.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/04.数组/02.二维数组的创建和使用.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/04.数组/03.数组的基本操作.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/04.数组/03.数组的基本操作.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/04.数组/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/04.数组/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/01.面向对象概述.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/01.面向对象概述.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/02.对象.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/02.类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/03.静态变量、常量和方法（static关键字）.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/03.静态变量、常量和方法（static关键字）.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/04.主方法.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/04.主方法.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/04.类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/05.实践与练习.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/05.实践与练习.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/05.构造方法.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/06.主方法.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/07.实践与练习.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/05.类与对象/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/06.包装类/01.Integer.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/06.包装类/02.Boolean.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/06.包装类/03.Byte.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/06.包装类/04.Character.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/06.包装类/05.Double.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/06.包装类/06.Number.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/06.包装类/07.实践与练习.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/06.包装类/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/06.数字处理类/01.数字格式化.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/06.数字处理类/01.数字格式化.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/06.数字处理类/02.Math类.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/06.数字处理类/02.Math类.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/06.数字处理类/03.Random类.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/06.数字处理类/03.Random类.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/06.数字处理类/04.大数字运算.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/06.数字处理类/04.大数字运算.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/06.数字处理类/05.实践和练习.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/06.数字处理类/05.实践和练习.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/06.数字处理类/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/06.数字处理类/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/07.接口、继承与多态/01.类的继承.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/07.接口、继承与多态/01.类的继承.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/07.接口、继承与多态/02.成员变量隐藏和方法覆盖.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/07.接口、继承与多态/02.成员变量隐藏和方法覆盖.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/07.接口、继承与多态/03.Object类.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/07.接口、继承与多态/03.Object类.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/07.接口、继承与多态/04.多态.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/07.接口、继承与多态/04.多态.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/07.接口、继承与多态/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/07.接口、继承与多态/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/07.数字处理类/01.数字格式化.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/07.数字处理类/02.Math类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/07.数字处理类/03.Random类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/07.数字处理类/04.大数字运算.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/07.数字处理类/05.实践和练习.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/07.数字处理类/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/08.包/01.包作用.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/08.包/01.包作用.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/08.包/02.包定义.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/08.包/02.包定义.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/08.包/03.包引入.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/08.包/03.包引入.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/08.包/04.常用包.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/08.包/04.常用包.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/08.包/05.方法重载(overload).txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/08.包/05.方法重载(overload).rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/08.包/06.封装性与访问控制.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/08.包/07.静态方法和静态变量.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/08.包/07.静态方法和静态变量.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/08.包/08.静态代码块.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/08.包/08.静态代码块.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/08.包/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/08.包/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/08.接口、继承与多态/01.类的继承.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/08.接口、继承与多态/02.成员变量隐藏和方法覆盖.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/08.接口、继承与多态/03.Object类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/08.接口、继承与多态/04.多态.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/08.接口、继承与多态/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/09.包/01.包作用.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/09.包/02.包定义.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/09.包/03.包引入.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/09.包/04.常用包.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/09.包/05.方法重载(overload).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/09.包/06.封装性与访问控制.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/09.包/07.静态方法和静态变量.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/09.包/08.静态代码块.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/09.包/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/09.对象/01.创建对象.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/09.对象/01.创建对象.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/09.对象/02.空对象.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/09.对象/02.空对象.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/09.对象/03.构造方法.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/09.对象/04.this关键字.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/09.对象/04.this关键字.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/09.对象/05.对象的销毁.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/09.对象/05.对象的销毁.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/09.对象/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/09.对象/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/10.对象/01.创建对象.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/10.对象/02.空对象.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/10.对象/03.构造方法.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/10.对象/04.this关键字.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/10.对象/05.对象的销毁.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/10.对象/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/10.继承与多态/01.Java中的继承.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/10.继承与多态/01.Java中的继承.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/10.继承与多态/02.多态.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/10.继承与多态/02.多态.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/10.继承与多态/03.final关键字.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/10.继承与多态/03.final关键字.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/10.继承与多态/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/10.继承与多态/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/01.抽象类.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/01.抽象类.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/02.使用接口.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/02.使用接口.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/03.接口中的方法和类中方法的区别.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/03.接口中的方法和类中方法的区别.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/04.接口与多继承.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/04.接口与多继承.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/05.接口继承.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/05.接口继承.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/06.Java-8新特性默认方法和静态方法.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/06.Java-8新特性默认方法和静态方法.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/07.抽象类与接口区别.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/07.抽象类与接口区别.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/08.什么是反射机制.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/08.什么是反射机制.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/11.抽象类与接口/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/11.继承与多态/01.Java中的继承.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/11.继承与多态/02.多态.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/11.继承与多态/03.final关键字.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/11.继承与多态/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/12.抽象类与接口/01.抽象类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/12.抽象类与接口/02.使用接口.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/12.抽象类与接口/03.接口中的方法和类中方法的区别.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/12.抽象类与接口/04.接口与多继承.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/12.抽象类与接口/05.接口继承.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/12.抽象类与接口/06.Java-8新特性默认方法和静态方法.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/12.抽象类与接口/07.抽象类与接口区别.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/12.抽象类与接口/08.什么是反射机制.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/12.抽象类与接口/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/12.枚举类/01.什么是枚举类.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/12.枚举类/01.什么是枚举类.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/12.枚举类/02.枚举类中成员变量和成员方法.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/12.枚举类/02.枚举类中成员变量和成员方法.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/12.枚举类/03.枚举类构造方法.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/12.枚举类/03.枚举类构造方法.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/12.枚举类/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/12.枚举类/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/13.Java常用类/01.Java根类.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/13.Java常用类/01.Java根类.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/13.Java常用类/02.包装类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/13.Java常用类/03.Math类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/13.Java常用类/04.大数值.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/13.Java常用类/04.大数值.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/13.Java常用类/05.日期时间相关类.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/13.Java常用类/05.日期时间相关类.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/13.Java常用类/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/13.Java常用类/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/13.枚举类/01.什么是枚举类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/13.枚举类/02.枚举类中成员变量和成员方法.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/13.枚举类/03.枚举类构造方法.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/13.枚举类/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/14.Java常用类/01.Java根类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/14.Java常用类/02.包装类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/14.Java常用类/03.Math类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/14.Java常用类/04.大数值.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/14.Java常用类/05.日期时间相关类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/14.Java常用类/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/14.内部类/01.内部类概述.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/14.内部类/02.内部类的作用.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/14.内部类/02.内部类的作用.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/14.内部类/03.内部类的分类.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/14.内部类/03.内部类的分类.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/14.内部类/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/14.内部类/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/15.Lambda表达式/01.Lambda表达式标准语法.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/15.Lambda表达式/01.Lambda表达式标准语法.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/15.Lambda表达式/02.函数式接口.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/15.Lambda表达式/02.函数式接口.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/15.Lambda表达式/03.Lambda表达式简化形式.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/15.Lambda表达式/03.Lambda表达式简化形式.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/15.Lambda表达式/04.作为参数使用Lambda表达式.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/15.Lambda表达式/04.作为参数使用Lambda表达式.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/15.Lambda表达式/05.访问变量.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/15.Lambda表达式/05.访问变量.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/15.Lambda表达式/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/15.Lambda表达式/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/15.内部类/01.内部类概述.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/15.内部类/02.内部类的作用.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/15.内部类/03.内部类的分类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/15.内部类/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.Lambda表达式/01.Lambda表达式标准语法.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.Lambda表达式/02.函数式接口.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.Lambda表达式/03.Lambda表达式简化形式.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.Lambda表达式/04.作为参数使用Lambda表达式.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.Lambda表达式/05.访问变量.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.Lambda表达式/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/01.Throwable类.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/01.Throwable类.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/02.Error和Exception.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/02.Error和Exception.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/03.捕获异常.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/04.释放资源.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/05.自定义异常类.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/05.自定义异常类.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/06.throws与声明方法抛出异常.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/06.throws与声明方法抛出异常.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/07.throw与显式抛出异常.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/07.throw与显式抛出异常.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/08.断言.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/08.断言.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/09.使用JDK的Logging.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/09.使用JDK的Logging.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/16.异常处理/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/17.对象容器—集合/01.List集合.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/17.对象容器—集合/01.List集合.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/17.对象容器—集合/02.Set集合.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/17.对象容器—集合/02.Set集合.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/17.对象容器—集合/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/17.对象容器—集合/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/17.异常处理/01.Throwable类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/17.异常处理/02.Error和Exception.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/17.异常处理/03.捕获异常.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/17.异常处理/04.释放资源.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/17.异常处理/05.自定义异常类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/17.异常处理/06.throws与声明方法抛出异常.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/17.异常处理/07.throw与显式抛出异常.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/17.异常处理/08.断言.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/17.异常处理/09.使用JDK的Logging.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/17.异常处理/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/18.对象容器—集合/01.List集合.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/18.对象容器—集合/02.Set集合.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/18.对象容器—集合/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/18.泛型/01.泛型的使用.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/18.泛型/01.泛型的使用.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/18.泛型/02.Set泛型集合示例.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/18.泛型/02.Set泛型集合示例.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/18.泛型/03.Map泛型集合示例.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/18.泛型/03.Map泛型集合示例.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/18.泛型/04.自定义泛型类.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/18.泛型/04.自定义泛型类.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/18.泛型/05.自定义泛型接口.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/18.泛型/05.自定义泛型接口.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/18.泛型/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/18.泛型/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/01.文件筛选过滤.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/01.文件筛选过滤.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/02.创建文件对象的例子.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/02.创建文件对象的例子.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/03.创建文件和文件相关操作.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/03.创建文件和文件相关操作.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/04.使用FileOutputStream类写入数据到文件.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/04.使用FileOutputStream类写入数据到文件.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/05.使用FileInputStream类读取文件数据.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/05.使用FileInputStream类读取文件数据.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/06.FileInputStream类和FileOutputStream类的结合使用.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/06.FileInputStream类和FileOutputStream类的结合使用.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/07.使用字节流复制文件.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/07.使用字节流复制文件.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/08.使用字节缓冲流复制文件.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/08.使用字节缓冲流复制文件.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/09.使用字符流缓冲.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/09.使用字符流缓冲.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/10.字节流转换字符流.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/10.字节流转换字符流.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/19.文件管理与IO流/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.泛型/01.泛型的使用.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.泛型/02.Set泛型集合示例.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.泛型/03.Map泛型集合示例.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.泛型/04.自定义泛型类.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.泛型/05.自定义泛型接口.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/19.泛型/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/01.创建子线程.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/01.创建子线程.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/02.线程优先级.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/02.线程优先级.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/03.等待线程结束.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/03.等待线程结束.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/04.线程让步.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/04.线程让步.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/05.线程停止.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/05.线程停止.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/06.线程安全.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/06.线程安全.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/07.线程间通信.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/07.线程间通信.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/20.多线程编程/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.文件管理与IO流/01.文件筛选过滤.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.文件管理与IO流/02.创建文件对象的例子.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.文件管理与IO流/03.创建文件和文件相关操作.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.文件管理与IO流/04.使用FileOutputStream类写入数据到文件.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.文件管理与IO流/05.使用FileInputStream类读取文件数据.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.文件管理与IO流/06.FileInputStream类和FileOutputStream类的结合使用.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.文件管理与IO流/07.使用字节流复制文件.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.文件管理与IO流/08.使用字节缓冲流复制文件.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.文件管理与IO流/09.使用字符流缓冲.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.文件管理与IO流/10.字节流转换字符流.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/20.文件管理与IO流/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.多线程编程/01.创建子线程.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.多线程编程/02.线程优先级.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.多线程编程/03.等待线程结束.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.多线程编程/04.线程让步.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.多线程编程/05.线程停止.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.多线程编程/06.线程安全.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.多线程编程/07.线程间通信.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.多线程编程/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/01.网络基础.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/01.网络基础.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/02.TCP-Socket.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/02.TCP-Socket.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/03.UDP-Socket.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/03.UDP-Socket.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/04.数据交换格式.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/04.数据交换格式.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/05.访问互联网资源.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/05.访问互联网资源.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/06.发送Email.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/06.发送Email.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/07.Java打印日志.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/07.Java打印日志.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/21.网络编程/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/22.Swing图形用户界面编程/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/22.Swing图形用户界面编程/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/22.网络编程/01.网络基础.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/22.网络编程/02.TCP-Socket.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/22.网络编程/03.UDP-Socket.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/22.网络编程/04.数据交换格式.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/22.网络编程/05.访问互联网资源.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/22.网络编程/06.发送Email.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/22.网络编程/07.Java打印日志.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/22.网络编程/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/23.Swing图形用户界面编程/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/23.再谈反射/01.Java反射机制简介.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/23.再谈反射/01.Java反射机制简介.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/23.再谈反射/02.构造方法的反射.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/23.再谈反射/02.构造方法的反射.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/23.再谈反射/03.依赖注入实现.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/23.再谈反射/03.依赖注入实现.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/23.再谈反射/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/23.再谈反射/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/24.再谈反射/01.Java反射机制简介.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/24.再谈反射/02.构造方法的反射.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/24.再谈反射/03.依赖注入实现.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/24.再谈反射/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/01.注解的含义.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/01.注解的含义.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/02.基本注解.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/02.基本注解.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/03.注解-Override.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/03.注解-Override.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/04.注解-@Deprecated.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/04.注解-@Deprecated.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/05.注解-@SuppressWarnings.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/05.注解-@SuppressWarnings.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/06.注解-@SafeVarargs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/06.注解-@SafeVarargs.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/07.注解-@FunctionalInterface.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/07.注解-@FunctionalInterface.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/24.注解(Annotation)/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/25.数据库编程/01.Java操作Mysql.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/25.数据库编程/01.Java操作Mysql.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/25.数据库编程/02.Java操作Redis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/25.数据库编程/02.Java操作Redis.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/25.数据库编程/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/25.数据库编程/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/25.注解(Annotation)/01.注解的含义.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/25.注解(Annotation)/02.基本注解.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/25.注解(Annotation)/03.注解-Override.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/25.注解(Annotation)/04.注解-@Deprecated.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/25.注解(Annotation)/05.注解-@SuppressWarnings.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/25.注解(Annotation)/06.注解-@SafeVarargs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/25.注解(Annotation)/07.注解-@FunctionalInterface.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/25.注解(Annotation)/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/26.数据库编程/01.Java操作Mysql.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/26.数据库编程/02.Java操作Redis.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/26.数据库编程/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/26.第三方安装包管理工具之Maven/01.Maven基础.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/26.第三方安装包管理工具之Maven/01.Maven基础.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/26.第三方安装包管理工具之Maven/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/26.第三方安装包管理工具之Maven/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/27.XML与JSON/01.XML简介.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/27.XML与JSON/01.XML简介.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/27.XML与JSON/02.使用DOM.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/27.XML与JSON/02.使用DOM.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/27.XML与JSON/03.使用SAX.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/27.XML与JSON/03.使用SAX.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/27.XML与JSON/04.使用Jackson.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/27.XML与JSON/04.使用Jackson.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/27.XML与JSON/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/27.XML与JSON/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/27.第三方安装包管理工具之Maven/01.Maven基础.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/27.第三方安装包管理工具之Maven/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Java/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Java/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/basic.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/basic.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/comment-bright.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/comment-bright.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/comment-close.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/comment-close.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/comment.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/comment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/css/badge_only.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/css/badge_only.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/css/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/doctools.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/doctools.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/down-pressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/down-pressed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/down.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/down.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/file.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/file.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/fonts/Inconsolata-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/fonts/Inconsolata-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/fonts/Inconsolata.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/fonts/Lato-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/fonts/Lato-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/fonts/RobotoSlab-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/fonts/RobotoSlab-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/jquery-1.11.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/js/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/js/theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/minus.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/minus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/plus.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/plus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/pygments.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/pygments.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/searchtools.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/searchtools.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/up-pressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/up-pressed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/up.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/up.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_static/websupport.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_static/websupport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_md5.json" beforeDir="false" afterPath="$PROJECT_DIR$/file_md5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/01.Java基础/01.Java开篇介绍.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/01.Java基础/01.Java开篇介绍.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/01.Java基础/01.Java开篇介绍.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/01.Java基础/01.Java开篇介绍.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/01.Java基础/03.基本数据类型.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/01.Java基础/03.基本数据类型.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/01.Java基础/03.基本数据类型.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/01.Java基础/03.基本数据类型.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/01.Java基础/04.变量与常量.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/01.Java基础/04.变量与常量.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/01.Java基础/04.变量与常量.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/01.Java基础/04.变量与常量.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/01.Java基础/05.运算符.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/01.Java基础/05.运算符.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/01.Java基础/05.运算符.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/01.Java基础/05.运算符.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/02.流程控制/02.条件语句.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/02.流程控制/02.条件语句.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/02.流程控制/02.条件语句.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/02.流程控制/02.条件语句.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/02.流程控制/03.循环语句.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/02.流程控制/03.循环语句.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/02.流程控制/03.循环语句.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/02.流程控制/03.循环语句.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/03.字符串/01.字符串.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/03.字符串/01.字符串.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/03.字符串/01.字符串.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/03.字符串/01.字符串.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/04.数组/01.一维数组的创建和使用.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/04.数组/01.一维数组的创建和使用.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/04.数组/01.一维数组的创建和使用.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/04.数组/01.一维数组的创建和使用.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/04.数组/02.二维数组的创建和使用.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/04.数组/02.二维数组的创建和使用.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/04.数组/02.二维数组的创建和使用.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/04.数组/02.二维数组的创建和使用.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/05.类与对象/02.类.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/05.类与对象/02.类.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/05.类与对象/02.类.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/05.类与对象/02.类.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/08.包/06.封装性与访问控制.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/08.包/06.封装性与访问控制.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/08.包/06.封装性与访问控制.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/08.包/06.封装性与访问控制.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/09.对象/03.构造方法.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/09.对象/03.构造方法.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/09.对象/03.构造方法.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/09.对象/03.构造方法.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/13.Java常用类/02.包装类.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/13.Java常用类/02.包装类.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/13.Java常用类/02.包装类.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/13.Java常用类/02.包装类.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/13.Java常用类/03.Math类.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/13.Java常用类/03.Math类.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/13.Java常用类/03.Math类.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/13.Java常用类/03.Math类.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/14.内部类/01.内部类概述.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/14.内部类/01.内部类概述.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/14.内部类/01.内部类概述.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/14.内部类/01.内部类概述.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/16.异常处理/03.捕获异常.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/16.异常处理/03.捕获异常.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/16.异常处理/03.捕获异常.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/16.异常处理/03.捕获异常.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/16.异常处理/04.释放资源.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/16.异常处理/04.释放资源.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Java/16.异常处理/04.释放资源.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/Java/16.异常处理/04.释放资源.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/index.rst" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/my_Java$md_to_rst_tool.coverage" NAME="md_to_rst_tool Coverage Results" MODIFIED="1603177918528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>位运算</find>
+      <find>static</find>
+      <find>_static</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="c45f9f5c-1fc7-48fe-bab6-fcb2c1df8661" />
+  <component name="ProjectId" id="1jtlmx5Lo6OXIPglTBhAbtYTOZV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="添加" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/source/Spring_Boot" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\my_Java\source\Spring_Boot" />
+      <recent name="D:\my_Java\source\Distributed_Systems\01.分布式系统基础知识" />
+      <recent name="D:\my_Java\source\Java\27.XML与JSON" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="md_to_rst_tool" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="my_Java" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/md_to_rst_tool.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.md_to_rst_tool" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="abdb315f-84ad-40f5-83a4-d30cb0846f04" name="默认更改列表" comment="" />
+      <created>1587350956928</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587350956928</updated>
+      <workItem from="1587350958299" duration="804000" />
+      <workItem from="1587352722266" duration="4808000" />
+      <workItem from="1587437278044" duration="4553000" />
+      <workItem from="1587447914259" duration="75000" />
+      <workItem from="1589120327532" duration="58000" />
+      <workItem from="1589792751000" duration="220000" />
+      <workItem from="1589793097723" duration="127000" />
+      <workItem from="1590767603369" duration="876000" />
+      <workItem from="1590769247945" duration="173000" />
+      <workItem from="1590845327767" duration="9000" />
+      <workItem from="1590846528027" duration="1103000" />
+      <workItem from="1590847693390" duration="370000" />
+      <workItem from="1590893603579" duration="635000" />
+      <workItem from="1590895458332" duration="49000" />
+      <workItem from="1591166491437" duration="566000" />
+      <workItem from="1591193259124" duration="190000" />
+      <workItem from="1593570887963" duration="225000" />
+      <workItem from="1593571235240" duration="943000" />
+      <workItem from="1593572214792" duration="30000" />
+      <workItem from="1593574707095" duration="421000" />
+      <workItem from="1593587614998" duration="314000" />
+      <workItem from="1594632527583" duration="740000" />
+      <workItem from="1594710027249" duration="2463000" />
+      <workItem from="1596016890273" duration="938000" />
+      <workItem from="1596031948688" duration="11000" />
+      <workItem from="1597116063990" duration="71000" />
+      <workItem from="1601188797636" duration="310000" />
+      <workItem from="1601215217066" duration="19000" />
+      <workItem from="1602319886141" duration="418000" />
+      <workItem from="1603177788382" duration="176000" />
+      <workItem from="1604631436854" duration="1077000" />
+      <workItem from="1604632740147" duration="194000" />
+      <workItem from="1604633115156" duration="19000" />
+      <workItem from="1604890763554" duration="883000" />
+      <workItem from="1605015283348" duration="1369000" />
+      <workItem from="1605075936605" duration="14000" />
+      <workItem from="1608087183350" duration="129000" />
+      <workItem from="1608561168827" duration="1472000" />
+    </task>
+    <task id="LOCAL-00001" summary="2020-05-10 fist-commit">
+      <created>1589120368652</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589120368652</updated>
+    </task>
+    <task id="LOCAL-00002" summary="2020-05-18 fist-commit">
+      <created>1589793186187</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1589793186188</updated>
+    </task>
+    <task id="LOCAL-00003" summary="2020-05-30 fist-commit">
+      <created>1590769289320</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1590769289320</updated>
+    </task>
+    <task id="LOCAL-00004" summary="2020-05-30 second-commit">
+      <created>1590847778879</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590847778879</updated>
+    </task>
+    <task id="LOCAL-00005" summary="2020-07-1 frist-commit">
+      <created>1593587805465</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1593587805465</updated>
+    </task>
+    <task id="LOCAL-00006" summary="2020-07-14 frist-commit">
+      <created>1594713735001</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1594713735001</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="2020-05-10 fist-commit" />
+    <MESSAGE value="2020-05-18 fist-commit" />
+    <MESSAGE value="2020-05-30 fist-commit" />
+    <MESSAGE value="2020-05-30 second-commit" />
+    <MESSAGE value="2020-07-1 frist-commit" />
+    <MESSAGE value="2020-07-14 frist-commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="2020-07-14 frist-commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1397" height="408" key="GridCell.Tab.0.bottom" timestamp="1605016666910">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state width="1397" height="408" key="GridCell.Tab.0.bottom/0.0.1440.920@0.0.1440.920" timestamp="1605016666910" />
+    <state width="1397" height="408" key="GridCell.Tab.0.center" timestamp="1605016666910">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state width="1397" height="408" key="GridCell.Tab.0.center/0.0.1440.920@0.0.1440.920" timestamp="1605016666910" />
+    <state width="1397" height="408" key="GridCell.Tab.0.left" timestamp="1605016666910">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state width="1397" height="408" key="GridCell.Tab.0.left/0.0.1440.920@0.0.1440.920" timestamp="1605016666910" />
+    <state width="1397" height="408" key="GridCell.Tab.0.right" timestamp="1605016666910">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state width="1397" height="408" key="GridCell.Tab.0.right/0.0.1440.920@0.0.1440.920" timestamp="1605016666910" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/my_Java$md_to_rst_tool.coverage" NAME="md_to_rst_tool Coverage Results" MODIFIED="1605016487229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

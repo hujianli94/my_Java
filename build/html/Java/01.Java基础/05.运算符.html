@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,19 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1.6. 代码注释和编码规范" href="06.代码注释和编码规范.html" />
     <link rel="prev" title="1.4. 变量与常量" href="04.变量与常量.html" /> 
 </head>
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -142,14 +146,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.XML与JSON/index.html">27. XML与JSON</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -188,7 +195,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
@@ -200,7 +207,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/01.Java基础/05.运算符.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/01.Java基础/05.运算符.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -231,18 +238,18 @@
 </div>
 <div class="section" id="id1">
 <h1><a class="toc-backref" href="#id10">1.5. 运算符</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-default"><div class="highlight"><pre><span></span>JAVA中提供丰富的运算符，如：赋值运算符、算术运算符、比较运算符
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>JAVA中提供丰富的运算符，如：赋值运算符、算术运算符、比较运算符
 </pre></div>
 </div>
 <div class="section" id="id2">
 <h2><a class="toc-backref" href="#id11">1.5.1. 赋值运算符</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span>赋值运算符以符合“=”表示，将右方操作数所含的值赋值给左方
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>赋值运算符以符合“=”表示，将右方操作数所含的值赋值给左方
 eg:
 int a = 100
 </pre></div>
 </div>
 <p>eg:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>package Number;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>package Number;
 
 public class Eval {
     public static void main(String[] args) {
@@ -271,7 +278,7 @@ x、y、z都得到同样的值5，开发环境中不建议使用这种赋值语�
 <p>算术一元运算符一共有3个，分别是-、++和–。</p>
 <p><img alt="image0" src="../../_images/java1yuan01.png" /></p>
 <p>-a是对a取反运算，a++或a–是在表达式运算完后，再给a加一或减一。而++a或–a是先给a加一或减一，然后再进行表达式运算。</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">company</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">company</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
 
@@ -290,7 +297,7 @@ x、y、z都得到同样的值5，开发环境中不建议使用这种赋值语�
 </pre></div>
 </div>
 <p><strong>二元运算符</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>：+、-、*、/和%，这些运算符对数值类型数据都有效.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>：+、-、*、/和%，这些运算符对数值类型数据都有效.
 </pre></div>
 </div>
 <p>具体说明参见如下表：</p>
@@ -336,7 +343,7 @@ x、y、z都得到同样的值5，开发环境中不建议使用这种赋值语�
 <td>求a除以b的商</td>
 <td>a/b</td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
+<tr class="row-even"><td>&#160;</td>
 <td>取余</td>
 <td>求a除以b的余数</td>
 <td>a%b</td>
@@ -344,7 +351,7 @@ x、y、z都得到同样的值5，开发环境中不建议使用这种赋值语�
 </tbody>
 </table>
 <p>eg:</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Number</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Number</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Arith</span> <span class="p">{</span>
 <span class="o">//</span>  <span class="n">创建类</span>
@@ -402,7 +409,7 @@ x、y、z都得到同样的值5，开发环境中不建议使用这种赋值语�
 </tbody>
 </table>
 <p>示例代码：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">zhijiekeji</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">zhijiekeji</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -479,7 +486,7 @@ false（基本数据类型） |</td>
 </tbody>
 </table>
 <p>eg:</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package Number;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package Number;
 
 public class Compare {
 //  create class
@@ -514,7 +521,7 @@ number1 &lt;= number2的返回值为： true
 </pre></div>
 </div>
 <p>示例代码</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">zhijiekeji2</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">zhijiekeji2</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -546,7 +553,7 @@ number1 &lt;= number2的返回值为： true
 <p>逻辑运算符</p>
 <p><img alt="image1" src="../../_images/java_logic001.png" /></p>
 <p>示例代码：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">zhijiekeji3</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">zhijiekeji3</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -572,7 +579,7 @@ number1 &lt;= number2的返回值为： true
 </pre></div>
 </div>
 <p>eg：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package Number;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package Number;
 
 class Calculation {
 //创建类
@@ -600,7 +607,7 @@ class Calculation {
 <div class="section" id="id6">
 <h2><a class="toc-backref" href="#id15">1.5.5. 位运算符</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>位运算符</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>位运算是以二进位（bit）为单位进行运算的，操作数和结果都是整型数据。位运算符有如下几个运算
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>位运算是以二进位（bit）为单位进行运算的，操作数和结果都是整型数据。位运算符有如下几个运算
 符：&amp;、|、^、~、&gt;&gt;、&lt;&lt;和&gt;&gt;&gt;，以及相应的赋值运算符
 </pre></div>
 </div>
@@ -611,7 +618,7 @@ class Calculation {
 如果用于short或byte数据,
 则数据在位移之前，转换为int类型后再进行位移计算。</p>
 <p>位运算示例代码：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package aom;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package aom;
 
 public class HelloWorld {
     public static void main(String[] args) {
@@ -652,7 +659,7 @@ c &gt;&gt; 2 = -3
 </pre></div>
 </div>
 <p>再看一个示例：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Number</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Number</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Demo</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -702,7 +709,7 @@ c &gt;&gt; 2 = -3
 </div>
 <div class="section" id="id8">
 <h2><a class="toc-backref" href="#id17">1.5.7. 三元运算符</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.zhijiekeji4;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package com.zhijiekeji4;
 
 import java.util.Date;
 
@@ -718,7 +725,7 @@ public class Main {
 }
 </pre></div>
 </div>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Calculation</span> <span class="p">{</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Calculation</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">boolean</span> <span class="n">a</span><span class="p">;</span>
         <span class="k">if</span> <span class="p">(</span><span class="mi">20</span> <span class="o">&lt;</span> <span class="mi">45</span><span class="p">)</span>
@@ -761,11 +768,19 @@ public class Main {
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -776,7 +791,6 @@ public class Main {
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

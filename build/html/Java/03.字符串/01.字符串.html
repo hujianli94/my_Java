@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,19 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4. 数组" href="../04.数组/index.html" />
     <link rel="prev" title="3. 字符串" href="index.html" /> 
 </head>
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -104,11 +108,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#api">3.1.1. 使用API文档</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#java-8api">3.1.2. Java 8在线API文档</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id2">3.1.3. 不可变字符串</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id11">3.1.4. 总结</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id12">3.1.5. 日期和时间字符串格式化</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id13">3.1.6. 常规类型的格式化</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id14">3.1.7. 使用正则表达式</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id15">3.1.8. 字符串生成器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">3.1.4. 可变字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">3.1.5. 总结</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">3.1.6. 日期和时间字符串格式化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">3.1.7. 常规类型的格式化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">3.1.8. 使用正则表达式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">3.1.9. 字符串生成器</a></li>
 </ul>
 </li>
 </ul>
@@ -136,14 +141,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.XML与JSON/index.html">27. XML与JSON</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -182,7 +190,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
@@ -194,7 +202,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/03.字符串/01.字符串.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/03.字符串/01.字符串.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -220,7 +228,9 @@
 <li><a class="reference internal" href="#id5" id="id23">字符串查找</a></li>
 <li><a class="reference internal" href="#id6" id="id24">字符串比较</a></li>
 <li><a class="reference internal" href="#id7" id="id25">字符串截取</a></li>
-<li><a class="reference internal" href="#id8" id="id26">可变字符串</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8" id="id26">可变字符串</a><ul>
 <li><a class="reference internal" href="#id9" id="id27">字符串追加</a></li>
 <li><a class="reference internal" href="#id10" id="id28">字符串插入、删除和替换</a></li>
 </ul>
@@ -244,7 +254,7 @@
 <div class="section" id="java-8api">
 <h2><a class="toc-backref" href="#id18">3.1.2. Java 8在线API文档</a><a class="headerlink" href="#java-8api" title="Permalink to this headline">¶</a></h2>
 <p>提示　很多读者希望能够有离线的中文Java API文档，但Java官方只提供了Java
-6的中文API文档，该文件下载地址是<code class="docutils literal"><span class="pre">http://download.oracle.com/technetwork/java/javase/6/docs/zh/api.zip</span></code>，下载完成后解压api.zip文件，找到其中的index.html文件，双击就会在浏览器中打开API文档了。</p>
+6的中文API文档，该文件下载地址是<code class="docutils literal notranslate"><span class="pre">http://download.oracle.com/technetwork/java/javase/6/docs/zh/api.zip</span></code>，下载完成后解压api.zip文件，找到其中的index.html文件，双击就会在浏览器中打开API文档了。</p>
 <p><img alt="image0" src="../../_images/Java_API01.png" /></p>
 <p>类窗口页面其他内容</p>
 <p><strong>compareTo方法详细描述</strong>
@@ -256,7 +266,7 @@
 <div class="section" id="string">
 <h3><a class="toc-backref" href="#id20">String</a><a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h3>
 <p>创建String对象可以通过构造方法实现，常用的构造方法：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>- String()：使用空字符串创建并初始化一个新的String对象。
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- String()：使用空字符串创建并初始化一个新的String对象。
 
 - String(String original)：使用另外一个字符串创建并初始化一个新的 String 对象。
 
@@ -272,7 +282,7 @@
 </pre></div>
 </div>
 <p>创建字符串对象的示例代码</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">company</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">company</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
 
@@ -306,7 +316,7 @@
 <div class="section" id="id3">
 <h3><a class="toc-backref" href="#id21">字符串池</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>使用new关键字与字符串常量都能获得字符串对象，但它们之间有一些区别。先看下面代码运行结果：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">company2</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">company2</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
 
@@ -332,7 +342,7 @@
 str)方法。</p>
 <p>+运算符优势是可以连接任何类型数据拼接成为字符串，而concat方法只能拼接String类型字符串。</p>
 <p>字符串拼接示例如下：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.zhijiekeji01;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package com.zhijiekeji01;
 
 public class Main {
     public static void main(String[] args) {
@@ -372,7 +382,7 @@ public class Main {
 <div class="section" id="id5">
 <h3><a class="toc-backref" href="#id23">字符串查找</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>在给定的字符串中查找字符或字符串是比较常见的操作。在String类中提供了indexOf和lastIndexOf方法用于查找字符或字符串，返回值是查找的字符或字符串所在的位置，-1表示没有找到。这两个方法有多个重载版本：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>- int indexOf(int ch)：从前往后搜索字符ch，返回第一次找到字符ch所在处的索引。
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- int indexOf(int ch)：从前往后搜索字符ch，返回第一次找到字符ch所在处的索引。
 
 - int indexOf(int ch, int fromIndex)：从指定的索引开始从前往后搜索字符ch，返回第一次找到字符ch所在处的索引。
 
@@ -392,7 +402,7 @@ public class Main {
 </pre></div>
 </div>
 <p>字符串查找示例代码如下：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.zhijiekeji02;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package com.zhijiekeji02;
 
 public class Main {
     public static void main(String[] args) {
@@ -470,7 +480,7 @@ prefix)：测试此字符串是否以指定的前缀开始</li>
 </li>
 </ol>
 <p>字符串比较示例代码如下：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.zhijiekeji03;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package com.zhijiekeji03;
 
 public class Main {
     public static void main(String[] args) {
@@ -545,7 +555,7 @@ endIndex)：从指定索引beginIndex开始截取直到索引endIndex
 -1处的字符，注意包括索引为beginIndex处的字符，但不包括索引为endIndex处的字符。</li>
 </ul>
 <p>字符串截取方法示例代码如下：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">zhijiekeji04</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">zhijiekeji04</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -579,8 +589,9 @@ endIndex)：从指定索引beginIndex开始截取直到索引endIndex
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="id8">
-<h3><a class="toc-backref" href="#id26">可变字符串</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id26">3.1.4. 可变字符串</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>可变字符串在追加、删除、修改、插入和拼接等操作不会产生新的对象。</p>
 <p><strong>StringBuffer和StringBuilder</strong></p>
 <p>Java提供了两个可变字符串类StringBuffer和StringBuilder，中文翻译为“字符串缓冲区”。</p>
@@ -589,7 +600,7 @@ endIndex)：从指定索引beginIndex开始截取直到索引endIndex
 <p>StringBuilder是StringBuffer单线程版本，Java
 5之后发布的，它不是线程安全的，但它的执行效率很高。</p>
 <p>StringBuffer和StringBuilder具有完全相同的API，即构造方法和普通方法等内容一样。StringBuilder的中构造方法有4个：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>- StringBuilder()：创建字符串内容是空的StringBuilder对象，初始容量默认为16个字符。
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- StringBuilder()：创建字符串内容是空的StringBuilder对象，初始容量默认为16个字符。
 
 - StringBuilder(CharSequence seq)：指定CharSequence字符串创建StringBuilder对象。CharSequence接口类型，它的实现类有：String、StringBuffer和StringBuilder等，所以参数seq可以是String、StringBuffer和StringBuilder等类型。
 
@@ -601,7 +612,7 @@ endIndex)：从指定索引beginIndex开始截取直到索引endIndex
 <p>上述构造方法同样适合于StringBuffer类，这里不再赘述。
 提示　字符串长度和字符串缓冲区容量区别。</p>
 <p>字符串长度是指在字符串缓冲区中目前所包含字符串长度，通过length()获得；字符串缓冲区容量是缓冲区中所能容纳的最大字符数，通过capacity()获得。当所容纳的字符超过这个长度时，字符串缓冲区自动扩充容量，但这是以牺牲性能为代价的扩容。</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.zhijikeji05;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package com.zhijikeji05;
 
 public class Main {
     public static void main(String[] args) {
@@ -631,12 +642,11 @@ public class Main {
 字符串缓冲区容量：34*/
 </pre></div>
 </div>
-</div>
 <div class="section" id="id9">
 <h3><a class="toc-backref" href="#id27">字符串追加</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>StringBuilder在提供了很多修改字符串缓冲区的方法，追加、插入、删除和替换等，这一节先介绍字符串追加方法。字符串追加方法是append，append有很多重载方法，可以追加任何类型数据，它的返回值还是StringBuilder。StringBuilder的追加法与StringBuffer完全一样。</p>
 <p>字符串追加示例代码如下：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package com.zhijiekeji06;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package com.zhijiekeji06;
 
 public class Main {
     public static void main(String[] args) {
@@ -672,7 +682,7 @@ false   null
 <div class="section" id="id10">
 <h3><a class="toc-backref" href="#id28">字符串插入、删除和替换</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>StringBuilder中实现插入、删除和替换等操作的常用方法说明如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>- StringBuilder insert(int offset, String str)：在字符串缓冲区中索引为offset的字符位置之前插入str，insert有很多重载方法，可以插入任何类型数据。
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- StringBuilder insert(int offset, String str)：在字符串缓冲区中索引为offset的字符位置之前插入str，insert有很多重载方法，可以插入任何类型数据。
 
 - StringBuffer delete(int start, int end)：在字符串缓冲区中删除子字符串，要删除的子字符串从指定索引start开始直到索引end - 1处的字符。start和end两个参数与substring(int beginIndex, intendIndex)方法中的两个参数含义一样。
 
@@ -681,7 +691,7 @@ false   null
 </div>
 <p>以上介绍的方法虽然是StringBuilder方法，但StringBuffer也完全一样，</p>
 <p>示例代码如下：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">zhijiekeji07</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">zhijiekeji07</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
@@ -717,16 +727,16 @@ false   null
 </div>
 </div>
 <div class="section" id="id11">
-<h2><a class="toc-backref" href="#id29">3.1.4. 总结</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id29">3.1.5. 总结</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
 <p>Java字符串类分为：</p>
 <p>可变字符串类（String）和不可变字符串类（StringBuilder和StringBuffer）。</p>
 <p>然后分别介绍了这些字符串类的用法。</p>
 </div>
 <div class="section" id="id12">
-<h2><a class="toc-backref" href="#id30">3.1.5. 日期和时间字符串格式化</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id30">3.1.6. 日期和时间字符串格式化</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
 <p><strong>1.常用的日期格式化转换符</strong></p>
 <p><img alt="image3" src="../../_images/java_data_format01.png" /></p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.</span><span class="o">*</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.</span><span class="o">*</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Eval</span> <span class="p">{</span> <span class="o">//</span> <span class="n">新建类</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span> <span class="o">//</span> <span class="n">主方法</span>
@@ -743,7 +753,7 @@ false   null
 </div>
 <p><strong>2.常用的时间格式化转换符</strong></p>
 <p><img alt="image4" src="../../_images/java_time_format001.png" /></p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.</span><span class="o">*</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.</span><span class="o">*</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">GetDate</span> <span class="p">{</span> <span class="o">//</span> <span class="n">新建类</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span> <span class="o">//</span> <span class="n">主方法</span>
@@ -760,7 +770,7 @@ false   null
 </div>
 <p><strong>3.格式化常见的日期时间组合</strong></p>
 <p><img alt="image5" src="../../_images/java_data_time001.png" /></p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.</span><span class="o">*</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.</span><span class="o">*</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">DateAndTime</span> <span class="p">{</span> <span class="o">//</span> <span class="n">创建类</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span> <span class="o">//</span> <span class="n">主方法</span>
@@ -776,10 +786,10 @@ false   null
 </div>
 </div>
 <div class="section" id="id13">
-<h2><a class="toc-backref" href="#id31">3.1.6. 常规类型的格式化</a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id31">3.1.7. 常规类型的格式化</a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
 <p>常规类型的格式化可以用于任何的参数类型</p>
 <p><img alt="image6" src="../../_images/java_format001.png" /></p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>public class General { // 新建类
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>public class General { // 新建类
     public static void main(String[] args) { // 主方法
         String str = String.format(&quot;%d&quot;, 400 / 2); // 将结果以十进制显示
         String str2 = String.format(&quot;%b&quot;, 3 &gt; 5); // 将结果以布尔形式显示
@@ -799,12 +809,12 @@ false   null
 </div>
 </div>
 <div class="section" id="id14">
-<h2><a class="toc-backref" href="#id32">3.1.7. 使用正则表达式</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id32">3.1.8. 使用正则表达式</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
 <p><strong>正则表达式的元字符</strong></p>
 <p><img alt="image7" src="../../_images/java_zhengze01.png" /></p>
 <p><strong>正则表达式的限定修饰符</strong></p>
 <p><img alt="image8" src="../../_images/zhengze002.png" /></p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Judge</span> <span class="p">{</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Judge</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
          <span class="o">//</span> <span class="n">定义要匹配E_mail地址的正则表达式</span>
         <span class="n">String</span> <span class="n">regex</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">w+@</span><span class="se">\\</span><span class="s2">w+(</span><span class="se">\\</span><span class="s2">.</span><span class="se">\\</span><span class="s2">w{2,3})*</span><span class="se">\\</span><span class="s2">.</span><span class="se">\\</span><span class="s2">w{2,3}&quot;</span><span class="p">;</span>
@@ -826,8 +836,8 @@ false   null
 </div>
 </div>
 <div class="section" id="id15">
-<h2><a class="toc-backref" href="#id33">3.1.8. 字符串生成器</a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>public class Jerque { // 新建类
+<h2><a class="toc-backref" href="#id33">3.1.9. 字符串生成器</a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>public class Jerque { // 新建类
     public static void main(String[] args) { // 主方法
         String str = &quot;&quot;; // 创建空字符串
         // 定义对字符串执行操作的起始时间
@@ -879,11 +889,19 @@ StringBuilder消耗时间：1
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -894,7 +912,6 @@ StringBuilder消耗时间：1
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

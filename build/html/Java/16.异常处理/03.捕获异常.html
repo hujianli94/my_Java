@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,19 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="16.4. 释放资源" href="04.释放资源.html" />
     <link rel="prev" title="16.2. Error和Exception" href="02.Error和Exception.html" /> 
 </head>
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -140,14 +144,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.XML与JSON/index.html">27. XML与JSON</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -186,7 +193,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
@@ -198,7 +205,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/16.异常处理/03.捕获异常.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/16.异常处理/03.捕获异常.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -228,12 +235,18 @@
 <div class="section" id="try-catch">
 <h2><a class="toc-backref" href="#id5">16.3.1. try-catch语句</a><a class="headerlink" href="#try-catch" title="Permalink to this headline">¶</a></h2>
 <p>语法：</p>
-<p>try{</p>
-<p>//可能会发生异常的语句</p>
-<p>} catch(Throwable e){</p>
-<p>//处理异常e }</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">{</span>
+
+<span class="o">//</span><span class="n">可能会发生异常的语句</span>
+
+<span class="p">}</span> <span class="n">catch</span><span class="p">(</span><span class="n">Throwable</span> <span class="n">e</span><span class="p">){</span>
+
+<span class="o">//</span><span class="n">处理异常e</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>Helloword2.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">a51work</span><span class="o">.</span><span class="n">cn</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">javafx.scene.input.DataFormat</span><span class="p">;</span>
 
@@ -280,13 +293,24 @@
 <div class="section" id="catch">
 <h2><a class="toc-backref" href="#id6">16.3.2. 多catch代码块</a><a class="headerlink" href="#catch" title="Permalink to this headline">¶</a></h2>
 <p>多catch代码块语法如下：</p>
-<p>try{</p>
-<p>//可能会发生异常的语句</p>
-<p>} catch(Throwable e){ //处理异常e</p>
-<p>} catch(Throwable e){ //处理异常e</p>
-<p>} catch(Throwable e){ //处理异常e }</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">{</span>
+
+<span class="o">//</span><span class="n">可能会发生异常的语句</span>
+
+<span class="p">}</span>
+<span class="n">catch</span><span class="p">(</span><span class="n">Throwable</span> <span class="n">e</span><span class="p">){</span>
+<span class="o">//</span><span class="n">处理异常e</span>
+
+<span class="p">}</span> <span class="n">catch</span><span class="p">(</span><span class="n">Throwable</span> <span class="n">e</span><span class="p">){</span>
+<span class="o">//</span><span class="n">处理异常e</span>
+
+<span class="p">}</span> <span class="n">catch</span><span class="p">(</span><span class="n">Throwable</span> <span class="n">e</span><span class="p">){</span>
+<span class="o">//</span><span class="n">处理异常e</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>HelloWorld2.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51cto;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>package com.a51cto;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -355,7 +379,7 @@ java.io.FileNotFoundException: readme.txt (系统找不到指定的文件。)
 <div class="section" id="id2">
 <h2><a class="toc-backref" href="#id7">16.3.3. try-catch语句嵌套</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>HelloWorld2.java</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>package com.a51cto;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>package com.a51cto;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -423,11 +447,17 @@ java.io.FileNotFoundException: readme.txt (系统找不到指定的文件。)
 <h2><a class="toc-backref" href="#id8">16.3.4. 多重捕获</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>Java 7推出了多重捕获（multi-catch）技术，可以帮助解决此类问题</p>
 <p>在catch中多重捕获异常用“|”运算符连接起来。</p>
-<p>try{</p>
-<p>//可能会发生异常的语句</p>
-<p>} catch (IOException | ParseException e) {</p>
-<p>//调用方法methodA处理</p>
-<p>}</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">{</span>
+
+<span class="o">//</span><span class="n">可能会发生异常的语句</span>
+
+<span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="o">|</span> <span class="n">ParseException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="o">//</span><span class="n">调用方法methodA处理</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -451,11 +481,19 @@ java.io.FileNotFoundException: readme.txt (系统找不到指定的文件。)
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -466,7 +504,6 @@ java.io.FileNotFoundException: readme.txt (系统找不到指定的文件。)
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

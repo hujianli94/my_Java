@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript">
@@ -28,21 +33,19 @@
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: ''
+              SOURCELINK_SUFFIX: '.txt'
           };
       </script>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="3. 字符串" href="../03.字符串/index.html" />
     <link rel="prev" title="2.2. 条件语句" href="02.条件语句.html" /> 
 </head>
@@ -58,7 +61,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> 小健_Java_Blog
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 小健_Java_Blog
           
 
           
@@ -88,6 +91,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -109,6 +113,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#id3">2.3.5. 循环控制</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id4">2.3.6. 总结</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id5">2.3.7. 课后练习</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scanner">2.3.8. 将循环应用于Scanner类的输入检查</a></li>
 </ul>
 </li>
 </ul>
@@ -137,14 +142,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../24.注解(Annotation)/index.html">24. 注解(Annotation）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../25.数据库编程/index.html">25. 数据库编程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../26.第三方安装包管理工具之Maven/index.html">26. 包管理工具之Maven</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../27.XML与JSON/index.html">27. XML与JSON</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Distributed_Systems/index.html">分布式系统架构案例(Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Spring_Boot/index.html">Spring Boot</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -183,7 +191,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../index.html">Java学习笔记</a> &raquo;</li>
         
@@ -195,7 +203,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/Java/02.流程控制/03.循环语句.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/Java/02.流程控制/03.循环语句.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -226,6 +234,7 @@
 </li>
 <li><a class="reference internal" href="#id4" id="id15">总结</a></li>
 <li><a class="reference internal" href="#id5" id="id16">课后练习</a></li>
+<li><a class="reference internal" href="#scanner" id="id17">将循环应用于Scanner类的输入检查</a></li>
 </ul>
 </li>
 </ul>
@@ -238,7 +247,7 @@
 <li>while语句也称条件判断语句。它的循环方式为利用一个条件来控制是否要继续反复执行这个语句。
 语法如下：</li>
 </ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">while</span><span class="p">(</span><span class="n">条件表达式</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="p">(</span><span class="n">条件表达式</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="n">执行语句</span>
 <span class="p">}</span>
@@ -247,7 +256,7 @@
 <p>当条件表达式的返回值为真时，则执行“{}”中的语句，当执行完“{}”中的语句后，重新判断条件表达式的
 返回值，直到表达式返回的结果为假时，退出循环。</p>
 <p>while循环语句的执行示例：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package Number;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package Number;
 
 public class GetSum {
 
@@ -282,7 +291,7 @@ System.out.println(&quot;x的值为5&quot;)
 而do…while循环语句则先执行一次循环之后，再判断条件是否成立。</li>
 </ul>
 <p>也就是说，do…while循环语句中“{}”中的程序至少要被执行一次。 语法如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>do {
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>do {
 执行语句
 }
 while(条件表达式);
@@ -293,7 +302,7 @@ do...while语句与while语句有一个明显的区别，do...while.语句在结
 </pre></div>
 </div>
 <p>eg：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">company</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">company</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Main</span> <span class="p">{</span>
 
@@ -329,7 +338,7 @@ do...while语句与while语句有一个明显的区别，do...while.语句在结
 <ul class="simple">
 <li>语法如下：</li>
 </ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span>for (表达式1；表达式2；表达式3)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for (表达式1；表达式2；表达式3)
 {
 语句序列
 }
@@ -339,7 +348,7 @@ do...while语句与while语句有一个明显的区别，do...while.语句在结
 * 表达式3：循环后操作表达式，负责修整变量，改变循环条件。
 </pre></div>
 </div>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package Number;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package Number;
 
 public class for_Test {
 
@@ -360,10 +369,27 @@ public class for_Test {
 2到100之间的所有偶数之和为：2550
 </pre></div>
 </div>
-<ul class="simple">
-<li>技巧： for循环实现无限循环。语法格式如下：</li>
+<ul>
+<li><p class="first">技巧：</p>
+</li>
+<li><p class="first">while实现无限循环</p>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">ch6_8</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>  <span class="p">{</span>
+<span class="o">//</span>        <span class="k">while</span> <span class="p">(</span><span class="n">true</span><span class="p">){</span>
+<span class="o">//</span>            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;这里是一个死循环......</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+<span class="o">//</span>        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(;;){</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;这是一个无限死循环....&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">for循环实现无限循环。语法格式如下：</p>
+</li>
 </ul>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>        <span class="k">for</span> <span class="p">(;;)</span> <span class="p">{</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="k">for</span> <span class="p">(;;)</span> <span class="p">{</span>
             <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;loop.......&quot;</span><span class="p">);</span>
         <span class="p">}</span>
 
@@ -376,16 +402,12 @@ public class for_Test {
             <span class="k">break</span><span class="p">;</span>
             <span class="n">x</span><span class="o">++</span><span class="p">;</span>
 
-
-
-
-
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>eg</p>
-<p><code class="docutils literal"><span class="pre">打印99乘法表</span></code></p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">for_yuju</span><span class="p">;</span>
+<p><code class="docutils literal notranslate"><span class="pre">打印99乘法表</span></code></p>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">for_yuju</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">continue_001</span> <span class="p">{</span>
 
@@ -426,13 +448,13 @@ public class for_Test {
 <p>foreach并不是一个关键字，习惯上将这种特殊的for语句格式称为foreach语句。</p>
 <p>foreach语句在遍历数组等方面为程序员提供了很大的方便</p>
 <p>语法如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>for (元素遍历x：遍历对象obj){
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for (元素遍历x：遍历对象obj){
     引用了x的java语句；
 }
 </pre></div>
 </div>
 <p>eg：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>package Number;
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>package Number;
 
 public class Repetition {
 
@@ -452,7 +474,7 @@ public class Repetition {
 </div>
 <div class="section" id="id3">
 <h2><a class="toc-backref" href="#id12">2.3.5. 循环控制</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span>循环控制包含两方面的内容：
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>循环控制包含两方面的内容：
 一方面是控制循环变量的变化方式
 另一方面是控制循环的跳转
 主要涉及到两个关键字：
@@ -464,19 +486,19 @@ continue是执行下一次循环
 </div>
 <div class="section" id="break">
 <h3><a class="toc-backref" href="#id13">break语句</a><a class="headerlink" href="#break" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span>break语句可以跳出switch结构，在循环结构中，同样也可用break语句跳出当前循环体，
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>break语句可以跳出switch结构，在循环结构中，同样也可用break语句跳出当前循环体，
 从而中断当前循环
 </pre></div>
 </div>
 <p>在循环体中使用break语句有两种方式：带有标签和不带标签。语法格式如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>break; //不带标签
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>break; //不带标签
 break label; //带标签，label是标签名
 </pre></div>
 </div>
 <p>不带标签的break语句使程序跳出所在层的循环体，而带标签的break语句使程序跳出标签指示的循环
 体。</p>
 <p>eg:</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Number</span><span class="p">;</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">Number</span><span class="p">;</span>
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">BreakTest</span> <span class="p">{</span>
 
@@ -509,7 +531,7 @@ break label; //带标签，label是标签名
 <p>**注意：
 如果遇到循环嵌套的情况，break语句将只会使程序流程跳出包含它的最内层的循环结构，
 只跳出一层循环。 eg：</p>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">BreakinsideNested</span> <span class="p">{</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">BreakinsideNested</span> <span class="p">{</span>
 
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -545,7 +567,7 @@ break label; //带标签，label是标签名
 （1）循环中的if语句判断：如果j等于4时，执行break语句，则中断了内层的循环，输出的j值最大到3为止
 （2）外层的循环没有受任何影响，输出的i值最大为2，正是for循环设定的最大值。</p>
 <p>如果要让break跳出外层循环，java提供了“标签”的功能，语法如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>标签名：循环体{
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>标签名：循环体{
     break 标签名;
 }
 </pre></div>
@@ -558,7 +580,7 @@ break label; //带标签，label是标签名
 带有标签的break可以制定跳出的循环，这个循环可以是内层循环，也可以是外层循环</li>
 </ul>
 <p>eg：带有标签的break跳出外层循环</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>public class BreakOutsideNested {
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>public class BreakOutsideNested {
 
     public static void main(String[] args) {
 //      在for循环前用标签标记
@@ -591,12 +613,12 @@ i=0 j=3
 循环的增量部分，然后进行条件测试。在while和do…while循环中，continue语句使控制直接回到条件
 测试部分。</p>
 <p>在循环体中使用continue语句有两种方式可以带有标签，也可以不带标签。语法格式如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>continue //不带标签
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>continue //不带标签
 continue label //带标签，label是标签名
 </pre></div>
 </div>
 <p>eg：输出1~20之间的奇数</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">continue1</span> <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">continue1</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">20</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 <span class="o">//</span>          <span class="n">如果i是偶数</span>
@@ -624,7 +646,7 @@ continue label //带标签，label是标签名
 </pre></div>
 </div>
 <p>与break语句一样，continue也支持标签功能，语法如下：</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>标签名：循环体{
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>标签名：循环体{
     continue 标签名；
 }
 </pre></div>
@@ -648,7 +670,7 @@ continue label //带标签，label是标签名
 <ul class="simple">
 <li>编写java程序，判断变量x是奇数还是偶数</li>
 </ul>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">checktest</span> <span class="p">{</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">checktest</span> <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
         <span class="nb">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">49</span><span class="p">;</span>   <span class="o">//</span><span class="n">定义变量x的值为49</span>
 <span class="o">//</span>      <span class="n">进行if判断奇数偶数</span>
@@ -666,7 +688,7 @@ continue label //带标签，label是标签名
 <ul class="simple">
 <li>编写java程序，应用for循环打印菱形</li>
 </ul>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span>public class Test_for {
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>public class Test_for {
     public static void main(String args[]) {
         int lineCount = 17;// 输出的菱形有多少行，请赋值成奇数
 
@@ -699,7 +721,7 @@ continue label //带标签，label是标签名
 <ul class="simple">
 <li>编写java程序，使用while循环语句计算1+1/2!+1/3!….1/20!之和</li>
 </ul>
-<div class="code java highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Example_02</span> <span class="p">{</span>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Example_02</span> <span class="p">{</span>
   <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="p">[])</span>
     <span class="p">{</span>
       <span class="n">double</span> <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -713,6 +735,36 @@ continue label //带标签，label是标签名
       <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="nb">sum</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="scanner">
+<h2><a class="toc-backref" href="#id17">2.3.8. 将循环应用于Scanner类的输入检查</a><a class="headerlink" href="#scanner" title="Permalink to this headline">¶</a></h2>
+<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span>import java.util.Scanner;
+
+public class CH6_13_1 {
+    public static void main(String[] args) {
+        int x1, x2;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println(&quot;请输入2个整数，使用空格隔开&quot;);
+        while (!scanner.hasNextInt()) {
+            System.out.println(&quot;输入的第一个数据类型错误，请输入整数&quot;);
+            scanner.next();      // 用字符串方式读取1
+        }
+        x1 = scanner.nextInt();
+
+        while (!scanner.hasNextInt()) {
+            System.out.println(&quot;输入的第二个数据类型错误，请输入整数&quot;);
+            scanner.next();      // 用字符串方式读取1
+        }
+        x2 = scanner.nextInt();
+
+        System.out.printf(&quot;输入的第一个数是:%d\n&quot;, x1);
+        System.out.printf(&quot;输入的第二个数是:%d\n&quot;, x2);
+        System.out.printf(&quot;输入的数的总和是：%d\n&quot;, (x1 + x2));
+    }
+}
 </pre></div>
 </div>
 </div>
@@ -738,11 +790,19 @@ continue label //带标签，label是标签名
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2019, huxiaojian
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -753,7 +813,6 @@ continue label //带标签，label是标签名
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
